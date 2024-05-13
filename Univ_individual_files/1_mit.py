@@ -32,7 +32,7 @@ def mit():
 
 	# d gives the array of all profs on the dept homepage
 	d = soup.find_all('div', {'class':"views-field views-field-title"})
-	# count = 0 
+	# count = 0
 	# iterating for every prof
 	for i in d:
 		a = i.find('a')                     # a contains the name and the homepage of prof
@@ -61,12 +61,12 @@ def filterandgetEmail(var, garbage_emails, name, link, email, prof_resp):
 	u_name = var[3]
 	country = var[4]
 
-	# keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture', 
+	# keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture',
 	#             'Hardware and Architecture', 'hardware and architecture', 'embedded system', 'Embedded System','Computer Organization','VLSI', 'Computer and System',
 	#             'Distributed System', 'distributed system', 'Distributed system' ]
 	keyword_list = ['computer architecture', 'Computer architecture', 'Embedded System', 'Embedded system', 'embedded system']   # 'Computer Architecture',
 	flag = 1
-	prof_soup = BeautifulSoup(prof_resp.text, "html.parser") 
+	prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
 	research_text = prof_soup.text
 	for pattern in keyword_list:
 		if re.search(pattern,research_text):
@@ -91,7 +91,7 @@ def filterandgetEmail(var, garbage_emails, name, link, email, prof_resp):
 						f.write(link + '\n' + name + '\t\t' + email + '\n')
 						csvwriter.writerow([u_name, country, name, email, link])
 						csvwriter2.writerow([u_name, country, name, email, link])
-					# f.write("\n") 
+					# f.write("\n")
  
 
 			f.write(pattern)
