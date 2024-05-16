@@ -13,10 +13,11 @@ html_content = response.text
 # Parse the HTML with BeautifulSoup
 soup = BeautifulSoup(html_content, 'html.parser')
 
-target_classes = ['people-entry', 'small-12', 'medium-6', 'large-4', 'larger-3', 'cell']
+target_classes = []
+target_names = ['a']
 
 # Find all elements with the specified classes
-elements_with_classes = soup.find_all(class_=target_classes)
+elements_with_classes = soup.find_all(target_names, class_=target_classes)
 
 # Extract and print the text content within each 'people-entry' class
 for element in elements_with_classes:

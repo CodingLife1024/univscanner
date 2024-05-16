@@ -30,4 +30,4 @@ with open("all_text.txt", "w", encoding="utf-8") as file:
 
             file.write(f"Text: {element.strip()}\n")
             file.write(f"Parent Details: {parent_details}\n\n")
-            file.write("-----------------\n\n\n")
+            file.write("-----------------\n")
