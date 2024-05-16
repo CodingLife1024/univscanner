@@ -14,7 +14,7 @@ html_content = response.text
 soup = BeautifulSoup(html_content, 'html.parser')
 
 # Extract and print only the text of the page along with its parent details
-with open("hh.txt", "w", encoding="utf-8") as file:
+with open("all_text.txt", "w", encoding="utf-8") as file:
     for element in soup.find_all(text=True):
         if element.parent.name and not element.parent.name.startswith('script') and element.strip() != "":
             parent = element.parent
