@@ -7,8 +7,13 @@ import csv
 from bs4 import BeautifulSoup
 
 def mit():
-	url = "https://www.eecs.mit.edu/people/faculty-advisors"   # homepage url
-	r = requests.get(url)                                        # request to url
+	url = "https://www.eecs.mit.edu/people/faculty"   # homepage url
+
+	headers = {
+		'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36'
+	}
+
+	r = requests.get(url, headers=headers)                                        # request to url
 
 	# getting the soup by parsing the html parsel to text to request r
 	soup = BeautifulSoup(r.text, "html.parser")
@@ -92,7 +97,7 @@ def filterandgetEmail(var, garbage_emails, name, link, email, prof_resp):
 						csvwriter.writerow([u_name, country, name, email, link])
 						csvwriter2.writerow([u_name, country, name, email, link])
 					# f.write("\n")
- 
+
 
 			f.write(pattern)
 			f.write('\n\n')

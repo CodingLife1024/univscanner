@@ -16,4 +16,4 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # Extract and print only the text of the page
 text_content = soup.get_text()
 print(text_content)
-print(text_content.parent())
+print(text_content.parent() if text_content.parent() else "No parent found")
