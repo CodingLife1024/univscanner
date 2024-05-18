@@ -41,7 +41,6 @@ def mit():
         # print("Research List:", research_list)
         for department in departments:
             if department in research_list:
-                # print(True)
                 print([university, country, text_content, email, href])
 
     print("MIT Done....")
