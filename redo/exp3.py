@@ -16,12 +16,9 @@ soup = BeautifulSoup(html_content, 'html.parser')
 
 # Find all <a> tags with Name: a, Class: None, ID: None, and 'rel': ['bookmark']
 extract_webpage = soup.find_all('a', class_=None, id=None, rel=['bookmark'])
-extract_email = soup.find_all('a', class_=None, id=None, href=lambda href: href and href.startswith('mailto:'))
-extract_research = soup.find_all('a', class_=None, id=None, href=lambda href: href and href.startswith('/people/?fwp_research'))
 
-for element in extract_email:
-    text_content = element.get_text(separator='\n')  # Separate text content by newlines for better readability
+for element in extract_webpage:
+    text_content = element.get_text()  # Separate text content by newlines for better readability
     href = element.get('href')  # Get the href attribute value
     print("Text Content:", text_content)
     print("Href:", href)
-    print()  # Print an empty line for readability

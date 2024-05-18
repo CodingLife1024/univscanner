@@ -25,7 +25,7 @@ def mit():
 
     for element in extract_webpage:
         final = []
-        text_content = element.get_text(separator='\n')  # Separate text content by newlines for better readability
+        text_content = element.get_text()  # Separate text content by newlines for better readability
         href = element.get('href')  # Get the href attribute value
         # print("Text Content:", text_content)
         # print("Href:", href)
