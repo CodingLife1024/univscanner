@@ -24,7 +24,6 @@ def mit():
     departments = ["Robotics", "AI and Society"]
 
     for element in extract_webpage:
-        final = []
         text_content = element.get_text()  # Separate text content by newlines for better readability
         href = element.get('href')  # Get the href attribute value
         # print("Text Content:", text_content)
