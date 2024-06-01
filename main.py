@@ -1,5 +1,6 @@
 from redo.mit import mit
 from redo.stanford import stanford
+from redo.harvard import harvard
 import csv
 
 def main():
@@ -7,19 +8,11 @@ def main():
         writer = csv.writer(file)
         writer.writerow(["University", "Country", "Name", "Email", "URL"])
 
-        # Try calling mit() and writing its output to the CSV file
-        try:
-            mit_data = mit()
-            writer.writerows(mit_data)
-        except Exception as e:
-            print("Error occurred while fetching and writing MIT data:", e)
+        writer.writerows(mit())
 
-        # Try calling stanford() and writing its output to the CSV file
-        try:
-            stanford_data = stanford()
-            writer.writerows(stanford_data)
-        except Exception as e:
-            print("Error occurred while fetching and writing Stanford data:", e)
+        writer.writerows(stanford())
+
+        writer.writerows(harvard())
 
 if __name__ == "__main__":
     main()

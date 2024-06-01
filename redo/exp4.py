@@ -28,8 +28,9 @@ for title in accordion_titles:
             links = accordion_content.find_all('a')
             print(f"Links under '{title}':")
             for link in links:
-                print("Text Content:", link.get_text(strip=True))
-                print("Href:", link.get('href'))
+                print("Name:", link.get_text(strip=True))
+                print("URL:", "https://seas.harvard.edu" + link.get('href'))
+
             print()
         else:
             print(f"No content found under '{title}'.")

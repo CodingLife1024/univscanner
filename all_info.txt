@@ -73,11 +73,6 @@ Parent Details: Name: head, Class: None, ID: None
 
 -----------------
 
-Text: 
-Parent Details: Name: head, Class: None, ID: None
-
------------------
-
 Text: window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
 Parent Details: Name: script, Class: None, ID: None
 
@@ -88,7 +83,7 @@ Parent Details: Name: head, Class: None, ID: None
 
 -----------------
 
-Text: Faculty & Research | Harvard John A. Paulson School of Engineering and Applied Sciences
+Text: Stephanie Gil | Harvard John A. Paulson School of Engineering and Applied Sciences
 Parent Details: Name: title, Class: None, ID: None
 
 -----------------
@@ -144,7 +139,7 @@ Parent Details: Name: html, Class: None, ID: None, Other Attributes: {'lang': 'e
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
@@ -154,12 +149,12 @@ Parent Details: Name: a, Class: ['visually-hidden', 'focusable', 'skip-link'], I
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
@@ -684,7 +679,7 @@ Parent Details: Name: section, Class: ['header__fixed'], ID: header__fixed, Othe
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['view', 'view-active-alerts', 'view-id-active_alerts', 'view-display-id-block_1', 'js-view-dom-id-26b2458abe3edda9a35ab46d7ead34232d58c919ddd7c0a6f06af2ff167c72ba'], ID: None, Other Attributes: {'class': ['view', 'view-active-alerts', 'view-id-active_alerts', 'view-display-id-block_1', 'js-view-dom-id-26b2458abe3edda9a35ab46d7ead34232d58c919ddd7c0a6f06af2ff167c72ba']}
+Parent Details: Name: div, Class: ['view', 'view-active-alerts', 'view-id-active_alerts', 'view-display-id-block_1', 'js-view-dom-id-68e3dc8d95c59aed85b0b67102646108613bb0096dd040267401779525110cee'], ID: None, Other Attributes: {'class': ['view', 'view-active-alerts', 'view-id-active_alerts', 'view-display-id-block_1', 'js-view-dom-id-68e3dc8d95c59aed85b0b67102646108613bb0096dd040267401779525110cee']}
 
 -----------------
 
@@ -1239,11 +1234,6 @@ Parent Details: Name: div, Class: ['block-seas-content', 'block', 'block-system'
 -----------------
 
 Text: 
-Parent Details: Name: article, Class: ['node-is-published'], ID: node-17461, Other Attributes: {'id': 'node-17461', 'class': ['node-is-published']}
-
------------------
-
-Text: 
 Parent Details: Name: div, Class: ['page__header-image-wrapper'], ID: None, Other Attributes: {'class': ['page__header-image-wrapper']}
 
 -----------------
@@ -1273,8 +1263,8 @@ Parent Details: Name: div, Class: ['page__header-title', 'cell'], ID: None, Othe
 
 -----------------
 
-Text: Computer Science
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science'}
+Text: About SEAS
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/about-us'}
 
 -----------------
 
@@ -1283,13 +1273,8 @@ Parent Details: Name: div, Class: ['page__header-title', 'cell'], ID: None, Othe
 
 -----------------
 
-Text: Faculty & Research
-Parent Details: Name: span, Class: ['page__title', 'page__title--full'], ID: None, Other Attributes: {'class': ['page__title', 'page__title--full']}
-
------------------
-
-Text: 
-Parent Details: Name: h1, Class: None, ID: None
+Text: Directory
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/about-us/directory'}
 
 -----------------
 
@@ -1314,141 +1299,37 @@ Parent Details: Name: div, Class: ['page__header-image-wrapper'], ID: None, Othe
 -----------------
 
 Text: 
-Parent Details: Name: article, Class: ['node-is-published'], ID: node-17461, Other Attributes: {'id': 'node-17461', 'class': ['node-is-published']}
-
------------------
-
-Text: .teaching-area-dark { color: #335890 !important; }
-        .teaching-area-bright { color: #5798E1  !important; }
-        .teaching-area-light { color: #DDEAF9  !important; }
-
-        .teaching-area-background-light { background-color: #DDEAF9  !important; }
-
-        .teaching-area-border-bright {
-            border-color: #5798E1;
-        }
-        
-        @media screen and (min-width: 48em) {
-            .page__header-title,
-            .page__header-title:before { 
-                background-color: #335890; /* fallback */
-                background-color: #335890E6; /* #RRGGBBAA */
-                border-bottom-color: #5798E1;
-            }
-        }
-
-        @media screen and (max-width: 47.9988em) {
-            .page__header-image-wrapper > .grid-container { 
-                background-color: #335890; 
-            }
-        }
-
-        .local-nav.menu.vertical.sublevel-1 > li > a:hover,
-        .local-nav.menu.vertical.sublevel-1 > li > a:focus { background-color: #335890; }
-        .local-nav.menu.vertical.sublevel-1 > li > a.is-active,
-        .local-nav.menu.vertical.sublevel-1 > li.expanded > a { background-color: #335890; }
-
-
-        .local-nav.menu.vertical .sublevel-2 > li > a { background-color: #DDEAF9; }
-        .local-nav.menu.vertical .sublevel-2 > li > a:hover,
-        .local-nav.menu.vertical .sublevel-2 > li > a:focus { background-color: #335890; }
-        .local-nav.menu.vertical .sublevel-2 > li > a.is-active { 
-            background-color: #DDEAF9; 
-            color: black;
-        }
-
-        #carousel__dots .slick-dots button,
-        #featured-news__dots .slick-dots button { background-color: #5798E1 }
-        #carousel__arrows .slick-arrow,
-        #featured-news__arrows .slick-arrow { background-color: #5798E1 }
-        .carousel-item__style-rectangle .carousel-item__link a:hover,
-        .carousel-item__style-rectangle .carousel-item__link a:focus { color: #335890; }
-        .carousel-item__style-round .carousel-item__link a:hover, 
-        .carousel-item__style-round .carousel-item__link a:focus { background-color: #335890; }
-
-        .teaching-area__research-area a { 
-            border-color: #5798E1;
-            background-color: #DDEAF9; }
-        .teaching-area__research-area a:hover,
-        .teaching-area__research-area a:focus { background-color: #335890; }
-
-        .course-teaser__title a:hover,
-        .course-teaser__title a:focus { color: #335890; }
-
-        .course-teaser__website:hover,
-        .course-teaser__website:focus { background-color: #335890; }
-
-        .localist__container-inner,
-        .localist__container-inner:before { background: #DDEAF9; }
-
-        .teaching-area__featured-stories-link:hover,
-        .teaching-area__featured-stories-link:focus { color: #335890; }
-Parent Details: Name: style, Class: None, ID: None
+Parent Details: Name: div, Class: ['block-seas-content', 'block', 'block-system', 'block-system-main-block'], ID: block-seas-content, Other Attributes: {'id': 'block-seas-content', 'data-block-plugin-id': 'system_main_block', 'class': ['block-seas-content', 'block', 'block-system', 'block-system-main-block']}
 
 -----------------
 
 Text: 
-Parent Details: Name: article, Class: ['node-is-published'], ID: node-17461, Other Attributes: {'id': 'node-17461', 'class': ['node-is-published']}
+Parent Details: Name: div, Class: ['person-full'], ID: None, Other Attributes: {'class': ['person-full']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['grid-container'], ID: None, Other Attributes: {'class': ['grid-container']}
+Parent Details: Name: article, Class: ['node-is-published', 'person__detailed-wrapper'], ID: node-22051, Other Attributes: {'id': 'node-22051', 'class': ['node-is-published', 'person__detailed-wrapper']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['grid-x', 'grid-margin-x'], ID: None, Other Attributes: {'class': ['grid-x', 'grid-margin-x']}
+Parent Details: Name: div, Class: ['person__detailed', 'has-research'], ID: None, Other Attributes: {'class': ['person__detailed', 'has-research']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['page__upper-content', 'cell', 'auto', 'small-order-2', 'medium-order-1'], ID: None, Other Attributes: {'class': ['page__upper-content', 'cell', 'auto', 'small-order-2', 'medium-order-1']}
+Parent Details: Name: div, Class: ['person__detailed-main'], ID: None, Other Attributes: {'class': ['person__detailed-main']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['body', 'page__body', 'page__body--full', 'field', 'field-node--body', 'field-name-body', 'field-type-text-with-summary', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['body', 'page__body', 'page__body--full', 'field', 'field-node--body', 'field-name-body', 'field-type-text-with-summary', 'field-label-hidden']}
+Parent Details: Name: div, Class: ['person__detailed-titles'], ID: None, Other Attributes: {'class': ['person__detailed-titles']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
-
------------------
-
-Text: Our faculty work within and beyond the disciplines of engineering and foundational science. Our approach to teaching and research is, by design, highly interdisciplinary. We collaborate across academic areas, within the larger university, and with colleagues in academia, industry, government and public service organizations beyond Harvard.
-Parent Details: Name: span, Class: ['large'], ID: None, Other Attributes: {'class': ['large']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
-
------------------
-
-Text: Faculty members listed on this page as “Affiliates” have primary appointments in other departments at Harvard. These affiliated faculty members can serve on advisory committees, supervise undergraduate theses, and co-advise Ph.D. students. Harvard faculty interested in becoming CS affiliates may contact the assistant director for faculty and academic operations and area chair.
-Parent Details: Name: p, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
-
------------------
-
-Text: Prospective Ph.D. students looking for a primary research advisor should consider the Assistant Professors, Associate Professors, and Professors listed on this page. Affiliates cannot serve as primary research advisors for Ph.D. students.
-Parent Details: Name: p, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
-
------------------
-
-Text: SEE COMPLETE LIST OF RESEARCH AREAS
-Parent Details: Name: strong, Class: None, ID: None
+Parent Details: Name: div, Class: ['person__headshot', 'person__headshot--full', 'field', 'field-node--field-headshot', 'field-name-field-headshot', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__headshot', 'person__headshot--full', 'field', 'field-node--field-headshot', 'field-name-field-headshot', 'field-type-entity-reference', 'field-label-hidden']}
 
 -----------------
 
@@ -1458,2627 +1339,837 @@ Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['body', 'page__body', 'page__body--full', 'field', 'field-node--body', 'field-name-body', 'field-type-text-with-summary', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['body', 'page__body', 'page__body--full', 'field', 'field-node--body', 'field-name-body', 'field-type-text-with-summary', 'field-label-hidden']}
+Parent Details: Name: article, Class: None, ID: None
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['page__upper-content', 'cell', 'auto', 'small-order-2', 'medium-order-1'], ID: None, Other Attributes: {'class': ['page__upper-content', 'cell', 'auto', 'small-order-2', 'medium-order-1']}
+Parent Details: Name: div, Class: ['blazy', 'blazy--field', 'blazy--image', 'blazy--image--headshot', 'image__image', 'image__image--headshot', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['blazy', 'blazy--field', 'blazy--image', 'blazy--image--headshot', 'image__image', 'image__image--headshot', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], 'data-blazy': ''}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['field-items', 'page__upper-content__items'], ID: None, Other Attributes: {'class': ['field-items', 'page__upper-content__items']}
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['faculty-research', 'faculty-research--default'], ID: None, Other Attributes: {'class': ['faculty-research', 'faculty-research--default']}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['view', 'view-research-interests-faculty', 'view-id-research_interests_faculty', 'view-display-id-block_1', 'js-view-dom-id-8233236f7327851ecea17d96f683b68ad19bbe140804ab540e2434aa03ada124'], ID: None, Other Attributes: {'class': ['view', 'view-research-interests-faculty', 'view-id-research_interests_faculty', 'view-display-id-block_1', 'js-view-dom-id-8233236f7327851ecea17d96f683b68ad19bbe140804ab540e2434aa03ada124']}
+Parent Details: Name: div, Class: ['media', 'media--blazy', 'media--image', 'media--responsive', 'is-b-loading'], ID: None, Other Attributes: {'data-b-token': 'b-4d495f4baf6', 'class': ['media', 'media--blazy', 'media--image', 'media--responsive', 'is-b-loading']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['view-content'], ID: None, Other Attributes: {'class': ['view-content']}
+Parent Details: Name: div, Class: ['media', 'media--blazy', 'media--image', 'media--responsive', 'is-b-loading'], ID: None, Other Attributes: {'data-b-token': 'b-4d495f4baf6', 'class': ['media', 'media--blazy', 'media--image', 'media--responsive', 'is-b-loading']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['blazy', 'blazy--field', 'blazy--image', 'blazy--image--headshot', 'image__image', 'image__image--headshot', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['blazy', 'blazy--field', 'blazy--image', 'blazy--image--headshot', 'image__image', 'image__image--headshot', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], 'data-blazy': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__headshot', 'person__headshot--full', 'field', 'field-node--field-headshot', 'field-name-field-headshot', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__headshot', 'person__headshot--full', 'field', 'field-node--field-headshot', 'field-name-field-headshot', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-titles'], ID: None, Other Attributes: {'class': ['person__detailed-titles']}
+
+-----------------
+
+Text: Stephanie Gil
+Parent Details: Name: span, Class: ['person__name', 'person__name--full'], ID: None, Other Attributes: {'class': ['person__name', 'person__name--full']}
+
+-----------------
+
+Text: 
+Parent Details: Name: h1, Class: ['node-title', 'teaching-area-dark', 'person__detailed-name'], ID: None, Other Attributes: {'class': ['node-title', 'teaching-area-dark', 'person__detailed-name']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-titles'], ID: None, Other Attributes: {'class': ['person__detailed-titles']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-primary-title'], ID: None, Other Attributes: {'class': ['person__detailed-primary-title']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__primary-title', 'person__primary-title--full', 'field', 'field-node--field-person-primary-title', 'field-name-field-person-primary-title', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__primary-title', 'person__primary-title--full', 'field', 'field-node--field-person-primary-title', 'field-name-field-person-primary-title', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: Assistant Professor of Computer Science
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__primary-title', 'person__primary-title--full', 'field', 'field-node--field-person-primary-title', 'field-name-field-person-primary-title', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__primary-title', 'person__primary-title--full', 'field', 'field-node--field-person-primary-title', 'field-name-field-person-primary-title', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-primary-title'], ID: None, Other Attributes: {'class': ['person__detailed-primary-title']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-titles'], ID: None, Other Attributes: {'class': ['person__detailed-titles']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-additional-titles'], ID: None, Other Attributes: {'class': ['person__detailed-additional-titles']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-titles'], ID: None, Other Attributes: {'class': ['person__detailed-titles']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-teaching-area'], ID: None, Other Attributes: {'class': ['person__detailed-teaching-area']}
+
+-----------------
+
+Text: Primary Teaching Area
+Parent Details: Name: h3, Class: ['teaching-area-dark'], ID: None, Other Attributes: {'class': ['teaching-area-dark']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-teaching-area'], ID: None, Other Attributes: {'class': ['person__detailed-teaching-area']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__primary-teaching-area', 'person__primary-teaching-area--full', 'field', 'field-node--field-primary-teaching-area', 'field-name-field-primary-teaching-area', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__primary-teaching-area', 'person__primary-teaching-area--full', 'field', 'field-node--field-primary-teaching-area', 'field-name-field-primary-teaching-area', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
 Text: Computer Science
-Parent Details: Name: h2, Class: None, ID: None
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['view-content'], ID: None, Other Attributes: {'class': ['view-content']}
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
+Parent Details: Name: div, Class: ['person__primary-teaching-area', 'person__primary-teaching-area--full', 'field', 'field-node--field-primary-teaching-area', 'field-name-field-primary-teaching-area', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__primary-teaching-area', 'person__primary-teaching-area--full', 'field', 'field-node--field-primary-teaching-area', 'field-name-field-primary-teaching-area', 'field-type-entity-reference', 'field-label-hidden']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-teaching-area'], ID: None, Other Attributes: {'class': ['person__detailed-teaching-area']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-titles'], ID: None, Other Attributes: {'class': ['person__detailed-titles']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-main'], ID: None, Other Attributes: {'class': ['person__detailed-main']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['grid-x', 'person__detailed-sections'], ID: None, Other Attributes: {'class': ['grid-x', 'person__detailed-sections']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--contact', 'cell', 'large-6'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--contact', 'cell', 'large-6']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: Contact
+Parent Details: Name: h3, Class: ['teaching-area-dark'], ID: None, Other Attributes: {'class': ['teaching-area-dark']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__office', 'person__office--full', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__office', 'person__office--full', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 150 Western Ave, Sci&Eng 4.211
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__office', 'person__office--full', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__office', 'person__office--full', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__email', 'person__email--full', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__email', 'person__email--full', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: sgil@seas.harvard.edu
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'mailto:sgil@seas.harvard.edu'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__email', 'person__email--full', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__email', 'person__email--full', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__phone', 'person__phone--full', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__phone', 'person__phone--full', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 1555555555
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__phone', 'person__phone--full', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__phone', 'person__phone--full', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--contact', 'cell', 'large-6'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--contact', 'cell', 'large-6']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['grid-x', 'person__detailed-sections'], ID: None, Other Attributes: {'class': ['grid-x', 'person__detailed-sections']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--websites', 'cell', 'large-6'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--websites', 'cell', 'large-6']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: Websites
+Parent Details: Name: h3, Class: ['teaching-area-dark'], ID: None, Other Attributes: {'class': ['teaching-area-dark']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__websites', 'person__websites--full', 'field', 'field-node--field-links', 'field-name-field-links', 'field-type-link', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__websites', 'person__websites--full', 'field', 'field-node--field-links', 'field-name-field-links', 'field-type-link', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: gil.seas.harvard.edu
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://gil.seas.harvard.edu', 'onclick': "dataLayer.push(\n                    {'event': 'faculty_website_click',\n                     'faculty-member': jQuery(this).closest('article').find('h2 > .person__name').text()\n                    });"}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: react.seas.harvard.edu
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://react.seas.harvard.edu', 'onclick': "dataLayer.push(\n                    {'event': 'faculty_website_click',\n                     'faculty-member': jQuery(this).closest('article').find('h2 > .person__name').text()\n                    });"}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__websites', 'person__websites--full', 'field', 'field-node--field-links', 'field-name-field-links', 'field-type-link', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__websites', 'person__websites--full', 'field', 'field-node--field-links', 'field-name-field-links', 'field-type-link', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['person__detailed-section-inner']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--websites', 'cell', 'large-6'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--websites', 'cell', 'large-6']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['grid-x', 'person__detailed-sections'], ID: None, Other Attributes: {'class': ['grid-x', 'person__detailed-sections']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--assistant', 'cell', 'large-6', 'accordion'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--assistant', 'cell', 'large-6', 'accordion'], 'data-accordion': '', 'data-allow-all-closed': 'true'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['accordion-item', 'person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['accordion-item', 'person__detailed-section-inner'], 'data-accordion-item': ''}
+
+-----------------
+
+Text: Staff Contact
+Parent Details: Name: h3, Class: ['teaching-area-dark'], ID: None, Other Attributes: {'class': ['teaching-area-dark']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['accordion-item', 'person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['accordion-item', 'person__detailed-section-inner'], 'data-accordion-item': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-content', 'accordion-content'], ID: None, Other Attributes: {'class': ['person__detailed-section-content', 'accordion-content'], 'data-tab-content': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__assistant', 'person__assistant--full', 'field', 'field-node--field-assistant', 'field-name-field-assistant', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__assistant', 'person__assistant--full', 'field', 'field-node--field-assistant', 'field-name-field-assistant', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['node-is-published'], ID: None, Other Attributes: {'class': ['node-is-published']}
+
+-----------------
+
+Text: Sarah Gayer
+Parent Details: Name: span, Class: ['person__name', 'person__name--person-assistant'], ID: None, Other Attributes: {'class': ['person__name', 'person__name--person-assistant']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['node-is-published'], ID: None, Other Attributes: {'class': ['node-is-published']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__office', 'person__office--person-assistant', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__office', 'person__office--person-assistant', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 150 Western Ave, Sci&Eng SEC 2.404
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__office', 'person__office--person-assistant', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__office', 'person__office--person-assistant', 'field', 'field-node--field-office', 'field-name-field-office', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['node-is-published'], ID: None, Other Attributes: {'class': ['node-is-published']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__email', 'person__email--person-assistant', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__email', 'person__email--person-assistant', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: sgayer@seas.harvard.edu
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'mailto:sgayer@seas.harvard.edu'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__email', 'person__email--person-assistant', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__email', 'person__email--person-assistant', 'field', 'field-node--field-email', 'field-name-field-email', 'field-type-email', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['node-is-published'], ID: None, Other Attributes: {'class': ['node-is-published']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__phone', 'person__phone--person-assistant', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__phone', 'person__phone--person-assistant', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: (617) 998-1948
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__phone', 'person__phone--person-assistant', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__phone', 'person__phone--person-assistant', 'field', 'field-node--field-phone', 'field-name-field-phone', 'field-type-string', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['node-is-published'], ID: None, Other Attributes: {'class': ['node-is-published']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__assistant', 'person__assistant--full', 'field', 'field-node--field-assistant', 'field-name-field-assistant', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__assistant', 'person__assistant--full', 'field', 'field-node--field-assistant', 'field-name-field-assistant', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-content', 'accordion-content'], ID: None, Other Attributes: {'class': ['person__detailed-section-content', 'accordion-content'], 'data-tab-content': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['accordion-item', 'person__detailed-section-inner'], ID: None, Other Attributes: {'class': ['accordion-item', 'person__detailed-section-inner'], 'data-accordion-item': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--assistant', 'cell', 'large-6', 'accordion'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--assistant', 'cell', 'large-6', 'accordion'], 'data-accordion': '', 'data-allow-all-closed': 'true'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['grid-x', 'person__detailed-sections'], ID: None, Other Attributes: {'class': ['grid-x', 'person__detailed-sections']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-main'], ID: None, Other Attributes: {'class': ['person__detailed-main']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed', 'has-research'], ID: None, Other Attributes: {'class': ['person__detailed', 'has-research']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--research-interests', 'accordion'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--research-interests', 'accordion'], 'data-accordion': '', 'data-allow-all-closed': 'true'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['accordion-item'], ID: None, Other Attributes: {'class': ['accordion-item'], 'data-accordion-item': ''}
+
+-----------------
+
+Text: Research Areas
+Parent Details: Name: h3, Class: ['teaching-area-dark'], ID: None, Other Attributes: {'class': ['teaching-area-dark']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['accordion-item'], ID: None, Other Attributes: {'class': ['accordion-item'], 'data-accordion-item': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__detailed-section-content', 'accordion-content'], ID: None, Other Attributes: {'class': ['person__detailed-section-content', 'accordion-content'], 'data-tab-content': ''}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['person__research-interests', 'person__research-interests--full', 'field', 'field-node--field-research-interests', 'field-name-field-research-interests', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__research-interests', 'person__research-interests--full', 'field', 'field-node--field-research-interests', 'field-name-field-research-interests', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: Applied Mathematics
+Parent Details: Name: div, Class: ['count-1'], ID: None, Other Attributes: {'class': ['count-1']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: Artificial Intelligence
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/faculty?research[251]=251'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
-Text: David Alvarez-Melis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-alvarez-melis', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Nada Amin
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/nada-amin', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Demba Ba
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/demba-ba', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Boaz Barak
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/boaz-barak', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael P. Brenner
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-brenner', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sitan Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sitan-chen', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yiling Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yiling-chen', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Finale Doshi-Velez
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/finale-doshi-velez', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jonathan Frankle
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jonathan-frankle', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Krzysztof Z Gajos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/krzysztof-gajos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stephanie Gil
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stephanie-gil', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Goel
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-goel', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yannai A. Gonczarowski
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yannai-gonczarowski', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Barbara J. Grosz
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/barbara-grosz', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Vijay Janapa Reddi
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/vijay-janapa-reddi', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Lucas B Janson
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/lucas-janson', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sham Kakade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sham-kakade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Petros Koumoutsakos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/petros-koumoutsakos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hima Lakkaraju
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hima-lakkaraju', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Na Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/na-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Xin Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/xin-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: L Mahadevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/l-mahadevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Mitzenmacher
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-mitzenmacher', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Susan A Murphy
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/susan-murphy', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Parkes
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-parkes', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Cengiz Pehlevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/cengiz-pehlevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hanspeter Pfister
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hanspeter-pfister', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Ariel Procaccia
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/ariel-procaccia', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Pavlos Protopapas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/pavlos-protopapas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anna Seigal
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anna-seigal', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stuart M. Shieber
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stuart-shieber', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Milind Tambe
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/milind-tambe', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Leslie G. Valiant
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/leslie-valiant', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Fernanda Viegas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/fernanda-viegas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Martin Wattenberg
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/martin-wattenberg', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Melanie Weber
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/melanie-weber', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Robert J. Wood
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/robert-wood', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Heng Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/heng-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Woodward Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/woodward-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Todd Zickler
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/todd-zickler', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jonathan Zittrain
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jonathan-zittrain', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Computation and Society
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Alvarez-Melis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-alvarez-melis', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Karen Brennan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/karen-brennan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Flavio P. Calmon
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/flavio-calmon', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yiling Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yiling-chen', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stephen Chong
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stephen-chong', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Finale Doshi-Velez
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/finale-doshi-velez', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Cynthia Dwork
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/cynthia-dwork', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jonathan Frankle
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jonathan-frankle', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Krzysztof Z Gajos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/krzysztof-gajos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Goel
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-goel', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yannai A. Gonczarowski
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yannai-gonczarowski', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Barbara J. Grosz
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/barbara-grosz', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Harry R. Lewis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/harry-lewis', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Na Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/na-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David J. Malan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-malan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: James Mickens
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/james-mickens', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Parkes
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-parkes', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Ariel Procaccia
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/ariel-procaccia', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Smith
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-smith', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Milind Tambe
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/milind-tambe', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Salil P. Vadhan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/salil-vadhan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Fernanda Viegas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/fernanda-viegas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: James H. Waldo
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/james-waldo', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Martin Wattenberg
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/martin-wattenberg', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Melanie Weber
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/melanie-weber', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Woodward Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/woodward-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jonathan Zittrain
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jonathan-zittrain', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Computational and Data Science
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Alvarez-Melis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-alvarez-melis', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anurag Anshu
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anurag-anshu', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Demba Ba
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/demba-ba', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael P. Brenner
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-brenner', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sitan Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sitan-chen', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Finale Doshi-Velez
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/finale-doshi-velez', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jonathan Frankle
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jonathan-frankle', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Elena Leah Glassman
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/elena-glassman', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Goel
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-goel', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stratos Idreos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stratos-idreos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Lucas B Janson
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/lucas-janson', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sham Kakade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sham-kakade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Efthimios Kaxiras
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/efthimios-kaxiras', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Boris Kozinsky
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/boris-kozinsky', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hima Lakkaraju
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hima-lakkaraju', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Na Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/na-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Xin Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/xin-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Mitzenmacher
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-mitzenmacher', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Susan A Murphy
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/susan-murphy', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Parkes
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-parkes', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hanspeter Pfister
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hanspeter-pfister', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Pavlos Protopapas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/pavlos-protopapas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Ramanathan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-ramanathan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anna Seigal
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anna-seigal', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Salil P. Vadhan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/salil-vadhan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: James H. Waldo
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/james-waldo', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Melanie Weber
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/melanie-weber', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Computational Neuroscience
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Demba Ba
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/demba-ba', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Frank J. Doyle
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/frank-doyle', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jia Liu
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jia-liu', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: L Mahadevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/l-mahadevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Cengiz Pehlevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/cengiz-pehlevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hanspeter Pfister
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hanspeter-pfister', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Ramanathan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-ramanathan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Christin Y. Sander
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/christin-sander', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Maurice Smith
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/maurice-smith', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Leslie G. Valiant
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/leslie-valiant', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Computer Engineering and Architecture
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Brooks
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-brooks', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Donhee Ham
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/donhee-ham', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Gage Hills
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/gage-hills', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Vijay Janapa Reddi
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/vijay-janapa-reddi', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: H.T. Kung
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/ht-kung', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Smith
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-smith', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Gu-Yeon Wei
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/gu-yeon-wei', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Woodward Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/woodward-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Economics and Computation
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yiling Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yiling-chen', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Goel
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-goel', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yannai A. Gonczarowski
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yannai-gonczarowski', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Na Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/na-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Mitzenmacher
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-mitzenmacher', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Parkes
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-parkes', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Ariel Procaccia
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/ariel-procaccia', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Milind Tambe
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/milind-tambe', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Graphics, Vision, and Visualization
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Elena Leah Glassman
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/elena-glassman', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Steven J. Gortler
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/steven-gortler', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hanspeter Pfister
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hanspeter-pfister', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anna Seigal
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anna-seigal', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Fernanda Viegas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/fernanda-viegas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Martin Wattenberg
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/martin-wattenberg', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Heng Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/heng-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Woodward Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/woodward-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Todd Zickler
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/todd-zickler', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Human-Computer Interaction
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Krzysztof Z Gajos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/krzysztof-gajos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Elena Leah Glassman
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/elena-glassman', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Goel
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-goel', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hanspeter Pfister
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hanspeter-pfister', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Shriya Srinivasan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/shriya-srinivasan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Fernanda Viegas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/fernanda-viegas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Martin Wattenberg
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/martin-wattenberg', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Machine Learning
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Alvarez-Melis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-alvarez-melis', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Boaz Barak
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/boaz-barak', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sitan Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sitan-chen', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Finale Doshi-Velez
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/finale-doshi-velez', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Jonathan Frankle
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/jonathan-frankle', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sharad Goel
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sharad-goel', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yannai A. Gonczarowski
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yannai-gonczarowski', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stratos Idreos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stratos-idreos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Lucas B Janson
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/lucas-janson', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sham Kakade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sham-kakade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Efthimios Kaxiras
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/efthimios-kaxiras', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Petros Koumoutsakos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/petros-koumoutsakos', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Boris Kozinsky
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/boris-kozinsky', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hima Lakkaraju
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hima-lakkaraju', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: L Mahadevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/l-mahadevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Mitzenmacher
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-mitzenmacher', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Parkes
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-parkes', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Cengiz Pehlevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/cengiz-pehlevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Hanspeter Pfister
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/hanspeter-pfister', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anna Seigal
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anna-seigal', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Milind Tambe
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/milind-tambe', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Leslie G. Valiant
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/leslie-valiant', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Fernanda Viegas
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/fernanda-viegas', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Martin Wattenberg
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/martin-wattenberg', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Melanie Weber
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/melanie-weber', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Programming Languages
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Nada Amin
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/nada-amin', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stephen Chong
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stephen-chong', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Elena Leah Glassman
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/elena-glassman', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Vijay Janapa Reddi
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/vijay-janapa-reddi', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Smith
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-smith', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: James H. Waldo
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/james-waldo', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Quantum Computing
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anurag Anshu
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anurag-anshu', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Boaz Barak
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/boaz-barak', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Leslie G. Valiant
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/leslie-valiant', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Robotics and Control
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Martin Bechthold
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/martin-bechthold', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: David Clarke
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/david-clarke', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stephanie Gil
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stephanie-gil', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Robert D. Howe
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/robert-howe', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Vijay Janapa Reddi
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/vijay-janapa-reddi', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sham Kakade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sham-kakade', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Na Li
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/na-li', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: L Mahadevan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/l-mahadevan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Patrick Slade
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/patrick-slade', 'hreflang': 'en'}
-
------------------
-
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
-Text: Maurice Smith
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/maurice-smith', 'hreflang': 'en'}
+Text: Computer Science
+Parent Details: Name: div, Class: ['count-1'], ID: None, Other Attributes: {'class': ['count-1']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
-Text: Shriya Srinivasan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/shriya-srinivasan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Conor J Walsh
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/conor-walsh', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Robert J. Wood
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/robert-wood', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Heng Yang
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/heng-yang', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
+Text: Artificial Intelligence
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/faculty?research[251]=251'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: Systems, Networks, and Databases
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/faculty?research[286]=286'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: Robotics and Control
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/faculty?research[316]=316'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stephanie Gil
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stephanie-gil', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Stratos Idreos
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/stratos-idreos', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
-Text: Vijay Janapa Reddi
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/vijay-janapa-reddi', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Eddie Kohler
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/eddie-kohler', 'hreflang': 'en'}
+Text: Electrical Engineering
+Parent Details: Name: div, Class: ['count-1'], ID: None, Other Attributes: {'class': ['count-1']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
-Text: H.T. Kung
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/ht-kung', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: James Mickens
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/james-mickens', 'hreflang': 'en'}
+Text: Robotics and Control
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/faculty?research[316]=316'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Mitzenmacher
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-mitzenmacher', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael D. Smith
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-smith', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
-Text: James H. Waldo
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/james-waldo', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Minlan Yu
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/minlan-yu', 'hreflang': 'en'}
+Text: Materials and Mechanical Engineering
+Parent Details: Name: div, Class: ['count-1'], ID: None, Other Attributes: {'class': ['count-1']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: Robotics and Control
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/faculty?research[316]=316'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: Theory of Computation
-Parent Details: Name: a, Class: ['accordion-title'], ID: None, Other Attributes: {'href': '#', 'class': ['accordion-title']}
+Parent Details: Name: div, Class: ['person__research-interests', 'person__research-interests--full', 'field', 'field-node--field-research-interests', 'field-name-field-research-interests', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['person__research-interests', 'person__research-interests--full', 'field', 'field-node--field-research-interests', 'field-name-field-research-interests', 'field-type-entity-reference', 'field-label-hidden']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
+Parent Details: Name: div, Class: ['person__detailed-section-content', 'accordion-content'], ID: None, Other Attributes: {'class': ['person__detailed-section-content', 'accordion-content'], 'data-tab-content': ''}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anurag Anshu
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anurag-anshu', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['accordion-item'], ID: None, Other Attributes: {'class': ['accordion-item'], 'data-accordion-item': ''}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Boaz Barak
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/boaz-barak', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['person__detailed-section', 'person__detailed-section--research-interests', 'accordion'], ID: None, Other Attributes: {'class': ['person__detailed-section', 'person__detailed-section--research-interests', 'accordion'], 'data-accordion': '', 'data-allow-all-closed': 'true'}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Sitan Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/sitan-chen', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['person__detailed', 'has-research'], ID: None, Other Attributes: {'class': ['person__detailed', 'has-research']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yiling Chen
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yiling-chen', 'hreflang': 'en'}
+Parent Details: Name: article, Class: ['node-is-published', 'person__detailed-wrapper'], ID: node-22051, Other Attributes: {'id': 'node-22051', 'class': ['node-is-published', 'person__detailed-wrapper']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Cynthia Dwork
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/cynthia-dwork', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['person-full'], ID: None, Other Attributes: {'class': ['person-full']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Yannai A. Gonczarowski
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/yannai-gonczarowski', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['block-seas-content', 'block', 'block-system', 'block-system-main-block'], ID: block-seas-content, Other Attributes: {'id': 'block-seas-content', 'data-block-plugin-id': 'system_main_block', 'class': ['block-seas-content', 'block', 'block-system', 'block-system-main-block']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Harry R. Lewis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/harry-lewis', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['news__related-news-wrapper'], ID: None, Other Attributes: {'class': ['news__related-news-wrapper']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
+Parent Details: Name: div, Class: ['inner'], ID: None, Other Attributes: {'class': ['inner']}
 
 -----------------
 
-Text: Michael D. Mitzenmacher
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-mitzenmacher', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Ariel Procaccia
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/ariel-procaccia', 'hreflang': 'en'}
+Text: Related News
+Parent Details: Name: h3, Class: ['news__related-news--title'], ID: None, Other Attributes: {'class': ['news__related-news--title']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Michael O. Rabin
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/michael-rabin', 'hreflang': 'en'}
+Parent Details: Name: div, Class: ['inner'], ID: None, Other Attributes: {'class': ['inner']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Anna Seigal
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/anna-seigal', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Madhu Sudan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/madhu-sudan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Salil P. Vadhan
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/salil-vadhan', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Leslie G. Valiant
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/leslie-valiant', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: Melanie Weber
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/person/melanie-weber', 'hreflang': 'en'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['accordion-content'], ID: None, Other Attributes: {'class': ['accordion-content'], 'data-tab-content': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion-item': ''}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: None, ID: None, Other Attributes: {'data-accordion': '', 'data-multi-expand': 'true', 'data-allow-all-closed': 'true'}
+Parent Details: Name: div, Class: ['view', 'view-recent-news-by-person', 'view-id-recent_news_by_person', 'view-display-id-block_1', 'js-view-dom-id-7c052a31d6416bb530806d339dd2e05e7f951ed6b0ad2850f0e68bf0c36220d8'], ID: None, Other Attributes: {'class': ['view', 'view-recent-news-by-person', 'view-id-recent_news_by_person', 'view-display-id-block_1', 'js-view-dom-id-7c052a31d6416bb530806d339dd2e05e7f951ed6b0ad2850f0e68bf0c36220d8']}
 
 -----------------
 
@@ -4088,7 +2179,487 @@ Parent Details: Name: div, Class: ['view-content'], ID: None, Other Attributes: 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['view', 'view-research-interests-faculty', 'view-id-research_interests_faculty', 'view-display-id-block_1', 'js-view-dom-id-8233236f7327851ecea17d96f683b68ad19bbe140804ab540e2434aa03ada124'], ID: None, Other Attributes: {'class': ['view', 'view-research-interests-faculty', 'view-id-research_interests_faculty', 'view-display-id-block_1', 'js-view-dom-id-8233236f7327851ecea17d96f683b68ad19bbe140804ab540e2434aa03ada124']}
+Parent Details: Name: div, Class: ['featured-news__items', 'featured-news__items-3'], ID: None, Other Attributes: {'class': ['featured-news__items', 'featured-news__items-3']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: ['node-is-published', 'featured-news__item'], ID: node-31551, Other Attributes: {'id': 'node-31551', 'class': ['node-is-published', 'featured-news__item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: a, Class: ['featured-news__image'], ID: None, Other Attributes: {'class': ['featured-news__image'], 'href': '/news/2021/05/gil-receives-amazon-research-award'}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: ['node-is-published', 'featured-news__item'], ID: node-31551, Other Attributes: {'id': 'node-31551', 'class': ['node-is-published', 'featured-news__item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news-featured__inset'], ID: None, Other Attributes: {'class': ['news-featured__inset']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: May 5, 2021
+Parent Details: Name: time, Class: None, ID: None, Other Attributes: {'datetime': '2021-05-05T12:00:00Z'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: h3, Class: ['node-title', 'news-featured__title'], ID: None, Other Attributes: {'class': ['node-title', 'news-featured__title']}
+
+-----------------
+
+Text: Gil receives Amazon Research Award
+Parent Details: Name: span, Class: ['news__title', 'news__title--news-featured-small'], ID: None, Other Attributes: {'class': ['news__title', 'news__title--news-featured-small']}
+
+-----------------
+
+Text: 
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/news/2021/05/gil-receives-amazon-research-award'}
+
+-----------------
+
+Text: 
+Parent Details: Name: h3, Class: ['node-title', 'news-featured__title'], ID: None, Other Attributes: {'class': ['node-title', 'news-featured__title']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: Computer scientist is improving multi-robot teamwork
+Parent Details: Name: p, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: Read more
+Parent Details: Name: span, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: p, Class: ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: Computer Science
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/news?topic[541]=541'}
+
+-----------------
+
+Text: 
+Parent Details: Name: p, Class: ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news-featured__inset'], ID: None, Other Attributes: {'class': ['news-featured__inset']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: ['node-is-published', 'featured-news__item'], ID: node-31551, Other Attributes: {'id': 'node-31551', 'class': ['node-is-published', 'featured-news__item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['featured-news__items', 'featured-news__items-3'], ID: None, Other Attributes: {'class': ['featured-news__items', 'featured-news__items-3']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: ['node-is-published', 'featured-news__item'], ID: node-27181, Other Attributes: {'id': 'node-27181', 'class': ['node-is-published', 'featured-news__item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image__image', 'image__image--news-teaser-small', 'field', 'field-media--image', 'field-name-image', 'field-type-image', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['image', 'news__featured-image', 'news__featured-image--news-featured-small', 'field', 'field-node--field-image', 'field-name-field-image', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: a, Class: ['featured-news__image'], ID: None, Other Attributes: {'class': ['featured-news__image'], 'href': '/news/2020/09/stephanie-gil-joins-harvard-engineering'}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: ['node-is-published', 'featured-news__item'], ID: node-27181, Other Attributes: {'id': 'node-27181', 'class': ['node-is-published', 'featured-news__item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news-featured__inset'], ID: None, Other Attributes: {'class': ['news-featured__inset']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: Sep 4, 2020
+Parent Details: Name: time, Class: None, ID: None, Other Attributes: {'datetime': '2020-09-04T12:00:00Z'}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__publication-date', 'news__publication-date--news-featured-small', 'field', 'field-node--field-publication-date', 'field-name-field-publication-date', 'field-type-datetime', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: h3, Class: ['node-title', 'news-featured__title'], ID: None, Other Attributes: {'class': ['node-title', 'news-featured__title']}
+
+-----------------
+
+Text: Stephanie Gil joins Harvard Engineering
+Parent Details: Name: span, Class: ['news__title', 'news__title--news-featured-small'], ID: None, Other Attributes: {'class': ['news__title', 'news__title--news-featured-small']}
+
+-----------------
+
+Text: 
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/news/2020/09/stephanie-gil-joins-harvard-engineering'}
+
+-----------------
+
+Text: 
+Parent Details: Name: h3, Class: ['node-title', 'news-featured__title'], ID: None, Other Attributes: {'class': ['node-title', 'news-featured__title']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: Computer scientist pursues real-world, life-saving applications
+Parent Details: Name: p, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-item'], ID: None, Other Attributes: {'class': ['field-item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['field-items'], ID: None, Other Attributes: {'class': ['field-items']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__teaser', 'news__teaser--news-featured-small', 'field', 'field-node--field-teaser', 'field-name-field-teaser', 'field-type-text-long', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: Read more
+Parent Details: Name: span, Class: None, ID: None
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: p, Class: ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: Robotics
+Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/news?topic[531]=531'}
+
+-----------------
+
+Text: 
+Parent Details: Name: p, Class: ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden'], ID: None, Other Attributes: {'class': ['news__topics', 'news__topics--news-featured-small', 'field', 'field-node--field-news-topics', 'field-name-field-news-topics', 'field-type-entity-reference', 'field-label-hidden']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['teaching-area-border-bright'], ID: None, Other Attributes: {'class': ['teaching-area-border-bright']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['news-featured__inset'], ID: None, Other Attributes: {'class': ['news-featured__inset']}
+
+-----------------
+
+Text: 
+Parent Details: Name: article, Class: ['node-is-published', 'featured-news__item'], ID: node-27181, Other Attributes: {'id': 'node-27181', 'class': ['node-is-published', 'featured-news__item']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['featured-news__items', 'featured-news__items-3'], ID: None, Other Attributes: {'class': ['featured-news__items', 'featured-news__items-3']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['view-content'], ID: None, Other Attributes: {'class': ['view-content']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['view-content'], ID: None, Other Attributes: {'class': ['view-content']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['view-content'], ID: None, Other Attributes: {'class': ['view-content']}
+
+-----------------
+
+Text: 
+Parent Details: Name: div, Class: ['view', 'view-recent-news-by-person', 'view-id-recent_news_by_person', 'view-display-id-block_1', 'js-view-dom-id-7c052a31d6416bb530806d339dd2e05e7f951ed6b0ad2850f0e68bf0c36220d8'], ID: None, Other Attributes: {'class': ['view', 'view-recent-news-by-person', 'view-id-recent_news_by_person', 'view-display-id-block_1', 'js-view-dom-id-7c052a31d6416bb530806d339dd2e05e7f951ed6b0ad2850f0e68bf0c36220d8']}
 
 -----------------
 
@@ -4098,757 +2669,12 @@ Parent Details: Name: div, Class: ['views-element-container'], ID: None, Other A
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['faculty-research', 'faculty-research--default'], ID: None, Other Attributes: {'class': ['faculty-research', 'faculty-research--default']}
+Parent Details: Name: div, Class: ['inner'], ID: None, Other Attributes: {'class': ['inner']}
 
 -----------------
 
 Text: 
-Parent Details: Name: div, Class: ['field-item__paragraph--faculty-research', 'field-item'], ID: None, Other Attributes: {'class': ['field-item__paragraph--faculty-research', 'field-item']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['field-items', 'page__upper-content__items'], ID: None, Other Attributes: {'class': ['field-items', 'page__upper-content__items']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['page__upper-content', 'cell', 'auto', 'small-order-2', 'medium-order-1'], ID: None, Other Attributes: {'class': ['page__upper-content', 'cell', 'auto', 'small-order-2', 'medium-order-1']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['grid-x', 'grid-margin-x'], ID: None, Other Attributes: {'class': ['grid-x', 'grid-margin-x']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2'], ID: None, Other Attributes: {'class': ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2']}
-
------------------
-
-Text: 
-Parent Details: Name: nav, Class: ['block-mainnavigation-2'], ID: block-mainnavigation-2, Other Attributes: {'role': 'navigation', 'aria-labelledby': 'block-mainnavigation-2-menu', 'id': 'block-mainnavigation-2', 'data-block-plugin-id': 'menu_block:main', 'class': ['block-mainnavigation-2']}
-
------------------
-
-Text: Main navigation
-Parent Details: Name: h2, Class: ['block-title', 'visually-hidden'], ID: block-mainnavigation-2-menu, Other Attributes: {'class': ['block-title', 'visually-hidden'], 'id': 'block-mainnavigation-2-menu'}
-
------------------
-
-Text: 
-Parent Details: Name: nav, Class: ['block-mainnavigation-2'], ID: block-mainnavigation-2, Other Attributes: {'role': 'navigation', 'aria-labelledby': 'block-mainnavigation-2-menu', 'id': 'block-mainnavigation-2', 'data-block-plugin-id': 'menu_block:main', 'class': ['block-mainnavigation-2']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2'], ID: None, Other Attributes: {'class': ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2']}
-
------------------
-
-Text: 
-Parent Details: Name: nav, Class: ['block-informationfor-2'], ID: block-informationfor-2, Other Attributes: {'role': 'navigation', 'aria-labelledby': 'block-informationfor-2-menu', 'id': 'block-informationfor-2', 'data-block-plugin-id': 'menu_block:information-for', 'class': ['block-informationfor-2']}
-
------------------
-
-Text: Information For
-Parent Details: Name: h2, Class: ['block-title', 'visually-hidden'], ID: block-informationfor-2-menu, Other Attributes: {'class': ['block-title', 'visually-hidden'], 'id': 'block-informationfor-2-menu'}
-
------------------
-
-Text: 
-Parent Details: Name: nav, Class: ['block-informationfor-2'], ID: block-informationfor-2, Other Attributes: {'role': 'navigation', 'aria-labelledby': 'block-informationfor-2-menu', 'id': 'block-informationfor-2', 'data-block-plugin-id': 'menu_block:information-for', 'class': ['block-informationfor-2']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2'], ID: None, Other Attributes: {'class': ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['block-seasgroupmenu', 'block', 'block-seas-menu', 'block-seasgroup-menu'], ID: block-seasgroupmenu, Other Attributes: {'id': 'block-seasgroupmenu', 'data-block-plugin-id': 'seasgroup_menu', 'class': ['block-seasgroupmenu', 'block', 'block-seas-menu', 'block-seasgroup-menu']}
-
------------------
-
-Text: In Computer Science
-Parent Details: Name: h2, Class: ['local-menu__section-title'], ID: None, Other Attributes: {'class': ['local-menu__section-title'], 'data-toggle': 'local-nav__menu-wrapper'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['block-seasgroupmenu', 'block', 'block-seas-menu', 'block-seasgroup-menu'], ID: block-seasgroupmenu, Other Attributes: {'id': 'block-seasgroupmenu', 'data-block-plugin-id': 'seasgroup_menu', 'class': ['block-seasgroupmenu', 'block', 'block-seas-menu', 'block-seasgroup-menu']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['local-nav__menu-wrapper'], ID: local-nav__menu-wrapper, Other Attributes: {'class': ['local-nav__menu-wrapper'], 'id': 'local-nav__menu-wrapper', 'data-toggler': '.expanded'}
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Undergraduate Program
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/undergraduate-program', 'data-drupal-link-system-path': 'node/236'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: First-Year Exploration
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://csadvising.seas.harvard.edu/firstyear/'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Concentration Information
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://csadvising.seas.harvard.edu/concentration/'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Secondary Field
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://csadvising.seas.harvard.edu/secondary/'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Advising
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://csadvising.seas.harvard.edu/advising/', 'title': 'Computer Science Forms'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Research Opportunities
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/undergraduate-program/research-opportunities', 'data-drupal-link-system-path': 'node/10016'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Senior Thesis
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/undergraduate-program/research-opportunities/senior-thesis', 'data-drupal-link-system-path': 'node/20631'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Careers
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/undergraduate-program/careers', 'data-drupal-link-system-path': 'node/10011'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: AB/SM Information
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/undergraduate-program/absm-information', 'data-drupal-link-system-path': 'node/18606'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Student Organizations
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/student-organizations', 'data-drupal-link-system-path': 'node/33084'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Graduate Program
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program', 'data-drupal-link-system-path': 'node/246'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: How to Apply
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-programs/how-apply', 'data-drupal-link-system-path': 'node/10091'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: PhD Timeline
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/phd-timeline', 'data-drupal-link-system-path': 'node/10131'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: PhD Overview and Requirements
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/general-requirements', 'data-drupal-link-system-path': 'node/10581'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: PhD Course Requirements
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/general-requirements/cs-phd-course-requirements', 'data-drupal-link-system-path': 'node/10116'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Qualifying Exam
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/general-requirements/cs-oral-qualifying', 'data-drupal-link-system-path': 'node/12851'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Committee Meetings (Review Days)
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/general-requirements/cs-phd-review-days', 'data-drupal-link-system-path': 'node/15401'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Committee on Higher Degrees
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/committee-higher-degrees-chd', 'data-drupal-link-system-path': 'node/10146'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-3', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: AB/SM Information
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/graduate-program/absm-information', 'title': 'AB/SM Information', 'data-drupal-link-system-path': 'node/27266'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Faculty & Research
-Parent Details: Name: a, Class: ['is-active'], ID: None, Other Attributes: {'class': ['is-active'], 'href': '/computer-science/faculty-research'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Research Interest Comparison
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://facultyexplorer.seas.harvard.edu/research-interest-comparison/?teachingAreas=Computer%20Science&show=Faculty%20Members%2CResearch%20Interests%2CTeaching%20Areas&sortBy=Last%20Name'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Collaborations
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://facultyexplorer.seas.harvard.edu/faculty-collaborations/?teachingAreas=Computer%20Science&show=Faculty%20Members%2CResearch%20Interests%2CTeaching%20Areas&sortBy=Collaborations'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Cross-Harvard Engagement
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': 'https://facultyexplorer.seas.harvard.edu/cross-harvard-engagement/'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active'], ID: None, Other Attributes: {'class': ['menu', 'vertical', 'nested', 'sublevel-2', 'submenu', 'is-active']}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: People
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/people', 'data-drupal-link-system-path': 'node/386'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Courses
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/courses', 'data-drupal-link-system-path': 'node/451'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Lecture Series
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/lecture-series', 'data-drupal-link-system-path': 'node/19796'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Clubs & Organizations
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/clubs-organizations', 'data-drupal-link-system-path': 'node/10026'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Centers & Initiatives
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/computer-science/centers-initiatives', 'data-drupal-link-system-path': 'node/10666'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: Alumni Stories
-Parent Details: Name: a, Class: None, ID: None, Other Attributes: {'href': '/alumni/alumni-news-profiles?concentration%5B692%5D=692', 'data-drupal-link-query': '{"concentration":{"692":"692"}}', 'data-drupal-link-system-path': 'node/3296'}
-
------------------
-
-Text: 
-Parent Details: Name: li, Class: None, ID: None
-
------------------
-
-Text: 
-Parent Details: Name: ul, Class: ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], ID: None, Other Attributes: {'class': ['accordion-menu', 'local-nav', 'vertical', 'menu', 'sublevel-1'], 'data-accordion-menu': '', 'data-slide-speed': '1', 'data-submenu-toggle': 'true'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['local-nav__menu-wrapper'], ID: local-nav__menu-wrapper, Other Attributes: {'class': ['local-nav__menu-wrapper'], 'id': 'local-nav__menu-wrapper', 'data-toggler': '.expanded'}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['block-seasgroupmenu', 'block', 'block-seas-menu', 'block-seasgroup-menu'], ID: block-seasgroupmenu, Other Attributes: {'id': 'block-seasgroupmenu', 'data-block-plugin-id': 'seasgroup_menu', 'class': ['block-seasgroupmenu', 'block', 'block-seas-menu', 'block-seasgroup-menu']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2'], ID: None, Other Attributes: {'class': ['page__navigation', 'cell', 'medium-4', 'small-order-1', 'medium-order-2']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['grid-x', 'grid-margin-x'], ID: None, Other Attributes: {'class': ['grid-x', 'grid-margin-x']}
-
------------------
-
-Text: 
-Parent Details: Name: div, Class: ['grid-container'], ID: None, Other Attributes: {'class': ['grid-container']}
-
------------------
-
-Text: 
-Parent Details: Name: article, Class: ['node-is-published'], ID: node-17461, Other Attributes: {'id': 'node-17461', 'class': ['node-is-published']}
+Parent Details: Name: div, Class: ['news__related-news-wrapper'], ID: None, Other Attributes: {'class': ['news__related-news-wrapper']}
 
 -----------------
 
@@ -5323,37 +3149,37 @@ Parent Details: Name: div, Class: ['dialog-off-canvas-main-canvas'], ID: None, O
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
-Text: {"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/17461","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"back_to_top":{"back_to_top_button_trigger":500,"back_to_top_prevent_on_mobile":true,"back_to_top_prevent_in_admin":true,"back_to_top_button_type":"text","back_to_top_button_text":"Back to top"},"ajaxTrustedUrl":{"\/search":true},"ajax":[],"user":{"uid":0,"permissionsHash":"36058a0fc5163aa240995f536ea5d0845b04545d62018084d8d54e4ed6d9ae4e"}}
+Text: {"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/22051","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"back_to_top":{"back_to_top_button_trigger":500,"back_to_top_prevent_on_mobile":true,"back_to_top_prevent_in_admin":true,"back_to_top_button_type":"text","back_to_top_button_text":"Back to top"},"blazy":{"loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50,"validateDelay":25,"container":"","loader":true,"unblazy":false,"visibleClass":false},"blazyIo":{"disconnect":false,"rootMargin":"0px","threshold":[0,0.25,0.5,0.75,1]},"ajaxTrustedUrl":{"\/search":true},"ajax":[],"user":{"uid":0,"permissionsHash":"36058a0fc5163aa240995f536ea5d0845b04545d62018084d8d54e4ed6d9ae4e"}}
 Parent Details: Name: script, Class: None, ID: None, Other Attributes: {'type': 'application/json', 'data-drupal-selector': 'drupal-settings-json'}
 
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
 Text: 
-Parent Details: Name: body, Class: ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page'], ID: None, Other Attributes: {'class': ['lang-en', 'section-computer-science', 'path-computer-science-faculty-research', 'path-node', 'node--type-page']}
+Parent Details: Name: body, Class: ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person'], ID: None, Other Attributes: {'class': ['lang-en', 'section-person', 'path-person-stephanie-gil', 'path-node', 'node--type-person']}
 
 -----------------
 
