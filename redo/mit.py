@@ -23,11 +23,13 @@ def mit():
 
     departments = ["Robotics", "AI and Society"]
 
+    faculty_data = []
+
     for element in extract_webpage:
         text_content = element.get_text()  # Separate text content by newlines for better readability
         href = element.get('href')  # Get the href attribute value
-        print("Text Content:", text_content)
-        print("Href:", href)
+        # print("Text Content:", text_content)
+        # print("Href:", href)
         indiv_url = href
         new_response = requests.get(indiv_url, headers=headers)
         new_html_content = new_response.text
@@ -42,8 +44,10 @@ def mit():
         for department in departments:
             if department in research_list:
                 print([university, country, text_content, email, href])
+                faculty_data.append([university, country, text_content, email, href])
 
     print("MIT Done....")
+    return faculty_data
 
-if __name__ == "__main__":
-    mit()
+# if __name__ == "__main__":
+#     mit()

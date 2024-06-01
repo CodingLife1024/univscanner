@@ -18,6 +18,8 @@ def stanford():
 
     extract_webpage = soup.find_all('a', class_=None, id=None, href=lambda href: href and href.startswith('/people/'))
 
+    faculty_data = []
+
     for element in extract_webpage:
         text_content = element.get_text().strip()  # Separate text content by newlines for better readability
         href = element.get('href')  # Get the href attribute value
@@ -35,8 +37,10 @@ def stanford():
             email = extract_email[0].get_text()
         # print("Email:", email)
         print([university, country, text_content, email, indiv_url])
+        faculty_data.append([university, country, text_content, email, indiv_url])
 
     print("Stanford Done....")
+    return faculty_data
 
 if __name__ == "__main__":
     stanford()
