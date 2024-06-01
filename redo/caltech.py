@@ -15,7 +15,7 @@ def caltech():
 
     faculty_data = []
 
-    keywords = []
+    keywords = ["embedded systems"]
 
     faculty_data = []
 

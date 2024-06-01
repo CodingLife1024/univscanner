@@ -6,7 +6,7 @@ import csv
 def main():
     with open('faculty_data.csv', 'w', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["University", "Country", "Name", "Email", "URL"])
+        writer.writerow(["University", "Country", "Name", "Email", "URL", "Personal Webpage"])
 
         writer.writerows(mit())
 
