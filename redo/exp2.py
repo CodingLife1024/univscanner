@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://www.cms.caltech.edu/people"
+url = "https://www.cms.caltech.edu/people/faculty"
 
 headers = {}
 response = requests.get(url, headers=headers)
@@ -14,6 +14,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 # Extract and print only the text of the page along with its parent details
 with open("all_info.txt", "w", encoding="utf-8") as file:
     for element in soup.find_all(text=True):
+        # if element.parent.name and element.strip() != "":
         if element.parent.name:
             parent = element.parent
             parent_name = parent.name
