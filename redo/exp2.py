@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://www.cms.caltech.edu/people/faculty"
+url = "https://www.cs.ox.ac.uk/people/rahul.santhanam/"
 
 headers = {}
 response = requests.get(url, headers=headers)
@@ -11,10 +11,9 @@ html_content = response.text
 # Parse the HTML with BeautifulSoup
 soup = BeautifulSoup(html_content, 'html.parser')
 
-# Extract and print only the text of the page along with its parent details
+# Extract and print text, parent details, and URLs of links
 with open("all_info.txt", "w", encoding="utf-8") as file:
     for element in soup.find_all(text=True):
-        # if element.parent.name and element.strip() != "":
         if element.parent.name:
             parent = element.parent
             parent_name = parent.name
@@ -22,6 +21,9 @@ with open("all_info.txt", "w", encoding="utf-8") as file:
             parent_id = parent.get('id', None)
             parent_attrs = parent.attrs
             parent_details = f"Name: {parent_name}, Class: {parent_class}, ID: {parent_id}, Other Attributes: {parent_attrs}" if parent_attrs else f"Name: {parent_name}, Class: {parent_class}, ID: {parent_id}"
+
+            if parent.name == 'a' and parent.get('href'):
+                parent_details += f", URL: {parent['href']}"
 
             print(f"Text: {element.strip()}")
             print(f"Parent Details: {parent_details}")

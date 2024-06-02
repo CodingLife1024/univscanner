@@ -1,6 +1,8 @@
 from redo.mit import mit
 from redo.stanford import stanford
 from redo.harvard import harvard
+
+from redo.oxford import oxford
 import csv
 
 def main():
@@ -13,6 +15,8 @@ def main():
         writer.writerows(stanford())
 
         writer.writerows(harvard())
+
+        writer.writerows(oxford())
 
 if __name__ == "__main__":
     main()

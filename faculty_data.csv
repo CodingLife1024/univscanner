@@ -1,4 +1,4 @@
-University,Country,Name,Email,URL
+University,Country,Name,Email,URL,Personal Webpage
 MIT,USA,Hal Abelson,hal@mit.edu,https://www.eecs.mit.edu/people/hal-abelson/
 MIT,USA,Pulkit Agrawal,pulkitag@mit.edu,https://www.eecs.mit.edu/people/pulkit-agrawal/
 MIT,USA,Sara Beery,beery@mit.edu,https://www.eecs.mit.edu/people/sara-beery/
@@ -67,3 +67,13 @@ Harvard,USA,Michael D. Mitzenmacher,michaelm@eecs.harvard.edu,https://seas.harva
 Harvard,USA,Michael D. Smith,mike_smith@harvard.edu,https://seas.harvard.edu/person/michael-smith
 Harvard,USA,James H. Waldo,jim_waldo@harvard.edu,https://seas.harvard.edu/person/james-waldo
 Harvard,USA,Minlan Yu,minlanyu@seas.harvard.edu,https://seas.harvard.edu/person/minlan-yu
+Oxford,UK,Ronnie Clark,ronald.clark@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/ronnie.clark
+Oxford,UK,Christian Coester,christian.coester@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/christian.coester
+Oxford,UK,Ivan Flechais,Email not found,https://www.cs.ox.ac.uk/people/ivan.flechais
+Oxford,UK,Marina Jirotka,Email not found,https://www.cs.ox.ac.uk/people/marina.jirotka
+Oxford,UK,Marta Kwiatkowska,Marta.Kwiatkowska@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/marta.kwiatkowska
+Oxford,UK,Andrew Markham,andrew.markham@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/andrew.markham
+Oxford,UK,Ivan Martinovic,firstname.lastname@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/ivan.martinovic
+Oxford,UK,Kasper Rasmussen,firstname.lastname@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/kasper.rasmussen
+Oxford,UK,Niki Trigoni,niki.trigoni@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/niki.trigoni
+Oxford,UK,Nobuko Yoshida,Email not found,https://www.cs.ox.ac.uk/people/nobuko.yoshida
