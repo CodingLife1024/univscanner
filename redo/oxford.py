@@ -52,6 +52,9 @@ def oxford():
 
             faculty_data.append([university, country, name, email, href])
             print([university, country, unidecode(name), email, href])
+    print()
+    print("Oxford done....")
+    print()
     return faculty_data
 
 # oxford()

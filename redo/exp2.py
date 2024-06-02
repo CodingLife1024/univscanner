@@ -2,10 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://www.cs.ox.ac.uk/people/rahul.santhanam/"
+url = "https://www.cst.cam.ac.uk/people/arb33"
 
 headers = {}
-response = requests.get(url, headers=headers)
+response = requests.get(url)
 html_content = response.text
 
 # Parse the HTML with BeautifulSoup

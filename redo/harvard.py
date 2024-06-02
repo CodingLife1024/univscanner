@@ -45,5 +45,7 @@ def harvard():
                         faculty_data.append([university, country, name, email, href])
                     print([university, country, name, email, href])
 
-    print("Harvard Done....")
+    print()
+    print("Harvard done....")
+    print()
     return faculty_data

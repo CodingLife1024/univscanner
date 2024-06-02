@@ -46,7 +46,10 @@ def mit():
                 print([university, country, text_content, email, href])
                 faculty_data.append([university, country, text_content, email, href])
 
+
+    print()
     print("MIT Done....")
+    print()
     return faculty_data
 
 # if __name__ == "__main__":

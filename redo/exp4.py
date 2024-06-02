@@ -1,39 +1,28 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://seas.harvard.edu/computer-science/faculty-research"
+url = "https://www.cst.cam.ac.uk/research/themes/systems-and-networking"
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36'
-}
-
+headers = {}
 response = requests.get(url)
 html_content = response.text
 
 # Parse the HTML with BeautifulSoup
 soup = BeautifulSoup(html_content, 'html.parser')
 
-# Find all <div> tags with class 'accordion-content' that are siblings to <a> tags with the specified titles
-accordion_titles = ["Robotics and Control", "Theory of Computation"]
+# Find all div elements
+div_elements = soup.find_all('div')
 
-for title in accordion_titles:
-    accordion_title_element = soup.find('a', class_='accordion-title', string=title)
+for div_element in div_elements:
+    # Find all <a> tags within the current div
+    link_tags = div_element.find_all('a')
 
-    if accordion_title_element:
-        # Find the next <div> tag with class 'accordion-content' after the accordion title
-        accordion_content = accordion_title_element.find_next_sibling('div', class_='accordion-content')
+    for link_tag in link_tags:
+        # Extract text and link URL
+        text = div_element.get_text(strip=True)
+        link_url = link_tag.get('href')
 
-        if accordion_content:
-            # Find all <a> tags within the accordion content
-            links = accordion_content.find_all('a')
-            print(f"Links under '{title}':")
-            for link in links:
-                print("Name:", link.get_text(strip=True))
-                print("URL:", "https://seas.harvard.edu" + link.get('href'))
-
-            print()
-        else:
-            print(f"No content found under '{title}'.")
-    else:
-        print(f"Accordion title '{title}' not found.")
-
+        # Print text and link URL
+        print("Text:", text)
+        print("Link URL:", link_url)
+        print()
