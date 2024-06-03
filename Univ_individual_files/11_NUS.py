@@ -7,7 +7,7 @@ import csv
 from bs4 import BeautifulSoup
 
 def nus():
-    url = "https://www.comp.nus.edu.sg/about/depts/cs/faculty/"   # homepage url
+    url = "https://www.comp.nus.edu.sg/cs/people/"   # homepage url
     r = requests.get(url)                                        # request to url
 
     # getting the soup by parsing the html parsel to text to request r
@@ -38,15 +38,15 @@ def nus():
 
     #iterating for every prof
     for i in d:
-        a = i.find('a') 
+        a = i.find('a')
         if a == None:
             continue
         a = i.find('a')                     # a contains the name and the homepage of prof
         link = a.get('href')                # extracting prof page link
         name = a.get_text()                 # extracting prof name
 
-        try:    
-            prof_resp = requests.get(link)        
+        try:
+            prof_resp = requests.get(link)
         except:
             continue
 
@@ -73,10 +73,10 @@ def filterandgetEmail(var, garbage_emails, name, link, email, prof_resp):
     u_name = var[3]
     country = var[4]
 
-    keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture', 
+    keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture',
                 'Hardware and Architecture', 'hardware and architecture', 'embedded system', 'Embedded System','Computer Organization', 'Computer and System']
     flag = 1
-    prof_soup = BeautifulSoup(prof_resp.text, "html.parser") 
+    prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
     research_text = prof_soup.text
     for pattern in keyword_list:
         if re.search(pattern,research_text):
@@ -101,8 +101,8 @@ def filterandgetEmail(var, garbage_emails, name, link, email, prof_resp):
                         f.write(link + '\n' + name + '\t\t' + email + '\n')
                         csvwriter.writerow([u_name, country, name, email, link])
                         csvwriter2.writerow([u_name, country, name, email, link])
-                    # f.write("\n") 
- 
+                    # f.write("\n")
+
 
             f.write(pattern)
             f.write('\n\n')
@@ -110,7 +110,7 @@ def filterandgetEmail(var, garbage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     nus()
-    
+
 
 
 

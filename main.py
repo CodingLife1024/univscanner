@@ -6,6 +6,7 @@ from redo.oxford import oxford
 from redo.cambridge import cambridge
 from redo.imperial import imperial
 from redo.uchicago import uchicago
+from redo.ucl_london import ucl_london
 import csv
 
 def main():
@@ -21,6 +22,7 @@ def main():
         writer.writerows(cambridge())
         writer.writerows(imperial())
         writer.writerows(uchicago())
+        writer.writerows(ucl_london())
 
 if __name__ == "__main__":
     main()

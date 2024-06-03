@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-import unidecode
+from unidecode import unidecode
 
 university = "UCL London"
 country = "UK"
@@ -44,8 +44,10 @@ def ucl_london():
             found_keyword = any(re.search(re.escape(keyword), (research_text + role).lower()) for keyword in keyword_list)
             if found_keyword:
                 print([university, country, unidecode(name), role, email, url])
-                faculty_data.append([university, country, unidecode(name), role, email, url])
-
+                faculty_data.append([university, country, unidecode(name), email, url, ])
+    print()
+    print("UCL London done...")
+    print()
     return faculty_data
 
-ucl_london()
+# ucl_london()
