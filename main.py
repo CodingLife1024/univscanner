@@ -1,10 +1,11 @@
 from redo.mit import mit
 from redo.stanford import stanford
 from redo.harvard import harvard
-
+from redo.caltech import caltech
 from redo.oxford import oxford
 from redo.cambridge import cambridge
 from redo.imperial import imperial
+from redo.uchicago import uchicago
 import csv
 
 def main():
@@ -15,10 +16,11 @@ def main():
         writer.writerows(mit())
         writer.writerows(stanford())
         writer.writerows(harvard())
-
+        writer.writerows(caltech())
         writer.writerows(oxford())
         writer.writerows(cambridge())
         writer.writerows(imperial())
+        writer.writerows(uchicago())
 
 if __name__ == "__main__":
     main()

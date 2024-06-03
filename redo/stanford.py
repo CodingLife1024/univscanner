@@ -39,7 +39,9 @@ def stanford():
         print([university, country, text_content, email, indiv_url])
         faculty_data.append([university, country, text_content, email, indiv_url])
 
+    print()
     print("Stanford Done....")
+    print()
     return faculty_data
 
 if __name__ == "__main__":

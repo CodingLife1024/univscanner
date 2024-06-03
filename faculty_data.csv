@@ -67,9 +67,17 @@ Harvard,USA,Michael D. Mitzenmacher,michaelm@eecs.harvard.edu,https://seas.harva
 Harvard,USA,Michael D. Smith,mike_smith@harvard.edu,https://seas.harvard.edu/person/michael-smith
 Harvard,USA,James H. Waldo,jim_waldo@harvard.edu,https://seas.harvard.edu/person/james-waldo
 Harvard,USA,Minlan Yu,minlanyu@seas.harvard.edu,https://seas.harvard.edu/person/minlan-yu
+Caltech,USA,Aaron Ames,adames@caltech.edu,https://www.cms.caltech.edu/people/adames,http://ames.caltech.edu/
+Caltech,USA,Joel W. Burdick,jburdick@caltech.edu,https://www.cms.caltech.edu/people/jburdick,http://robotics.caltech.edu/~jwb/jwb.html
+Caltech,USA,Soon-Jo Chung,sjchung@caltech.edu,https://www.cms.caltech.edu/people/sjchung,Personal URL Not found
+Caltech,USA,John Doyle,doyle@caltech.edu,https://www.cms.caltech.edu/people/doyle,http://www.cds.caltech.edu/~doyle
+Caltech,USA,Erik Winfree,winfree@caltech.edu,https://www.cms.caltech.edu/people/winfree,http://www.dna.caltech.edu/~winfree
+Caltech,USA,Yisong Yue,yyue@caltech.edu,https://www.cms.caltech.edu/people/yyue,http://www.yisongyue.com
+Caltech,USA,Kanianthra M. (Mani) Chandy,mani@caltech.edu,https://www.cms.caltech.edu/people/mani,Personal URL Not found
 Oxford,UK,Ronnie Clark,ronald.clark@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/ronnie.clark
 Oxford,UK,Christian Coester,christian.coester@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/christian.coester
 Oxford,UK,Ivan Flechais,Email not found,https://www.cs.ox.ac.uk/people/ivan.flechais
+Oxford,UK,Yarin Gal,yarin@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/yarin.gal
 Oxford,UK,Marina Jirotka,Email not found,https://www.cs.ox.ac.uk/people/marina.jirotka
 Oxford,UK,Marta Kwiatkowska,Marta.Kwiatkowska@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/marta.kwiatkowska
 Oxford,UK,Andrew Markham,andrew.markham@cs.ox.ac.uk,https://www.cs.ox.ac.uk/people/andrew.markham
@@ -115,3 +123,32 @@ Cambridge,UK,Robert Watson,rnw24@cam.ac.uk,https://www.cst.cam.ac.uk/people/rnw2
 "Imperial College, London",UK,Prof. Peter Pietzuch,prp@imperial.ac.uk,https://www.doc.ic.ac.uk/~prp/
 "Imperial College, London",UK,Dr. Azalea Raad,azalea.raad06@imperial.ac.uk,http://www.soundandcomplete.org/
 "Imperial College, London",UK,Dr. Lluis Vilanova,vilanova@imperial.ac.uk,https://www.doc.ic.ac.uk/~lvilanov/
+University of Chicago,USA,David Cash,davidcash@cs.uchicago.edu,https://cs.uchicago.edu/people/david-cash/
+University of Chicago,USA,Marshini Chetty,marshini@uchicago.edu,https://cs.uchicago.edu/people/marshini-chetty/
+University of Chicago,USA,Andrew A. Chien,aachien@uchicago.edu,https://cs.uchicago.edu/people/andrew-a-chien/
+University of Chicago,USA,Fred Chong,chong@cs.uchicago.edu,https://cs.uchicago.edu/people/frederic-chong/
+University of Chicago,USA,Aaron Elmore,aelmore@cs.uchicago.edu,https://cs.uchicago.edu/people/aaron-elmore/
+University of Chicago,USA,Ian Foster,foster@cs.uchicago.edu,https://cs.uchicago.edu/people/ian-foster/
+University of Chicago,USA,Michael Franklin,mjfranklin@uchicago.edu,https://cs.uchicago.edu/people/michael-franklin/
+University of Chicago,USA,Robert Grossman,rgrossman1@uchicago.edu,https://cs.uchicago.edu/people/robert-grossman/
+University of Chicago,USA,Haryadi Gunawi,haryadi@cs.uchicago.edu,https://cs.uchicago.edu/people/haryadi-gunawi/
+University of Chicago,USA,Henry Hoffmann,hankhoffmann@cs.uchicago.edu,https://cs.uchicago.edu/people/henry-hoffmann/
+University of Chicago,USA,Junchen Jiang,junchenj@cs.uchicago.edu,https://cs.uchicago.edu/people/junchen-jiang/
+University of Chicago,USA,Alex Kale,kalea@uchicago.edu,https://cs.uchicago.edu/people/alex-kale/
+University of Chicago,USA,Gordon Kindlmann,glk@uchicago.edu,https://cs.uchicago.edu/people/gordon-kindlmann/
+University of Chicago,USA,Sanjay Krishnan,skr@cs.uchicago.edu,https://cs.uchicago.edu/people/sanjay-krishnan/
+University of Chicago,USA,Mina Lee,mnlee@uchicago.edu,https://cs.uchicago.edu/people/mina-lee/
+University of Chicago,USA,Yanjing Li,yanjingl@cs.uchicago.edu,https://cs.uchicago.edu/people/yanjing-li/
+University of Chicago,USA,Pedro Lopes,pedrolopes@cs.uchicago.edu,https://cs.uchicago.edu/people/pedro-lopes/
+University of Chicago,USA,Shan Lu,shanlu@cs.uchicago.edu,https://cs.uchicago.edu/people/shan-lu/
+University of Chicago,USA,Ken Nakagaki,knakagaki@uchicago.edu,https://cs.uchicago.edu/people/ken-nakagaki/
+University of Chicago,USA,John H. Reppy,jhr@cs.uchicago.edu,https://cs.uchicago.edu/people/john-h-reppy/
+University of Chicago,USA,Anne Rogers,amr@cs.uchicago.edu,https://cs.uchicago.edu/people/anne-rogers/
+University of Chicago,USA,Lamont Kenneth Samuels,lamonts@cs.uchicago.edu,https://cs.uchicago.edu/people/lamont-kenneth-samuels/
+University of Chicago,USA,Sarah Sebo,sarahsebo@uchicago.edu,https://cs.uchicago.edu/people/sarah-sebo/
+University of Chicago,USA,Borja Sotomayor,borja@cs.uchicago.edu,https://cs.uchicago.edu/people/borja-sotomayor/
+University of Chicago,USA,Rick Stevens,stevens@cs.uchicago.edu,https://cs.uchicago.edu/people/rick-stevens/
+University of Chicago,USA,Blase Ur,blase@cs.uchicago.edu,https://cs.uchicago.edu/people/blase-ur/
+University of Chicago,USA,Matthew Wachs,mwachs@cs.uchicago.edu,https://cs.uchicago.edu/people/matthew-wachs/
+University of Chicago,USA,Ben Y. Zhao,ravenben@cs.uchicago.edu,https://cs.uchicago.edu/people/ben-y-zhao/
+University of Chicago,USA,Heather Zheng,htzheng@cs.uchicago.edu,https://cs.uchicago.edu/people/heather-zheng/
