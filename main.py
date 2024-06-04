@@ -7,6 +7,9 @@ from redo.cambridge import cambridge
 from redo.imperial import imperial
 from redo.uchicago import uchicago
 from redo.ucl_london import ucl_london
+from redo.nus import nus
+from redo.princeton import princeton
+from redo.ntus import ntus
 import csv
 
 def main():
@@ -23,6 +26,9 @@ def main():
         writer.writerows(imperial())
         writer.writerows(uchicago())
         writer.writerows(ucl_london())
+        writer.writerows(nus())
+        writer.writerows(princeton())
+        writer.writerows(ntus())
 
 if __name__ == "__main__":
     main()
