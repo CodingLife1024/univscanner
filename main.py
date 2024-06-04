@@ -10,6 +10,7 @@ from redo.ucl_london import ucl_london
 from redo.nus import nus
 from redo.princeton import princeton
 from redo.ntus import ntus
+from redo.tsinghua import tsinghua
 import csv
 
 def main():
@@ -29,6 +30,7 @@ def main():
         writer.writerows(nus())
         writer.writerows(princeton())
         writer.writerows(ntus())
+        writer.writerows(tsinghua())
 
 if __name__ == "__main__":
     main()
