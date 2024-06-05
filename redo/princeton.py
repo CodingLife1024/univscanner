@@ -48,4 +48,4 @@ def princeton():
         print()
         return faculty_data
 
-princeton()
+# princeton()

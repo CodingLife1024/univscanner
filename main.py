@@ -11,6 +11,8 @@ from redo.nus import nus
 from redo.princeton import princeton
 from redo.ntus import ntus
 from redo.tsinghua import tsinghua
+from redo.upenn import upenn
+from redo.yale import yale
 import csv
 
 def main():
@@ -31,6 +33,8 @@ def main():
         writer.writerows(princeton())
         writer.writerows(ntus())
         writer.writerows(tsinghua())
+        writer.writerows(upenn())
+        writer.writerows(yale())
 
 if __name__ == "__main__":
     main()

@@ -65,4 +65,4 @@ def ntus():
     print("NTUS done...")
     print()
 
-# ntus()
+ntus()

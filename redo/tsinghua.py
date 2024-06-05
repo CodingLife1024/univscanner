@@ -44,4 +44,4 @@ def tsinghua():
     print()
 
 
-tsinghua()
+# tsinghua()
