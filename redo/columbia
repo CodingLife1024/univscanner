@@ -56,4 +56,4 @@ def columbia():
 
     return faculty_data
 
-columbia()
+# columbia()
