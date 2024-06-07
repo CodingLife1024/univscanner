@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 university_name = "Cornell University"
 country = "USA"
@@ -62,11 +63,18 @@ def cornell():
             dd = dept.text.strip()
             if dd in departments:
                 email = faculty_div.find('div', class_='person__email').text.strip() if faculty_div.find('div', class_='person__email') else "Email Not Found"
-                faculty_data.append([university_name, country, name, email, profile_url])
-                print([university_name, country, name, email, profile_url])
-                print()
-                print()
 
+                # pers_link = faculty_div.find(lambda tag: tag.name == 'h2' and 'class' not in tag.attrs and tag.string == 'Websites').find_next('a')['href']
+
+
+                if [university_name, country, name, email, profile_url] != faculty_data[-1] if faculty_data != [] else True:
+                    faculty_data.append([university_name, country, name, email, profile_url])
+                    print([university_name, country, name, email, profile_url])
+                    print()
+
+    print()
+    print('Cornell done...')
+    print()
     return faculty_data
 
 cornell()
