@@ -1,10 +1,4 @@
 import requests
-import urllib.request
-import time
-import urllib
-import re
-import csv
-import sys
 from bs4 import BeautifulSoup
 
 university = "Columbia University"

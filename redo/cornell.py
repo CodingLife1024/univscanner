@@ -77,4 +77,4 @@ def cornell():
     print()
     return faculty_data
 
-cornell()
+# cornell()
