@@ -7,9 +7,11 @@ import csv
 import sys
 from bs4 import BeautifulSoup
 
-def uni_hongkong():    
+def uni_hongkong():
     url = "https://www.cs.hku.hk/people/academic-staff"   # homepage url
+
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+    
     r = requests.get(url, headers=headers)
 
     # getting the soup by parsing the html parsel to text to request r
@@ -53,8 +55,8 @@ def uni_hongkong():
 
         # print(name, link)
         # check if link is valid on Not
-        try:    
-            prof_resp = requests.get(link, headers=headers)   
+        try:
+            prof_resp = requests.get(link, headers=headers)
         except:
             continue
 
@@ -107,8 +109,8 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
                         f.write(link + '\n' + name + '\t\t' + email + '\n')
                         csvwriter.writerow([u_name, country, name, email, link])
                         csvwriter2.writerow([u_name, country, name, email, link])
-                    # f.write("\n") 
- 
+                    # f.write("\n")
+
 
             f.write(pattern)
             f.write('\n\n')
@@ -116,4 +118,3 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     uni_hongkong()
-     

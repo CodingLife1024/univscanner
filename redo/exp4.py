@@ -1,28 +1,18 @@
 from bs4 import BeautifulSoup
-import requests
 
-url = "https://www.cst.cam.ac.uk/research/themes/systems-and-networking"
+# Sample HTML content
+html_content = '''
+<div class="col-md-6">
+<h1>Professor Chan, Hubert T.H.</h1>
+<strong>PhD <em>Carnegie Mellon</em><br /> BEng(CompSc) Programme Director; Associate Professor</strong><br /> <br /> Tel: (+852) 2857 8461<br /> Fax: (+852) 2559 8447<br /> Email: hubert@cs.hku.hk<br /> Homepage: <a href="https://www.cs.hku.hk/~hubert">https://www.cs.hku.hk/~hubert</a></div>
+'''
 
-headers = {}
-response = requests.get(url)
-html_content = response.text
-
-# Parse the HTML with BeautifulSoup
+# Parse the HTML content
 soup = BeautifulSoup(html_content, 'html.parser')
 
-# Find all div elements
-div_elements = soup.find_all('div')
+# Locate the <div> tag with the class 'col-md-6'
+div_tag = soup.find('div', class_='col-md-6')
 
-for div_element in div_elements:
-    # Find all <a> tags within the current div
-    link_tags = div_element.find_all('a')
-
-    for link_tag in link_tags:
-        # Extract text and link URL
-        text = div_element.get_text(strip=True)
-        link_url = link_tag.get('href')
-
-        # Print text and link URL
-        print("Text:", text)
-        print("Link URL:", link_url)
-        print()
+# Extract and print all the text within the <div>
+div_text = div_tag.get_text(separator="\n").strip()
+print(div_text)
