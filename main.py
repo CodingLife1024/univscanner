@@ -16,6 +16,11 @@ from redo.yale import yale
 from redo.cornell import cornell
 from redo.columbia import columbia
 from redo.edinburgh import edinburgh
+
+from redo.hongkong import hongkong
+
+from redo.tokyo import tokyo
+from redo.john_hopkins import john_hopkins
 import csv
 
 def main():
@@ -41,6 +46,11 @@ def main():
         # writer.writerows(cornell())
         # writer.writerows(columbia())
         writer.writerows(edinburgh())
+
+        writer.writerows(hongkong())
+
+        writer.writerows(tokyo())
+        writer.writerows(john_hopkins())
 
 if __name__ == "__main__":
     main()
