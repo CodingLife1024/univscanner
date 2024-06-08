@@ -15,6 +15,7 @@ from redo.upenn import upenn
 from redo.yale import yale
 from redo.cornell import cornell
 from redo.columbia import columbia
+from redo.edinburgh import edinburgh
 import csv
 
 def main():
@@ -38,7 +39,8 @@ def main():
         # writer.writerows(upenn())
         # writer.writerows(yale())
         # writer.writerows(cornell())
-        writer.writerows(columbia())
+        # writer.writerows(columbia())
+        writer.writerows(edinburgh())
 
 if __name__ == "__main__":
     main()
