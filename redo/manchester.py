@@ -1,6 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
+from google_scholar import get_scholar_profile_link
 
 u_name = "University of Manchester"
 country = "England"
@@ -13,76 +14,54 @@ def uni_menchester():
     r = requests.get(url, headers=headers)
 
     # getting the soup by parsing the html parsel to text to request r
-    soup = BeautifulSoup(r.text, "html5lib")
+    soup = BeautifulSoup(r.text, "html.parser")
 
-    garbage_emails = ['mkearns@lehman.com', 'michael.kearns@bofasecurities.com', 'lhoot@seas.upenn.edu', 'kearmic@amazon.com']
-    var = [u_name, country, garbage_emails]
+    keyword_list = ["operating system", "robotics", "kerrnel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
 
-    # d gives the array of all profs on the dept homepage
-    d = soup.find_all('li', {'class': ["tabrowwhite", "tabrowgrey"]})
+    dd = soup.find('div', {'class': 'tabRows'})
 
-    # iterating for every prof
+    d = dd.find_all('li', class_=lambda x: x in ['tabrowwhite', 'tabrowgrey'])
+
+    faculty_data = []
+
     for i in d:
-        a = i.find('a')  # a contains the name and the homepage of prof
-        if a is None:
-            continue
-        link = a.get('href')
-        name = a.get_text().strip()  # extracting prof name
-        try:
-            prof_resp = requests.get(link)  # requesting prof homepage
-            prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
-        except:
-            continue
+        name = i.find_all('div', class_="tabCol_30")[0].text[6:]
+        email = ".".join(name.lower().split(" ")) + "@manchester.ac.uk"
+        link = i.find_all('a', href=True)[0]['href'] if i.find_all('a', href=True) else "Not Available"
 
-        print(name, link)
-        pp = prof_soup.find('a', string='Personal Website')
-        if pp is None:
-            continue
-        link2 = pp.get('href')
-        print(name, link2)
+        expertise = i.find_all('div', class_="tabCol_30")[2].text[19:] if len(i.find_all('div', class_="tabCol_30")) >= 3 else "Not Available"
 
-        # check if link is valid or not
-        try:
-            prof_resp = requests.get(link2, headers=headers)
-        except:
-            continue
+        # print(name, link)
+        # print("Expertise: ", expertise)
+        # print()
 
-        email = "Not Found"
-        print(name, link)
-        filter_and_get_email(var, name, link, email, prof_resp)
+        if expertise == "Human computer systems" or expertise == "Machine learning and robotics":
+            faculty_data.append([u_name, country, name, email, link, get_scholar_profile_link(name, u_name)])
+            print([u_name, country, name, email, link, get_scholar_profile_link(name, u_name)])
 
-    print("Finished")
+        elif expertise == "Not Available" or expertise == "Teaching":
 
+            if link == "Not Available":
+                new_r = requests.get(link, headers=headers)
+                new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-def filter_and_get_email(var, name, link, email, prof_resp):
-    u_name = var[0]
-    country = var[1]
-    garbage_emails = var[2]
+                fingerprints = ""
 
-    keyword_list = ['Computer Architecture', 'hardware and system architecture', 'hardware and architecture',
-                    'Computerarchitectuur', 'embedded system', 'computer organization', 'VLSI Design', 'Computer and System',
-                    'multiprocessor architecture']
-    flag = 1
-    prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
-    research_text = prof_soup.text
-    for pattern in keyword_list:
-        if re.search(pattern, research_text, re.IGNORECASE):
-            flag = 0
-            if email != 'Not Found':
-                print(f"{name}\t{email}\n{link}\n")
-            else:
-                new_emails = set(re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", prof_resp.text))
-                for eemail in garbage_emails:
-                    if eemail in new_emails:
-                        new_emails.remove(eemail)
-                if len(new_emails) == 0:
-                    email = "Email Not Found"
-                    print(f"{name}\t{email}\n{link}\n")
-                else:
-                    for email in new_emails:
-                        print(f"{name}\t{email}\n{link}\n")
-            print(pattern)
-            break
+                new_link = new_soup.find_all('button', class_="concept-badge-large dropdown-toggle")
 
-if __name__ == '__main__':
-    uni_menchester()
+                for i in new_link:
+                    fingerprints += i.text
+
+                found_keyword = any(re.search(re.escape(keyword), fingerprints) for keyword in keyword_list)
+
+                if found_keyword:
+                    faculty_data.append([u_name, country, name, email, link, get_scholar_profile_link(name, u_name)])
+                print([u_name, country, name, email, link, get_scholar_profile_link(name, u_name)])
+
+    print()
+    print("University of Manchester done...")
+    print()
+
+    return faculty_data
+
+uni_menchester()
