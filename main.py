@@ -54,6 +54,7 @@ def main():
         writer.writerows(tokyo())
         writer.writerows(john_hopkins())
         writer.writerows(toronto())
+        writer.writerows(manchester())
 
 if __name__ == "__main__":
     main()
