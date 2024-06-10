@@ -1,31 +1,25 @@
-import requests
-from bs4 import BeautifulSoup
-import urllib.parse
+from scholarly import scholarly
 
-def get_scholar_profile_link(professor_name, university_name):
-    # URL encode the professor name and university name for the query
-    query = professor_name.replace(" ", "+") + "+" + university_name.replace(" ", "+")
-    url = f"https://scholar.google.com/citations?view_op=search_authors&mauthors={query}&hl=en&oi=ao"
+# Define a function to search for an author and get their Google Scholar URL
+def get_scholar_profile(name):
+    try:
+        # Search for the author by name
+        search_query = scholarly.search_author(name)
+        # Attempt to get the first author in the search results
+        author = next(search_query)
 
-    # Send a GET request to Google Scholar
-    response = requests.get(url)
+        # Print the author's information
+        # print(author)
 
-    # Parse the response content with BeautifulSoup
-    soup = BeautifulSoup(response.content, 'html.parser')
+        # Print the Google Scholar URL
+        return f"https://scholar.google.com/citations?user={author['scholar_id']}"
 
-    # Find the first profile link
-    profile_link = None
-    first_a_tag = soup.find('a', {'class': 'gs_ai_pho'})
-    if first_a_tag:
-        profile_link = urllib.parse.urljoin('https://scholar.google.com', first_a_tag['href'])
+    except StopIteration:
+        # If no authors are found, print an error message
+        return None
 
-    return profile_link
+# Example usage with a nonsense query
+# print(get_scholar_profile('Mauricio Alvarez'))
 
-# Example usage
-professor_name = "mauricio alvarez"
-university_name = "University of Manchester"
-profile_link = get_scholar_profile_link(professor_name, university_name)
-if profile_link:
-    print(f"Google Scholar profile link: {profile_link}")
-else:
-    print("Profile not found.")
+# Example usage with a valid query
+# print(get_scholar_profile('ma yi'))

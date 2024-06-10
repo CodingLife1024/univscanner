@@ -22,6 +22,7 @@ from redo.hongkong import hongkong
 from redo.tokyo import tokyo
 from redo.john_hopkins import john_hopkins
 from redo.toronto import toronto
+from redo.manchester import manchester
 import csv
 
 def main():
