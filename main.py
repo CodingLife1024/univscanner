@@ -24,6 +24,7 @@ from redo.john_hopkins import john_hopkins
 from redo.toronto import toronto
 from redo.manchester import manchester
 from redo.northwestern import northwestern
+from redo.uc_berkeley import uc_berkeley
 import csv
 
 def main():
@@ -57,6 +58,7 @@ def main():
         writer.writerows(toronto())
         writer.writerows(manchester())
         writer.writerows(northwestern())
+        writer.writerows(uc_berkeley())
 
 if __name__ == "__main__":
     main()
