@@ -26,6 +26,7 @@ from redo.manchester import manchester
 from redo.northwestern import northwestern
 from redo.uc_berkeley import uc_berkeley
 from redo.anu import anu
+from redo.kings_college import kings_college
 import csv
 
 def main():
@@ -61,6 +62,7 @@ def main():
         writer.writerows(northwestern())
         writer.writerows(uc_berkeley())
         writer.writerows(anu())
+        writer.writerows(kings_college())
 
 if __name__ == "__main__":
     main()
