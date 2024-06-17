@@ -28,6 +28,8 @@ from redo.uc_berkeley import uc_berkeley
 from redo.anu import anu
 from redo.kings_college import kings_college
 from redo.mcgill import mcgill
+
+from redo.nyu import nyu
 import csv
 
 def main():
@@ -65,6 +67,8 @@ def main():
         writer.writerows(anu())
         writer.writerows(kings_college())
         writer.writerows(mcgill())
+
+        writer.writerows(nyu())
 
 if __name__ == "__main__":
     main()
