@@ -14,7 +14,7 @@ def tokyo():
 
     faculty_data = []
 
-    keyword_list = ["operating system", "robotics", "kerrnel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer", "computer architecture", "fpga"]
+    keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer", "computer architecture", "fpga"]
 
     # Parse the HTML with BeautifulSoup
     soup = BeautifulSoup(r.text, 'html.parser')
