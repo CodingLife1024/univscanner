@@ -1,38 +1,34 @@
-import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
-import re
-import json
+import time
 
-def fetch_and_parse(url):
-    # Fetch the HTML page
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, "html.parser")
+def fetch_and_parse():
+    url = "https://findanexpert.unimelb.edu.au/profile/1601-atif-ahmad"
 
-    # Extract meta data
-    meta_data = {meta['name']: meta['content'] for meta in soup.find_all("meta") if 'name' in meta.attrs and 'content' in meta.attrs}
+    # Set up the Selenium WebDriver (using Chrome in this example)
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")  # Run in headless mode (without a GUI)
+    service = ChromeService(executable_path="path/to/chromedriver")
+    driver = webdriver.Chrome(service=service, options=options)
 
-    # Fetch JavaScript file
-    js_url = "https://www.sydney.edu.au/engineering/about/our-people/academic-staff/xiu-wang.html//etc.clientlibs/corporate-commons/clientlibs/translation.15b6fc27cccbddb5fb7b88a7c6a2c7e4.js"
-    js_response = requests.get(js_url)
-    js_content = js_response.text
+    # Navigate to the page
+    driver.get(url)
 
-    # Extract JSON data from JavaScript content
-    start_index = js_content.find('({')
-    end_index = js_content.rfind('});')
+    # Wait for the page to load (adjust the wait time if necessary)
+    time.sleep(5)
 
-    if start_index != -1 and end_index != -1:
-        data_str = js_content[start_index:end_index + 2]
-        try:
-            js_data = json.loads(data_str)
-        except json.JSONDecodeError:
-            js_data = None
-    else:
-        js_data = None
+    # Extract the page source and parse it with BeautifulSoup
+    page_source = driver.page_source
+    soup = BeautifulSoup(page_source, "html.parser")
 
-    return meta_data, js_data
+    # Close the WebDriver session
+    driver.quit()
 
-# Example usage
-url = "https://www.sydney.edu.au/engineering/about/our-people/academic-staff/xiu-wang.html"
-meta_data, js_data = fetch_and_parse(url)
-print("Meta Data:", meta_data)
-print("JavaScript Data:", js_data)
+    # Print all the text from the page
+    print(soup.get_text())
+
+fetch_and_parse()
