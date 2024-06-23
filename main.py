@@ -36,6 +36,9 @@ from redo.kaist import kaist
 
 
 from redo.duke import duke
+
+
+from redo.ubc_canada import ubc_canada
 import csv
 
 def main():
@@ -81,6 +84,9 @@ def main():
 
 
         writer.writerows(duke())
+
+
+        writer.writerows(ubc_canada())
 
 if __name__ == "__main__":
     main()

@@ -15,7 +15,7 @@ def uc_berkeley():
     # Getting the soup by parsing the HTML response
     soup = BeautifulSoup(r.text, "html.parser")
 
-    keyword_list = ["operating system", "robotics", "kerrnel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+    keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
 
     faculty_data = []
 
