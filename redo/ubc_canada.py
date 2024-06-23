@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import google_scholar  # Assuming this module exists and has the get_scholar_profile function
+import google_scholar
 
 u_name = "University of British Columbia"
 country = "Canada"
