@@ -1,23 +1,19 @@
-from bs4 import BeautifulSoup
 import requests
+import warnings
+import warnings
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-url = "https://www.cst.cam.ac.uk/people/aa2019"
+# Suppress only the single InsecureRequestWarning from urllib3
+warnings.simplefilter('ignore', InsecureRequestWarning)
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36'
-}
+url = "https://www.cse.cuhk.edu.hk/research/computer-engineering/"
+headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36'}
 
-response = requests.get(url)
-html_content = response.text
+r = requests.get(url, headers=headers, verify=False)
 
-# Parse the HTML with BeautifulSoup
-soup = BeautifulSoup(html_content, 'html.parser')
+if r.status_code == 200:
+    print("Request successful")
+else:
+    print(f"Request failed with status code {r.status_code}")
 
-# Find all <a> tags with Name: a, Class: None, ID: None, and 'rel': ['bookmark']
-extract_webpage = soup.find_all('div', class_=['ds-1col', 'entity', 'entity-paragraphs-item', 'paragraphs-item-link-block-with-description', 'view-mode-full', 'clearfix'])
-for element in extract_webpage:
-    text_content = element.get_text()  # Separate text content by newlines for better readability
-    href = element.find_all('a')  # Get the href attribute value
-    if href != []:
-        print("Text Content:", text_content.strip())
-        print("Href:", href)
+print(r.text)
