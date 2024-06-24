@@ -60,4 +60,4 @@ def uni_queensland():
     print("UQ done....")
     print()
 
-uni_queensland()
+# uni_queensland()

@@ -40,6 +40,7 @@ from redo.duke import duke
 
 from redo.ubc_canada import ubc_canada
 from redo.uni_queensland import uni_queensland
+from redo.shanghai_jt import shanghai_jt
 import csv
 
 def main():
@@ -89,6 +90,7 @@ def main():
 
         writer.writerows(ubc_canada())
         writer.writerows(uni_queensland())
+        writer.writerows(shanghai_jt())
 
 if __name__ == "__main__":
     main()
