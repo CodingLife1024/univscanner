@@ -25,10 +25,23 @@ def ucsd():
         faculty_entries = soup.find_all('div', class_='col-xs-6 col-sm-6 col-md-4 col-lg-3')
 
         for faculty_entry in faculty_entries:
-            link = "https://cse.ucsd.edu" + faculty_entry.find('a')['href']
             name = faculty_entry.find('strong').text.strip()
+            link = "https://cse.ucsd.edu" + faculty_entry.find('a')['href']
 
-            print(name, link)
+            new_r = requests.get(link)
+            new_soup = BeautifulSoup(new_r.content, 'html.parser')
+
+            email = new_soup.find('a', href=re.compile(r'mailto:')).text.strip() if new_soup.find('a', href=re.compile(r'mailto:')) else None
+            full_profile = new_soup.find('a', string="Full Profile")['href'] if new_soup.find('a', string="Full Profile") else link
+            pers_website = new_soup.find('a', string="Website")['href'] if new_soup.find('a', string="Website") else google_scholar.get_scholar_profile(name)
+
+            print([u_name, country, name, email, full_profile, pers_website])
+            faculty_data.append([u_name, country, name, email, full_profile, pers_website])
+
+    print()
+    print("USCD done....")
+    print()
+    return faculty_data
 
 
-ucsd()
+# ucsd()
