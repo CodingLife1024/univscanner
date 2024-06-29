@@ -44,7 +44,7 @@ from redo.shanghai_jt import shanghai_jt
 from redo.city_uni_hk import city_uni_hk
 from redo.carnegie_mellon import carnegie_mellon
 
-
+from redo.zheijiang_uni import zhejiang_uni
 from redo.uscd import uscd
 
 import csv
@@ -100,7 +100,7 @@ def main():
         writer.writerows(city_uni_hk())
         writer.writerows(carnegie_mellon())
 
-
+        writer.writerows(zhejiang_uni())
         writer.writerows(uscd())
 
 if __name__ == "__main__":
