@@ -47,6 +47,8 @@ from redo.carnegie_mellon import carnegie_mellon
 from redo.zheijiang_uni import zhejiang_uni
 from redo.uscd import uscd
 
+from redo.tokyo_uni_tech import tokyo_uni_tech
+
 import csv
 
 def main():
@@ -102,6 +104,8 @@ def main():
 
         writer.writerows(zhejiang_uni())
         writer.writerows(uscd())
+
+        writer.writerows(tokyo_uni_tech())
 
 if __name__ == "__main__":
     main()
