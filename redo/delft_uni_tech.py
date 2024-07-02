@@ -29,8 +29,6 @@ def delft_uni_tech():
             name = re.sub(r'Prof\.dr\.ir\.|Prof\.dr\.', '', name_element.text).strip()
             profile_link = block.find("a", href=True)["href"] if block.find("a", href=True) else None
 
-            # print(name, profile_link)
-
             if profile_link:
                 new_r = requests.get(profile_link)
                 new_soup = BeautifulSoup(new_r.text, "html.parser")
