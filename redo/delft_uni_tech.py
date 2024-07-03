@@ -37,12 +37,19 @@ def delft_uni_tech():
 
                 expertise = ""
 
-                expertise_element = new_soup.find_all("a", class_="btn btn--orange btn--borderBox color-white btn--single")
-                for element in expertise_element:
-                    expertise += element.text.strip().lower()
+                expertise_element = new_soup.text
 
+                found_keyword = any(re.search(re.escape(keyword), new_r.text.lower()) for keyword in keyword_list)
 
-                print(name, profile_link, email, '\n\n', expertise, '\n\n')
+                if found_keyword:
+                    print([u_name, name, email, profile_link, google_scholar.get_scholar_profile(name)])
+                    faculty_data.append([u_name, name, email, profile_link, google_scholar.get_scholar_profile(name)])
+
+    print()
+    print("Delft done....")
+    print()
+
+    return faculty_data
 
 
 
