@@ -51,6 +51,9 @@ from redo.tokyo_uni_tech import tokyo_uni_tech
 from redo.delft_uni_tech import delft_uni_tech
 from redo.brown_uni import brown_uni
 from redo.uni_warwick import uni_warwick
+from redo.uni_wisconsin import uni_wisconsin
+
+
 
 import csv
 
@@ -112,6 +115,7 @@ def main():
         writer.writerows(delft_uni_tech())
         writer.writerows(brown_uni())
         writer.writerows(uni_warwick())
+        writer.writerows(uni_wisconsin())
 
 if __name__ == "__main__":
     main()
