@@ -38,7 +38,7 @@ from scraper_files.shanghai_jt import shanghai_jt
 from scraper_files.city_uni_hk import city_uni_hk
 from scraper_files.carnegie_mellon import carnegie_mellon
 from scraper_files.zhejiang_uni import zhejiang_uni
-from scraper_files.uscd import uscd
+from scraper_files.ucsd import ucsd
 from scraper_files.tokyo_uni_tech import tokyo_uni_tech
 from scraper_files.delft_uni_tech import delft_uni_tech
 from scraper_files.brown_uni import brown_uni
@@ -98,7 +98,7 @@ def main():
         writer.writerows(carnegie_mellon())
 
         writer.writerows(zhejiang_uni())
-        writer.writerows(uscd())
+        writer.writerows(ucsd())
 
         writer.writerows(tokyo_uni_tech())
         writer.writerows(delft_uni_tech())

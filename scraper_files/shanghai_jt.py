@@ -49,7 +49,3 @@ def shanghai_jt():
     print("Shanghai Jiao Tong University done....")
     print()
     return faculty_data
-
-
-
-shanghai_jt()

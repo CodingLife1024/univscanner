@@ -40,7 +40,7 @@ def duke():
                     personal_page = link.get('href', "None")
 
         if personal_page == "" or personal_page == "None":
-            personal_page = google_scholar.get_scholar_profile(name)
+            personal_page = get_scholar_profile(name)
 
         if profile_link:
             new_r = requests.get(profile_link)
@@ -64,5 +64,3 @@ def duke():
     print()
     return faculty_data
 
-
-duke()
