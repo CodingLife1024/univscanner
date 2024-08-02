@@ -52,5 +52,3 @@ def brown_uni():
     print("Brown University Done....")
     print()
     return faculty_data
-
-brown_uni()

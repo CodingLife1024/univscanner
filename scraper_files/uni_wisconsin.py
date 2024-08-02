@@ -62,5 +62,3 @@ def uni_wisconsin():
     print("University of Wisconsin done....")
     print()
     return faculty_data
-
-uni_wisconsin()

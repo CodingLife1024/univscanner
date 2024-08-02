@@ -49,6 +49,3 @@ def tokyo_uni_tech():
     print("Tokyo University of Technology done....")
     print()
     return faculty_data
-
-
-tokyo_uni_tech()

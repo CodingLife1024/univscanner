@@ -50,8 +50,3 @@ def delft_uni_tech():
     print()
 
     return faculty_data
-
-
-
-delft_uni_tech()
-

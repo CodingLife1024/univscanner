@@ -42,6 +42,7 @@ def tsinghua():
     print()
     print("Tsinghua University done...")
     print()
+    return faculty_data
 
 
 # tsinghua()
