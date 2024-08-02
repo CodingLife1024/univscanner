@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import google_scholar
+from redo.google_scholar import get_scholar_profile
 import unidecode as unidecode
 
 u_name = "Northwestern University"
@@ -44,9 +44,9 @@ def northwestern():
                     personal_link = a_tag.get('href')
                     # print(f"Personal Website: {personal_link}")
                 else:
-                    personal_link = google_scholar.get_scholar_profile(name)
+                    personal_link = get_scholar_profile(name)
             else:
-                personal_link = google_scholar.get_scholar_profile(name)
+                personal_link = get_scholar_profile(name)
 
             # Extract research interests
             research_interests_h2 = new_soup.find('h2', string='Research Interests')

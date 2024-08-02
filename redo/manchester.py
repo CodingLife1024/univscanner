@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-from google_scholar import get_scholar_profile
+from redo.google_scholar import get_scholar_profile
 
 u_name = "University of Manchester"
 country = "England"
@@ -76,4 +76,5 @@ def manchester():
 
     return faculty_data
 
-# uni_menchester()
+if __name__ == "__main__":
+    manchester()

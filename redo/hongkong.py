@@ -63,4 +63,5 @@ def hongkong():
     print()
     return faculty_data
 
-hongkong()
+if __name__ == "__main__":
+    hongkong()

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import google_scholar
+import redo.google_scholar
 
 u_name = "University of Wisconsin"
 country = "USA"

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import google_scholar  # Assuming google_scholar is a valid module
+from redo.google_scholar import get_scholar_profile  # Assuming google_scholar is a valid module
 
 u_name = "King's College London"
 country = "UK"
@@ -66,7 +66,7 @@ def kings_college():
                     if websites:
                         personal_link = websites['href']
                     else:
-                        personal_link = google_scholar.get_scholar_profile(name)
+                        personal_link = get_scholar_profile(name)
 
                     print([u_name, country, name, email, link, personal_link])
                     faculty_data.append([u_name, country, name, email, link, personal_link])
@@ -75,5 +75,3 @@ def kings_college():
     print("King's College London done....")
     print()
     return faculty_data
-
-kings_college()

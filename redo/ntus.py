@@ -64,5 +64,6 @@ def ntus():
     print()
     print("NTUS done...")
     print()
+    return faculty_data
 
 # ntus()

@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import google_scholar
+import redo.google_scholar
 
 u_name = "Tokyo University of Technology"
 country = "Japan"
@@ -35,7 +35,7 @@ def tokyo_uni_tech():
             new_r = requests.get(link)
             research_text = new_r.text
 
-            new_soup = BeautifulSoup(research_text, "html.parser") 
+            new_soup = BeautifulSoup(research_text, "html.parser")
 
             found_keyword = any(re.search(re.escape(keyword), research_text.lower()) for keyword in keyword_list)
 
