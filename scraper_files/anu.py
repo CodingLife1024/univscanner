@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-from redo.google_scholar import get_scholar_profile
+from components.google_scholar import get_scholar_profile
 
 u_name = "Australian National University"
 country = "Australia"

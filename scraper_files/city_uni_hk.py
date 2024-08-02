@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "City University Hong Kong"
 country = "Hong Kong"
@@ -57,7 +57,7 @@ def city_uni_hk():
 
             # Fallback to Google Scholar if personal webpage not found
             if not personal_webpage:
-                personal_webpage = google_scholar.get_scholar_profile(name)
+                personal_webpage = get_scholar_profile(name)
 
             faculty_data.append([u_name, country, name, email, link, personal_webpage])
             print([u_name, country, name, email, link, personal_webpage])

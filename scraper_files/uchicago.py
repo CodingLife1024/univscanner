@@ -18,7 +18,7 @@ def uchicago():
     # Find all divs with class 'card card--person'
     faculty_cards = soup.find_all('div', class_='card card--person')
 
-    keyword_list = ["operating system", "robotics", "kerrnel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+    keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
 
     # Iterate over each faculty card
     for card in faculty_cards:

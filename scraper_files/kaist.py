@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 from requests.exceptions import RequestException, ChunkedEncodingError
 
 u_name = "KAIST"

@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 from requests.exceptions import RequestException, ChunkedEncodingError
 
 u_name = "Seoul National University"
@@ -51,9 +51,9 @@ def seoul_uni():
             if found_keyword:
                 try:
                     links = new_soup.find_all('a', class_="text-link hover:underline")
-                    site = links[1].get('href') if len(links) > 1 else google_scholar.get_scholar_profile(name)
+                    site = links[1].get('href') if len(links) > 1 else get_scholar_profile(name)
                 except Exception as e:
-                    site = google_scholar.get_scholar_profile(name)
+                    site = get_scholar_profile(name)
 
                 print([u_name, country, name, email, link, site])
                 faculty_data.append([u_name, country, name, email, link, site])

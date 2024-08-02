@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "University of California San Diego"
 country = "USA"
@@ -33,7 +33,7 @@ def ucsd():
 
             email = new_soup.find('a', href=re.compile(r'mailto:')).text.strip() if new_soup.find('a', href=re.compile(r'mailto:')) else None
             full_profile = new_soup.find('a', string="Full Profile")['href'] if new_soup.find('a', string="Full Profile") else link
-            pers_website = new_soup.find('a', string="Website")['href'] if new_soup.find('a', string="Website") else google_scholar.get_scholar_profile(name)
+            pers_website = new_soup.find('a', string="Website")['href'] if new_soup.find('a', string="Website") else get_scholar_profile(name)
 
             print([u_name, country, name, email, full_profile, pers_website])
             faculty_data.append([u_name, country, name, email, full_profile, pers_website])

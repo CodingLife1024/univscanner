@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "University of California, Berkeley"
 country = "USA"
@@ -59,7 +59,7 @@ def uc_berkeley():
             if personal_website_tag:
                 personal_website = personal_website_tag.get('href')
             else:
-                personal_website = google_scholar.get_scholar_profile(name)
+                personal_website = get_scholar_profile(name)
 
                 print([u_name, country, name, email, link, personal_website])
                 faculty_data.append([u_name, country, name, email, link, personal_website])

@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "Zhejiang University"
 country = "China"
@@ -52,16 +52,16 @@ def zhejiang_uni():
                     new_emails.remove(garbage_email)
 
             if email != 'Not Found':
-                print([u_name, country, name, email, link, google_scholar.get_scholar_profile(name)])
-                faculty_data.append([u_name, country, name, email, link, google_scholar.get_scholar_profile(name)])
+                print([u_name, country, name, email, link, get_scholar_profile(name)])
+                faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
             elif len(new_emails) == 0:
                 email = "Email Not Found"
-                print([u_name, country, name, email, link, google_scholar.get_scholar_profile(name)])
-                faculty_data.append([u_name, country, name, email, link, google_scholar.get_scholar_profile(name)])
+                print([u_name, country, name, email, link, get_scholar_profile(name)])
+                faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
             else:
                 for email in new_emails:
-                    print([u_name, country, name, email, link, google_scholar.get_scholar_profile(name)])
-                    faculty_data.append([u_name, country, name, email, link, google_scholar.get_scholar_profile(name)])
+                    print([u_name, country, name, email, link, get_scholar_profile(name)])
+                    faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
 
     print()
     print("Zhejiang University done...")

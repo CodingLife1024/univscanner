@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "University of Queensland"
 country = "Australia"
@@ -43,7 +43,7 @@ def uni_queensland():
 
                     email = new_soup.find('div', class_="field-name-field-uq-profile-email").text.strip()
                     # print(email)
-                    personal_website = new_soup.find('a', string="View researcher profile").get('href') if new_soup.find('a', string="View researcher profile") else google_scholar.get_scholar_profile(name)
+                    personal_website = new_soup.find('a', string="View researcher profile").get('href') if new_soup.find('a', string="View researcher profile") else get_scholar_profile(name)
                     # print(personal_website)
 
                     research = new_soup.find('div', class_="field-name-field-uq-profile-researcher-bio").text.strip() if new_soup.find('div', class_="field-name-field-uq-profile-researcher-bio") else ""

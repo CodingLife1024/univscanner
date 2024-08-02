@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "University of British Columbia"
 country = "Canada"
@@ -29,7 +29,7 @@ def ubc_canada():
 
         # Extract personal page link if present
         personal_page_a = name_td.find_all('a')[1] if len(name_td.find_all('a')) > 1 else None
-        personal_page_link = personal_page_a.get('href') if personal_page_a else google_scholar.get_scholar_profile(name)
+        personal_page_link = personal_page_a.get('href') if personal_page_a else get_scholar_profile(name)
 
         # Extract email
         email_td = row.find('td', {'class': 'views-field-field-person-email'})

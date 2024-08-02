@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "Carnegie Mellon University"
 country = "USA"
@@ -36,7 +36,7 @@ def carnegie_mellon():
 
                     all_strong_text = new_soup.find_all('p')
 
-                    personal_page_link = google_scholar.get_scholar_profile(name)
+                    personal_page_link = get_scholar_profile(name)
                     email = "Email not found"
 
                     for strong_text in all_strong_text:

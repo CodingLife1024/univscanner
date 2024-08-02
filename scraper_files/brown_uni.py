@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "Brown University"
 country = "USA"
@@ -33,7 +33,7 @@ def brown_uni():
             profile_link = "https://cs.brown.edu" + profile_link_tag.get("href") if profile_link_tag else "Not Found"
 
             home_page_tag = full_profile.find("a", string="Home Page")
-            home_page = home_page_tag.get("href") if home_page_tag else google_scholar.get_scholar_profile(name)
+            home_page = home_page_tag.get("href") if home_page_tag else get_scholar_profile(name)
 
             research_areas_tag = full_profile.find("li", class_="profile-areas")
             research_areas = research_areas_tag.get_text().strip() if research_areas_tag else "Not Found"

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "Shanghai Jiao Tong University"
 country = "China"
@@ -40,7 +40,7 @@ def shanghai_jt():
 
                     email = new_soup.find('a', href=re.compile(r'mailto:')).get_text().strip() if new_soup.find('a', href=re.compile(r'mailto:')) else "Email not found"
 
-                    personal_website = google_scholar.get_scholar_profile(name)
+                    personal_website = get_scholar_profile(name)
 
                     print([u_name, country, name, email, link, personal_website])
                     faculty_data.append([u_name, country, name, email, link, personal_website])

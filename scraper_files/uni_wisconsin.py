@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "University of Wisconsin"
 country = "USA"
@@ -47,7 +47,7 @@ def uni_wisconsin():
                         found_keyword = any(re.search(re.escape(keyword), new_r.text, re.IGNORECASE) for keyword in keyword_list)
 
                         if found_keyword:
-                            scholar_profile = google_scholar.get_scholar_profile(name)
+                            scholar_profile = get_scholar_profile(name)
                             print([u_name, country, name, email, link, scholar_profile])
                             faculty_data.append([u_name, country, name, email, link, scholar_profile])
 

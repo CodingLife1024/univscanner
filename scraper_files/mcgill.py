@@ -1,7 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = 'McGill University'
 country = 'Canada'
@@ -43,8 +43,8 @@ def mcgill():
                         email_match = re.search(r'Email:\s*([^\s]+)', email_info)
                         if email_match:
                             # print(email_match.group(1))
-                            print([u_name, country, name, email_match.group(1), website, google_scholar.get_scholar_profile(name)])
-                            faculty_data.append([u_name, country, name, email_match.group(1), website, google_scholar.get_scholar_profile(name)])
+                            print([u_name, country, name, email_match.group(1), website, get_scholar_profile(name)])
+                            faculty_data.append([u_name, country, name, email_match.group(1), website, get_scholar_profile(name)])
 
     print()
     print("McGill University done....")

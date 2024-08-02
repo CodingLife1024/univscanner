@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-from redo.google_scholar import get_scholar_profile
+from components.google_scholar import get_scholar_profile
 
 u_name = "University of Manchester"
 country = "England"

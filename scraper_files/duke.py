@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 import re
 from requests.exceptions import RequestException, ChunkedEncodingError
 

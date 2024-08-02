@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "Tokyo University of Technology"
 country = "Japan"
@@ -40,7 +40,7 @@ def tokyo_uni_tech():
             found_keyword = any(re.search(re.escape(keyword), research_text.lower()) for keyword in keyword_list)
 
             if found_keyword:
-                pers_page = new_soup.find('a', string='Personal page') if research_text else google_scholar.get_scholar_profile(name.lower())
+                pers_page = new_soup.find('a', string='Personal page') if research_text else get_scholar_profile(name.lower())
 
                 print([u_name, country, name, email, link, pers_page])
                 faculty_data.append([u_name, country, name, email, link, pers_page])

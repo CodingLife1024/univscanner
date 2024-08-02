@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-import redo.google_scholar
+from components.google_scholar import get_scholar_profile
 
 u_name = "Delft University of Technology"
 country = "Netherlands"
@@ -42,8 +42,8 @@ def delft_uni_tech():
                 found_keyword = any(re.search(re.escape(keyword), new_r.text.lower()) for keyword in keyword_list)
 
                 if found_keyword:
-                    print([u_name, name, email, profile_link, google_scholar.get_scholar_profile(name)])
-                    faculty_data.append([u_name, name, email, profile_link, google_scholar.get_scholar_profile(name)])
+                    print([u_name, name, email, profile_link, get_scholar_profile(name)])
+                    faculty_data.append([u_name, name, email, profile_link, get_scholar_profile(name)])
 
     print()
     print("Delft done....")
