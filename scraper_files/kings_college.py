@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-from redo.google_scholar import get_scholar_profile  # Assuming google_scholar is a valid module
+from components.google_scholar import get_scholar_profile  # Assuming google_scholar is a valid module
 
 u_name = "King's College London"
 country = "UK"
