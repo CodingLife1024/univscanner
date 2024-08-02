@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import google_scholar
+from redo.google_scholar import get_scholar_profile
 
 u_name = "Australian National University"
 country = "Australia"
@@ -56,9 +56,9 @@ def anu():
                         if next_a_tag:
                             website_link = next_a_tag['href']
                         else:
-                            website_link = google_scholar.get_scholar_profile(name)
+                            website_link = get_scholar_profile(name)
                     else:
-                        website_link = google_scholar.get_scholar_profile(name)
+                        website_link = get_scholar_profile(name)
 
                     print([u_name, country, name, email, link, website_link])
                     faculty_data.append([u_name, country, name, email, link, website_link])

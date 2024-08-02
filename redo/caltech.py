@@ -66,3 +66,6 @@ def caltech():
     return faculty_data
 
 # caltech()
+
+if __name__ == "__main__":
+    caltech()
