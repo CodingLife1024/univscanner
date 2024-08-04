@@ -21,7 +21,7 @@ def mit():
     # Find all <a> tags with Name: a, Class: None, ID: None, and 'rel': ['bookmark']
     extract_webpage = soup.find_all('a', class_=None, id=None, rel=['bookmark'])
 
-    departments = ["Robotics", "AI and Society"]
+    departments = ["Robotics", "Systems and Networking", "Computer Architecture", "Multicore Processors & Cloud Computing"]
 
     faculty_data = []
 
@@ -45,6 +45,7 @@ def mit():
             if department in research_list:
                 print([university, country, text_content, email, href])
                 faculty_data.append([university, country, text_content, email, href])
+                break
 
 
     print()
