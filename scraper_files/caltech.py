@@ -1,9 +1,50 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+from components.google_scholar import get_scholar_profile
+import concurrent.futures
 
 university = "Caltech"
 country = "USA"
+
+keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+
+faculty_data = []
+
+def extract_personal_url(soup, name):
+    pers_soup = soup.find_all('div', class_='field__personal_url person-page2__link--quicklinks')
+    if pers_soup:
+        return pers_soup[0].find('a')['href']
+    return get_scholar_profile(name)
+
+def extract_research_summary(soup):
+    text_soup = soup.find_all('div', class_='person-page2__field field__research_summary') + soup.find_all('div', class_='person-page2__profile-block__profile profile-text')
+    return ' '.join(div.get_text(separator=' ') for div in text_soup)
+
+def get_faculty_data(card):
+    name = card.get_text().strip() if card else "Name not found"
+    url_element = card.find('a')
+    url = "https://www.cms.caltech.edu" + url_element['href'] if url_element else "URL not found"
+    email = url[35:] + "@caltech.edu" if url else "Email not found"
+
+    try:
+        new_response = requests.get(url)
+        new_soup = BeautifulSoup(new_response.text, "html.parser")
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            future_pers_url = executor.submit(extract_personal_url, new_soup, name)
+            future_research_summary = executor.submit(extract_research_summary, new_soup)
+
+            pers_url = future_pers_url.result()
+            combined_text = future_research_summary.result()
+
+            found_keyword = any(re.search(re.escape(keyword), combined_text.lower()) for keyword in keyword_list)
+
+            if found_keyword:
+                faculty_data.append([university, country, name, email, url, pers_url])
+                print([university, country, name, email, url, pers_url])
+    except Exception as e:
+        print(f"Error occurred while processing {name}: {e}")
 
 def caltech():
     url_1 = "https://www.eas.caltech.edu/people/faculty"
@@ -15,55 +56,20 @@ def caltech():
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    faculty_data = []
-
-    # Find all divs with class 'card card--person'
     faculty_cards = soup.find_all('li', class_='person-list__names-only__person')
 
-    keyword_list = ["operating system", "robotics", "kerrnel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
-
-    # Iterate over each faculty card
-    for card in faculty_cards:
-        # name_element = card.find('a', class_='card__title')
-        name = card.get_text().strip() if card else "Name not found"
-        # print("Name:", name)
-
-        # # Find the URL (inside the 'a' tag with class 'card__url')
-        url_element = card.find('a')
-        url = "https://www.cms.caltech.edu" + url_element['href'] if url_element else "URL not found"
-        # print("URL:", url)
-
-        email = url[35:] + "@caltech.edu" if url else "Email not found"
-        # print("Email:", email)
-
-        new_response = requests.get(url)
-        new_soup = BeautifulSoup(new_response.text, "html.parser")
-
-        pers_soup = new_soup.find_all('div', class_='field__personal_url person-page2__link--quicklinks')
-        if pers_soup:
-            for div in pers_soup:
-                pers_url = div.find('a')['href']
-                # print("Personal URL:", pers_url)
-                # print()
-        else:
-            pers_url = "Personal URL Not found"
-            # print("Personal URL:", url)
-            # print()
-
-        text_soup = new_soup.find_all('div', class_='person-page2__field field__research_summary') + new_soup.find_all('div', class_='person-page2__profile-block__profile profile-text')
-
-        # Combine all the text from text_soup into one string
-        combined_text = ' '.join(soup.get_text(separator=' ') for soup in text_soup)
-
-        # Check if any of the keywords are found in the combined text
-        if any(re.search(re.escape(keyword), combined_text) for keyword in keyword_list):
-            faculty_data.append([university, country, name, email, url, pers_url])
-            print([university, country, name, email, url, pers_url])
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(get_faculty_data, card) for card in faculty_cards]
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()  # Ensure exceptions are raised
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
     print()
     print("Caltech done...")
     print()
     return faculty_data
 
-if __name__ == "__main__":
-    caltech()
+# Uncomment the following line to run the script
+# caltech()
