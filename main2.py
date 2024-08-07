@@ -1,4 +1,4 @@
-from scraper_files.anu import anu
+from scraper_files.brown_uni import brown_uni
 import csv
 
 def main():
@@ -6,7 +6,7 @@ def main():
         writer = csv.writer(file)
         writer.writerow(["University", "Country", "Name", "Email", "URL", "Personal Webpage"])
 
-        writer.writerows(anu())
+        writer.writerows(brown_uni())
 
 
 if __name__ == "__main__":
