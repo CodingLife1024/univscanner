@@ -1,4 +1,4 @@
-from scraper_files.caltech import caltech
+from scraper_files.cambridge import cambridge
 import csv
 
 def main():
@@ -6,7 +6,7 @@ def main():
         writer = csv.writer(file)
         writer.writerow(["University", "Country", "Name", "Email", "URL", "Personal Webpage"])
 
-        writer.writerows(caltech())
+        writer.writerows(cambridge())
 
 
 if __name__ == "__main__":
