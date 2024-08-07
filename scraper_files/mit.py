@@ -3,7 +3,7 @@ import requests
 import concurrent.futures
 from components.google_scholar import get_scholar_profile
 
-university = "MIT"
+university = "Massachusetts Institute of Technology"
 country = "USA"
 
 def get_faculty_data(name, base_url, headers, faculty_data):
