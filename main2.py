@@ -1,4 +1,4 @@
-from scraper_files.carnegie_mellon import carnegie_mellon
+from scraper_files.korea_uni import korea_uni
 import csv
 
 def main():
@@ -6,7 +6,7 @@ def main():
         writer = csv.writer(file)
         writer.writerow(["University", "Country", "Name", "Email", "URL", "Personal Webpage"])
 
-        writer.writerows(carnegie_mellon())
+        writer.writerows(korea_uni())
 
 
 if __name__ == "__main__":
