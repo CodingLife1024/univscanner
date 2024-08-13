@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://scholars.duke.edu/person/rongge"
+url = "https://cs.korea.edu/en_cs/intro/fulltime_faculty.do?mode=list&&articleLimit=100&article.offset=0"
 
 response = requests.get(url)
 html_content = response.text
@@ -10,14 +10,16 @@ html_content = response.text
 # Parse the HTML with BeautifulSoup
 soup = BeautifulSoup(html_content, 'html.parser')
 
-# Get the prettified HTML content with a custom indent size
-custom_indent_size = 4  # Specify your desired indent size here
-
+# Get the prettified HTML content
 prettified_html = soup.prettify()
 
-# Print the prettified HTML content
-print(prettified_html)
+# Manually add custom indentation size
+custom_indent_size = 4  # Specify your desired indent size here
+indented_html = '\n'.join(' ' * custom_indent_size + line for line in prettified_html.splitlines())
 
-# Write the prettified HTML content to a file
+# Print the indented HTML content
+print(indented_html)
+
+# Write the indented HTML content to a file
 with open("all_info.txt", "w", encoding="utf-8") as file:
-    file.write(prettified_html)
+    file.write(indented_html)

@@ -45,6 +45,7 @@ from scraper_files.brown_uni import brown_uni
 from scraper_files.uni_warwick import uni_warwick
 from scraper_files.uni_wisconsin import uni_wisconsin
 from scraper_files.national_taiwan_university import national_taiwan_university
+from scraper_files.korea_uni import korea_uni
 
 
 def main():
@@ -107,6 +108,7 @@ def main():
         writer.writerows(uni_warwick())
         writer.writerows(uni_wisconsin())
         writer.writerows(national_taiwan_university())
+        writer.writerows(korea_uni())
 
 if __name__ == "__main__":
     main()

@@ -36,7 +36,7 @@ def korea_university():
     # d = soup.find('a', {'class':"accordian-title"})
     dd = soup.find('div',  {'class':"pro_list"})
     d = dd.find_all('div', {'class':" "})
-    # print(d)  
+    # print(d)
 
     #iterating for every prof
     for i in d:
@@ -52,8 +52,8 @@ def korea_university():
         link = dd2.text
 
         # check if link is valid on not
-        try:    
-            prof_resp = requests.get(link)        
+        try:
+            prof_resp = requests.get(link)
         except:
             continue
 
@@ -78,10 +78,10 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
     u_name = var[3]
     country = var[4]
 
-    keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture', 
+    keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture',
                 'Hardware and Architecture', 'hardware and architecture', 'embedded system', 'Embedded System','Computer Organization','VLSI', 'Computer and System']
     flag = 1
-    prof_soup = BeautifulSoup(prof_resp.text, "html.parser") 
+    prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
     research_text = prof_soup.text
     for pattern in keyword_list:
         if re.search(pattern,research_text):
@@ -106,8 +106,8 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
                         f.write(link + '\n' + name + '\t\t' + email + '\n')
                         csvwriter.writerow([u_name, country, name, email, link])
                         csvwriter2.writerow([u_name, country, name, email, link])
-                    # f.write("\n") 
- 
+                    # f.write("\n")
+
 
             f.write(pattern)
             f.write('\n\n')
@@ -115,4 +115,3 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     korea_university()
-    
