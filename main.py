@@ -56,6 +56,8 @@ from scraper_files.uni_glasgow import uni_glasgow
 
 from scraper_files.georgia_inst_tech import georgia_inst_tech
 
+from scraper_files.uni_illinois import uni_illinois
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -127,6 +129,8 @@ def main():
         writer.writerows(uni_glasgow)
 
         writer.writerows(georgia_inst_tech())
+
+        writer.writerows(uni_illinois())
 
 if __name__ == "__main__":
     main()
