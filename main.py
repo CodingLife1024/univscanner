@@ -51,6 +51,7 @@ from scraper_files.osaka_uni import osaka_uni
 from scraper_files.uni_washington import uni_washington
 from scraper_files.hong_kong_poly_uni import hong_kong_poly_uni
 from scraper_files.uni_copenhagen import uni_copenhagen
+from scraper_files.postech_korea import postech_korea
 
 
 def main():
@@ -119,6 +120,7 @@ def main():
         writer.writerows(uni_washington())
         writer.writerows(hong_kong_poly_uni())
         writer.writerows(uni_copenhagen())
+        writer.writerows(postech_korea())
 
 if __name__ == "__main__":
     main()
