@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://www.gla.ac.uk/schools/computing/staff/#research%26teaching"
+url = "view-source:https://www.durham.ac.uk/departments/academic/computer-science/about-us/staff/"
 
 response = requests.get(url)
 html_content = response.text
