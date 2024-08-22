@@ -62,6 +62,8 @@ from scraper_files.durham_uni import durham_uni
 from scraper_files.yonsei_uni import yonsei_uni
 from scraper_files.uni_birmingham import uni_birmingham
 
+from scraper_files.uni_southampton import uni_southampton
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -139,6 +141,8 @@ def main():
         writer.writerows(durham_uni())
         writer.writerows(yonsei_uni())
         writer.writerows(uni_birmingham())
+
+        writer.writerows(uni_southampton())
 
 if __name__ == "__main__":
     main()
