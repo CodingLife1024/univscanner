@@ -18,7 +18,9 @@ from scraper_files.yale import yale
 from scraper_files.cornell import cornell
 from scraper_files.columbia import columbia
 from scraper_files.edinburgh import edinburgh
+
 from scraper_files.hongkong import hongkong
+
 from scraper_files.tokyo import tokyo
 from scraper_files.john_hopkins import john_hopkins
 from scraper_files.toronto import toronto
@@ -28,17 +30,25 @@ from scraper_files.uc_berkeley import uc_berkeley
 from scraper_files.anu import anu
 from scraper_files.kings_college import kings_college
 from scraper_files.mcgill import mcgill
+
 from scraper_files.nyu import nyu
+
 from scraper_files.seoul_uni import seoul_uni
 from scraper_files.kaist import kaist
+
+
 from scraper_files.duke import duke
+
+
 from scraper_files.ubc_canada import ubc_canada
 from scraper_files.uni_queensland import uni_queensland
 from scraper_files.shanghai_jt import shanghai_jt
 from scraper_files.city_uni_hk import city_uni_hk
 from scraper_files.carnegie_mellon import carnegie_mellon
+
 from scraper_files.zhejiang_uni import zhejiang_uni
 from scraper_files.ucsd import ucsd
+
 from scraper_files.tokyo_uni_tech import tokyo_uni_tech
 from scraper_files.delft_uni_tech import delft_uni_tech
 from scraper_files.brown_uni import brown_uni
@@ -88,9 +98,7 @@ def main():
         writer.writerows(cornell())
         writer.writerows(columbia())
         writer.writerows(edinburgh())
-
         writer.writerows(hongkong())
-
         writer.writerows(tokyo())
         writer.writerows(john_hopkins())
         writer.writerows(toronto())
@@ -100,25 +108,17 @@ def main():
         writer.writerows(anu())
         writer.writerows(kings_college())
         writer.writerows(mcgill())
-
         writer.writerows(nyu())
-
         writer.writerows(seoul_uni())
         writer.writerows(kaist())
-
-
         writer.writerows(duke())
-
-
         writer.writerows(ubc_canada())
         writer.writerows(uni_queensland())
         writer.writerows(shanghai_jt())
         writer.writerows(city_uni_hk())
         writer.writerows(carnegie_mellon())
-
         writer.writerows(zhejiang_uni())
         writer.writerows(ucsd())
-
         writer.writerows(tokyo_uni_tech())
         writer.writerows(delft_uni_tech())
         writer.writerows(brown_uni())
@@ -133,15 +133,11 @@ def main():
         writer.writerows(uni_copenhagen())
         writer.writerows(postech_korea())
         writer.writerows(uni_glasgow)
-
         writer.writerows(georgia_inst_tech())
-
         writer.writerows(uni_illinois())
-
         writer.writerows(durham_uni())
         writer.writerows(yonsei_uni())
         writer.writerows(uni_birmingham())
-
         writer.writerows(uni_southampton())
 
 if __name__ == "__main__":
