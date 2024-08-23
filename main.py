@@ -77,7 +77,7 @@ from scraper_files.uni_leeds import uni_leeds
 from scraper_files.uni_sheffield import uni_sheffield
 
 from scraper_files.lund_uni import lund_uni
-
+from scraper_files.kth_royal import kth_royal
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -145,8 +145,8 @@ def main():
         writer.writerows(uni_southampton())
         writer.writerows(uni_leeds())
         writer.writerows(uni_sheffield())
-
         writer.writerows(lund_uni())
+        writer.writerows(kth_royal())
 
 if __name__ == "__main__":
     main()
