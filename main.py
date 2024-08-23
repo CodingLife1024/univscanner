@@ -74,6 +74,7 @@ from scraper_files.uni_birmingham import uni_birmingham
 
 from scraper_files.uni_southampton import uni_southampton
 from scraper_files.uni_leeds import uni_leeds
+from scraper_files.uni_sheffield import uni_sheffield
 
 
 def main():
@@ -141,6 +142,7 @@ def main():
         writer.writerows(uni_birmingham())
         writer.writerows(uni_southampton())
         writer.writerows(uni_leeds())
+        writer.writerows(uni_sheffield())
 
 if __name__ == "__main__":
     main()

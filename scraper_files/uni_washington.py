@@ -8,12 +8,12 @@ import concurrent.futures
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
 
-u_name = "University of Washington"
-country = "United States"
-
 keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
 
 faculty_data = []
+
+u_name = "University of Washington"
+country = "United States"
 
 def get_name(prof):
     name = prof.find('div', class_='directory-name').text.strip()
