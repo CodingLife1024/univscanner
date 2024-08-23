@@ -73,6 +73,7 @@ from scraper_files.yonsei_uni import yonsei_uni
 from scraper_files.uni_birmingham import uni_birmingham
 
 from scraper_files.uni_southampton import uni_southampton
+from scraper_files.uni_leeds import uni_leeds
 
 
 def main():
@@ -139,6 +140,7 @@ def main():
         writer.writerows(yonsei_uni())
         writer.writerows(uni_birmingham())
         writer.writerows(uni_southampton())
+        writer.writerows(uni_leeds())
 
 if __name__ == "__main__":
     main()
