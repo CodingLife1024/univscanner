@@ -82,6 +82,7 @@ from scraper_files.uni_nottingham import uni_nottingham
 from scraper_files.penn_state_uni import penn_state_uni
 
 from scraper_files.tud import tud
+from scraper_files.uni_helinski import uni_helinski
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -153,8 +154,8 @@ def main():
         writer.writerows(kth_royal())
         writer.writerows(uni_nottingham())
         writer.writerows(penn_state_uni())
-
         writer.writerows(tud())
+        writer.writerows(uni_helinski())
 
 
 if __name__ == "__main__":
