@@ -86,6 +86,7 @@ from scraper_files.uni_helinski import uni_helinski
 from scraper_files.washu import washu
 
 from scraper_files.ohio_state_uni import ohio_state_uni
+from scraper_files.purdue_uni import purdue_uni
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -161,6 +162,7 @@ def main():
         writer.writerows(uni_helinski())
         writer.writerows(washu())
         writer.writerows(ohio_state_uni())
+        writer.writerows(purdue_uni())
 
 
 if __name__ == "__main__":
