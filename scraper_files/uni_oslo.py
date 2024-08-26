@@ -20,7 +20,7 @@ def get_faculty_data(prof):
     if len(columns) < 3:
         return
     name_element = columns[0].find('a', string=lambda text: text is not None)
-    name = name_element.text.split(",")[1] + " " + name_element.text.split(",")[0] if name_element else "N/A"
+    name = name_element.text.split(",")[1].strip() + " " + name_element.text.split(",")[0].strip() if name_element else "N/A"
 
     link = name_element['href'] if name_element else "N/A"
 
@@ -54,7 +54,12 @@ def uni_oslo():
 
     soup = BeautifulSoup(total_text, "html.parser")
 
-    all_profs = soup.find('table', class_="vrtx-person-listing").find_all('tr')
+    all_tables = soup.find_all('table', class_="vrtx-person-listing")
+
+    all_profs = []
+
+    for table in all_tables:
+        all_profs += table.find_all('tr')
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
