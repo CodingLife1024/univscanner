@@ -89,6 +89,7 @@ from scraper_files.ohio_state_uni import ohio_state_uni
 from scraper_files.purdue_uni import purdue_uni
 
 from scraper_files.nagoya_uni import nagoya_uni
+from scraper_files.uc_davis import uc_davis
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -166,6 +167,7 @@ def main():
         writer.writerows(ohio_state_uni())
         writer.writerows(purdue_uni())
         writer.writerows(nagoya_uni())
+        writer.writerows(uc_davis())
 
 
 if __name__ == "__main__":
