@@ -20,7 +20,7 @@ def get_name(prof):
     return name
 
 def get_email(prof):
-    email = prof.find('a', href=lambda href: href and href.startswith('mailto:')).text if prof.find('a', href=lambda href: href and href.startswith('mailto:')) else "N/A"
+    email = prof.find('a', href=lambda href: href and href.startswith('mailto:')).text if prof.find('a', href=lambda href: href and href.startswith('mailto:')) else None
     return email
 
 def get_link(prof):
@@ -39,7 +39,7 @@ def get_faculty_data(prof):
         link = future_link.result()
         email = future_email.result()
 
-    if not link:
+    if not link or not email:
         return
 
     new_r = requests.get(link)
