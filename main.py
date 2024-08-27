@@ -92,6 +92,7 @@ from scraper_files.nagoya_uni import nagoya_uni
 from scraper_files.uc_davis import uc_davis
 from scraper_files.uni_oslo import uni_oslo
 from scraper_files.queen_mary_uni import queen_mary_uni
+from scraper_files.uni_bern import uni_bern
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -172,6 +173,7 @@ def main():
         writer.writerows(uc_davis())
         writer.writerows(uni_oslo())
         writer.writerows(queen_mary_uni())
+        writer.writerows(uni_bern())
 
 
 if __name__ == "__main__":
