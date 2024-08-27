@@ -96,6 +96,9 @@ from scraper_files.uni_bern import uni_bern
 from scraper_files.uni_berlin import uni_berlin
 from scraper_files.uni_montreal import uni_montreal
 
+
+from scraper_files.uni_southern_california import uni_southern_california
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -178,6 +181,7 @@ def main():
         writer.writerows(uni_bern())
         writer.writerows(uni_berlin())
         writer.writerows(uni_montreal())
+        writer.writerows(uni_southern_california())
 
 
 if __name__ == "__main__":
