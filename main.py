@@ -102,6 +102,7 @@ from scraper_files.utrecht_uni import utrecht_uni
 
 from scraper_files.uppsala_uni import uppsala_uni
 from scraper_files.aalto_uni import aalto_uni
+from scraper_files.leiden_uni import leiden_uni
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -189,6 +190,7 @@ def main():
         writer.writerows(utrecht_uni())
         writer.writerows(uppsala_uni())
         writer.writerows(aalto_uni())
+        writer.writerows(leiden_uni())
 
 
 if __name__ == "__main__":
