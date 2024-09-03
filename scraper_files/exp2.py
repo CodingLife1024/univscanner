@@ -2,10 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://www.uts.edu.au/about/faculty-engineering-and-information-technology/computer-science/school-computer-science-staff"
+url = "https://www.lancaster.ac.uk/scc/about-us/people/"
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
-
-response = requests.get(url, verify=False)
+response = requests.get(url, verify=False, headers=headers)
 html_content = response.text
 
 # Parse the HTML with BeautifulSoup

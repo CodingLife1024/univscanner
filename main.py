@@ -107,6 +107,7 @@ from scraper_files.uni_groningen import uni_groningen
 from scraper_files.frieie_uni import frieie_uni
 from scraper_files.upm import upm
 from scraper_files.uts_sydney import uts_sydney
+from scraper_files.lancaster_uni import lancaster_uni
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -199,6 +200,7 @@ def main():
         writer.writerows(frieie_uni())
         writer.writerows(upm())
         writer.writerows(uts_sydney())
+        writer.writerows(lancaster_uni())
 
 
 if __name__ == "__main__":
