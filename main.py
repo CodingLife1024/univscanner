@@ -114,6 +114,8 @@ from scraper_files.lancaster_uni import lancaster_uni
 from scraper_files.hokkaido_uni import hokkaido_uni
 from scraper_files.usm_malaysia import usm_malaysia
 
+from scraper_files.mcmaster_uni import mcmaster_uni
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -208,6 +210,7 @@ def main():
         writer.writerows(lancaster_uni())
         writer.writerows(hokkaido_uni())
         writer.writerows(usm_malaysia())
+        writer.writerows(mcmaster_uni())
 
 
 if __name__ == "__main__":

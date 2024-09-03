@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://www.lancaster.ac.uk/scc/about-us/people/"
-headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+url = "https://www.eng.mcmaster.ca/faculty-staff/faculty-directory/?filter-search=&filter-research-cluster=&filter-department=56#faculty-listing__filter"
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'}
 
 response = requests.get(url, verify=False, headers=headers)
 html_content = response.text
