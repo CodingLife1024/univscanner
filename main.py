@@ -109,6 +109,10 @@ from scraper_files.upm import upm
 from scraper_files.uts_sydney import uts_sydney
 from scraper_files.lancaster_uni import lancaster_uni
 
+
+
+from scraper_files.hokkaido_uni import hokkaido_uni
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -201,6 +205,7 @@ def main():
         writer.writerows(upm())
         writer.writerows(uts_sydney())
         writer.writerows(lancaster_uni())
+        writer.writerows(hokkaido_uni())
 
 
 if __name__ == "__main__":
