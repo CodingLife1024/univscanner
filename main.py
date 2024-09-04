@@ -116,6 +116,8 @@ from scraper_files.usm_malaysia import usm_malaysia
 
 from scraper_files.mcmaster_uni import mcmaster_uni
 
+from scraper_files.hanyang_uni import hanyang_uni
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -211,6 +213,7 @@ def main():
         writer.writerows(hokkaido_uni())
         writer.writerows(usm_malaysia())
         writer.writerows(mcmaster_uni())
+        writer.writerows(hanyang_uni())
 
 
 if __name__ == "__main__":
