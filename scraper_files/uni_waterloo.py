@@ -53,7 +53,7 @@ def get_faculty_data(prof):
         email = future_email.result()
 
     # Skip certain titles
-    if "student" in title.lower() or "emeritus" in title.lower():
+    if "student" in title.lower() or "emeritus" in title.lower() or ("professor" not in title.lower() and "lecturer" not in title.lower()):
         return
 
     new_r = requests.get(link)
