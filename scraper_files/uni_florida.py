@@ -12,29 +12,28 @@ keyword_list = ["operating system", "robotics", "kernel", "embedded system", "ha
 
 faculty_data = []
 
-u_name = "Lancaster University"
-country = "United Kingdom"
+u_name = "University of Florida"
+country = "United States"
 
 def get_name(prof):
-    name = prof.find('h3', class_="name").get_text().strip()
+    name = prof.find('p', class_="wp-show-posts-entry-title").find('a').get_text().strip()
+    new = name.split(',')
+    name = new[0].strip()
     return name
 
 def get_link(prof):
-    link = "https://www.lancaster.ac.uk" + prof.find('a')['href']
+    link = prof.find('p', class_="wp-show-posts-entry-title").find('a')['href']
     return link
 
 def get_title(prof):
-    title = prof.find('span', class_="job-title").get_text().strip()
+    title = prof.find('div', class_="wp-show-posts-entry-summary").find('p').get_text().strip().lower()
     return title
 
 def get_email(prof):
-    obfuscated_email_element = prof.find('span', class_="email").find('a')['rel'][0] if prof.find('span', class_="email") else None
-    if not obfuscated_email_element:
-        return
-    email = obfuscated_email_element[::-1].replace("//", "@").replace("/", ".")
+    email = prof.find('a', href=re.compile(r'^mailto:')).get_text().strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
     return email
 
-def get_faculty_data(prof, headers):
+def get_faculty_data(prof):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         # Submit tasks for each component
         future_name = executor.submit(get_name, prof)
@@ -48,28 +47,30 @@ def get_faculty_data(prof, headers):
         title = future_title.result()
         email = future_email.result()
 
-    if "student" in title.lower():
+    if 'emeritus' in title:
         return
-    new_r = requests.get(link, headers=headers)
+
+    new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
-    research = new_soup.text
+
+    research = new_soup.find('div', class_="col-md-12").text
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
     if found_keyword:
-        pers_link = get_scholar_profile(name)
+        pers_link = new_soup.find('div', class_="col-md-4 faculty_contact_information").find('strong', string="Website(s):").find_next('a')['href'] if new_soup.find('div', class_="col-md-4 faculty_contact_information").find('strong', string="Website(s):") else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
 
-def lancaster_uni():
-    url = "https://www.lancaster.ac.uk/scc/about-us/people/"
-    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-    r = requests.get(url, headers=headers)
+def uni_florida():
+    url = "https://www.cise.ufl.edu/people/faculty/"
+    r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
 
-    all_profs = soup.find_all('div', class_='cell feature staff-row')
+    all_profs = soup.find_all('div', class_="wp-show-posts-inner")
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()
@@ -77,10 +78,10 @@ def lancaster_uni():
                 print(f"Error occurred: {e}")
 
     print()
-    print("Lancaster University done...")
+    print("University of Florida done...")
     print()
-
     return faculty_data
 
+
 if __name__ == '__main__':
-    lancaster_uni()
+    uni_florida()
