@@ -133,6 +133,7 @@ from scraper_files.case_western_reserve_uni import case_western_reserve_uni
 from scraper_files.uni_florida import uni_florida
 from scraper_files.uni_exeter import uni_exeter
 from scraper_files.uni_rochester import uni_rochester
+from scraper_files.uni_waterloo import uni_waterloo
 
 
 def main():
@@ -245,6 +246,7 @@ def main():
         writer.writerows(uni_florida())
         writer.writerows(uni_exeter())
         writer.writerows(uni_rochester())
+        writer.writerows(uni_waterloo())
 
 
 if __name__ == "__main__":
