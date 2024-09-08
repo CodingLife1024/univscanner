@@ -125,6 +125,7 @@ from scraper_files.uni_york import uni_york
 from scraper_files.uc_santa_barbara import uc_santa_barbara
 from scraper_files.uni_maryland import uni_maryland
 from scraper_files.uni_pittsburgh import uni_pittsburgh
+from scraper_files.michigan_state_uni import michigan_state_uni
 
 
 def main():
@@ -229,6 +230,7 @@ def main():
         writer.writerows(uc_santa_barbara())
         writer.writerows(uni_maryland())
         writer.writerows(uni_pittsburgh())
+        writer.writerows(michigan_state_uni())
 
 
 if __name__ == "__main__":
