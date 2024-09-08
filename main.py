@@ -128,6 +128,7 @@ from scraper_files.uni_pittsburgh import uni_pittsburgh
 from scraper_files.michigan_state_uni import michigan_state_uni
 from scraper_files.emory_college import emory_college
 from scraper_files.cardiff_uni import cardiff_uni
+from scraper_files.ens_lyon import ens_lyon
 
 
 def main():
@@ -235,6 +236,7 @@ def main():
         writer.writerows(michigan_state_uni())
         writer.writerows(emory_college())
         writer.writerows(cardiff_uni())
+        writer.writerows(ens_lyon())        
 
 
 if __name__ == "__main__":
