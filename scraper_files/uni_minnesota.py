@@ -42,7 +42,13 @@ def get_faculty_data(prof):
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
-    research = new_soup.text
+    
+    research_tags = new_soup.find_all('div', class_="accordion-trigger js-accordion-trigger")
+    research = ""
+    for tag in research_tags:
+        research_material = tag.find_next('div').get_text()
+        research += research_material
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
     if found_keyword:
         pers_link = new_soup.find('a', string="Personal Website")['href'] if new_soup.find('a', string="Personal Website") else get_scholar_profile(name)
