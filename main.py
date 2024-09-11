@@ -141,6 +141,7 @@ from scraper_files.uni_tubingen import uni_tubingen
 
 
 from scraper_files.uni_college_dublin import uni_college_dublin
+from scraper_files.uni_minnesota import uni_minnesota
 
 
 def main():
@@ -258,6 +259,7 @@ def main():
         writer.writerows(uni_bath())
         writer.writerows(uni_tubingen())
         writer.writerows(uni_college_dublin())
+        writer.writerows(uni_minnesota())
 
 
 if __name__ == "__main__":
