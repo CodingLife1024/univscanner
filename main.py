@@ -136,6 +136,8 @@ from scraper_files.uni_rochester import uni_rochester
 from scraper_files.uni_waterloo import uni_waterloo
 from scraper_files.sapienza_uni import sapienza_uni
 
+from scraper_files.uni_bath import uni_bath
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -249,6 +251,7 @@ def main():
         writer.writerows(uni_rochester())
         writer.writerows(uni_waterloo())
         writer.writerows(sapienza_uni())
+        writer.writerows(uni_bath())
 
 
 if __name__ == "__main__":
