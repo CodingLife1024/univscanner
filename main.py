@@ -143,6 +143,8 @@ from scraper_files.uni_tubingen import uni_tubingen
 from scraper_files.uni_college_dublin import uni_college_dublin
 from scraper_files.uni_minnesota import uni_minnesota
 
+from scraper_files.uni_liverpool import uni_liverpool
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -260,6 +262,7 @@ def main():
         writer.writerows(uni_tubingen())
         writer.writerows(uni_college_dublin())
         writer.writerows(uni_minnesota())
+        writer.writerows(uni_liverpool())
 
 
 if __name__ == "__main__":
