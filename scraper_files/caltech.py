@@ -1,13 +1,17 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-from components.google_scholar import get_scholar_profile
 import concurrent.futures
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
 
 university = "Caltech"
-country = "USA"
-
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+country = "United States"
 
 faculty_data = []
 

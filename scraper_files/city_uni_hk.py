@@ -2,9 +2,12 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 u_name = "City University Hong Kong"
 country = "Hong Kong"
+
+faculty_data = []
 
 def city_uni_hk():
 
@@ -18,10 +21,6 @@ def city_uni_hk():
     html_content = response_1.text + response_2.text + response_3.text
 
     soup = BeautifulSoup(html_content, 'html.parser')
-
-    faculty_data = []
-
-    keyword_list = ["operating system", "robotics", "kerrnel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
 
     professors = soup.find_all('article', class_='person-card')
 
