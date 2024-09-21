@@ -10,7 +10,49 @@ from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
 
 university_name = "Cornell University"
-country = "USA"
+country = "United States"
+
+faculty_data = []
+
+def get_name(prof):
+    name_tag = prof.find('h2', class_='person__name').find('a')
+    name = name_tag.text.strip()
+    link = name_tag['href']
+    return name, link
+
+def get_email(prof):
+    email = prof.find('div', class_='person__email').text.strip() if prof.find('div', class_='person__email') else "N/A"
+    return email
+
+def get_pers_link(name):
+    return get_scholar_profile(name)
+
+
+def get_faculty_data(prof):
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future_name = executor.submit(get_name, prof)
+        future_email = executor.submit(get_email, prof)
+
+        name, link = future_name.result()
+        email = future_email.result()
+
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, 'html.parser')
+
+    depts = new_soup.find_all('li', class_=None)
+
+    departments = ['Computer Engineering', 'Computer Systems', 'Integrated Circuits', 'Systems and Networking']
+
+    for dept in depts:
+        dd = dept.text.strip()
+        if dd in departments:
+
+            pers_link = get_scholar_profile(name)
+
+            if [university_name, country, name, email, link, pers_link] != faculty_data[-1] if faculty_data != [] else True:
+                faculty_data.append([university_name, country, name, email, link, pers_link])
+                print([university_name, country, name, email, link, pers_link])
+
 
 def cornell():
     # URL of the form submission (same as the homepage in this case)
@@ -52,36 +94,20 @@ def cornell():
     soup = BeautifulSoup(full_text, 'html.parser')
 
     faculty_data = []
-    faculty_divs = soup.find_all('div', class_='faculty-bio-all')
+    all_profs = soup.find_all('div', class_='faculty-bio-all')
 
-    for faculty_div in faculty_divs:
-        name_tag = faculty_div.find('h2', class_='person__name').find('a')
-        name = name_tag.text.strip()
-        profile_url = name_tag['href']
-
-        new_r = requests.get(profile_url)
-        new_soup = BeautifulSoup(new_r.text, 'html.parser')
-
-        depts = new_soup.find_all('li', class_=None)
-
-        departments = ['Computer Engineering', 'Computer Systems', 'Integrated Circuits', 'Systems and Networking']
-
-        for dept in depts:
-            dd = dept.text.strip()
-            if dd in departments:
-                email = faculty_div.find('div', class_='person__email').text.strip() if faculty_div.find('div', class_='person__email') else "Email Not Found"
-
-                # pers_link = faculty_div.find(lambda tag: tag.name == 'h2' and 'class' not in tag.attrs and tag.string == 'Websites').find_next('a')['href']
-
-
-                if [university_name, country, name, email, profile_url] != faculty_data[-1] if faculty_data != [] else True:
-                    faculty_data.append([university_name, country, name, email, profile_url])
-                    print([university_name, country, name, email, profile_url])
-                    print()
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
     print()
-    print('Cornell done...')
+    print('Cornell University done...')
     print()
     return faculty_data
 
-# cornell()
+if __name__ == "__main__":
+    cornell()
