@@ -1,6 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
+import sys
+import os
 import re
+import concurrent.futures
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 university_name = "Cornell University"
 country = "USA"
