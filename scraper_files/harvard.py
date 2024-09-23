@@ -1,8 +1,18 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+import sys
+import os
+import re
+import concurrent.futures
 
-university = "Harvard"
-country = "USA"
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
+
+university = "Harvard University"
+country = "United States"
 
 def harvard():
     url = "https://www.seas.harvard.edu/computer-science/faculty-research"
@@ -51,10 +61,13 @@ def harvard():
                             continue
 
         print()
-        print("Harvard scraping completed.")
+        print("Harvard University done...")
         print()
         return faculty_data
 
     except requests.exceptions.RequestException as e:
         print("Error fetching Harvard faculty page:", str(e))
         return []
+
+if __name__ == '__main__':
+    harvard()

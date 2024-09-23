@@ -7,16 +7,10 @@ import concurrent.futures
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 u_name = "Honk Kong Polytechnic University"
 country = "Hong Kong"
-
-keyword_list = [
-    "operating system", "robotics", "kernel", "embedded system",
-    "hardware", "computer architecture", "distributed system",
-    "computer organization", "vlsi", "computer and system",
-    "human-computer interaction", "human computer"
-]
 
 faculty_data = []
 
