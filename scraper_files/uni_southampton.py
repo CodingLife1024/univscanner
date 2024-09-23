@@ -52,7 +52,7 @@ def get_faculty_data(prof):
         print([u_name, country, name, email, link, get_scholar_profile(name)])
         faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
 
-def uni_southapmton():
+def uni_southampton():
     url = "https://www.southampton.ac.uk/research/groups/computational-engineering-design-group"
     r = requests.get(url)
 
@@ -75,5 +75,5 @@ def uni_southapmton():
 
 
 if __name__ == '__main__':
-    uni_southapmton()
+    uni_southampton()
 

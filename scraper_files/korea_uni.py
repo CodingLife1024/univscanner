@@ -56,4 +56,5 @@ def korea_uni():
 
     return faculty_data
 
-korea_uni()
+if __name__ == "__main__":
+    korea_uni()
