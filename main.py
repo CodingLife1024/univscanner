@@ -145,6 +145,8 @@ from scraper_files.uni_minnesota import uni_minnesota
 
 from scraper_files.uni_liverpool import uni_liverpool
 
+from scraper_files.uni_otago import uni_otago
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -263,6 +265,7 @@ def main():
         writer.writerows(uni_college_dublin())
         writer.writerows(uni_minnesota())
         writer.writerows(uni_liverpool())
+        writer.writerows(uni_otago())
 
 
 if __name__ == "__main__":
