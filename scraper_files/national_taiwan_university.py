@@ -4,22 +4,19 @@ import concurrent.futures
 import base64
 import re
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 university = "National Taiwan University"
 country = "Taiwan"
 
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
-
 faculty_data = []
 
 def get_faculty_data(name, base_url="https://csie.ntu.edu.tw", headers=""):
-    # Fetch the faculty list page
     url = "https://csie.ntu.edu.tw/en/member/Faculty"
     response = requests.get(url)
     html_content = response.text
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    # Find the profile URL for the given name
     try:
         prof_url = base_url + soup.find('a', string=name + " ").get('href')
     except AttributeError:
@@ -56,7 +53,6 @@ def get_faculty_data(name, base_url="https://csie.ntu.edu.tw", headers=""):
         faculty_data.append([university, country, name, email, prof_url, personal_page])
 
 def national_taiwan_university():
-
     url = "https://csie.ntu.edu.tw/en/member/Faculty"
     response = requests.get(url)
     html_content = response.text

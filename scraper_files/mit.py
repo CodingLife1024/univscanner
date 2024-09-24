@@ -1,10 +1,18 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+import sys
+import os
+import re
 import concurrent.futures
-from components.google_scholar import get_scholar_profile
 
-university = "Massachusetts Institute of Technology"
-country = "USA"
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
+
+university = "Massachusetts Institute of Technology (MIT)"
+country = "United States"
 
 def get_faculty_data(name, base_url, headers, faculty_data):
     response = requests.get(base_url, headers=headers)
@@ -36,6 +44,7 @@ def get_faculty_data(name, base_url, headers, faculty_data):
         pers_url = get_scholar_profile(name)
 
     departments = ["Robotics", "Systems and Networking", "Computer Architecture", "Multicore Processors & Cloud Computing"]
+
     for department in departments:
         if department in research_list:
             print([university, country, text_content, email, indiv_url, pers_url])
@@ -54,7 +63,6 @@ def mit():
 
     all_names = [element.get('title') for element in soup.find_all('a', class_="people-index-image")]
 
-    faculty_data = []
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, name, base_url, headers, faculty_data) for name in all_names]
         for future in concurrent.futures.as_completed(futures):
@@ -62,7 +70,11 @@ def mit():
                 future.result()
             except Exception as e:
                 print(f"Error occurred: {e}")
+                
     print()
-    print("MIT Done....")
+    print("Massachusetts Institute of Technology (MIT) done....")
     print()
     return faculty_data
+
+if __name__ == "__main__":
+    mit()

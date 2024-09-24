@@ -7,8 +7,7 @@ import concurrent.futures
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
-
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
@@ -46,12 +45,6 @@ def get_faculty_data(prof):
         link = future_link.result()
         email = future_email.result()
         title = future_title.result()
-
-    # if 'STUDENT' in title or 'student' in title:
-    #     continue
-    # else:
-    #     print([full_name, email, link])
-
     new_r = requests.get(link)
 
     research = new_r.text
