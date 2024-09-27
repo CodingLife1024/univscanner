@@ -1,8 +1,8 @@
 import requests
-from bs4 import BeautifulSoup
 import sys
 import os
 import re
+from bs4 import BeautifulSoup
 import concurrent.futures
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
