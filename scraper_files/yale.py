@@ -1,6 +1,6 @@
-from bs4 import BeautifulSoup
 import requests
 import re
+from bs4 import BeautifulSoup
 from unidecode import unidecode
 
 university = "Yale University"
