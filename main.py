@@ -150,6 +150,8 @@ from scraper_files.iisc_blr import iisc_blr
 from scraper_files.kfupm import kfupm
 from scraper_files.uni_tech_malaysia import uni_tech_malaysia
 
+from scraper_files.tu_wien import tu_wien
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -272,6 +274,7 @@ def main():
         writer.writerows(iisc_blr())
         writer.writerows(kfupm())
         writer.writerows(uni_tech_malaysia())
+        writer.writerows(tu_wien())
 
 
 if __name__ == "__main__":
