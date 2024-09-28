@@ -43,7 +43,7 @@ def get_faculty_data(name, base_url, headers, faculty_data):
     else:
         pers_url = get_scholar_profile(name)
 
-    departments = ["Robotics", "Systems and Networking", "Computer Architecture", "Multicore Processors & Cloud Computing"]
+    departments = ["Robotics", "Computer Architecture", "Multicore Processors & Cloud Computing"]
 
     for department in departments:
         if department in research_list:
@@ -70,7 +70,7 @@ def mit():
                 future.result()
             except Exception as e:
                 print(f"Error occurred: {e}")
-                
+
     print()
     print("Massachusetts Institute of Technology (MIT) done....")
     print()
