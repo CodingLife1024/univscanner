@@ -148,6 +148,7 @@ from scraper_files.uni_liverpool import uni_liverpool
 from scraper_files.uni_otago import uni_otago
 from scraper_files.iisc_blr import iisc_blr
 from scraper_files.kfupm import kfupm
+from scraper_files.uni_tech_malaysia import uni_tech_malaysia
 
 
 def main():
@@ -270,6 +271,7 @@ def main():
         writer.writerows(uni_otago())
         writer.writerows(iisc_blr())
         writer.writerows(kfupm())
+        writer.writerows(uni_tech_malaysia())
 
 
 if __name__ == "__main__":
