@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from components.google_scholar import get_scholar_profile
 
 u_name = "University of California, Berkeley"
-country = "USA"
+country = "United States"
 
 def uc_berkeley():
     url = "https://www2.eecs.berkeley.edu/Faculty/Lists/CS/faculty.html"
