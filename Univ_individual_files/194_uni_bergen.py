@@ -13,7 +13,7 @@ def uni_bergen():
     r = requests.get(url, headers=headers)
 
     # getting the soup by parsing the html parsel to text to request r
-    soup = BeautifulSoup(r.text, "html5lib")
+    soup = BeautifulSoup(r.text, "html.parser")
     # print(soup.prettify)
 
     # file initialization to write
@@ -58,8 +58,8 @@ def uni_bergen():
 
         # print(name, link)
         # check if link is valid on Not
-        try:    
-            prof_resp = requests.get(link, headers=headers)   
+        try:
+            prof_resp = requests.get(link, headers=headers)
         except:
             continue
 
@@ -113,8 +113,8 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
                         f.write(link + '\n' + name + '\t\t' + email + '\n')
                         csvwriter.writerow([u_name, country, name, email, link])
                         csvwriter2.writerow([u_name, country, name, email, link])
-                    # f.write("\n") 
- 
+                    # f.write("\n")
+
 
             f.write(pattern)
             f.write('\n\n')
@@ -122,4 +122,3 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     uni_bergen()
-     

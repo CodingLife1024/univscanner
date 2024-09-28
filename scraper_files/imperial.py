@@ -48,13 +48,10 @@ def get_faculty_data(prof):
 
 
 def imperial():
-    url = "https://www.imperial.ac.uk/computing/people/academic-staff/"   # homepage url
-    r = requests.get(url)                                        # request to url
-
-    # getting the soup by parsing the html parsel to text to request r
+    url = "https://www.imperial.ac.uk/computing/people/academic-staff/"  
+    r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
 
-    # d gives the array of all profs on the dept homepage
     all_profs = soup.find_all('div', {'class':'name-wrapper'})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:

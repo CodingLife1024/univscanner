@@ -151,6 +151,7 @@ from scraper_files.kfupm import kfupm
 from scraper_files.uni_tech_malaysia import uni_tech_malaysia
 
 from scraper_files.tu_wien import tu_wien
+from scraper_files.uni_bergen import uni_bergen
 
 
 def main():
@@ -275,6 +276,7 @@ def main():
         writer.writerows(kfupm())
         writer.writerows(uni_tech_malaysia())
         writer.writerows(tu_wien())
+        writer.writerows(uni_bergen())
 
 
 if __name__ == "__main__":
