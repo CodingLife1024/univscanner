@@ -153,6 +153,7 @@ from scraper_files.uni_tech_malaysia import uni_tech_malaysia
 from scraper_files.tu_wien import tu_wien
 from scraper_files.uni_bergen import uni_bergen
 from scraper_files.uni_gottingen import uni_gottingen
+from scraper_files.uni_wollongong import uni_wollongong
 
 
 def main():
@@ -279,6 +280,7 @@ def main():
         writer.writerows(tu_wien())
         writer.writerows(uni_bergen())
         writer.writerows(uni_gottingen())
+        writer.writerows(uni_wollongong())
 
 
 if __name__ == "__main__":
