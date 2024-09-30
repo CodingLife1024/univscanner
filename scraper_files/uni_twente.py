@@ -16,7 +16,7 @@ u_name = "University of Twente"
 country = "Netherlands"
 
 def get_faculty_data(prof):
-    name = prof.get_text().strip()
+    name = prof.get_text().replace('dr.', "").replace('ir.', "").replace('prof', '').strip()
     link = prof.get('href')
 
     new_r = requests.get(link + "?tab=education")
@@ -27,7 +27,7 @@ def get_faculty_data(prof):
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
-        pers_link = new_soup.find('a', string="Business card")['href'] if new_soup.find('a', string="Business card") else get_scholar_profile(name)
+        pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 

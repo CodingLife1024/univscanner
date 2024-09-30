@@ -158,6 +158,9 @@ from scraper_files.uni_wollongong import uni_wollongong
 from scraper_files.uni_twente import uni_twente
 
 
+from scraper_files.dartmouth import dartmouth
+
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -284,6 +287,7 @@ def main():
         writer.writerows(uni_gottingen())
         writer.writerows(uni_wollongong())
         writer.writerows(uni_twente())
+        writer.writerows(dartmouth())
 
 
 if __name__ == "__main__":
