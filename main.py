@@ -161,6 +161,7 @@ from scraper_files.uni_twente import uni_twente
 from scraper_files.dartmouth import dartmouth
 from scraper_files.western_uni import western_uni
 from scraper_files.uni_reading import uni_reading
+from scraper_files.uni_aberdeen import uni_aberdeen
 
 
 def main():
@@ -292,6 +293,7 @@ def main():
         writer.writerows(dartmouth())
         writer.writerows(western_uni())
         writer.writerows(uni_reading())
+        writer.writerows(uni_aberdeen())
 
 
 if __name__ == "__main__":
