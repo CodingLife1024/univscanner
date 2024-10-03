@@ -12,7 +12,7 @@ from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
-u_name = "Chula Engineering"
+u_name = "Chulalongkorn Engineering University"
 country = "Thailand"
 
 def get_faculty_data(prof):
@@ -51,7 +51,7 @@ def chula_engg():
                 print(f"Error occurred: {e}")
 
     print()
-    print("Chula Engineering done...")
+    print("Chulalongkorn Engineering University done...")
     print()
 
     return faculty_data
