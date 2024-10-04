@@ -165,6 +165,8 @@ from scraper_files.uni_aberdeen import uni_aberdeen
 from scraper_files.chula_engg import chula_engg
 from scraper_files.queen_mary_uni import queen_mary_uni
 from scraper_files.uc_irvine import uc_irvine
+from scraper_files.khalifa_uni import khalifa_uni
+from scraper_files.uni_notre_dame import uni_notre_dame
 
 
 def main():
@@ -300,6 +302,8 @@ def main():
         writer.writerows(chula_engg())
         writer.writerows(queen_mary_uni())
         writer.writerows(uc_irvine())
+        writer.writerows(khalifa_uni())
+        writer.writerows(uni_notre_dame())
 
 
 if __name__ == "__main__":
