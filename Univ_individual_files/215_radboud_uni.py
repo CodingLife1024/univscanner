@@ -53,8 +53,8 @@ def radboud_uni():
 
         # print(name, link)
         # check if link is valid on Not
-        try:    
-            prof_resp = requests.get(link, headers=headers)   
+        try:
+            prof_resp = requests.get(link, headers=headers)
         except:
             continue
 
@@ -107,8 +107,8 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
                         f.write(link + '\n' + name + '\t\t' + email + '\n')
                         csvwriter.writerow([u_name, country, name, email, link])
                         csvwriter2.writerow([u_name, country, name, email, link])
-                    # f.write("\n") 
- 
+                    # f.write("\n")
+
 
             f.write(pattern)
             f.write('\n\n')
@@ -116,4 +116,3 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     radboud_uni()
-     

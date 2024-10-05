@@ -12,45 +12,50 @@ from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
-u_name = "Macquarie University"
-country = "Australia"
+u_name = "Radboud University"
+country = "Netherlands"
 
 def get_name(prof):
-    name = prof.find('a').text.replace("Dr ", "").replace("Professor ", "").replace("Assistant ", "").strip()
+    name = prof.find('a', class_="link link--icon link--arrow-small link--icon-posafter").text.replace("\n", "").replace("Prof.", "").replace("Dr.", "").replace("Dr", "").replace("Prof", "").strip()
+    name_parts = name.split("(")
+    formatted_name = name_parts[1][:-1] + " " + name_parts[0][2:]
+    name = formatted_name
     return name
 
 def get_link(prof):
-    link = prof.find('a')['href']
+    link = "https://www.ru.nl" + prof.find('a', class_="link link--icon link--arrow-small link--icon-posafter")["href"]
     return link
 
-def get_research(prof):
-    research = prof.find('ul').text.strip()
-    return research
-
 def get_email(prof):
-    email = prof.find('a', href=re.compile(r"^mailto:"))['href'].replace("mailto:", "")
+    email = prof.find('span', class_="spamspan").text.strip().replace("[at]", "@").replace(" ", "")
     return email
 
 def get_faculty_data(prof):
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future_name = executor.submit(get_name, prof)
         future_link = executor.submit(get_link, prof)
-        future_research = executor.submit(get_research, prof)
         future_email = executor.submit(get_email, prof)
 
         name = future_name.result()
         link = future_link.result()
-        research = future_research.result()
         email = future_email.result()
 
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, 'html.parser')
+
+    research = new_soup.text
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
     if found_keyword:
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
-def macquarie_uni():
-    urls = ["https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/school-of-computing/our-people"]
+def radboud_uni():
+    urls = ["https://www.ru.nl/en/search/scope/staff/staff-department/858/staff-staff/professors/staff-staff/teachers",
+            "https://www.ru.nl/en/search/scope/staff/staff-department/858/staff-staff/professors/staff-staff/teachers?page=1",
+            "https://www.ru.nl/en/search/scope/staff/staff-department/858/staff-staff/professors/staff-staff/teachers?page=1"]
 
     total_text = ""
 
@@ -58,15 +63,9 @@ def macquarie_uni():
         r = requests.get(url)
         total_text += r.text
 
-    soup = BeautifulSoup(total_text, "html.parser")
+    soup = BeautifulSoup(total_text, 'html.parser')
 
-    super_class = soup.find_all('tbody')[1:3]
-
-    all_profs = []
-
-    for i in super_class:
-        profs = i.find_all('tr')
-        all_profs.extend(profs)
+    all_profs = soup.find_all("span", class_="field-content")
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
@@ -77,9 +76,10 @@ def macquarie_uni():
                 print(f"Error occurred: {e}")
 
     print()
-    print("Macquarie University done...")
+    print("Radbound University done...")
     print()
+
     return faculty_data
 
-if __name__ == '__main__':
-    macquarie_uni()
+if __name__ == "__main__":
+    radboud_uni()
