@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://cse.nd.edu/faculty/page/2/"
+url = "https://www.mq.edu.au/faculty-of-science-and-engineering/departments-and-schools/school-of-computing/our-people"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0'}
 
 response = requests.get(url, verify=False, headers=headers)
