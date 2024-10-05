@@ -169,6 +169,7 @@ from scraper_files.khalifa_uni import khalifa_uni
 from scraper_files.uni_notre_dame import uni_notre_dame
 from scraper_files.macquarie_uni import macquarie_uni
 from scraper_files.radboud_uni import radboud_uni
+from scraper_files.uni_padova import uni_padova
 
 
 def main():
@@ -308,6 +309,7 @@ def main():
         writer.writerows(uni_notre_dame())
         writer.writerows(macquarie_uni())
         writer.writerows(radboud_uni())
+        writer.writerows(uni_padova())
 
 
 if __name__ == "__main__":
