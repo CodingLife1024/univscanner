@@ -170,6 +170,7 @@ from scraper_files.uni_notre_dame import uni_notre_dame
 from scraper_files.macquarie_uni import macquarie_uni
 from scraper_files.radboud_uni import radboud_uni
 from scraper_files.uni_padova import uni_padova
+from scraper_files.curtin_uni import curtin_uni
 
 
 def main():
@@ -310,6 +311,7 @@ def main():
         writer.writerows(macquarie_uni())
         writer.writerows(radboud_uni())
         writer.writerows(uni_padova())
+        writer.writerows(curtin_uni())
 
 
 if __name__ == "__main__":
