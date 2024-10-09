@@ -171,7 +171,7 @@ from scraper_files.macquarie_uni import macquarie_uni
 from scraper_files.radboud_uni import radboud_uni
 from scraper_files.uni_padova import uni_padova
 from scraper_files.curtin_uni import curtin_uni
-
+from scraper_files.queensland_uni_tech import queensland_uni_tech
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -312,6 +312,7 @@ def main():
         writer.writerows(radboud_uni())
         writer.writerows(uni_padova())
         writer.writerows(curtin_uni())
+        writer.writerows(queensland_uni_tech())
 
 
 if __name__ == "__main__":
