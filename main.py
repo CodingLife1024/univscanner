@@ -174,6 +174,9 @@ from scraper_files.curtin_uni import curtin_uni
 from scraper_files.queensland_uni_tech import queensland_uni_tech
 from scraper_files.uni_virginia import uni_virginia
 
+from scraper_files.uni_cape_town import uni_cape_town
+
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -315,7 +318,7 @@ def main():
         writer.writerows(curtin_uni())
         writer.writerows(queensland_uni_tech())
         writer.writerows(uni_virginia())
-
+        writer.writerows(uni_cape_town())
 
 if __name__ == "__main__":
     main()

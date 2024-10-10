@@ -43,6 +43,7 @@ def uni_virginia():
             "https://engineering.virginia.edu/department/computer-science/faculty?page=6",
             "https://engineering.virginia.edu/department/computer-science/faculty?page=7",
             "https://engineering.virginia.edu/department/computer-science/faculty?page=8"]
+            
 
     total_text = ""
 
