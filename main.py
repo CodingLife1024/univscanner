@@ -176,6 +176,8 @@ from scraper_files.uni_virginia import uni_virginia
 
 from scraper_files.uni_cape_town import uni_cape_town
 
+from scraper_files.victoria_uni_wellington import victoria_uni_wellington
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -319,6 +321,7 @@ def main():
         writer.writerows(queensland_uni_tech())
         writer.writerows(uni_virginia())
         writer.writerows(uni_cape_town())
+        writer.writerows(victoria_uni_wellington())
 
 if __name__ == "__main__":
     main()
