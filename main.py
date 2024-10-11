@@ -179,6 +179,7 @@ from scraper_files.uni_cape_town import uni_cape_town
 from scraper_files.victoria_uni_wellington import victoria_uni_wellington
 from scraper_files.st_petersburg_state_uni import st_petersburg_state_uni
 from scraper_files.loughbourough_uni import loughborough_uni
+from scraper_files.novosibirsk_state_uni import novosibirsk_state_uni
 
 
 def main():
@@ -326,6 +327,7 @@ def main():
         writer.writerows(victoria_uni_wellington())
         writer.writerows(st_petersburg_state_uni())
         writer.writerows(loughborough_uni())
+        writer.writerows(novosibirsk_state_uni())
 
 if __name__ == "__main__":
     main()
