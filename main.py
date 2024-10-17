@@ -181,6 +181,9 @@ from scraper_files.st_petersburg_state_uni import st_petersburg_state_uni
 from scraper_files.loughbourough_uni import loughborough_uni
 from scraper_files.novosibirsk_state_uni import novosibirsk_state_uni
 
+from scraper_files.georgetown_uni import georgetown_uni
+from scraper_files.telaviv_uni import telaviv_uni
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -328,6 +331,8 @@ def main():
         writer.writerows(st_petersburg_state_uni())
         writer.writerows(loughborough_uni())
         writer.writerows(novosibirsk_state_uni())
+        writer.writerows(georgetown_uni())
+        writer.writerows(telaviv_uni())
 
 if __name__ == "__main__":
     main()
