@@ -189,6 +189,7 @@ from scraper_files.maastritcht_uni import maastritcht_uni
 from scraper_files.national_cheng_kung_uni import national_cheng_kung_uni
 from scraper_files.kyung_hee_uni import kyung_hee_uni
 from scraper_files.uni_galway import uni_galway
+from scraper_files.uni_antwerp import uni_antwerp
 
 
 def main():
@@ -344,6 +345,7 @@ def main():
         writer.writerows(national_cheng_kung_uni())
         writer.writerows(kyung_hee_uni())
         writer.writerows(uni_galway())
+        writer.writerows(uni_antwerp())
 
 if __name__ == "__main__":
     main()
