@@ -188,6 +188,7 @@ from scraper_files.unicamp import unicamp
 from scraper_files.maastritcht_uni import maastritcht_uni
 from scraper_files.national_cheng_kung_uni import national_cheng_kung_uni
 from scraper_files.kyung_hee_uni import kyung_hee_uni
+from scraper_files.uni_galway import uni_galway
 
 
 def main():
@@ -342,6 +343,7 @@ def main():
         writer.writerows(maastritcht_uni())
         writer.writerows(national_cheng_kung_uni())
         writer.writerows(kyung_hee_uni())
+        writer.writerows(uni_galway())
 
 if __name__ == "__main__":
     main()
