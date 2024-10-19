@@ -184,6 +184,8 @@ from scraper_files.novosibirsk_state_uni import novosibirsk_state_uni
 from scraper_files.georgetown_uni import georgetown_uni
 from scraper_files.telaviv_uni import telaviv_uni
 
+from scraper_files.unicamp import unicamp
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -333,6 +335,7 @@ def main():
         writer.writerows(novosibirsk_state_uni())
         writer.writerows(georgetown_uni())
         writer.writerows(telaviv_uni())
+        writer.writerows(unicamp())
 
 if __name__ == "__main__":
     main()
