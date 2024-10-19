@@ -192,6 +192,10 @@ from scraper_files.uni_galway import uni_galway
 from scraper_files.uni_antwerp import uni_antwerp
 from scraper_files.national_yang_ming_chiao_tung_uni import national_yang_ming_chiao_tung_uni
 from scraper_files.uni_bonn import uni_bonn
+from scraper_files.uni_leicester import uni_leicester
+
+from scraper_files.queens_uni import queens_uni
+from scraper_files.uni_calgary import uni_calgary
 
 
 def main():
@@ -350,6 +354,9 @@ def main():
         writer.writerows(uni_antwerp())
         writer.writerows(national_yang_ming_chiao_tung_uni())
         writer.writerows(uni_bonn())
+        writer.writerows(uni_leicester())
+        writer.writerows(queens_uni())
+        writer.writerows(uni_calgary())
 
 if __name__ == "__main__":
     main()
