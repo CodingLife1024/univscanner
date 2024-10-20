@@ -198,6 +198,7 @@ from scraper_files.queens_uni import queens_uni
 from scraper_files.uni_calgary import uni_calgary
 from scraper_files.uni_sussex import uni_sussex
 
+from scraper_files.mahidol_uni import mahidol_uni
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -359,6 +360,7 @@ def main():
         writer.writerows(queens_uni())
         writer.writerows(uni_calgary())
         writer.writerows(uni_sussex())
+        writer.writerows(mahidol_uni())
 
 if __name__ == "__main__":
     main()
