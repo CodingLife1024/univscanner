@@ -28,23 +28,25 @@ def get_faculty_data(prof):
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
-        pers_link = get_scholar_profile(name)
+        pers_link = new_soup.find('strong', string="Personal home page:").find_parent('p').text.split(":")[-1].strip() if new_soup.find('strong', string="Personal home page:") else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
 def tongji_uni():
-    urls = ["https://see-en.tongji.edu.cn/faculty/By_A_Z.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/11.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/10.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/9.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/8.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/7.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/6.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/5.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/4.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/3.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/2.htm",
-            "https://see-en.tongji.edu.cn/faculty/By_A_Z/1.htm"]
+    urls = [
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/11.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/10.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/9.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/8.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/7.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/6.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/5.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/4.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/3.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/2.htm",
+        "https://see-en.tongji.edu.cn/faculty/By_A_Z/1.htm"
+        ]
 
     all_profs = []
 
