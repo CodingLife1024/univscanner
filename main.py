@@ -204,6 +204,7 @@ from scraper_files.uni_tokyo import uni_tokyo
 from scraper_files.universitas_gadjah_mada import universitas_gadjah_mada
 from scraper_files.tongji_uni import tongji_uni
 from scraper_files.uni_illinois_chicago import uni_illinois_chicago
+from scraper_files.rutgers import rutgers
 
 
 def main():
@@ -372,6 +373,7 @@ def main():
         writer.writerows(universitas_gadjah_mada())
         writer.writerows(tongji_uni())
         writer.writerows(uni_illinois_chicago())
+        writer.writerows(rutgers())
 
 if __name__ == "__main__":
     main()

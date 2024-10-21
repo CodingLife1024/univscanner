@@ -16,7 +16,7 @@ u_name = "Tongji University"
 country = "China"
 
 def get_faculty_data(prof):
-    name = prof.find('a').text.strip()
+    name = prof.find('a')['title']
     link = "https://see-en.tongji.edu.cn" + prof.find('a').get('href')[2:]
 
     new_r = requests.get(link)
@@ -29,6 +29,8 @@ def get_faculty_data(prof):
 
     if found_keyword:
         pers_link = new_soup.find('strong', string="Personal home page:").find_parent('p').text.split(":")[-1].strip() if new_soup.find('strong', string="Personal home page:") else get_scholar_profile(name)
+        if pers_link == "":
+            pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
