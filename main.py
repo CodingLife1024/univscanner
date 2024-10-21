@@ -201,6 +201,7 @@ from scraper_files.uni_sussex import uni_sussex
 from scraper_files.mahidol_uni import mahidol_uni
 from scraper_files.universiti_brunei_darussalm import universiti_brunei_darussalam
 from scraper_files.uni_tokyo import uni_tokyo
+from scraper_files.universitas_gadjah_mada import universitas_gadjah_mada
 
 
 def main():
@@ -366,6 +367,7 @@ def main():
         writer.writerows(mahidol_uni())
         writer.writerows(universiti_brunei_darussalam())
         writer.writerows(uni_tokyo())
+        writer.writerows(universitas_gadjah_mada())
 
 if __name__ == "__main__":
     main()
