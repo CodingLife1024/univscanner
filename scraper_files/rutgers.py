@@ -27,7 +27,7 @@ def get_faculty_data_1(prof):
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
         pers_link = new_soup.find('li', class_="field-entry website ").find('a')['href'] if new_soup.find('li', class_="field-entry website ").find('a') else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
@@ -35,7 +35,6 @@ def get_faculty_data_1(prof):
 def get_faculty_data_2(prof):
     name = prof.find('a').text.strip()
     link = "https://www.cs.rutgers.edu" + prof.find('a').get('href')
-    email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
@@ -44,7 +43,25 @@ def get_faculty_data_2(prof):
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
+        email_spans = prof.find('span',class_="detail_data").find_all('span', class_=False)
+        flag = 0
+        email_parts_0 = []
+        email_parts_1 = []
+        for det in email_spans:
+            for attr_name, attr_value in det.attrs.items():
+                if attr_name.startswith('data-ep'):
+                    if flag == 0:
+                        email_parts_0.append(attr_value)
+                        flag = 1
+                    else:
+                        email_parts_1.append(attr_value)
+                        flag = 0
+
+        email_parts_0 = email_parts_0[:3]
+        email_parts_1 = email_parts_1[:3]
+        email_parts = email_parts_0.extend(email_parts_1.reverse())
+        email = "".join(email_parts)
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
@@ -94,8 +111,6 @@ def rutgers():
     soup = BeautifulSoup(total_text_2, "html.parser")
 
     all_profs = soup.find_all('div', {'class': 'news'})
-
-    print(len(all_profs))
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data_2, prof) for prof in all_profs]
