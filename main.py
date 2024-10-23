@@ -210,6 +210,7 @@ from scraper_files.charles_uni import charles_uni
 from scraper_files.tufts_uni import tufts_uni
 from scraper_files.hongkong_baptist_uni import hongkong_baptist_uni
 from scraper_files.uni_innsbruck import uni_innsbruck
+from scraper_files.uni_tsukuba import uni_tsukuba
 
 
 def main():
@@ -383,6 +384,7 @@ def main():
         writer.writerows(tufts_uni())
         writer.writerows(hongkong_baptist_uni())
         writer.writerows(uni_innsbruck())
+        writer.writerows(uni_tsukuba())
 
 if __name__ == "__main__":
     main()
