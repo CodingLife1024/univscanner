@@ -207,6 +207,8 @@ from scraper_files.uni_illinois_chicago import uni_illinois_chicago
 from scraper_files.rutgers import rutgers
 from scraper_files.charles_uni import charles_uni
 
+from scraper_files.tufts_uni import tufts_uni
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -376,6 +378,7 @@ def main():
         writer.writerows(uni_illinois_chicago())
         writer.writerows(rutgers())
         writer.writerows(charles_uni())
+        writer.writerows(tufts_uni())
 
 if __name__ == "__main__":
     main()
