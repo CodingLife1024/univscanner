@@ -213,6 +213,7 @@ from scraper_files.uni_innsbruck import uni_innsbruck
 from scraper_files.uni_tsukuba import uni_tsukuba
 from scraper_files.national_taiwan_university import national_taiwan_university
 from scraper_files.technical_uni_darmstadt import technical_uni_darmstadt
+from scraper_files.uni_surrey import uni_surrey
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -388,6 +389,7 @@ def main():
         writer.writerows(uni_tsukuba())
         writer.writerows(national_taiwan_university())
         writer.writerows(technical_uni_darmstadt())
+        writer.writerows(uni_surrey())
 
 if __name__ == "__main__":
     main()
