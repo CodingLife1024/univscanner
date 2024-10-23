@@ -19,8 +19,8 @@ def get_faculty_data(prof):
     name = prof.find('div', class_="mtitle").text.replace("\n", "").replace("\t", "").replace("Professor", "").replace("Associate", "").replace("Assistant", "").replace("Project", "").replace("Chairman", "").replace(",", "").replace("Distinguished", "").replace("Chair", "").strip()
     link = prof.find('div', class_="mtitle").find('a')['href']
     table = prof.find('tbody').find_all('td')
-    email = table[1].text
-    pers_link = table[3].text
+    email = table[1].text.strip()
+    pers_link = table[3].text.strip()
 
     research = prof.text
 
