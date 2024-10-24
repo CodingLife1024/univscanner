@@ -223,6 +223,7 @@ from scraper_files.technical_uni_graz import technical_uni_graz
 from scraper_files.iit_madras import iit_madras
 
 from scraper_files.uae_uni import uae_uni
+from scraper_files.uni_college_cork import uni_college_cork
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -407,6 +408,7 @@ def main():
         writer.writerows(technical_uni_graz())
         writer.writerows(iit_madras())
         writer.writerows(uae_uni())
+        writer.writerows(uni_college_cork())
 
 if __name__ == "__main__":
     main()
