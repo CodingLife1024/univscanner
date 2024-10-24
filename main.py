@@ -220,6 +220,7 @@ from scraper_files.massey_uni import massey_uni
 from scraper_files.universita_della_svizzera import universita_della_svizzera
 from scraper_files.uni_arizona import uni_arizona
 from scraper_files.technical_uni_graz import technical_uni_graz
+from scraper_files.iit_madras import iit_madras
 
 
 def main():
@@ -403,6 +404,7 @@ def main():
         writer.writerows(universita_della_svizzera())
         writer.writerows(uni_arizona())
         writer.writerows(technical_uni_graz())
+        writer.writerows(iit_madras())
 
 if __name__ == "__main__":
     main()
