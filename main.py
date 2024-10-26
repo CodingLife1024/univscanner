@@ -231,6 +231,7 @@ from scraper_files.uni_miami import uni_miami
 from scraper_files.gwangju_uni import gwangju_uni
 from scraper_files.north_carolina_state_uni import north_carolina_state_uni
 from scraper_files.uni_south_australia import uni_south_australia
+from scraper_files.hse_uni import hse_uni
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -423,6 +424,7 @@ def main():
         writer.writerows(gwangju_uni())
         writer.writerows(north_carolina_state_uni())
         writer.writerows(uni_south_australia())
+        writer.writerows(hse_uni())
 
 
 if __name__ == "__main__":
