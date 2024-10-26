@@ -228,6 +228,7 @@ from scraper_files.king_saud_uni import king_saud_uni
 from scraper_files.dalhousie_uni import dalhousie_uni
 from scraper_files.israel_institute_tech import israel_institute_tech
 from scraper_files.uni_miami import uni_miami
+from scraper_files.gwangju_uni import gwangju_uni
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -417,6 +418,8 @@ def main():
         writer.writerows(dalhousie_uni())
         writer.writerows(israel_institute_tech())
         writer.writerows(uni_miami())
+        writer.writerows(gwangju_uni())
+        
 
 if __name__ == "__main__":
     main()
