@@ -230,6 +230,7 @@ from scraper_files.israel_institute_tech import israel_institute_tech
 from scraper_files.uni_miami import uni_miami
 from scraper_files.gwangju_uni import gwangju_uni
 from scraper_files.north_carolina_state_uni import north_carolina_state_uni
+from scraper_files.uni_south_australia import uni_south_australia
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -421,6 +422,7 @@ def main():
         writer.writerows(uni_miami())
         writer.writerows(gwangju_uni())
         writer.writerows(north_carolina_state_uni())
+        writer.writerows(uni_south_australia())
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ u_name = "North Carolina State University"
 country = "United States"
 
 def get_name(prof):
-    name_string = prof.find('a').text.replace("Dr.", "").replace("Ms.", "").strip()
+    name_string = prof.find('a').text.replace("Dr.", "").replace("Ms.", "").replace("Mr.", "").strip()
     name_parts = name_string.split(" ")
     name_parts = [part for part in name_parts if part != ""]
     name = " ".join(name_parts)
