@@ -19,13 +19,13 @@ def get_faculty_data(prof, headers):
     name = prof.find('a').text.strip()
     link = prof.find('a')['href']
 
-    if not link.startswith("https://"):
+    if not link.startswith("http"):
         link = "https://researchportal.uc3m.es" + link
 
     new_r = requests.get(link, headers=headers)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    email = new_soup.find('a', {'class': 'email'}).text.strip() if new_soup.find('a', {'class': 'email'}) else "N/A"
+    email = new_soup.find('a', href=re.compile(r'^mailto:')).text.strip() if new_soup.find('a', href=re.compile(r'^mailto:')) else "N/A"
 
     research = new_soup.text.strip()
 
