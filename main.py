@@ -240,6 +240,7 @@ from scraper_files.aalborg_uni import aalborg_uni
 from scraper_files.politecnico_di_torino import politecnico_di_torino
 from scraper_files.royal_holloway_uni_london import royal_holloway_uni_london
 from scraper_files.uni_tasmania import uni_tasmania
+from scraper_files.universidad_carlos_de_madrid import universidad_carlos_de_madrid
 
 
 def main():
@@ -439,6 +440,7 @@ def main():
         writer.writerows(politecnico_di_torino())
         writer.writerows(royal_holloway_uni_london())
         writer.writerows(uni_tasmania())
+        writer.writerows(universidad_carlos_de_madrid())
 
 
 if __name__ == "__main__":
