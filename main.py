@@ -234,6 +234,8 @@ from scraper_files.uni_south_australia import uni_south_australia
 from scraper_files.hse_uni import hse_uni
 from scraper_files.griffith_uni import griffith_uni
 
+from scraper_files.aalborg_uni import aalborg_uni
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -427,6 +429,7 @@ def main():
         writer.writerows(uni_south_australia())
         writer.writerows(hse_uni())
         writer.writerows(griffith_uni())
+        writer.writerows(aalborg_uni())
 
 
 if __name__ == "__main__":
