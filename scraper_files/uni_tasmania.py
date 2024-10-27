@@ -59,6 +59,7 @@ def uni_tasmania():
     for url in urls:
         r = requests.get(url)
         soup = BeautifulSoup(r.text, "html.parser")
+        print("Fetching..." + url + "\n")
         all_profs += soup.find('tbody').find_all('tr')[1:]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
