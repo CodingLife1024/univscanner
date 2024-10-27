@@ -236,6 +236,10 @@ from scraper_files.griffith_uni import griffith_uni
 
 from scraper_files.aalborg_uni import aalborg_uni
 
+
+from scraper_files.politecnico_di_torino import politecnico_di_torino
+from scraper_files.royal_holloway_uni_london import royal_holloway_uni_london
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -430,6 +434,8 @@ def main():
         writer.writerows(hse_uni())
         writer.writerows(griffith_uni())
         writer.writerows(aalborg_uni())
+        writer.writerows(politecnico_di_torino())
+        writer.writerows(royal_holloway_uni_london())
 
 
 if __name__ == "__main__":
