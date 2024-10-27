@@ -1,41 +1,27 @@
+import concurrent.futures
+import os
+import pprint
+import re
+import sys
+
 import requests
 from bs4 import BeautifulSoup
-import sys
-import os
-import re
-import concurrent.futures
-import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
+from components.google_scholar import get_scholar_profile
 
 faculty_data = []
 
 u_name = "University of Tasmania"
 country = "Australia"
 
-def get_name(prof):
-    name = prof.find('a', class_="profile-link").text.replace("Dr", "").replace("Professor", "").replace("Associate", "").strip()
-    return name
-
-def get_link(prof):
-    link = prof.find('a', class_="profile-link")['href']
-    return link
-
-def get_email(prof):
-    email = prof.find('a', href=re.compile(r"^mailto:")).text.strip() if prof.find('a', href=re.compile(r"^mailto:")) else "N/A"
-    return email
-
 def get_faculty_data(prof):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        future_name = executor.submit(get_name, prof)
-        future_link = executor.submit(get_link, prof)
-        future_email = executor.submit(get_email, prof)
+    columns = prof.find_all('td')
 
-        name = future_name.result()
-        link = future_link.result()
-        email = future_email.result()
+    name = columns[1].find('a').text.replace("Dr", "").replace("Professor", "").replace("Associate", "").strip()
+    link = columns[1].find('a')['href']
+    email = columns[2].find('a').text.strip()
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
@@ -43,7 +29,7 @@ def get_faculty_data(prof):
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
