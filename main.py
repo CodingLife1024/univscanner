@@ -249,6 +249,7 @@ from scraper_files.institut_technologi_bandung import institut_technologi_bandun
 
 
 from scraper_files.uni_warsaw import uni_warsaw
+from scraper_files.simon_fraser_uni import simon_fraser_uni
 
 
 def main():
@@ -451,6 +452,7 @@ def main():
         writer.writerows(universidad_carlos_de_madrid())
         writer.writerows(institut_technologi_bandung())
         writer.writerows(uni_warsaw())
+        writer.writerows(simon_fraser_uni())
 
 
 if __name__ == "__main__":
