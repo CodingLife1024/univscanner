@@ -244,6 +244,13 @@ from scraper_files.universidad_carlos_de_madrid import universidad_carlos_de_mad
 from scraper_files.institut_technologi_bandung import institut_technologi_bandung
 
 
+
+
+
+
+from scraper_files.uni_warsaw import uni_warsaw
+
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -443,6 +450,7 @@ def main():
         writer.writerows(uni_tasmania())
         writer.writerows(universidad_carlos_de_madrid())
         writer.writerows(institut_technologi_bandung())
+        writer.writerows(uni_warsaw())
 
 
 if __name__ == "__main__":

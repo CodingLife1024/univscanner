@@ -45,15 +45,15 @@ def Belarusian_State_University():
         a = i
        # if type(a)!=int  :                  # a contains the name and the homepage of prof
         link =  a.get('href')                # extracting prof page link
-        name = a.get_text()   
+        name = a.get_text()
         print(name, link)              # extracting prof name
-        try:    
-            prof_resp = requests.get(link)    
-            #print(prof_resp)    
+        try:
+            prof_resp = requests.get(link)
+            #print(prof_resp)
         except:
             continue
         email = "Not Found"
-        
+
         OnlygetEmail(var, garbage_emails, name, link, email, prof_resp)
 
 
@@ -74,7 +74,7 @@ def OnlygetEmail(var, garbage_emails, name, link, email, prof_resp):
     u_name = var[3]
     country = var[4]
 
-    prof_soup = BeautifulSoup(prof_resp.text, "html.parser") 
+    prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
 
     if email != 'Not Found':
         f.write(link + '\n' + name + "\t"+ email + "\n")
@@ -96,7 +96,7 @@ def OnlygetEmail(var, garbage_emails, name, link, email, prof_resp):
                 f.write(link + '\n' + name + '\t\t' + email + '\n')
                 csvwriter.writerow([u_name, country, name, email, link])
                 csvwriter2.writerow([u_name, country, name, email, link])
-            # f.write("\n") 
+            # f.write("\n")
 
 
     f.write('\n\n')
@@ -104,4 +104,4 @@ def OnlygetEmail(var, garbage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     Belarusian_State_University()
-    
+
