@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 # Fetch the HTML content directly
-url = "https://cms.ewha.ac.kr/user/indexSub.action?codyMenuSeq=2172651&siteId=cseeng&menuUIType=sub"
+url = "https://www.umu.se/en/department-of-computing-science/staff-at-the-department-of-computing-science/"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'}
 
 response = requests.get(url, verify=False, headers=headers)

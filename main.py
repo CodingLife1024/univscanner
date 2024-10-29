@@ -256,6 +256,7 @@ from scraper_files.virginia_tech import virginia_tech
 
 from scraper_files.national_taiwan_normal_uni import national_taiwan_normal_uni
 from scraper_files.ewha_womans_uni import ewha_womans_uni
+from scraper_files.umea_uni import umea_uni
 
 
 def main():
@@ -463,6 +464,7 @@ def main():
         writer.writerows(virginia_tech())
         writer.writerows(national_taiwan_normal_uni())
         writer.writerows(ewha_womans_uni())
+        writer.writerows(umea_uni())
 
 
 if __name__ == "__main__":
