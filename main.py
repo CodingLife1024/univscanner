@@ -252,6 +252,7 @@ from scraper_files.uni_warsaw import uni_warsaw
 from scraper_files.simon_fraser_uni import simon_fraser_uni
 
 from scraper_files.uni_central_arkansas import uni_central_arkansas
+from scraper_files.virginia_tech import virginia_tech
 
 
 def main():
@@ -456,6 +457,7 @@ def main():
         writer.writerows(uni_warsaw())
         writer.writerows(simon_fraser_uni())
         writer.writerows(uni_central_arkansas())
+        writer.writerows(virginia_tech())
 
 
 if __name__ == "__main__":
