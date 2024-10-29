@@ -258,6 +258,8 @@ from scraper_files.national_taiwan_normal_uni import national_taiwan_normal_uni
 from scraper_files.ewha_womans_uni import ewha_womans_uni
 from scraper_files.umea_uni import umea_uni
 
+from scraper_files.uni_hawaii_at_manoa import uni_hawaii_at_manoa
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -465,6 +467,7 @@ def main():
         writer.writerows(national_taiwan_normal_uni())
         writer.writerows(ewha_womans_uni())
         writer.writerows(umea_uni())
+        writer.writerows(uni_hawaii_at_manoa())
 
 
 if __name__ == "__main__":
