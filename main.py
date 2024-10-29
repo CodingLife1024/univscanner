@@ -251,6 +251,8 @@ from scraper_files.institut_technologi_bandung import institut_technologi_bandun
 from scraper_files.uni_warsaw import uni_warsaw
 from scraper_files.simon_fraser_uni import simon_fraser_uni
 
+from scraper_files.uni_central_arkansas import uni_central_arkansas
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -453,6 +455,7 @@ def main():
         writer.writerows(institut_technologi_bandung())
         writer.writerows(uni_warsaw())
         writer.writerows(simon_fraser_uni())
+        writer.writerows(uni_central_arkansas())
 
 
 if __name__ == "__main__":
