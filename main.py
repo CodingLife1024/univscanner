@@ -261,6 +261,7 @@ from scraper_files.umea_uni import umea_uni
 from scraper_files.uni_hawaii_at_manoa import uni_hawaii_at_manoa
 from scraper_files.uni_jyvaskyla import uni_jyvaskyla
 from scraper_files.uni_stuttgart import uni_stuttgart
+from scraper_files.uni_utah import uni_utah
 
 
 def main():
@@ -472,6 +473,7 @@ def main():
         writer.writerows(uni_hawaii_at_manoa())
         writer.writerows(uni_jyvaskyla())
         writer.writerows(uni_stuttgart())
+        writer.writerows(uni_utah())
 
 
 if __name__ == "__main__":
