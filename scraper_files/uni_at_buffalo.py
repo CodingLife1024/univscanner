@@ -12,11 +12,12 @@ from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
-u_name = "Western University"
-country = "Canada"
+u_name = "University at Buffalo"
+country = "United States"
 
 def get_name(prof):
-    name = prof.find('div', {'class': 'infoleft'}).find('h2').text.strip()
+    name_string = prof.find('a').text.strip()
+    name = name_string.split(",")[0].strip()
     return name
 
 def get_email(prof):
@@ -24,11 +25,11 @@ def get_email(prof):
     return email
 
 def get_link(prof):
-    link = prof.find('a', string='Biography').get('href') if prof.find('a', string='Biography') else prof.find('a', string='External link').get('href')
+    link = "https://engineering.buffalo.edu" + prof.find('a')['href']
     return link
 
 def get_research(prof):
-    research = prof.find('div', {'class': 'infoleft'}).text
+    research = prof.text.strip()
     return research
 
 def get_faculty_data(prof):
@@ -43,18 +44,34 @@ def get_faculty_data(prof):
         email = future_email.result()
         research = future_research.result()
 
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, "html.parser")
+
+    research += new_soup.text.strip()
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
     if found_keyword:
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
-def western_uni():
-    url = "https://www.csd.uwo.ca/people/faculty/index.html"
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, "html.parser")
 
-    all_profs = soup.find_all('div', {'class': 'teamgrid'})
+def uni_at_buffalo():
+    urls = [
+        "https://engineering.buffalo.edu/computer-science-engineering/people/faculty-directory.html",
+        "https://engineering.buffalo.edu/ee/faculty/faculty_directory.html"
+    ]
+
+    total_text = ""
+
+    for url in urls:
+        r = requests.get(url)
+        total_text += r.text
+
+    soup = BeautifulSoup(total_text, "html.parser")
+
+    all_profs = soup.find_all('div', {'class': 'profilepage unstructuredpage page basicpage'})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
@@ -64,9 +81,11 @@ def western_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nWestern University done...\n")
+    print("\nUniversity at Buffalo done...\n")
 
     return faculty_data
 
 if __name__ == '__main__':
-    western_uni()
+    uni_at_buffalo()
+
+
