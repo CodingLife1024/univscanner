@@ -266,6 +266,7 @@ from scraper_files.yeshiva_uni import yeshiva_uni
 from scraper_files.birkbeck_uni import birkbeck_uni
 from scraper_files.uni_ulm import uni_ulm
 from scraper_files.uni_at_buffalo import uni_at_buffalo
+from scraper_files.american_uni_sharjah import american_uni_sharjah
 
 
 def main():
@@ -482,6 +483,7 @@ def main():
         writer.writerows(birkbeck_uni())
         writer.writerows(uni_ulm())
         writer.writerows(uni_at_buffalo())
+        writer.writerows(american_uni_sharjah())
 
 
 if __name__ == "__main__":
