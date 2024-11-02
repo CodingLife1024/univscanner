@@ -269,6 +269,7 @@ from scraper_files.uni_at_buffalo import uni_at_buffalo
 from scraper_files.american_uni_sharjah import american_uni_sharjah
 from scraper_files.iit_kanpur import iit_kanpur
 from scraper_files.city_uni_london import city_uni_london
+from scraper_files.uni_southern_denmark import uni_southern_denmark
 
 
 def main():
@@ -488,6 +489,7 @@ def main():
         writer.writerows(american_uni_sharjah())
         writer.writerows(iit_kanpur())
         writer.writerows(city_uni_london())
+        writer.writerows(uni_southern_denmark())
 
 
 if __name__ == "__main__":
