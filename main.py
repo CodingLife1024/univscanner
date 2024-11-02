@@ -276,6 +276,8 @@ from scraper_files.uni_munster import uni_munster
 
 from scraper_files.norwegian_uni import norwegian_uni
 
+from scraper_files.uni_macau import uni_macau
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -497,6 +499,7 @@ def main():
         writer.writerows(uni_southern_denmark())
         writer.writerows(uni_munster())
         writer.writerows(norwegian_uni())
+        writer.writerows(uni_macau())
 
 
 if __name__ == "__main__":
