@@ -272,6 +272,9 @@ from scraper_files.city_uni_london import city_uni_london
 from scraper_files.uni_southern_denmark import uni_southern_denmark
 
 
+from scraper_files.uni_munster import uni_munster
+
+
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
         writer = csv.writer(file)
@@ -490,6 +493,7 @@ def main():
         writer.writerows(iit_kanpur())
         writer.writerows(city_uni_london())
         writer.writerows(uni_southern_denmark())
+        writer.writerows(uni_munster())
 
 
 if __name__ == "__main__":
