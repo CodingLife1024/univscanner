@@ -278,6 +278,7 @@ from scraper_files.norwegian_uni import norwegian_uni
 
 from scraper_files.uni_macau import uni_macau
 from scraper_files.brunel_uni import brunel_uni
+from scraper_files.uni_victoria import uni_victoria
 
 
 def main():
@@ -502,6 +503,7 @@ def main():
         writer.writerows(norwegian_uni())
         writer.writerows(uni_macau())
         writer.writerows(brunel_uni())
+        writer.writerows(uni_victoria())
 
 
 if __name__ == "__main__":
