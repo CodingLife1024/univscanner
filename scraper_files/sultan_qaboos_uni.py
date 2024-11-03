@@ -16,8 +16,8 @@ u_name = "Sultan Qaboos University"
 country = "Oman"
 
 def get_faculty_data(prof):
-    name = prof.find('h2').text.strip()
-    link = prof.find('a').get('href')
+    name = prof.find('h2').text.strip() if prof.find('h2') else "N/A"
+    link = prof.find('a').get('href') if prof.find('a') else "N/A"
     research = prof.text
     email = research.split("Email:")[-1].split("@")[0].replace("\xa0", "") + "@squ.edu.om"
 

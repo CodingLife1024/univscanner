@@ -283,6 +283,8 @@ from scraper_files.swinburne_uni import swinburne_uni
 from scraper_files.stonybrook_uni import stonybrook_uni
 from scraper_files.sultan_qaboos_uni import sultan_qaboos_uni
 
+from scraper_files.wakeforest_uni import wakeforest_uni
+
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -510,6 +512,7 @@ def main():
         writer.writerows(swinburne_uni())
         writer.writerows(stonybrook_uni())
         writer.writerows(sultan_qaboos_uni())
+        writer.writerows(wakeforest_uni())
 
 
 if __name__ == "__main__":
