@@ -76,10 +76,7 @@ def case_western_reserve_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Case Western Reserve University done...")
-    print()
-
+    print("\nCase Western Reserve University done...\n")
     return faculty_data
 
 

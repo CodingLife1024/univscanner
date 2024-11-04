@@ -54,10 +54,7 @@ def aalto_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Aalto University done...")
-    print()
-
+    print("\nAalto University done...\n")
     return faculty_data
 
 

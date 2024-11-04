@@ -5,7 +5,7 @@ import concurrent.futures
 from components.google_scholar import get_scholar_profile
 
 u_name = "Carnegie Mellon University"
-country = "USA"
+country = "United States"
 
 faculty_data = []
 
@@ -22,7 +22,7 @@ def extract_name(professor):
         return None
 
 def extract_email_and_personal_page(new_soup):
-    email = "Email not found"
+    email = "N/A"
     personal_page_link = None
 
     all_strong_text = new_soup.find_all('p')
@@ -84,10 +84,9 @@ def carnegie_mellon():
                     except Exception as e:
                         print(f"Error occurred: {e}")
 
-    print()
-    print("Carnegie Mellon done....")
-    print()
+    print("\nCarnegie Mellon done...\n")
     return faculty_data
 
-# Uncomment the following line to run the script
-# carnegie_mellon()
+
+if __name__ == "__main__":
+    carnegie_mellon()

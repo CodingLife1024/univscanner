@@ -9,7 +9,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
 
-
 university = "Caltech"
 country = "United States"
 
@@ -70,10 +69,10 @@ def caltech():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Caltech done...")
+    print("\nCaltech done...\n")
     print()
     return faculty_data
 
-# Uncomment the following line to run the script
-# caltech()
+
+if __name__ == "__main__":
+    caltech()

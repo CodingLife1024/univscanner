@@ -16,7 +16,7 @@ faculty_data = []
 
 def extract_email(new_soup):
     email_links = new_soup.find('a', href=lambda href: href and href.startswith("mailto:"))
-    return email_links['href'][7:] if email_links else "Email not found"
+    return email_links['href'][7:] if email_links else "N/A"
 
 def extract_website(new_soup, name):
     strong_tag = new_soup.find('strong', string='Website')
@@ -40,7 +40,6 @@ def get_faculty_data(faculty):
             new_r = requests.get(link)
             new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-            # Use concurrent futures to parallelize the extraction of content, email, and website
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 future_email = executor.submit(extract_email, new_soup)
                 future_website = executor.submit(extract_website, new_soup, name)
@@ -70,10 +69,9 @@ def anu():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("ANU done....")
-    print()
+    print("\nAustralian National University done...\n")
     return faculty_data
 
-# Uncomment the following line to run the script
-# anu()
+
+if __name__ == "__main__":
+    anu()

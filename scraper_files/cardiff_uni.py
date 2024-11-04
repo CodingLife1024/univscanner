@@ -34,13 +34,11 @@ def get_email(prof):
 
 def get_faculty_data(prof):
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Submit tasks for each component
         future_name = executor.submit(get_name, prof)
         future_link = executor.submit(get_link, prof)
         future_title = executor.submit(get_title, prof)
         future_email = executor.submit(get_email, prof)
 
-        # Collect the results as they complete
         name = future_name.result()
         link = future_link.result()
         title = future_title.result()
@@ -72,9 +70,7 @@ def cardiff_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Cardiff University done...")
-    print()
+    print("\nCardiff University done...\n")
     return faculty_data
 
 

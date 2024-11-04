@@ -11,7 +11,7 @@ from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
 
 u_name = "Brown University"
-country = "USA"
+country = "United States"
 
 faculty_data = []
 
@@ -47,7 +47,6 @@ def get_faculty_data(name_tag, headers):
             email = profile_link.split("/")[-2] + "@cs.brown.edu" if profile_link != "Not Found" else "Not Found"
 
             if found_keyword:
-                # Fetch additional details if needed, like the content of the profile
                 new_r = requests.get(profile_link, headers=headers, verify=False)
 
                 print([u_name, country, name, email, profile_link, home_page])
@@ -73,10 +72,9 @@ def brown_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Brown University Done....")
-    print()
+    print("\nBrown University done...\n")
     return faculty_data
 
-# Uncomment the following line to run the script
-# brown_uni()
+
+if __name__ == "__main__":
+    brown_uni()

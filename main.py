@@ -38,7 +38,7 @@ from scraper_files.kaist import kaist
 
 
 from scraper_files.duke import duke
-
+from scraper_files.chinese_uni_hk import chinese_uni_hk
 
 from scraper_files.ubc_canada import ubc_canada
 from scraper_files.uni_queensland import uni_queensland
@@ -327,6 +327,7 @@ def main():
         writer.writerows(seoul_uni())
         writer.writerows(kaist())
         writer.writerows(duke())
+        writer.writerows(chinese_uni_hk())
         writer.writerows(ubc_canada())
         writer.writerows(uni_queensland())
         writer.writerows(shanghai_jt())

@@ -63,10 +63,9 @@ def cambridge():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Cambridge done....")
-    print()
+    print("\nCambridge done...\n")
     return faculty_data
 
-# Uncomment the following line to run the script
-# cambridge()
+
+if __name__ == "__main__":
+    cambridge()
