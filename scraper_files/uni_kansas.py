@@ -62,7 +62,7 @@ def get_faculty_data(prof):
 
 def uni_kansas():
     url = "https://eecs.ku.edu/faculty"
-    r = requests.get(url)
+    r = requests.get(url, verify=False)
     soup = BeautifulSoup(r.text, "html.parser")
 
     all_profs = soup.find_all('div', {'class': 'col-11 offset-2 col-sm-7 offset-sm-0 col-lg-6 offset-sm-1 pt-3 pt-sm-0'})
