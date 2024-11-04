@@ -285,6 +285,7 @@ from scraper_files.sultan_qaboos_uni import sultan_qaboos_uni
 
 from scraper_files.wakeforest_uni import wakeforest_uni
 from scraper_files.iit_roorkee import iit_roorkee
+from scraper_files.oxford_brookes_uni import oxford_brookes_uni
 
 
 def main():
@@ -515,6 +516,7 @@ def main():
         writer.writerows(sultan_qaboos_uni())
         writer.writerows(wakeforest_uni())
         writer.writerows(iit_roorkee())
+        writer.writerows(oxford_brookes_uni())
 
 
 if __name__ == "__main__":
