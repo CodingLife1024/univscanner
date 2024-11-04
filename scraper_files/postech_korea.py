@@ -4,21 +4,17 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 u_name = "Pohang University"
 country = "South Korea"
 
-keyword_list = [
-    "operating system", "robotics", "kernel", "embedded system",
-    "hardware", "computer architecture", "distributed system",
-    "computer organization", "vlsi", "computer and system",
-    "human-computer interaction", "human computer"
-]
-
-faculty_data = []
 
 def get_name(prof):
     name = prof.find('h3', class_="name").text.strip()

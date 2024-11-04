@@ -86,9 +86,7 @@ def queens_uni_belfast():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Queens University Belfast done...")
-    print()
+    print("\nQueens University Belfast done...\n")
     return faculty_data
 
 

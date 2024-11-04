@@ -90,9 +90,7 @@ def queensland_uni_tech():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Queensland University of Technology done...")
-    print()
+    print("\nQueensland University of Technology done...\n")
     return faculty_data
 
 if __name__ == '__main__':

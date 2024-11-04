@@ -77,9 +77,7 @@ def uc_irvine():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of California, Irvine done...")
-    print()
+    print("\nUniversity of California, Irvine done...\n")
     return faculty_data
 
 if __name__ == '__main__':

@@ -1,26 +1,32 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+import sys
+import os
 import re
 import concurrent.futures
+import pprint
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 university = "Tsinghua University"
 country = "China"
 
-def fetch_faculty_data(faculty):
-    keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture",
-                    "distributed system", "computer organization", "vlsi", "computer and system",
-                    "human-computer interaction", "human computer"]
-
-    name = faculty.find('a').text
-    site = "https://www.cs.tsinghua.edu.cn/csen" + faculty.find('a')['href'][2:]
-    email = faculty.find_all('p')[2].text
+def get_faculty_data(prof):
+    name = prof.find('a').text
+    site = "https://www.cs.tsinghua.edu.cn/csen" + prof.find('a')['href'][2:]
+    email = prof.find_all('p')[2].text
 
     new_r = requests.get(site)
     found_keyword = any(re.search(re.escape(keyword), new_r.text) for keyword in keyword_list)
 
     if found_keyword:
-        return [university, country, name, email, site]
-    return None
+        pers_link = get_scholar_profile(name)
+        print([university, country, name, email, site, pers_link])
+        faculty_data.append([university, country, name, email, site, pers_link])
 
 def tsinghua():
     url = "https://www.cs.tsinghua.edu.cn/csen/Faculty/Full_time_Faculty.htm"
@@ -30,19 +36,20 @@ def tsinghua():
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    faculty_cards = soup.find_all('div', class_='text')
-
-    faculty_data = []
+    all_profs = soup.find_all('div', class_='text')
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        results = list(executor.map(fetch_faculty_data, faculty_cards))
+        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
-    faculty_data = [result for result in results if result]
-
-    for data in faculty_data:
-        print(data)
-
-    print()
-    print("Tsinghua University done...")
-    print()
+    print("\nTsinghua University done...\n")
     return faculty_data
+
+
+if __name__ == '__main__':
+    tsinghua()
+    

@@ -51,9 +51,7 @@ def tu_wien():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Technical University of Vienna done...")
-    print()
+    print("\nTechnical University of Vienna done...\n")
     return faculty_data
 
 

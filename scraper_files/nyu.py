@@ -5,6 +5,7 @@ import os
 import re
 import concurrent.futures
 import pprint
+from tqdm import tqdm
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
@@ -45,14 +46,16 @@ def get_faculty_data(prof, headers):
                 print(f"SSL error for {website}: {e}")
 
 def nyu():
-    url = 'https://cs.nyu.edu/dynamic/people/prof/type/20/'
+    urls = ['https://cs.nyu.edu/dynamic/people/faculty/']
 
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
-    r = requests.get(url, headers=headers)
+    r = requests.get(urls[0], headers=headers)
     soup = BeautifulSoup(r.text, 'html.parser')
 
     all_profs = soup.find_all('li', class_='col-sm-6')
+
+    print(len(all_profs))
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]

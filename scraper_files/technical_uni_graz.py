@@ -35,7 +35,9 @@ def get_faculty_data(prof):
 
 
 def technical_uni_graz():
-    urls = ["https://www.tugraz.at/fakultaeten/faculty-of-computer-science-and-biomedical-engineering/faculty/team/faculty"]
+    urls = [
+        "https://www.tugraz.at/fakultaeten/faculty-of-computer-science-and-biomedical-engineering/faculty/team/faculty"
+    ]
 
     total_text = ""
 

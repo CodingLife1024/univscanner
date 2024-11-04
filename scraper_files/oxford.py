@@ -62,10 +62,8 @@ def get_faculty_data(prof):
 def oxford():
     url = "https://www.cs.ox.ac.uk/people/faculty.html"
 
-    response = requests.get(url)
-    html_content = response.text
-
-    soup = BeautifulSoup(html_content, 'html.parser')
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, 'html.parser')
 
     all_profs = soup.find_all('span', itemprop='name')
 
@@ -77,10 +75,9 @@ def oxford():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Oxford University done....")
-    print()
+    print("\nOxford University done...\n")
     return faculty_data
+
 
 if __name__ == "__main__":
     oxford()

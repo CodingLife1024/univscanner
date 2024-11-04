@@ -41,7 +41,7 @@ def get_faculty_data(prof, headers):
 
     new_r = requests.get(link, headers=headers, verify=False)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
-    
+
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future_email = executor.submit(get_email, new_soup)
         future_research = executor.submit(get_research, new_soup)
@@ -81,10 +81,7 @@ def st_petersburg_state_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Saint Petersburg State University done...")
-    print()
-
+    print("\nSaint Petersburg State University done...\n")
     return faculty_data
 
 

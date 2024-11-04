@@ -4,11 +4,11 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
-
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
@@ -32,6 +32,7 @@ def sapienza_uni():
     url = "https://www.di.uniroma1.it/en/people/professors"
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
+    
     all_profs = soup.find_all('tr', {'class':["odd", 'even']})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -42,9 +43,7 @@ def sapienza_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Sapienza University di Roma done...")
-    print()
+    print("\nSapienza University di Roma done...\n")
     return faculty_data
 
 if __name__ == '__main__':

@@ -1,11 +1,19 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+import sys
+import os
+import re
 import concurrent.futures
+import pprint
 
-university = "Stanford"
-country = "USA"
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
+
+university = "Stanford University"
+country = "United States"
 
 def get_faculty_data(href):
     indiv_url = "https://www.cs.stanford.edu" + href
@@ -42,9 +50,8 @@ def stanford():
                     faculty_data.append(result)
             except Exception as e:
                 print(f"Error occurred: {e}")
-    print()
-    print("Stanford Done....")
-    print()
+
+    print("\nStanford University done...\n")
     return faculty_data
 
 if __name__ == "__main__":

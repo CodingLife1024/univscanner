@@ -4,20 +4,20 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
 u_name = "Osaka University"
 country = "Japan"
 
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
-
 def get_email(new_soup):
-    email_tag = new_soup.find('p').text.startswith('E-mail: ')
-    email = email_tag.text[7:] if email_tag and email_tag.text.startswith('E-mail: ') else None
+    email_tag = new_soup.find('div', class_="researcherDetailContact").find_all('p')[1].text[7:]
+    email = email_tag + "osaka-u.ac.jp" if email_tag else "N/A"
     return email
 
 def get_faculty_data(prof):
@@ -53,6 +53,9 @@ def osaka_uni():
                 future.result()  # Ensure exceptions are raised
             except Exception as e:
                 print(f"Error occurred: {e}")
+
+    print("\nOsaka University done...\n")
+    return faculty_data
 
 if __name__ == '__main__':
     osaka_uni()

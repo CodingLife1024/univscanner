@@ -40,7 +40,6 @@ def technical_uni_darmstadt():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0'}
 
     r = requests.get(url, headers=headers)
-
     soup = BeautifulSoup(r.text, "html.parser")
 
     all_profs = soup.find_all('tr', id=lambda x: x and x.startswith('contact_'))
@@ -53,7 +52,8 @@ def technical_uni_darmstadt():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\n")
+    print("\nTechnical University of Darmstadt done...\n")
+    return faculty_data
 
 
 if __name__ == "__main__":

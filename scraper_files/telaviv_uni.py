@@ -72,9 +72,7 @@ def telaviv_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Tel Aviv University done...")
-    print()
+    print("\nTel Aviv University done...\n")
     return faculty_data
 
 if __name__ == '__main__':
