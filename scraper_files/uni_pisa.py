@@ -18,21 +18,38 @@ country = "Italy"
 def get_faculty_data(prof):
     columns = prof.find_all('td')
 
-    name = columns[1].text.strip() + " " + columns[0].text.strip()
-    email_parts = columns[2].find('a')
-    email = email_parts['data-name'] + "@" + email_parts['data-domain'] + "." + email_parts['data-tld']
-    link = columns[3].find('a')['href']
+    if len(columns) < 4:
+        print("Expected columns not found for a faculty member.")
+        return
 
-    new_r = requests.get(link)
-    new_soup = BeautifulSoup(new_r.text, 'html.parser')
+    name = columns[1].text.strip() + " " + columns[0].text.strip() if columns[1] and columns[0] else "N/A"
 
-    research = new_soup.text
+    email_parts = columns[2].find('a') if columns[2] else None
+    if email_parts and all(part in email_parts.attrs for part in ['data-name', 'data-domain', 'data-tld']):
+        email = f"{email_parts['data-name']}@{email_parts['data-domain']}.{email_parts['data-tld']}"
+    else:
+        email = "N/A"
+
+    link = columns[3].find('a')['href'] if columns[3] and columns[3].find('a') else "N/A"
+
+    if link != "N/A":
+        try:
+            new_r = requests.get(link)
+            new_r.raise_for_status()
+            new_soup = BeautifulSoup(new_r.text, 'html.parser')
+            research = new_soup.text
+        except requests.RequestException as e:
+            print(f"Error retrieving research page: {e}")
+            research = ""
+    else:
+        research = ""
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-    if found_keyword:
+    if found_keyword or True:
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
+
 
 def uni_pisa():
     url = "https://di.unipi.it/en/people/"
