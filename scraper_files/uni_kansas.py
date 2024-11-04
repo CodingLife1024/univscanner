@@ -16,12 +16,13 @@ u_name = "University of Kansas"
 country = "United States"
 
 def get_name(prof):
-    name_tag = prof.find('a', class_="lightsaber-link")
-    return name_tag.text.strip() if name_tag else "N/A"
+    name = prof.find('a').text.strip()
+    return name
 
 def get_email(prof):
     email_tag = prof.find('a', href=re.compile(r'^mailto:'))
-    return email_tag['href'] if email_tag else "N/A"
+    email = email_tag['href'] if email_tag else "N/A"
+    return email
 
 def get_link(prof):
     link_tag = prof.find('a')
@@ -33,7 +34,7 @@ def get_link(prof):
     return "N/A"
 
 def get_research(prof):
-    research = prof.text
+    research = prof.text if prof else ""
     return research
 
 def get_faculty_data(prof):
@@ -49,13 +50,12 @@ def get_faculty_data(prof):
         research = future_research.result()
 
     new_r = requests.get(link)
-    new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    research += new_soup.text
+    research += new_r.text
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword:
+    if found_keyword or True:
         pers_link = prof.find('a', href=lambda x: "Website" in x.text).get('href') if prof.find('a', href=lambda x: "Website" in x.text) else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
