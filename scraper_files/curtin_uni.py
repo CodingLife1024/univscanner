@@ -64,9 +64,8 @@ def curtin_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Curtin University done...")
-    print()
+
+    print("\nCurtin University done...\n")
     return faculty_data
 
 

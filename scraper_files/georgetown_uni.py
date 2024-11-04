@@ -42,7 +42,7 @@ def get_faculty_data(prof):
         link = future_link.result()
         email = future_email.result()
         research = future_research.result()
-        
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
@@ -71,10 +71,9 @@ def georgetown_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Georgetown University done...")
-    print()
+    print("\nGeorgetown University done...\n")
     return faculty_data
+
 
 if __name__ == '__main__':
     georgetown_uni()

@@ -48,10 +48,7 @@ def hokkaido_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Hokkaio University done...")
-    print()
-
+    print("\nHokkaio University done...\n")
     return faculty_data
 
 

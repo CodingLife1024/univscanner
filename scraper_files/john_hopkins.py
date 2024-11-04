@@ -86,10 +86,7 @@ def john_hopkins():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-
-    print()
-    print("John Hopkins University done...")
-    print()
+    print("\nJohn Hopkins University done...\n")
     return faculty_data
 
 if __name__ == "__main__":

@@ -54,11 +54,9 @@ def nagoya_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Nagoya University done...")
-    print()
-
+    print("\nNagoya University done...\n")
     return faculty_data
+
 
 if __name__ == "__main__":
     nagoya_uni()

@@ -13,7 +13,7 @@ from components.GLOBAL_VARIABLES import keyword_list
 faculty_data = []
 
 u_name = "Khalifa University"
-country = "UAE"
+country = "United Arab Emirates (UAE)"
 
 def get_name(prof):
     name = prof.find('span', class_='name').find('a')['title'].replace('Dr.', '').replace('Prof.', '').strip()
@@ -78,9 +78,7 @@ def khalifa_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Khalifa University done...")
-    print()
+    print("\nKhalifa University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

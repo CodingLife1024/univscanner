@@ -65,10 +65,9 @@ def ntus():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Nanyang Technological University done...")
-    print()
+    print("\nNanyang Technological University done...\n")
     return faculty_data
+
 
 if __name__ == "__main__":
     ntus()

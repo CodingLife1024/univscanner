@@ -22,7 +22,7 @@ def get_faculty_data(prof):
     email = columns[2].get_text().strip().replace(" [a] ", "@").replace(" [point] ", ".")
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-    
+
     if found_keyword:
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
@@ -44,10 +44,7 @@ def ens_lyon():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Lyon done...")
-    print()
-
+    print("\nUniversity of Lyon done...\n")
     return faculty_data
 
 if __name__ == '__main__':

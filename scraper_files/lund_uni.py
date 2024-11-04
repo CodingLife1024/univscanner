@@ -79,9 +79,7 @@ def lund_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Lund University done...")
-    print()
+    print("\nLund University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

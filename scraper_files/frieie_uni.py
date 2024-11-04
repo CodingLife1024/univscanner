@@ -72,10 +72,7 @@ def frieie_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Freie Universität Berlin done...")
-    print()
-
+    print("\nFreie Universität Berlin done...\n")
     return faculty_data
 
 if __name__ == '__main__':

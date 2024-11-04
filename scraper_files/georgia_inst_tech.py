@@ -63,9 +63,7 @@ def georgia_inst_tech():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Georgia Institute of Technology done...")
-    print()
+    print("\nGeorgia Institute of Technology done...\n")
     return faculty_list
 
 

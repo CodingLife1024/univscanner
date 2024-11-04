@@ -77,9 +77,7 @@ def michigan_state_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Michigan State University done...")
-    print()
+    print("\nMichigan State University done...\n")
     return faculty_data
 
 

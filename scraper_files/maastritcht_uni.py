@@ -70,9 +70,7 @@ def maastritcht_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Maastritcht University done...")
-    print()
+    print("\nMaastritcht University done...\n")
     return faculty_data
 
 

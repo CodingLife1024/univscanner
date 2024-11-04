@@ -35,7 +35,6 @@ def get_faculty_data(prof, headers):
         link = future_link.result()
 
     email = link.split("/")[-1] + "@cs.hku.hk"
-    # print(email)
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
@@ -84,9 +83,7 @@ def hongkong():
                 print(f"Error occurred: {e}")
 
 
-    print()
-    print("University of Hong Kong done...")
-    print()
+    print("\nUniversity of Hong Kong done...\n")
     return faculty_data
 
 if __name__ == "__main__":

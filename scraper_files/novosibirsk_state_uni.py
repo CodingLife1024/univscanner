@@ -70,11 +70,9 @@ def novisibirsk_state_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Novosibirsk State University done...")
-    print()
-
+    print("\nNovosibirsk State University done...\n")
     return faculty_data
+
 
 if __name__ == "__main__":
     novisibirsk_state_uni()

@@ -92,10 +92,7 @@ def mcmaster_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("McMaster University done...")
-    print()
-
+    print("\nMcMaster University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

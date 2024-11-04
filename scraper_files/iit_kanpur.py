@@ -104,5 +104,4 @@ def iit_kanpur():
 
 if __name__ == '__main__':
     iit_kanpur()
-    pprint.pprint(faculty_data)
 

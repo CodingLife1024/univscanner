@@ -74,6 +74,7 @@ def hong_kong_poly_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
+    print("\nHong Kong Polytechnic University done...\n")
     return faculty_data
 
 if __name__ == "__main__":

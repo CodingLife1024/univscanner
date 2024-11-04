@@ -72,12 +72,8 @@ def kaist():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-
-    print()
-    print("KAIST done...")
-    print()
+    print("\nKAIST done...\n")
     return faculty_data
-
 
 if __name__ == "__main__":
     kaist()

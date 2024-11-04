@@ -83,9 +83,7 @@ def national_taiwan_university():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("National Taiwan University done...")
-    print()
+    print("\nNational Taiwan University done...\n")
     return faculty_data
 
 

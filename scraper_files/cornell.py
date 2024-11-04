@@ -104,9 +104,7 @@ def cornell():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print('Cornell University done...')
-    print()
+    print('\nCornell University done...\n')
     return faculty_data
 
 if __name__ == "__main__":

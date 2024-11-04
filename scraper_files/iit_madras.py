@@ -12,7 +12,7 @@ from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
-u_name = "Indian Institute of Technology Madras"
+u_name = "Indian Institute of Technology Madras (IITM)"
 country = "India"
 
 def get_name(prof):
@@ -73,7 +73,7 @@ def iit_madras():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nIndian Institute of Technology Madras done...\n")
+    print("\nIndian Institute of Technology Madras (IITM) done...\n")
     return faculty_data
 
 

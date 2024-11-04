@@ -75,10 +75,7 @@ def lancaster_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Lancaster University done...")
-    print()
-
+    print("\nLancaster University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

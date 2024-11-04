@@ -58,10 +58,7 @@ def emory_college():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Emory College of Arts and Sciences done...")
-    print()
-
+    print("\nEmory College of Arts and Sciences done...\n")
     return faculty_data
 
 

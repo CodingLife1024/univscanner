@@ -86,9 +86,7 @@ def kings_college():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("King's College London done....")
-    print()
+    print("\nKing's College London done...\n")
     return faculty_data
 
 if __name__ == "__main__":

@@ -71,10 +71,7 @@ def leiden_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Leiden University done...")
-    print()
-
+    print("\nLeiden University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

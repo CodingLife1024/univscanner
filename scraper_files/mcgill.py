@@ -56,11 +56,9 @@ def mcgill():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("McGill University done....")
-    print()
-
+    print("\nMcGill University done...\n")
     return faculty_data
+
 
 if __name__ == '__main__':
     mcgill()

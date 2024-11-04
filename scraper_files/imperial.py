@@ -48,7 +48,7 @@ def get_faculty_data(prof):
 
 
 def imperial():
-    url = "https://www.imperial.ac.uk/computing/people/academic-staff/"  
+    url = "https://www.imperial.ac.uk/computing/people/academic-staff/"
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
 
@@ -62,9 +62,7 @@ def imperial():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Imperial College done...")
-    print()
+    print("\nImperial College done...\n")
     return faculty_data
 
 if __name__ == "__main__":

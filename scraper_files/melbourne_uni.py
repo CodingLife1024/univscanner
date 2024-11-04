@@ -69,9 +69,7 @@ def melbourne_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Melbourne done...")
-    print()
+    print("\nUniversity of Melbourne done...\n")
     return faculty_data
 
 

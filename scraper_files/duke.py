@@ -12,7 +12,7 @@ from components.GLOBAL_VARIABLES import keyword_list
 faculty_data = []
 
 u_name = "Duke University"
-country = "USA"
+country = "United States"
 
 def get_name(prof):
     name_div = prof.find('div', class_='h4')
@@ -80,9 +80,7 @@ def duke():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Duke University done ...")
-    print()
+    print("\nDuke University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

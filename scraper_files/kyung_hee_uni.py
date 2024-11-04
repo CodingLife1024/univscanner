@@ -52,9 +52,7 @@ def kyung_hee_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Kyung Hee University done...")
-    print()
+    print("\nKyung Hee University done...\n")
     return faculty_data
 
 if __name__ == "__main__":

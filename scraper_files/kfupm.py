@@ -86,9 +86,7 @@ def kfupm():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("King Fahd University of Petroleum and Minerals done...")
-    print()
+    print("\nKing Fahd University of Petroleum and Minerals done...\n")
     return faculty_data
 
 

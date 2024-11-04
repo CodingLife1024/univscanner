@@ -84,11 +84,9 @@ def national_cheng_kung_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("National Cheng Kung University done...")
-    print()
-
+    print("\nNational Cheng Kung University done...\n")
     return faculty_data
+
 
 if __name__ == '__main__':
     national_cheng_kung_uni()

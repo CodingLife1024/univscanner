@@ -1,10 +1,39 @@
 import requests
-import re
 from bs4 import BeautifulSoup
+import sys
+import os
+import re
+import concurrent.futures
+import pprint
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 u_name = "Delft University of Technology"
 country = "Netherlands"
+
+def get_faculty_data(prof):
+    name_element = prof.find("h3")
+    if name_element:
+        name = re.sub(r'Prof\.dr\.ir\.|Prof\.dr\.', '', name_element.text).strip()
+        profile_link = prof.find("a", href=True)["href"] if prof.find("a", href=True) else None
+
+        if profile_link:
+            new_r = requests.get(profile_link)
+            new_soup = BeautifulSoup(new_r.text, "html.parser")
+
+            email = new_soup.find('a', class_='i-mail')['href'][7:] if new_soup.find('a', class_='i-mail') else None
+            research = new_soup.text
+
+            found_keyword = any(re.search(re.escape(keyword), research.lower()) for keyword in keyword_list)
+
+            if found_keyword:
+                pers_link = get_scholar_profile(name)
+                print([u_name, name, email, profile_link, pers_link])
+                faculty_data.append([u_name, name, email, profile_link, pers_link])
 
 def decode_email(encoded_email):
     """Decode the email address from the HTML character codes"""
@@ -17,36 +46,19 @@ def delft_uni_tech():
 
     soup = BeautifulSoup(r.text, "html.parser")
 
-    keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction"]
+    all_profs = soup.find_all("div", class_="profile theme-blue hoverableBlock hoverableBlock--green hoverableBlock--hasLink")
 
-    faculty_data = []
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
-    professor_blocks = soup.find_all("div", class_="profile theme-blue hoverableBlock hoverableBlock--green hoverableBlock--hasLink")
-
-    for block in professor_blocks:
-        name_element = block.find("h3")
-        if name_element:
-            name = re.sub(r'Prof\.dr\.ir\.|Prof\.dr\.', '', name_element.text).strip()
-            profile_link = block.find("a", href=True)["href"] if block.find("a", href=True) else None
-
-            if profile_link:
-                new_r = requests.get(profile_link)
-                new_soup = BeautifulSoup(new_r.text, "html.parser")
-
-                email = new_soup.find('a', class_='i-mail')['href'][7:] if new_soup.find('a', class_='i-mail') else None
-
-                expertise = ""
-
-                expertise_element = new_soup.text
-
-                found_keyword = any(re.search(re.escape(keyword), new_r.text.lower()) for keyword in keyword_list)
-
-                if found_keyword:
-                    print([u_name, name, email, profile_link, get_scholar_profile(name)])
-                    faculty_data.append([u_name, name, email, profile_link, get_scholar_profile(name)])
-
-    print()
-    print("Delft done....")
-    print()
-
+    print("\nDelft University of Technology done...\n")
     return faculty_data
+
+
+if __name__ == "__main__":
+    delft_uni_tech()

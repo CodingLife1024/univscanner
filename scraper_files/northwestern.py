@@ -85,11 +85,9 @@ def northwestern():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Northwestern University done....")
-    print()
-
+    print("\nNorthwestern University done...\n")
     return faculty_data
+
 
 if __name__ == "__main__":
     northwestern()

@@ -75,9 +75,7 @@ def kth_royal():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("KTH Royal Institute of Technology done...")
-    print()
+    print("\nKTH Royal Institute of Technology done...\n")
     return faculty_data
 
 

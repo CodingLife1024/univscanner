@@ -71,10 +71,9 @@ def mit():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Massachusetts Institute of Technology (MIT) done....")
-    print()
+    print("\nMassachusetts Institute of Technology (MIT) done...\n")
     return faculty_data
+
 
 if __name__ == "__main__":
     mit()

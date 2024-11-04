@@ -15,14 +15,30 @@ faculty_data = []
 u_name = "National Taiwan University of Science and Technology"
 country = "Taiwan"
 
-def get_faculty_data(prof):
-    name = prof.find('div', class_="mtitle").text.replace("\n", "").replace("\t", "").replace("Professor", "").replace("Associate", "").replace("Assistant", "").replace("Project", "").replace("Chairman", "").replace(",", "").replace("Distinguished", "").replace("Chair", "").strip()
+def get_name(prof):
+    name = prof.find('div', class_="mtitle").text.replace("\n", "").replace("\t", "").replace("Professor", "").replace("Associate", "").replace("Assistant", "").replace("Project", "").replace("Chairman", "").replace("Distinguished", "").replace("Chair", "").strip()
+    return name
+
+def get_link(prof):
     link = prof.find('div', class_="mtitle").find('a')['href']
+    return link
+
+def get_research(prof):
+    return prof.text
+
+def get_faculty_data(prof):
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future_name = executor.submit(get_name, prof)
+        future_link = executor.submit(get_link, prof)
+        future_research = executor.submit(get_research, prof)
+
+        name = future_name.result()
+        link = future_link.result()
+        research = future_research.result()
+
     table = prof.find('tbody').find_all('td')
     email = table[1].text.strip()
     pers_link = table[3].text.strip()
-
-    research = prof.text
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
     if found_keyword:

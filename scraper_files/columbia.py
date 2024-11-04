@@ -81,10 +81,8 @@ def columbia():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Columbia University done...")
-    print()
-
+    print("\nColumbia University done...\n")
     return faculty_data
 
-# columbia()
+if __name__ == '__main__':
+    columbia()
