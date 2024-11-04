@@ -50,10 +50,7 @@ def chula_engg():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Chulalongkorn Engineering University done...")
-    print()
-
+    print("\nChulalongkorn Engineering University done...\n")
     return faculty_data
 
 if __name__ == '__main__':
