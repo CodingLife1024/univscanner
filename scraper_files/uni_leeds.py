@@ -2,18 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 import sys
 import os
-import concurrent.futures
 import re
+import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from components.google_scholar import get_scholar_profile  # Uncomment if needed
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 u_name = "University of Leeds"
 country = "United Kingdom"
-
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
-
-faculty_data = []
 
 def get_name(prof):
     last_name_tag = prof.find('td', {'class': 'title'}).find('a')
@@ -65,7 +65,7 @@ def get_faculty_data(prof):
     if found_keyword:
         faculty_data.append([u_name, country, full_name, email, link, pers_link])
         print([u_name, country, full_name, email, link, pers_link])
-        
+
 
 def uni_leeds():
     urls = [
@@ -96,9 +96,7 @@ def uni_leeds():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Leeds done...")
-    print()
+    print("\nUniversity of Leeds done...\n")
     return faculty_data
 
 

@@ -69,10 +69,7 @@ def uni_minnesota():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Minnesota done...")
-    print()
-
+    print("\nUniversity of Minnesota done...\n")
     return faculty_data
 
 

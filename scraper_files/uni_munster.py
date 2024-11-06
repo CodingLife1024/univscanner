@@ -60,8 +60,8 @@ def uni_munster():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nUniversitat Munster done...\n")
 
+    print("\nUniversitat Munster done...\n")
     return faculty_data
 
 if __name__ == '__main__':

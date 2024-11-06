@@ -4,15 +4,16 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
 
+faculty_data = []
+
 u_name = "University of Oslo"
 country = "Norway"
-
-faculty_data = []
 
 def get_faculty_data(prof):
     columns = prof.find_all('td')
@@ -68,9 +69,7 @@ def uni_oslo():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Oslo done...")
-    print()
+    print("\nUniversity of Oslo done...\n")
     return faculty_data
 
 

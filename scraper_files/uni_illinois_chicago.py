@@ -53,7 +53,7 @@ def get_faculty_data(prof):
 def uni_illinois_chicago():
     urls = [
         "https://cs.uic.edu/faculty-staff/faculty/"
-        ]
+    ]
 
     total_text = ""
 

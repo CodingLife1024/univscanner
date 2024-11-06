@@ -1,9 +1,55 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+import sys
+import os
 import re
+import concurrent.futures
+import pprint
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 university = "University of Pennsylvania"
-country = "USA"
+country = "United States"
+
+def get_faculty_data(prof):
+    name = prof.find('div', class_='StaffListName').text.strip()
+    site = prof.find('a')['href'].strip()
+    email_a_tag = prof.find('a', href=lambda href: href and href.startswith("mailto:"))
+
+    if email_a_tag:
+        email = email_a_tag['href'].replace('mailto:', '')
+
+    expertise = prof.find('div', class_='StaffListTitles').text.strip()
+
+    new_r = requests.get(site)
+    new_soup = BeautifulSoup(new_r.text, 'html.parser')
+
+    pers_site = new_soup.find('a', string='Personal Website')['href'] if new_soup.find('a', string='Personal Website') else "N/A"
+
+    if pers_site != "N/A":
+        try:
+            pers_r = requests.get(pers_site)
+            pers_soup = BeautifulSoup(pers_r.text, 'html.parser')
+            pers_text = pers_soup.text
+        except:
+            return
+
+    else:
+        pers_soup = None
+        pers_text = ""
+
+    found_keyword = False
+
+    if pers_soup:
+        found_keyword = any(re.search(re.escape(keyword), (pers_text + expertise).lower()) for keyword in keyword_list)
+
+    if found_keyword:
+        faculty_data.append([university, country, name, email, site, pers_site])
+        print([university, country, name, email, site, pers_site])
 
 def upenn():
     url = "https://directory.seas.upenn.edu/computer-and-information-science/"
@@ -13,61 +59,20 @@ def upenn():
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
-    keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer", "systems engineering", "systems"]
+    all_profs = soup.find_all(class_=re.compile(r'col-12.*SingleStaffList.*ft-cis'))
 
-    faculty_data = []
-
-    faculty_cards = soup.find_all(class_=re.compile(r'col-12.*SingleStaffList.*ft-cis'))
-
-    for faculty in faculty_cards:
-        # Extracting the information from the parent div
-        name = faculty.find('div', class_='StaffListName').text.strip()
-        site = faculty.find('a')['href'].strip()
-        email_a_tag = faculty.find('a', href=lambda href: href and href.startswith("mailto:"))
-
-        # print("Name:", name)
-        # print("Site:", site)
-
-        if email_a_tag:
-            email = email_a_tag['href'].replace('mailto:', '')
-            # print("Email:", email)
-
-        expertise = faculty.find('div', class_='StaffListTitles').text.strip()
-        # print("Expertise:", expertise.strip().replace('\n', ' ').replace('\r', ' '))
-
-        new_r = requests.get(site)
-        new_soup = BeautifulSoup(new_r.text, 'html.parser')
-
-        pers_site = new_soup.find('a', string='Personal Website')['href'] if new_soup.find('a', string='Personal Website') else "Personal Website not found"
-
-        # print("Personal Site:", pers_site)
-
-        if pers_site != "Personal Website not found":
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        for future in concurrent.futures.as_completed(futures):
             try:
-                pers_r = requests.get(pers_site)
-                pers_soup = BeautifulSoup(pers_r.text, 'html.parser')
-                pers_text = pers_soup.text
-            except:
-                continue
-
-        else:
-            pers_soup = None
-            pers_text = ""
-
-        found_keyword = False
-
-        if pers_soup:
-            found_keyword = any(re.search(re.escape(keyword), (pers_text + expertise).lower()) for keyword in keyword_list)
-
-        if found_keyword:
-
-            faculty_data.append([university, country, name, email, site, pers_site])
-            print([university, country, name, email, site, pers_site])
+                future.result()
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
 
-    print()
-    print("University of Pennsylvania done...")
-    print()
+    print("\nUniversity of Pennsylvania done...\n")
     return faculty_data
 
-# upenn()
+
+if __name__ == "__main__":
+    upenn()

@@ -4,21 +4,16 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 u_name = "University of Glasgow"
 country = "United Kingdom"
-
-keyword_list = [
-    "operating system", "robotics", "kernel", "embedded system",
-    "hardware", "computer architecture", "distributed system",
-    "computer organization", "vlsi", "computer and system",
-    "human-computer interaction", "human computer"
-]
-
-faculty_data = []
 
 def get_name(prof):
     name = prof.find('a').text.strip()
@@ -40,8 +35,6 @@ def get_email(prof):
     return email
 
 def get_faculty_data(prof):
-    base_url = "https://www.gla.ac.uk/schools/computing/staff/"
-
     with concurrent.futures.ThreadPoolExecutor() as executor:
         # Submit tasks for each component
         future_name = executor.submit(get_name, prof)
@@ -84,9 +77,7 @@ def uni_glasgow():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Glasgow done...")
-    print()
+    print("\nUniversity of Glasgow done...\n")
     return faculty_data
 
 if __name__ == '__main__':

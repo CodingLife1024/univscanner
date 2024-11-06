@@ -57,9 +57,8 @@ def unicamp():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Instiuto de Computação - UNICAMP done...")
-    print()
+
+    print("\nInstiuto de Computação - UNICAMP done...\n")
     return faculty_data
 
 if __name__ == '__main__':

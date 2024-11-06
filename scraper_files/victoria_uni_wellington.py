@@ -73,10 +73,8 @@ def victoria_uni_wellington():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Victoria University of Wellington done...")
-    print()
 
+    print("\nVictoria University of Wellington done...\n")
     return faculty_data
 
 if __name__ == '__main__':

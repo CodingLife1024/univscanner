@@ -58,10 +58,9 @@ def uni_bergen():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Bergen done...")
-    print()
+    print("\nUniversity of Bergen done...\n")
     return faculty_data
+
 
 if __name__ == '__main__':
     uni_bergen()

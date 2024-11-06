@@ -4,16 +4,16 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
-
-u_uname = "Yonsei University"
-country = "South Korea"
+from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+u_uname = "Yonsei University"
+country = "South Korea"
 
 def get_name(prof):
     name = prof.find('dt').text.strip()
@@ -60,9 +60,8 @@ def yonsei_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("Yonsei University done...")
-    print()
+
+    print("\nYonsei University done...\n")
     return faculty_data
 
 if __name__ == '__main__':

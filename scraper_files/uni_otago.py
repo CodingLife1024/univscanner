@@ -72,9 +72,7 @@ def uni_otago():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Otago done...")
-    print()
+    print("\nUniversity of Otago done...\n")
     return faculty_data
 
 

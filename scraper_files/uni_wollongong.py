@@ -65,9 +65,8 @@ def uni_wollongong():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Wollongong done...")
-    print()
+
+    print("\nUniversity of Wollongong done...\n")
     return faculty_data
 
 if __name__ == '__main__':

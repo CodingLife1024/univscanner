@@ -57,9 +57,7 @@ def uni_aberdeen():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Aberdeen done...")
-    print()
+    print("\nUniversity of Aberdeen done...\n")
     return faculty_data
 
 

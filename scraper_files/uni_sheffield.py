@@ -4,11 +4,11 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
-
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "hardware", "computer architecture", "distributed system", "computer organization", "vlsi", "computer and system", "human-computer interaction", "human computer"]
+from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
@@ -67,7 +67,7 @@ def get_faculty_data(prof):
             pers_link = future_personal_link.result()
 
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-        
+
         if found_keyword:
             faculty_data.append([u_name, country, name, email, link, pers_link])
             print([u_name, country, name, email, link, pers_link])
@@ -86,9 +86,7 @@ def uni_sheffield():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Sheffield done...")
-    print()
+    print("\nUniversity of Sheffield done...\n")
     return faculty_data
 
 if __name__ == "__main__":

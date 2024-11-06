@@ -71,9 +71,7 @@ def uni_padova():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Padova done...")
-    print()
+    print("\nUniversity of Padova done...\n")
     return faculty_data
 
 

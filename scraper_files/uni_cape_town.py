@@ -63,9 +63,7 @@ def uni_cape_town():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Cape Town done...")
-    print()
+    print("\nUniversity of Cape Town done...\n")
     return faculty_data
 
 

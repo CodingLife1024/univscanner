@@ -43,7 +43,7 @@ def uni_virginia():
             "https://engineering.virginia.edu/department/computer-science/faculty?page=6",
             "https://engineering.virginia.edu/department/computer-science/faculty?page=7",
             "https://engineering.virginia.edu/department/computer-science/faculty?page=8"]
-            
+
 
     total_text = ""
 
@@ -63,9 +63,7 @@ def uni_virginia():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Virginia done...")
-    print()
+    print("\nUniversity of Virginia done...\n")
     return faculty_data
 
 if __name__ == '__main__':

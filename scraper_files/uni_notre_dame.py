@@ -82,9 +82,7 @@ def uni_notre_dame():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Notre Dame done...")
-    print()
+    print("\nUniversity of Notre Dame done...\n")
     return faculty_data
 
 if __name__ == '__main__':

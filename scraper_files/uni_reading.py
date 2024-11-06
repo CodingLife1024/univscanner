@@ -64,9 +64,8 @@ def uni_reading():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Reading done...")
-    print()
+
+    print("\nUniversity of Reading done...\n")
     return faculty_data
 
 if __name__ == '__main__':

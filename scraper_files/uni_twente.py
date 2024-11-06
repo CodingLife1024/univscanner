@@ -56,9 +56,8 @@ def uni_twente():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Twente done...")
-    print()
+
+    print("\nUniversity of Twente done...\n")
     return faculty_data
 
 if __name__ == "__main__":

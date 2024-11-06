@@ -4,21 +4,16 @@ import sys
 import os
 import re
 import concurrent.futures
+import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
+
+faculty_data = []
 
 u_name = "University of Illinois at Urbana-Champaign"
 country = "United States"
-
-faculty_list = []
-
-keyword_list = [
-    "operating system", "robotics", "kernel", "embedded system",
-    "hardware", "computer architecture", "distributed system",
-    "computer organization", "vlsi", "computer and system",
-    "human-computer interaction", "human computer"
-]
 
 def get_name(prof):
     return prof.find('div', class_="name").text.strip()
@@ -63,7 +58,7 @@ def get_faculty_data(prof):
 
     if found_keyword:
         print([u_name, country, name, email, link, pers_link])
-        faculty_list.append([u_name, country, name, email, link, pers_link])
+        faculty_data.append([u_name, country, name, email, link, pers_link])
 
 def uni_illinois():
     url = "https://cs.illinois.edu/about/people/all-faculty"
@@ -80,11 +75,8 @@ def uni_illinois():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print(u_name, " done...")
-    print()
-
-    return faculty_list
+    print("\n" + u_name +" done..." + "\n")
+    return faculty_data
 
 
 if __name__ == "__main__":

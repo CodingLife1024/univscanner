@@ -47,7 +47,7 @@ from scraper_files.city_uni_hk import city_uni_hk
 from scraper_files.carnegie_mellon import carnegie_mellon
 
 from scraper_files.zhejiang_uni import zhejiang_uni
-from scraper_files.ucsd import ucsd
+from univscanner.scraper_files.uc_san_diego import uc_san_diego
 
 from scraper_files.tokyo_uni_tech import tokyo_uni_tech
 from scraper_files.delft_uni_tech import delft_uni_tech
@@ -82,7 +82,7 @@ from scraper_files.uni_nottingham import uni_nottingham
 from scraper_files.penn_state_uni import penn_state_uni
 
 from scraper_files.tud import tud
-from scraper_files.uni_helinski import uni_helinski
+from univscanner.scraper_files.uni_helsinki import uni_helsinki
 from scraper_files.washu import washu
 
 from scraper_files.ohio_state_uni import ohio_state_uni
@@ -334,7 +334,7 @@ def main():
         writer.writerows(city_uni_hk())
         writer.writerows(carnegie_mellon())
         writer.writerows(zhejiang_uni())
-        writer.writerows(ucsd())
+        writer.writerows(uc_san_diego())
         writer.writerows(tokyo_uni_tech())
         writer.writerows(delft_uni_tech())
         writer.writerows(brown_uni())
@@ -362,7 +362,7 @@ def main():
         writer.writerows(uni_nottingham())
         writer.writerows(penn_state_uni())
         writer.writerows(tud())
-        writer.writerows(uni_helinski())
+        writer.writerows(uni_helsinki())
         writer.writerows(washu())
         writer.writerows(ohio_state_uni())
         writer.writerows(purdue_uni())
