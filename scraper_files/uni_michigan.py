@@ -7,7 +7,6 @@ import concurrent.futures
 import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import *
 from components.gscholar_indiv_page import search_faculty_list
 
@@ -54,12 +53,9 @@ def uni_michigan():
         "https://scholar.google.com/citations?view_op=view_org&hl=en&org=4770128543809686866&after_author=zbhEAH-d__8J&astart=280",
         "https://scholar.google.com/citations?view_op=view_org&hl=en&org=4770128543809686866&after_author=3pttANqg__8J&astart=290",
         "https://scholar.google.com/citations?view_op=view_org&hl=en&org=4770128543809686866&after_author=Ky9JAGGi__8J&astart=300",
-        "https://scholar.google.com/citations?view_op=view_org&hl=en&org=4770128543809686866&after_author=CqQlAHuk__8J&astart=310"
+        "https://scholar.google.com/citations?view_op=view_org&hl=en&org=4770128543809686866&after_author=CqQlAHuk__8J&astart=310",
+        "https://scholar.google.com/citations?view_op=view_org&hl=en&org=4770128543809686866&after_author=2GYAAPKl__8J&astart=320"
     ]
-
-    # for link in links:
-    #     # print("Fetching URL..." + link + "\n")
-    #     all_faculty += search_faculty_list(link, headers, u_name, country)[0]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, link, headers) for link in links]

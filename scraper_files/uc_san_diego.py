@@ -12,7 +12,7 @@ from components.GLOBAL_VARIABLES import keyword_list
 
 faculty_data = []
 
-u_name = "University of California San Diego"
+u_name = "University of California, San Diego"
 country = "United States"
 
 def get_faculty_data(prof):
@@ -52,7 +52,7 @@ def uc_san_diego():
                 print(f"Error occurred: {e}")
 
 
-    print("\nUniversity of California San Diego done...\n")
+    print("\nUniversity of California, San Diego done...\n")
     return faculty_data
 
 

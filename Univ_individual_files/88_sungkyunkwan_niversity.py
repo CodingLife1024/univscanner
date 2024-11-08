@@ -8,10 +8,10 @@ from bs4 import BeautifulSoup
 
 def sungkyunkwan_uni():
     url = "https://cs.skku.edu/en/people/staff"   # homepage url
-    try:    
+    try:
         r = requests.get(url)
     except:
-        continue
+        return
 
     # getting the soup by parsing the html parsel to text to request r
     soup = BeautifulSoup(r.text, "html.parser")
@@ -51,8 +51,8 @@ def sungkyunkwan_uni():
         name = (a.get_text()).strip()
         link = 'https://www.birmingham.ac.uk' +a.get('href')
         # check if link is valid on Not
-        try:    
-            prof_resp = requests.get(link)        
+        try:
+            prof_resp = requests.get(link)
         except:
             continue
 
@@ -84,10 +84,10 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
     u_name = var[3]
     country = var[4]
 
-    keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture', 
+    keyword_list = ['Computer architecture','computer architecture','Computer Architecture', 'Hardware And System Architecture', 'hardware and system architecture',
                 'Hardware and Architecture', 'hardware and architecture', 'embedded system', 'Embedded System','Computer Organization','VLSI', 'Computer and System']
     flag = 1
-    prof_soup = BeautifulSoup(prof_resp.text, "html.parser") 
+    prof_soup = BeautifulSoup(prof_resp.text, "html.parser")
     research_text = prof_soup.text
     for pattern in keyword_list:
         if re.search(pattern,research_text):
@@ -112,8 +112,8 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
                         f.write(link + '\n' + name + '\t\t' + email + '\n')
                         csvwriter.writerow([u_name, country, name, email, link])
                         csvwriter2.writerow([u_name, country, name, email, link])
-                    # f.write("\n") 
- 
+                    # f.write("\n")
+
 
             f.write(pattern)
             f.write('\n\n')
@@ -121,4 +121,3 @@ def filterandgetEmail(var, grabage_emails, name, link, email, prof_resp):
 
 if __name__ == '__main__':
     sungkyunkwan_uni()
-    

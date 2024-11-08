@@ -20,7 +20,7 @@ from scraper_files.columbia import columbia
 from scraper_files.edinburgh import edinburgh
 from scraper_files.uni_michigan import uni_michigan
 from scraper_files.hongkong import hongkong
-
+from scraper_files.peking_uni import peking_uni
 from scraper_files.tokyo import tokyo
 from scraper_files.john_hopkins import john_hopkins
 from scraper_files.toronto import toronto
@@ -30,25 +30,25 @@ from scraper_files.uc_berkeley import uc_berkeley
 from scraper_files.anu import anu
 from scraper_files.kings_college import kings_college
 from scraper_files.mcgill import mcgill
-
+from scraper_files.fudan_uni import fudan_uni
 from scraper_files.nyu import nyu
-
+from scraper_files.uc_los_angeles import uc_los_angeles
 from scraper_files.seoul_uni import seoul_uni
 from scraper_files.kaist import kaist
-
-
+from scraper_files.uni_sydney import uni_sydney
+from scraper_files.uni_melbourne import uni_melbourne
 from scraper_files.duke import duke
 from scraper_files.chinese_uni_hk import chinese_uni_hk
-
+from scraper_files.uni_north_south_wales import uni_north_south_wales
 from scraper_files.ubc_canada import ubc_canada
 from scraper_files.uni_queensland import uni_queensland
 from scraper_files.shanghai_jt import shanghai_jt
 from scraper_files.city_uni_hk import city_uni_hk
 from scraper_files.carnegie_mellon import carnegie_mellon
-
+from scraper_files.psl_uni import psl_uni
 from scraper_files.zhejiang_uni import zhejiang_uni
-from univscanner.scraper_files.uc_san_diego import uc_san_diego
-
+from scraper_files.uc_san_diego import uc_san_diego
+from scraper_files.monash_uni import monash_uni
 from scraper_files.tokyo_uni_tech import tokyo_uni_tech
 from scraper_files.delft_uni_tech import delft_uni_tech
 from scraper_files.brown_uni import brown_uni
@@ -63,11 +63,11 @@ from scraper_files.hong_kong_poly_uni import hong_kong_poly_uni
 from scraper_files.uni_copenhagen import uni_copenhagen
 from scraper_files.postech_korea import postech_korea
 from scraper_files.uni_glasgow import uni_glasgow
-
+from scraper_files.tohoku_uni import tohoku_uni
 from scraper_files.georgia_inst_tech import georgia_inst_tech
-
+from scraper_files.uni_auckland import uni_auckland
 from scraper_files.uni_illinois import uni_illinois
-
+from scraper_files.ku_leuven import ku_leuven
 from scraper_files.durham_uni import durham_uni
 from scraper_files.yonsei_uni import yonsei_uni
 from scraper_files.uni_birmingham import uni_birmingham
@@ -315,6 +315,7 @@ def main():
         writer.writerows(edinburgh())
         writer.writerows(uni_michigan())
         writer.writerows(hongkong())
+        writer.writerows(peking_uni())
         writer.writerows(tokyo())
         writer.writerows(john_hopkins())
         writer.writerows(toronto())
@@ -324,18 +325,25 @@ def main():
         writer.writerows(anu())
         writer.writerows(kings_college())
         writer.writerows(mcgill())
+        writer.writerows(fudan_uni())
         writer.writerows(nyu())
+        writer.writerows(uc_los_angeles())
         writer.writerows(seoul_uni())
         writer.writerows(kaist())
+        writer.writerows(uni_sydney())
+        writer.writerows(uni_melbourne())
         writer.writerows(duke())
         writer.writerows(chinese_uni_hk())
+        writer.writerows(uni_north_south_wales())
         writer.writerows(ubc_canada())
         writer.writerows(uni_queensland())
         writer.writerows(shanghai_jt())
         writer.writerows(city_uni_hk())
         writer.writerows(carnegie_mellon())
+        writer.writerows(psl_uni())
         writer.writerows(zhejiang_uni())
         writer.writerows(uc_san_diego())
+        writer.writerows(monash_uni())
         writer.writerows(tokyo_uni_tech())
         writer.writerows(delft_uni_tech())
         writer.writerows(brown_uni())
@@ -350,8 +358,11 @@ def main():
         writer.writerows(uni_copenhagen())
         writer.writerows(postech_korea())
         writer.writerows(uni_glasgow)
+        writer.writerows(tohoku_uni())
         writer.writerows(georgia_inst_tech())
+        writer.writerows(uni_auckland())
         writer.writerows(uni_illinois())
+        writer.writerows(ku_leuven())
         writer.writerows(durham_uni())
         writer.writerows(yonsei_uni())
         writer.writerows(uni_birmingham())
