@@ -18,7 +18,7 @@ from scraper_files.yale import yale
 from scraper_files.cornell import cornell
 from scraper_files.columbia import columbia
 from scraper_files.edinburgh import edinburgh
-
+from scraper_files.uni_michigan import uni_michigan
 from scraper_files.hongkong import hongkong
 
 from scraper_files.tokyo import tokyo
@@ -313,6 +313,7 @@ def main():
         writer.writerows(cornell())
         writer.writerows(columbia())
         writer.writerows(edinburgh())
+        writer.writerows(uni_michigan())
         writer.writerows(hongkong())
         writer.writerows(tokyo())
         writer.writerows(john_hopkins())
