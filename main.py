@@ -248,8 +248,11 @@ from scraper_files.institut_technologi_bandung import institut_technologi_bandun
 
 
 
+
 from scraper_files.uni_warsaw import uni_warsaw
 from scraper_files.simon_fraser_uni import simon_fraser_uni
+
+
 
 from scraper_files.uni_central_arkansas import uni_central_arkansas
 from scraper_files.virginia_tech import virginia_tech
@@ -265,6 +268,7 @@ from scraper_files.uni_utah import uni_utah
 from scraper_files.yeshiva_uni import yeshiva_uni
 from scraper_files.birkbeck_uni import birkbeck_uni
 from scraper_files.uni_ulm import uni_ulm
+
 from scraper_files.uni_at_buffalo import uni_at_buffalo
 from scraper_files.american_uni_sharjah import american_uni_sharjah
 from scraper_files.iit_kanpur import iit_kanpur
