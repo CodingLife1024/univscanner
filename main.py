@@ -69,25 +69,25 @@ from scraper_files.ku_leuven import ku_leuven
 from scraper_files.durham_uni import durham_uni
 from scraper_files.yonsei_uni import yonsei_uni
 from scraper_files.uni_birmingham import uni_birmingham
-
-
+from scraper_files.sungkyunkwan_uni import sungkyunkwan_uni
+from scraper_files.rice_uni import rice_uni
 from scraper_files.uni_melbourne import uni_melbourne
 from scraper_files.uni_southampton import uni_southampton
 from scraper_files.uni_leeds import uni_leeds
 from scraper_files.uni_sheffield import uni_sheffield
-
+from scraper_files.uni_north_carolina import uni_north_carolina
 from scraper_files.lund_uni import lund_uni
 from scraper_files.kth_royal import kth_royal
 from scraper_files.uni_nottingham import uni_nottingham
 from scraper_files.penn_state_uni import penn_state_uni
-
+from scraper_files.trinity_college_dublin import trinity_college_dublin
 from scraper_files.tud import tud
 from univscanner.scraper_files.uni_helsinki import uni_helsinki
 from scraper_files.washu import washu
-
+from scraper_files.uni_geneva import uni_geneva
 from scraper_files.ohio_state_uni import ohio_state_uni
 from scraper_files.purdue_uni import purdue_uni
-
+from scraper_files.boston_uni import boston_uni
 from scraper_files.nagoya_uni import nagoya_uni
 from scraper_files.uc_davis import uc_davis
 from scraper_files.uni_oslo import uni_oslo
@@ -95,11 +95,11 @@ from scraper_files.queen_mary_uni import queen_mary_uni
 from scraper_files.uni_bern import uni_bern
 from scraper_files.uni_berlin import uni_berlin
 from scraper_files.uni_montreal import uni_montreal
-
-
+from scraper_files.uni_alberta import uni_alberta
+from scraper_files.pontificia_uni import pontificia_uni
 from scraper_files.uni_southern_california import uni_southern_california
 from scraper_files.utrecht_uni import utrecht_uni
-
+from scraper_files.kyushu_uni import kyushu_uni
 from scraper_files.uppsala_uni import uppsala_uni
 from scraper_files.aalto_uni import aalto_uni
 from scraper_files.leiden_uni import leiden_uni
@@ -108,9 +108,9 @@ from scraper_files.frieie_uni import frieie_uni
 from scraper_files.upm import upm
 from scraper_files.uts_sydney import uts_sydney
 from scraper_files.lancaster_uni import lancaster_uni
-
-
-
+from univscanner.scraper_files.ghent_uni import ghent_uni
+from scraper_files.uni_centrale import uni_centrale
+from scraper_files.chalmers_uni import chalmers_uni
 from scraper_files.hokkaido_uni import hokkaido_uni
 from scraper_files.usm_malaysia import usm_malaysia
 
@@ -371,19 +371,25 @@ def main():
         writer.writerows(durham_uni())
         writer.writerows(yonsei_uni())
         writer.writerows(uni_birmingham())
+        writer.writerows(sungkyunkwan_uni())
+        writer.writerows(rice_uni())
         writer.writerows(uni_melbourne())
         writer.writerows(uni_southampton())
         writer.writerows(uni_leeds())
         writer.writerows(uni_sheffield())
+        writer.writerows(uni_north_carolina())
         writer.writerows(lund_uni())
         writer.writerows(kth_royal())
         writer.writerows(uni_nottingham())
         writer.writerows(penn_state_uni())
+        writer.writerows(trinity_college_dublin())
         writer.writerows(tud())
         writer.writerows(uni_helsinki())
         writer.writerows(washu())
+        writer.writerows(uni_geneva())
         writer.writerows(ohio_state_uni())
         writer.writerows(purdue_uni())
+        writer.writerows(boston_uni())
         writer.writerows(nagoya_uni())
         writer.writerows(uc_davis())
         writer.writerows(uni_oslo())
@@ -391,8 +397,11 @@ def main():
         writer.writerows(uni_bern())
         writer.writerows(uni_berlin())
         writer.writerows(uni_montreal())
+        writer.writerows(uni_alberta())
+        writer.writerows(pontificia_uni())
         writer.writerows(uni_southern_california())
         writer.writerows(utrecht_uni())
+        writer.writerows(kyushu_uni())
         writer.writerows(uppsala_uni())
         writer.writerows(aalto_uni())
         writer.writerows(leiden_uni())
@@ -401,6 +410,9 @@ def main():
         writer.writerows(upm())
         writer.writerows(uts_sydney())
         writer.writerows(lancaster_uni())
+        writer.writerows(ghent_uni())
+        writer.writerows(uni_centrale())
+        writer.writerows(chalmers_uni())
         writer.writerows(hokkaido_uni())
         writer.writerows(usm_malaysia())
         writer.writerows(mcmaster_uni())
