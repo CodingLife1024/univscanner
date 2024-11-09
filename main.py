@@ -1,5 +1,3 @@
-import csv
-
 from scraper_files.mit import mit
 from scraper_files.stanford import stanford
 from scraper_files.harvard import harvard
@@ -72,6 +70,8 @@ from scraper_files.durham_uni import durham_uni
 from scraper_files.yonsei_uni import yonsei_uni
 from scraper_files.uni_birmingham import uni_birmingham
 
+
+from scraper_files.uni_melbourne import uni_melbourne
 from scraper_files.uni_southampton import uni_southampton
 from scraper_files.uni_leeds import uni_leeds
 from scraper_files.uni_sheffield import uni_sheffield
@@ -293,6 +293,7 @@ from scraper_files.oxford_brookes_uni import oxford_brookes_uni
 from scraper_files.uni_kansas import uni_kansas
 from scraper_files.uni_pisa import uni_pisa
 
+import csv
 
 def main():
     with open('faculty_data.csv', 'a', encoding='utf-8', newline='') as file:
@@ -370,6 +371,7 @@ def main():
         writer.writerows(durham_uni())
         writer.writerows(yonsei_uni())
         writer.writerows(uni_birmingham())
+        writer.writerows(uni_melbourne())
         writer.writerows(uni_southampton())
         writer.writerows(uni_leeds())
         writer.writerows(uni_sheffield())
