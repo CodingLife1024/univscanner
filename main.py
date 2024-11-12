@@ -183,7 +183,7 @@ from scraper_files.novosibirsk_state_uni import novosibirsk_state_uni
 from scraper_files.uni_hamburg import uni_hamburg
 from scraper_files.georgetown_uni import georgetown_uni
 from scraper_files.telaviv_uni import telaviv_uni
-
+from scraper_files.uni_colorado_boulder import uni_colorado_boulder
 from scraper_files.unicamp import unicamp
 from scraper_files.maastritcht_uni import maastritcht_uni
 from scraper_files.national_cheng_kung_uni import national_cheng_kung_uni
@@ -193,11 +193,11 @@ from scraper_files.uni_antwerp import uni_antwerp
 from scraper_files.national_yang_ming_chiao_tung_uni import national_yang_ming_chiao_tung_uni
 from scraper_files.uni_bonn import uni_bonn
 from scraper_files.uni_leicester import uni_leicester
-
+from scraper_files.qatar_uni import qatar_uni
 from scraper_files.queens_uni import queens_uni
 from scraper_files.uni_calgary import uni_calgary
 from scraper_files.uni_sussex import uni_sussex
-
+from scraper_files.tomsk_state_uni import tomsk_state_uni
 from scraper_files.mahidol_uni import mahidol_uni
 from scraper_files.universiti_brunei_darussalm import universiti_brunei_darussalam
 from scraper_files.uni_tokyo import uni_tokyo
@@ -206,7 +206,7 @@ from scraper_files.tongji_uni import tongji_uni
 from scraper_files.uni_illinois_chicago import uni_illinois_chicago
 from scraper_files.rutgers import rutgers
 from scraper_files.charles_uni import charles_uni
-
+from scraper_files.harbin_institute_tech import harbin_institute_tech
 from scraper_files.tufts_uni import tufts_uni
 from scraper_files.hongkong_baptist_uni import hongkong_baptist_uni
 from scraper_files.uni_innsbruck import uni_innsbruck
@@ -221,7 +221,7 @@ from scraper_files.universita_della_svizzera import universita_della_svizzera
 from scraper_files.uni_arizona import uni_arizona
 from scraper_files.technical_uni_graz import technical_uni_graz
 from scraper_files.iit_madras import iit_madras
-
+from scraper_files.xian_jiaotong_uni import xian_jiaotong_uni
 from scraper_files.uae_uni import uae_uni
 from scraper_files.uni_college_cork import uni_college_cork
 from scraper_files.king_saud_uni import king_saud_uni
@@ -233,20 +233,20 @@ from scraper_files.north_carolina_state_uni import north_carolina_state_uni
 from scraper_files.uni_south_australia import uni_south_australia
 from scraper_files.hse_uni import hse_uni
 from scraper_files.griffith_uni import griffith_uni
-
+from scraper_files.deakin_uni import deakin_uni
 from scraper_files.aalborg_uni import aalborg_uni
-
-
+from scraper_files.uni_mannheim import uni_mannheim
+from scraper_files.iit_kharagpur import iit_kharagpur
 from scraper_files.politecnico_di_torino import politecnico_di_torino
 from scraper_files.royal_holloway_uni_london import royal_holloway_uni_london
 from scraper_files.uni_tasmania import uni_tasmania
 from scraper_files.universidad_carlos_de_madrid import universidad_carlos_de_madrid
 from scraper_files.institut_technologi_bandung import institut_technologi_bandung
-
-
-
-
-
+from scraper_files.uni_polytech_catalunya import uni_polytech_catalunya
+from scraper_files.belarusian_state_uni import belarusian_state_uni
+from scraper_files.uni_dundee import uni_dundee
+from scraper_files.indiana_uni_bloomington import indiana_uni_bloomington
+from scraper_files.hiroshima_uni import hiroshima_uni
 
 
 from scraper_files.uni_warsaw import uni_warsaw
@@ -485,6 +485,7 @@ def main():
         writer.writerows(uni_hamburg())
         writer.writerows(georgetown_uni())
         writer.writerows(telaviv_uni())
+        writer.writerows(uni_colorado_boulder())
         writer.writerows(unicamp())
         writer.writerows(maastritcht_uni())
         writer.writerows(national_cheng_kung_uni())
@@ -494,9 +495,11 @@ def main():
         writer.writerows(national_yang_ming_chiao_tung_uni())
         writer.writerows(uni_bonn())
         writer.writerows(uni_leicester())
+        writer.writerows(qatar_uni())
         writer.writerows(queens_uni())
         writer.writerows(uni_calgary())
         writer.writerows(uni_sussex())
+        writer.writerows(tomsk_state_uni())
         writer.writerows(mahidol_uni())
         writer.writerows(universiti_brunei_darussalam())
         writer.writerows(uni_tokyo())
@@ -505,6 +508,7 @@ def main():
         writer.writerows(uni_illinois_chicago())
         writer.writerows(rutgers())
         writer.writerows(charles_uni())
+        writer.writerows(harbin_institute_tech())
         writer.writerows(tufts_uni())
         writer.writerows(hongkong_baptist_uni())
         writer.writerows(uni_innsbruck())
@@ -519,6 +523,7 @@ def main():
         writer.writerows(uni_arizona())
         writer.writerows(technical_uni_graz())
         writer.writerows(iit_madras())
+        writer.writerows(xian_jiaotong_uni())
         writer.writerows(uae_uni())
         writer.writerows(uni_college_cork())
         writer.writerows(king_saud_uni())
@@ -530,12 +535,20 @@ def main():
         writer.writerows(uni_south_australia())
         writer.writerows(hse_uni())
         writer.writerows(griffith_uni())
+        writer.writerows(deakin_uni())
         writer.writerows(aalborg_uni())
+        writer.writerows(uni_mannheim())
+        writer.writerows(iit_kharagpur())
         writer.writerows(politecnico_di_torino())
         writer.writerows(royal_holloway_uni_london())
         writer.writerows(uni_tasmania())
         writer.writerows(universidad_carlos_de_madrid())
         writer.writerows(institut_technologi_bandung())
+        writer.writerows(uni_polytech_catalunya())
+        writer.writerows(belarusian_state_uni())
+        writer.writerows(uni_dundee())
+        writer.writerows(indiana_uni_bloomington())
+        writer.writerows(hiroshima_uni())
         writer.writerows(uni_warsaw())
         writer.writerows(simon_fraser_uni())
         writer.writerows(uni_central_arkansas())
