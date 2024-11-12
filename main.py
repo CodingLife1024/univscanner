@@ -248,12 +248,12 @@ from scraper_files.uni_dundee import uni_dundee
 from scraper_files.indiana_uni_bloomington import indiana_uni_bloomington
 from scraper_files.hiroshima_uni import hiroshima_uni
 
-
+from scraper_files.uni_jena import uni_jena
 from scraper_files.uni_warsaw import uni_warsaw
 from scraper_files.simon_fraser_uni import simon_fraser_uni
-
-
-
+from scraper_files.uca_argentina import uca_argentina
+from scraper_files.ie_uni import ie_uni
+from scraper_files.uni_east_anglia import uni_east_anglia
 from scraper_files.uni_central_arkansas import uni_central_arkansas
 from scraper_files.virginia_tech import virginia_tech
 
@@ -268,25 +268,25 @@ from scraper_files.uni_utah import uni_utah
 from scraper_files.yeshiva_uni import yeshiva_uni
 from scraper_files.birkbeck_uni import birkbeck_uni
 from scraper_files.uni_ulm import uni_ulm
-
+from scraper_files.soas_uni import soas_uni
 from scraper_files.uni_at_buffalo import uni_at_buffalo
 from scraper_files.american_uni_sharjah import american_uni_sharjah
 from scraper_files.iit_kanpur import iit_kanpur
 from scraper_files.city_uni_london import city_uni_london
 from scraper_files.uni_southern_denmark import uni_southern_denmark
-
-
+from scraper_files.george_washington_uni import george_washington_uni
+from scraper_files.national_uni_sciences_tech import national_uni_sciences_tech
 from scraper_files.uni_munster import uni_munster
-
+from scraper_files.uni_lisbon import uni_lisbon
 from scraper_files.norwegian_uni import norwegian_uni
-
+from scraper_files.north_eastern_uni import north_eastern_uni
 from scraper_files.uni_macau import uni_macau
 from scraper_files.brunel_uni import brunel_uni
 from scraper_files.uni_victoria import uni_victoria
 from scraper_files.swinburne_uni import swinburne_uni
 from scraper_files.stonybrook_uni import stonybrook_uni
 from scraper_files.sultan_qaboos_uni import sultan_qaboos_uni
-
+from scraper_files.uni_waikato import uni_waikato
 from scraper_files.wakeforest_uni import wakeforest_uni
 from scraper_files.iit_roorkee import iit_roorkee
 from scraper_files.oxford_brookes_uni import oxford_brookes_uni
@@ -549,8 +549,12 @@ def main():
         writer.writerows(uni_dundee())
         writer.writerows(indiana_uni_bloomington())
         writer.writerows(hiroshima_uni())
+        writer.writerows(uni_jena())
         writer.writerows(uni_warsaw())
         writer.writerows(simon_fraser_uni())
+        writer.writerows(uca_argentina())
+        writer.writerows(ie_uni())
+        writer.writerows(uni_east_anglia())
         writer.writerows(uni_central_arkansas())
         writer.writerows(virginia_tech())
         writer.writerows(national_taiwan_normal_uni())
@@ -563,19 +567,25 @@ def main():
         writer.writerows(yeshiva_uni())
         writer.writerows(birkbeck_uni())
         writer.writerows(uni_ulm())
+        writer.writerows(soas_uni())
         writer.writerows(uni_at_buffalo())
         writer.writerows(american_uni_sharjah())
         writer.writerows(iit_kanpur())
         writer.writerows(city_uni_london())
         writer.writerows(uni_southern_denmark())
+        writer.writerows(george_washington_uni())
+        writer.writerows(national_uni_sciences_tech())
         writer.writerows(uni_munster())
+        writer.writerows(uni_lisbon())
         writer.writerows(norwegian_uni())
+        writer.writerows(north_eastern_uni())
         writer.writerows(uni_macau())
         writer.writerows(brunel_uni())
         writer.writerows(uni_victoria())
         writer.writerows(swinburne_uni())
         writer.writerows(stonybrook_uni())
         writer.writerows(sultan_qaboos_uni())
+        writer.writerows(uni_waikato())
         writer.writerows(wakeforest_uni())
         writer.writerows(iit_roorkee())
         writer.writerows(oxford_brookes_uni())
