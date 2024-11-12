@@ -134,6 +134,7 @@ from scraper_files.uni_florida import uni_florida
 from scraper_files.uni_exeter import uni_exeter
 from scraper_files.uni_rochester import uni_rochester
 from scraper_files.uni_waterloo import uni_waterloo
+from scraper_files.national_tsing_hua_uni import national_tsing_hua_uni
 from scraper_files.sapienza_uni import sapienza_uni
 from scraper_files.iit_bombay import iit_bombay
 from scraper_files.uni_bath import uni_bath
@@ -188,6 +189,7 @@ from scraper_files.unicamp import unicamp
 from scraper_files.maastritcht_uni import maastritcht_uni
 from scraper_files.national_cheng_kung_uni import national_cheng_kung_uni
 from scraper_files.kyung_hee_uni import kyung_hee_uni
+from scraper_files.vrije_uni_amsterdam import vrije_uni_amsterdam
 from scraper_files.uni_galway import uni_galway
 from scraper_files.uni_antwerp import uni_antwerp
 from scraper_files.national_yang_ming_chiao_tung_uni import national_yang_ming_chiao_tung_uni
@@ -232,6 +234,9 @@ from scraper_files.gwangju_uni import gwangju_uni
 from scraper_files.north_carolina_state_uni import north_carolina_state_uni
 from scraper_files.uni_south_australia import uni_south_australia
 from scraper_files.hse_uni import hse_uni
+from scraper_files.uni_strathclyde import uni_strathclyde
+from scraper_files.heriot_watt_uni import heriot_watt_uni
+from scraper_files.uni_milan import uni_milan
 from scraper_files.griffith_uni import griffith_uni
 from scraper_files.deakin_uni import deakin_uni
 from scraper_files.aalborg_uni import aalborg_uni
@@ -244,10 +249,10 @@ from scraper_files.universidad_carlos_de_madrid import universidad_carlos_de_mad
 from scraper_files.institut_technologi_bandung import institut_technologi_bandung
 from scraper_files.uni_polytech_catalunya import uni_polytech_catalunya
 from scraper_files.belarusian_state_uni import belarusian_state_uni
+from scraper_files.uni_erlangen_nuremberg import uni_erlangen_nuremberg
 from scraper_files.uni_dundee import uni_dundee
 from scraper_files.indiana_uni_bloomington import indiana_uni_bloomington
 from scraper_files.hiroshima_uni import hiroshima_uni
-
 from scraper_files.uni_jena import uni_jena
 from scraper_files.uni_warsaw import uni_warsaw
 from scraper_files.simon_fraser_uni import simon_fraser_uni
@@ -436,6 +441,7 @@ def main():
         writer.writerows(uni_exeter())
         writer.writerows(uni_rochester())
         writer.writerows(uni_waterloo())
+        writer.writerows(national_tsing_hua_uni())
         writer.writerows(sapienza_uni())
         writer.writerows(iit_bombay())
         writer.writerows(uni_bath())
@@ -489,6 +495,7 @@ def main():
         writer.writerows(unicamp())
         writer.writerows(maastritcht_uni())
         writer.writerows(national_cheng_kung_uni())
+        writer.writerows(vrije_uni_amsterdam())
         writer.writerows(kyung_hee_uni())
         writer.writerows(uni_galway())
         writer.writerows(uni_antwerp())
@@ -534,6 +541,9 @@ def main():
         writer.writerows(north_carolina_state_uni())
         writer.writerows(uni_south_australia())
         writer.writerows(hse_uni())
+        writer.writerows(uni_strathclyde())
+        writer.writerows(heriot_watt_uni())
+        writer.writerows(uni_milan())
         writer.writerows(griffith_uni())
         writer.writerows(deakin_uni())
         writer.writerows(aalborg_uni())
@@ -546,6 +556,7 @@ def main():
         writer.writerows(institut_technologi_bandung())
         writer.writerows(uni_polytech_catalunya())
         writer.writerows(belarusian_state_uni())
+        writer.writerows(uni_erlangen_nuremberg())
         writer.writerows(uni_dundee())
         writer.writerows(indiana_uni_bloomington())
         writer.writerows(hiroshima_uni())
