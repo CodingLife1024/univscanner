@@ -82,7 +82,7 @@ from scraper_files.uni_nottingham import uni_nottingham
 from scraper_files.penn_state_uni import penn_state_uni
 from scraper_files.trinity_college_dublin import trinity_college_dublin
 from scraper_files.tud import tud
-from univscanner.scraper_files.uni_helsinki import uni_helsinki
+from scraper_files.uni_helsinki import uni_helsinki
 from scraper_files.washu import washu
 from scraper_files.uni_geneva import uni_geneva
 from scraper_files.ohio_state_uni import ohio_state_uni
@@ -201,9 +201,9 @@ from scraper_files.uni_calgary import uni_calgary
 from scraper_files.uni_sussex import uni_sussex
 from scraper_files.tomsk_state_uni import tomsk_state_uni
 from scraper_files.mahidol_uni import mahidol_uni
-from scraper_files.universiti_brunei_darussalm import universiti_brunei_darussalam
-from scraper_files.uni_tokyo import uni_tokyo
 from scraper_files.universitas_gadjah_mada import universitas_gadjah_mada
+from scraper_files.uni_tokyo import uni_tokyo
+from scraper_files.universiti_brunei_darussalm import universiti_brunei_darussalam
 from scraper_files.tongji_uni import tongji_uni
 from scraper_files.uni_illinois_chicago import uni_illinois_chicago
 from scraper_files.rutgers import rutgers
@@ -223,7 +223,7 @@ from scraper_files.universita_della_svizzera import universita_della_svizzera
 from scraper_files.uni_arizona import uni_arizona
 from scraper_files.technical_uni_graz import technical_uni_graz
 from scraper_files.iit_madras import iit_madras
-from scraper_files.xian_jiaotong_uni import xian_jiaotong_uni
+from scraper_files.deakin_uni import deakin_uni
 from scraper_files.uae_uni import uae_uni
 from scraper_files.uni_college_cork import uni_college_cork
 from scraper_files.king_saud_uni import king_saud_uni
@@ -238,15 +238,15 @@ from scraper_files.uni_strathclyde import uni_strathclyde
 from scraper_files.heriot_watt_uni import heriot_watt_uni
 from scraper_files.uni_milan import uni_milan
 from scraper_files.griffith_uni import griffith_uni
-from scraper_files.deakin_uni import deakin_uni
+from scraper_files.xian_jiaotong_uni import xian_jiaotong_uni
 from scraper_files.aalborg_uni import aalborg_uni
 from scraper_files.uni_mannheim import uni_mannheim
-from scraper_files.iit_kharagpur import iit_kharagpur
 from scraper_files.politecnico_di_torino import politecnico_di_torino
 from scraper_files.royal_holloway_uni_london import royal_holloway_uni_london
 from scraper_files.uni_tasmania import uni_tasmania
 from scraper_files.universidad_carlos_de_madrid import universidad_carlos_de_madrid
 from scraper_files.institut_technologi_bandung import institut_technologi_bandung
+from scraper_files.iit_kharagpur import iit_kharagpur
 from scraper_files.uni_polytech_catalunya import uni_polytech_catalunya
 from scraper_files.belarusian_state_uni import belarusian_state_uni
 from scraper_files.uni_erlangen_nuremberg import uni_erlangen_nuremberg
@@ -256,16 +256,15 @@ from scraper_files.hiroshima_uni import hiroshima_uni
 from scraper_files.uni_jena import uni_jena
 from scraper_files.uni_warsaw import uni_warsaw
 from scraper_files.simon_fraser_uni import simon_fraser_uni
+from scraper_files.sustech import sustech
 from scraper_files.uca_argentina import uca_argentina
-from scraper_files.ie_uni import ie_uni
-from scraper_files.uni_east_anglia import uni_east_anglia
-from scraper_files.uni_central_arkansas import uni_central_arkansas
 from scraper_files.virginia_tech import virginia_tech
-
+from scraper_files.ie_uni import ie_uni
+from scraper_files.uni_central_arkansas import uni_central_arkansas
 from scraper_files.national_taiwan_normal_uni import national_taiwan_normal_uni
 from scraper_files.ewha_womans_uni import ewha_womans_uni
 from scraper_files.umea_uni import umea_uni
-
+from scraper_files.uni_east_anglia import uni_east_anglia
 from scraper_files.uni_hawaii_at_manoa import uni_hawaii_at_manoa
 from scraper_files.uni_jyvaskyla import uni_jyvaskyla
 from scraper_files.uni_stuttgart import uni_stuttgart
@@ -563,6 +562,7 @@ def main():
         writer.writerows(uni_jena())
         writer.writerows(uni_warsaw())
         writer.writerows(simon_fraser_uni())
+        writer.writerows(sustech())
         writer.writerows(uca_argentina())
         writer.writerows(ie_uni())
         writer.writerows(uni_east_anglia())
