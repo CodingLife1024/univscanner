@@ -5,7 +5,7 @@ import os
 import re
 import concurrent.futures
 import pprint
-from tqdm import tqdm
+import csv
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
@@ -54,8 +54,6 @@ def nyu():
     soup = BeautifulSoup(r.text, 'html.parser')
 
     all_profs = soup.find_all('li', class_='col-sm-6')
-
-    print(len(all_profs))
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]

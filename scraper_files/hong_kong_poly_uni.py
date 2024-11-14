@@ -9,13 +9,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
 
-u_name = "Honk Kong Polytechnic University"
+u_name = "Hong Kong Polytechnic University"
 country = "Hong Kong"
 
 faculty_data = []
 
 def get_name(prof):
-    return prof.find('span', class_="ppl-detail-blk__name").text.strip()
+    return prof.find('span', class_="ppl-detail-blk__name").text.replace("Dr", "").replace("Professor", "").replace("Prof", "").strip().title()
 
 def get_link(prof):
     link = prof.find('div', class_="ppl-detail-blk__img-ctrl").find('a').get('href') if prof.find('div', class_="ppl-detail-blk__img-ctrl") else None

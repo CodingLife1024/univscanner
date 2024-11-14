@@ -49,7 +49,7 @@ def get_faculty_data(prof):
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
-def novisibirsk_state_uni():
+def novosibirsk_state_uni():
     urls = ["https://pure.nsu.ru/portal/en/persons/search.html?search=&organisationName=Department%20of%20Information%20Technologies&journalName=&organisations=3086172&uri=&pageSize=all&page=0"]
 
     total_text = ""
@@ -75,4 +75,4 @@ def novisibirsk_state_uni():
 
 
 if __name__ == "__main__":
-    novisibirsk_state_uni()
+    novosibirsk_state_uni()

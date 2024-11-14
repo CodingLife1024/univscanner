@@ -15,12 +15,14 @@ country = "Hong Kong"
 faculty_data = []
 
 def get_name(prof):
-    name = prof.find('h4').get_text()
+    name = prof.find('h4').get_text().split("\n")[0].strip()
     return name
 
 def get_link(prof):
-    link = "https://www.cs.hku.hk" + prof.find('a').get('href') if prof.find('a').get('href')[0] == "/" else prof.find('a').get('href')
+    link = prof.find('a').get('href') if prof.find('a').get('href')[0] == "/" else prof.find('a').get('href')
     # print(link)
+    if link.startswith("/"):
+        link = "https://www.cs.hku.hk" + link
     if link[-1] == "/":
         link = link[:-1]
     return link
@@ -36,13 +38,10 @@ def get_faculty_data(prof, headers):
 
     email = link.split("/")[-1] + "@cs.hku.hk"
 
-    new_r = requests.get(link)
+    new_r = requests.get(link, headers=headers)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    try :
-        pers_url = new_soup.find('div', class_='col-md-6').find('a').get('href') if new_soup.find('div', class_='col-md-6').find('a') else "N/A"
-    except:
-        pers_url = get_scholar_profile(name)
+    pers_url = new_soup.find('div', class_='col-md-6').find('a').get('href') if new_soup.find('div', class_='col-md-6').find('a') else get_scholar_profile(name)
 
     if pers_url[0] == "/":
         pers_url = "https://www.cs.hku.hk" + pers_url
@@ -50,12 +49,9 @@ def get_faculty_data(prof, headers):
     if pers_url.startswith("mailto:"):
         pers_url = get_scholar_profile(name)
 
-    try:
-        desc = new_soup.find('div', class_='sp-column').get_text()
-    except:
-        desc = new_r.text
+    desc = new_r.text
 
-    found_keyword = any(re.search(re.escape(keyword), desc) for keyword in keyword_list)
+    found_keyword = any(re.search(re.escape(keyword), desc.lower()) for keyword in keyword_list)
 
     if found_keyword:
         faculty_data.append([university, country, name, email, link, pers_url])
@@ -75,7 +71,7 @@ def hongkong():
     all_profs = soup.find_all('div', class_='left col-8 col-sm-8')
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()

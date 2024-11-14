@@ -49,7 +49,7 @@ def uni_centrale():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nUniversity of Ghent done...\n")
+    print("\nUniversity of Centrale done...\n")
     # print(len(all_faculty))
     return all_faculty
 

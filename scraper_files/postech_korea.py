@@ -34,6 +34,7 @@ def get_research(prof):
     return research
 
 def get_faculty_data(prof):
+    global faculty_data
     with concurrent.futures.ThreadPoolExecutor() as executor:
         future_name = executor.submit(get_name, prof)
         future_link = executor.submit(get_link, prof)
@@ -65,6 +66,9 @@ def postech_korea():
                 future.result()
             except Exception as e:
                 print(f"Error occurred: {e}")
+
+    print("\nPohang University done...\n")
+    return faculty_data
 
 if __name__ == "__main__":
     postech_korea()

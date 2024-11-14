@@ -18,7 +18,7 @@ country = "United Kingdom"
 
 def get_faculty_data(prof):
     columns = prof.find_all('td')
-    name = columns[0].text.strip()
+    name = columns[0].text.replace("Dr", "").replace("Prof", "").strip()
     role = columns[1].text.strip()
     email = columns[2].find('a').text.strip()
     url = columns[0].find('a')['href']
@@ -27,7 +27,7 @@ def get_faculty_data(prof):
     research_text = new_soup.text
 
     found_keyword = any(re.search(re.escape(keyword), (research_text + role).lower()) for keyword in keyword_list)
-    
+
     if found_keyword:
         pers_link = get_scholar_profile(name)
         print([university, country, unidecode(name), email, url, pers_link])

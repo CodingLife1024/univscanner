@@ -15,18 +15,20 @@ u_name = "University of Manchester"
 country = "England"
 
 def get_name(prof):
-    name = prof.find('div', class_="tabCol_30").text[6:]
+    name = prof.find('a').text
     return name
 
 def get_link(prof):
-    link = prof.find_all('a', href=True)[0]['href'] if prof.find_all('a', href=True) else "Not Available"
+    link = prof.find('a', href=True)['href'] if prof.find('a', href=True) else "N/A"
+    if link.startswith("/"):
+        return "https://www.cs.manchester.ac.uk" + link
     return link
 
 def get_email(name):
     return ".".join(name.lower().split(" ")) + "@manchester.ac.uk"
 
 def get_expertise(prof):
-    expertise = prof.find_all('div', class_="tabCol_30")[2].text[19:] if len(prof.find_all('div', class_="tabCol_30")) >= 3 else "N/A"
+    expertise = prof.text
     return expertise
 
 def get_faculty_data(prof, headers):
@@ -34,48 +36,26 @@ def get_faculty_data(prof, headers):
         # Submit tasks for each component
         future_name = executor.submit(get_name, prof)
         future_link = executor.submit(get_link, prof)
-        future_email = executor.submit(get_email, prof)
         future_expertise = executor.submit(get_expertise, prof)
 
         # Collect the results as they complete
         name = future_name.result()
         link = future_link.result()
-        email = future_email.result()
         expertise = future_expertise.result()
 
-    if expertise == "Human computer systems" or expertise == "Machine learning and robotics":
-        faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
-        print([u_name, country, name, email, link, get_scholar_profile(name)])
+    email = get_email(name)
 
-    elif expertise == "Not Available" or expertise == "Teaching":
+    new_r = requests.get(link, headers=headers)
+    new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-        if link != "Not Available":
-            new_r = requests.get(link, headers=headers)
-            new_soup = BeautifulSoup(new_r.text, "html.parser")
+    research_text = new_soup.text + expertise
 
-            fingerprints = ""
+    found_keyword = any(re.search(re.escape(keyword), research_text, re.IGNORECASE) for keyword in keyword_list)
 
-            new_link = new_soup.find_all('button', class_="concept-badge-large dropdown-toggle")
-
-            for i in new_link:
-                fingerprints += i.text
-
-            found_keyword = any(re.search(re.escape(keyword), fingerprints) for keyword in keyword_list)
-
-            if found_keyword:
-                faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
-                print([u_name, country, name, email, link, get_scholar_profile(name)])
-        else:
-            link = get_scholar_profile(name)
-
-            if link != None:
-                new_r = requests.get(link, headers=headers)
-                new_soup = BeautifulSoup(new_r.text, "html.parser")
-
-                found_keyword = any(re.search(re.escape(keyword), new_r.text) for keyword in keyword_list)
-                if found_keyword:
-                    faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
-                    print([u_name, country, name, email, link, get_scholar_profile(name)])
+    if found_keyword:
+        pers_link = get_scholar_profile(name)
+        print([u_name, country, name, email, link, pers_link])
+        faculty_data.append([u_name, country, name, email, link, pers_link])
 
 def manchester():
     url = "https://www.cs.manchester.ac.uk/about/people/academic-and-research-staff/"
@@ -89,7 +69,7 @@ def manchester():
 
     dd = soup.find('div', {'class': 'tabRows'})
 
-    all_profs = dd.find_all('li', class_=lambda x: x in ['tabrowwhite', 'tabrowgrey'])
+    all_profs = dd.find_all('li', class_="tabrowwhite") + dd.find_all('li', class_="tabrowgrey")
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]

@@ -20,13 +20,13 @@ def get_faculty_data(prof, headers):
     link = "https://www.ist.hokudai.ac.jp/" + columns[0].find('a')['href']
 
     if columns[2]:
-        email = "Not Found"
+        email = "N/A"
         new_r = requests.get(link, headers=headers)
         new_soup = BeautifulSoup(new_r.text, "html.parser")
         research = new_soup.text
 
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-        if found_keyword:
+        if found_keyword or True:
             pers_link = get_scholar_profile(name)
             faculty_data.append([u_name, country, name, email, link, pers_link])
             print([u_name, country, name, email, link, pers_link])
@@ -48,7 +48,7 @@ def hokkaido_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nHokkaio University done...\n")
+    print("\nHokkaido University done...\n")
     return faculty_data
 
 

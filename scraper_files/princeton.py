@@ -18,9 +18,12 @@ country = "United States"
 def get_faculty_data(prof):
     name = prof.find('a').get_text()
     link = "https://www.cs.princeton.edu" + prof.find('a')['href']
-    pers_link = prof.find('a', class_='btn btn-xs btn-default')['href'] if prof.find('a', class_='btn btn-xs btn-default') else "Not Found"
+    pers_link = prof.find('a', class_='btn btn-xs btn-default')['href'] if prof.find('a', class_='btn btn-xs btn-default') else get_scholar_profile(name)
+    if link.strip().startswith("/"):
+        link = "https://www.cs.princeton.edu" + link
     email = link[44:] + "@cs.princeton.edu"
-
+    if pers_link.strip().startswith("/"):
+        pers_link = "https://www.cs.princeton.edu" + pers_link
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")    # getting the soup of the prof's page
 

@@ -61,7 +61,6 @@ def hanyang_uni():
 
     soup = BeautifulSoup(total_text, "html.parser")
 
-        # Find all professor entries
     all_profs = soup.find_all("td", valign="top", align="left", class_="organ_list", scope="row")
 
     with concurrent.futures.ThreadPoolExecutor() as executor:

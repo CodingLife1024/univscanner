@@ -1,62 +1,37 @@
 import requests
 from bs4 import BeautifulSoup
+import sys
+import os
 import re
+import pprint
 import concurrent.futures
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
+from components.GLOBAL_VARIABLES import keyword_list
 
 u_name = "Carnegie Mellon University"
 country = "United States"
 
 faculty_data = []
 
-def fetch_soup(url):
-    response = requests.get(url)
-    return BeautifulSoup(response.text, "html.parser")
+def get_faculty_data(prof, headers):
+    global faculty_data
+    columns = prof.find_all('td')
 
-def extract_name(professor):
-    try:
-        last_name = professor.find('td', class_='views-field-field-last-name').find('a').text.strip()
-        first_name = professor.find('td', class_='views-field-field-first-name').find('a').text.strip()
-        return f"{last_name} {first_name}"
-    except AttributeError:
-        return None
+    if len(columns) == 3:
+        name = columns[1].text.strip() + " " + columns[0].text.strip()
+        link = "https://csd.cmu.edu" + columns[0].find('a').get('href')
 
-def extract_email_and_personal_page(new_soup):
-    email = "N/A"
-    personal_page_link = None
+        new_r = requests.get(link, headers=headers)
+        new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    all_strong_text = new_soup.find_all('p')
-    for strong_text in all_strong_text:
-        if "Email" in strong_text.text:
-            email = strong_text.text[6:].strip()
-        elif "Website" in strong_text.text:
-            personal_page_link = strong_text.find('a').get('href')
+        email = new_soup.find('strong', string=lambda x: "Email" in x).find_parent('p').text.replace("Email", "").replace("\n", "").strip() if new_soup.find('strong', string=lambda x: "Email" in x) else "N/A"
 
-    return email, personal_page_link
+        pers_link = new_soup.find('a', string="Website")['href'] if new_soup.find('a', string="Website") else get_scholar_profile(name)
 
-def get_faculty_data(professor):
-    try:
-        name = extract_name(professor)
-        if not name:
-            return
-
-        link = "https://csd.cmu.edu" + professor.find('a').get('href')
-
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            future_soup = executor.submit(fetch_soup, link)
-            new_soup = future_soup.result()
-
-            future_email_personal = executor.submit(extract_email_and_personal_page, new_soup)
-            email, personal_page_link = future_email_personal.result()
-
-        if not personal_page_link:
-            personal_page_link = get_scholar_profile(name)
-
-        print([u_name, country, name, email, link, personal_page_link])
-        faculty_data.append([u_name, country, name, email, link, personal_page_link])
-
-    except Exception as e:
-        print(f"Error occurred: {e}")
+        faculty_data.append([u_name, country, name, email, link, pers_link])
+        print([u_name, country, name, email, link, pers_link])
 
 def carnegie_mellon():
     urls = [
@@ -67,22 +42,30 @@ def carnegie_mellon():
         "https://csd.cmu.edu/research/research-areas/robotics"
     ]
 
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+    }
+
+    all_profs = []
+
     for url in urls:
-        r = requests.get(url)
+        r = requests.get(url, headers=headers)
         soup = BeautifulSoup(r.text, "html.parser")
+        print("Fetching URL...", url)
 
-        tables = soup.find_all('table', {'class': 'cols-4'})
+        try:
+            profs = soup.find('table', class_="cols-3").find_all('tr')[1:]
+            all_profs.extend(profs)
+        except:
+            print(f"Error occurred while fetching URL: {url}")
 
-        for table in tables:
-            professors = table.find_all('tr')
-
-            with concurrent.futures.ThreadPoolExecutor() as executor:
-                futures = [executor.submit(get_faculty_data, professor) for professor in professors]
-                for future in concurrent.futures.as_completed(futures):
-                    try:
-                        future.result()  # Ensure exceptions are raised
-                    except Exception as e:
-                        print(f"Error occurred: {e}")
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
     print("\nCarnegie Mellon done...\n")
     return faculty_data

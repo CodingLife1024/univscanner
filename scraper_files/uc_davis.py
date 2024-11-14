@@ -68,7 +68,9 @@ def uc_davis():
     soup = BeautifulSoup(total_text, 'html.parser')
 
     super_div = soup.find_all('h3', string="Faculty")
-    
+
+    all_profs = []  
+
     for div in super_div:
         all_profs += div.find_next('div', class_="views-view-grid horizontal cols-2 clearfix").find_all('h3', class_="vm-listing__title")
 

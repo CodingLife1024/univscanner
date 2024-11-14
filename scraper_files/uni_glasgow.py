@@ -16,7 +16,7 @@ u_name = "University of Glasgow"
 country = "United Kingdom"
 
 def get_name(prof):
-    name = prof.find('a').text.strip()
+    name = prof.find('a').text.replace("Dr", "").replace("Professor", "").replace("Prof", "").replace("Mr", "").replace("Ms", "").replace("Miss", "").strip()
     name_parts = name.split(',')
     name = name_parts[1] + " " + name_parts[0]
     name = " ".join(name.split(" ")[1:])
