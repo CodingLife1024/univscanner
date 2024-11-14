@@ -30,11 +30,10 @@ def get_faculty_data(prof):
 
         new_soup = BeautifulSoup(research_text, "html.parser")
 
-        found_keyword = any(re.search(re.escape(keyword), research_text.lower()) for keyword in keyword_list)
+        found_keyword = any(re.search(re.escape(keyword), research_text.lower(), re.IGNORECASE) for keyword in keyword_list)
 
         if found_keyword:
             pers_page = new_soup.find('a', string='Personal page') if research_text else get_scholar_profile(name)
-
             print([u_name, country, name, email, link, pers_page])
             faculty_data.append([u_name, country, name, email, link, pers_page])
 

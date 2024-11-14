@@ -46,7 +46,6 @@ def get_faculty_data(prof):
     for dept in depts:
         dd = dept.text.strip()
         if dd in departments:
-
             pers_link = get_scholar_profile(name)
 
             if [university_name, country, name, email, link, pers_link] != faculty_data[-1] if faculty_data != [] else True:

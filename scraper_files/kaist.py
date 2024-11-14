@@ -42,6 +42,8 @@ def get_faculty_data(prof):
             dt_elements = table.find_all('dt')
             dd_elements = table.find_all('dd')
 
+            research = new_soup.text
+
             for dt, dd in zip(dt_elements, dd_elements):
                 if dt.get_text(strip=True) == 'Research Area':
                     research_area = dd.get_text(strip=True)
@@ -50,7 +52,7 @@ def get_faculty_data(prof):
                 elif dt.get_text(strip=True) == 'Website':
                     website = dd.find('a')['href']
 
-            found_keyword = any(re.search(keyword, research_area.lower() + major.lower(), re.IGNORECASE) for keyword in keyword_list)
+            found_keyword = any(re.search(keyword, research, re.IGNORECASE) for keyword in keyword_list)
 
             if found_keyword:
                 faculty_data.append([u_name, country, name, email, link, website])

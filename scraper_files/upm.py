@@ -17,7 +17,7 @@ country = "Malaysia"
 
 def get_name(prof):
     name_tag = prof.find('a', href=True)
-    name = name_tag.get_text().strip() if name_tag else None
+    name = name_tag.get_text().replace("Prof.", "").replace("Dr.", "").replace("Ts.", "").replace("Assoc.", "").replace("Gs.", "").replace("Ir.", "").strip() if name_tag else None
     return name
 
 def get_link(prof):
@@ -26,14 +26,16 @@ def get_link(prof):
     return link
 
 def get_research(prof):
-    research_tag = prof.find('strong', string=re.compile(r"Research"))
-    research = research_tag.next_sibling.strip() if research_tag else ""
+    research = prof.text
     return research
 
 def get_email(prof):
-    email_tag = prof.find('a', sreing=re.compile(r"Mail"))
-    email = email_tag.next_sibling.strip() if email_tag else "N/A"
-    return email
+    email_tag = prof.find('a', href=re.compile(r"mailto:"))['href'][7:] if prof.find('a', href=re.compile(r"mailto:")) else False
+    if email_tag == False:
+        full_text = prof.text
+        email = full_text.split("Mail :")[1].strip().split("@")[0] + "@@upm.edu.my"
+        return email
+    return email_tag
 
 def get_faculty_data(prof):
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -48,6 +50,10 @@ def get_faculty_data(prof):
         link = future_link.result()
         research = future_research.result()
         email = future_email.result()
+
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, 'html.parser')
+    research += new_soup.text
 
     # Check if any keyword matches the research area
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)

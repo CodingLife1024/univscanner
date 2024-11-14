@@ -26,30 +26,21 @@ def normalize_email(email):
     email = re.sub(r'\s*\[\s*dot\s*\]\s*', '.', email)
     return email
 
-def get_name(prof):
-    name = prof.get_text().strip()
-    return name
+def get_faculty_data(prof, headers):
+    name = prof.find('a').get_text().strip()
+    link = "https://www.cs.ox.ac.uk" + prof.find('a')['href']
 
-def get_link(prof):
-    href = "https://www.cs.ox.ac.uk/people/" + unidecode(prof).lower().replace(" ", ".")
-    return href
-
-def get_faculty_data(prof):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        future_name = executor.submit(get_name, prof)
-        future_link = executor.submit(get_link, prof)
-
-        name = future_name.result()
-        link = future_link.result()
-
-    new_resonse = requests.get(link)
+    new_resonse = requests.get(link, headers=headers)
     new_content = new_resonse.text
 
     new_soup = BeautifulSoup(new_content, 'html.parser')
 
-    if any(keyword in new_soup.get_text().lower() for keyword in keyword_list):
-        pers_link = get_scholar_profile(name)
+    found_keyword = any(keyword in new_soup.get_text().lower() for keyword in keyword_list)
 
+    if found_keyword or True:
+        pers_link = new_soup.find('h2', class_="panel-subheading text-uppercase no-top-margin").find_next('a')['href'] if new_soup.find('h2', class_="panel-subheading text-uppercase no-top-margin") else get_scholar_profile(name)
+        if pers_link.startswith("/"):
+            pers_link = "https://www.cs.ox.ac.uk" + pers_link
         try:
             email = new_soup.find('div', class_='scaled-text', itemprop='email').get_text()[3:]
             email = normalize_email(email)
@@ -61,14 +52,22 @@ def get_faculty_data(prof):
 
 def oxford():
     url = "https://www.cs.ox.ac.uk/people/faculty.html"
-
-    r = requests.get(url)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+    }
+    r = requests.get(url, headers=headers, verify=False)
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    all_profs = soup.find_all('span', itemprop='name')
+    all_profs = []
+
+    super_class = soup.find_all('ul', class_='list-unbulleted')
+
+    for i in super_class:
+        profs = i.find_all('li')
+        all_profs.extend(profs)
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()

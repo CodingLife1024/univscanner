@@ -19,14 +19,14 @@ def get_faculty_data(prof):
     columns = prof.find_all('td')
     name = columns[0].text.strip()
     link = "https://di.ku.dk/english/staff/vip/" + columns[0].find('a').get('href')
-    post = columns[1].text.strip().lower()
+    post = columns[1].text.lower()
 
-    if "professor" in post or "lecturer" in post:
+    if "professor" in post or "lecturer" in post or "instructor" in post:
         new_r = requests.get(link)
         new_soup = BeautifulSoup(new_r.text, "html.parser")
 
         email = new_soup.find('p', class_="forskerprofil_kontakt").find('a').text.strip() if new_soup.find('p', class_="forskerprofil_kontakt").find('a') else "N/A"
-        research = new_soup.text.strip()
+        research = new_soup.text
 
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 

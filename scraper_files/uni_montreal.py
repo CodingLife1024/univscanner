@@ -26,8 +26,7 @@ def get_email(prof):
     return email
 
 def get_link(prof):
-    anchor_tag = prof.find('a')
-    link = "https://diro.umontreal.ca" + anchor_tag['href'] if anchor_tag else "N/A"
+    link = "https://diro.umontreal.ca" + prof.find('a')['href'] if prof.find('a') else "N/A"
     return link
 
 def get_faculty_data(prof):
@@ -49,7 +48,7 @@ def get_faculty_data(prof):
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
     if found_keyword:
-        pers_link = new_soup.find('p', class_="presenceWeb_link")['href'] if new_soup.find('p', class_="presenceWeb_link") else get_scholar_profile(name)
+        pers_link = new_soup.find('p', class_="presenceWeb_link").find('a')['href'] if new_soup.find('p', class_="presenceWeb_link") else get_scholar_profile(name)
 
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
