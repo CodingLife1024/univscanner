@@ -35,7 +35,7 @@ def get_research(new_soup):
     return research
 
 def get_personal_link(new_soup, name):
-    pers_link = new_soup.find('span', id_="idDetail_lbl_WWW").find('a')['href'] if new_soup.find('span', id_="idDetail_lbl_WWW") else "get_scholar_profile(name)"
+    pers_link = new_soup.find('span', id_="idDetail_lbl_WWW").find('a')['href'] if new_soup.find('span', id_="idDetail_lbl_WWW") else get_scholar_profile(name)
     return pers_link
 
 def get_faculty_data(prof):

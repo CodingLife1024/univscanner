@@ -31,7 +31,7 @@ def get_email(prof):
     link = get_link(prof)
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
-    email = new_soup.find('span', itemprop_="email").text.strip() if new_soup.find('span', itemprop_="email") else None
+    email = new_soup.find('a', href=re.compile(r'mailto:')).text if new_soup.find('a', href=re.compile(r'mailto:')) else "N/A"
     return email
 
 def get_faculty_data(prof):

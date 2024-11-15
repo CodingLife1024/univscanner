@@ -29,6 +29,8 @@ def get_link(prof):
     name_tag = prof.find('a', class_="font-bold text-2xl text-endeavour")
     if name_tag:
         link = name_tag['href']
+        if link.startswith("/"):
+            link = "https://www.southampton.ac.uk" + link
         return link
 
 def get_email(prof):

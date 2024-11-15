@@ -15,44 +15,16 @@ faculty_data = []
 u_name = "University of Nottingham"
 country = "United Kingdom"
 
-def get_name(prof):
-    name = prof.find('td')
-    if not name:
-        pass
-    name = name.text.strip()
-    name = name.split(',')[1] + " " + name.split(',')[0]
-    return name
-
-def get_link(prof):
-    name_tag = prof.find('td')
-    if not name_tag:
-        pass
-    link = "https://www.nottingham.ac.uk/" + name_tag.find('a')['href']
-    return link
-
-def get_email(prof):
-    email = prof.find('td', class_='sys_email').find('a')['href'][7:]
-    return email
-
-def get_research(new_r):
-    research = new_r.text
-    return research
-
 def get_faculty_data(prof):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Submit tasks for each component
-        future_name = executor.submit(get_name, prof)
-        future_link = executor.submit(get_link, prof)
-        future_email = executor.submit(get_email, prof)
-
-        # Collect the results as they complete
-        name = future_name.result()
-        link = future_link.result()
-        email = future_email.result()
+    columns = prof.find_all('td')
+    name_parts = columns[0].text.strip().split(",")
+    name = name_parts[1].strip() + " " + name_parts[0].strip()
+    link = "https://www.nottingham.ac.uk/computerscience/people/" + columns[0].find('a')['href']
+    email = prof.find('a', href=re.compile(r'^mailto:'))['href'][7:] if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
 
     new_r = requests.get(link)
-
     research = new_r.text
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:

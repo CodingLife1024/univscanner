@@ -73,7 +73,6 @@ def uni_north_carolina():
                 print(f"Error occurred: {e}")
 
     print("\nUniversity of North Carolina done...\n")
-
     return faculty_data
 
 if __name__ == '__main__':
