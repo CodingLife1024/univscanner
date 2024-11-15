@@ -177,6 +177,7 @@ def uni_michigan():
 
     print("\nUniversity of Michigan done...\n")
     # print(len(all_faculty))
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
     return all_faculty
 
 if __name__ == "__main__":

@@ -18,6 +18,8 @@ country = "South Korea"
 def get_faculty_data(prof):
     category_name = prof.find('span').text
 
+    research = prof.text
+
     if category_name != "Emeritus":
         profs = prof.find_next('ul').find_all('li')
 
@@ -37,20 +39,9 @@ def get_faculty_data(prof):
             new_r = requests.get(link)
             new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-            table = new_soup.find('dl', {'class': 'detail'})
+            research += new_soup.find('div', class_="fix").text
 
-            dt_elements = table.find_all('dt')
-            dd_elements = table.find_all('dd')
-
-            research = new_soup.text
-
-            for dt, dd in zip(dt_elements, dd_elements):
-                if dt.get_text(strip=True) == 'Research Area':
-                    research_area = dd.get_text(strip=True)
-                elif dt.get_text(strip=True) == 'Major':
-                    major = dd.get_text(strip=True)
-                elif dt.get_text(strip=True) == 'Website':
-                    website = dd.find('a')['href']
+            website = get_scholar_profile(name)
 
             found_keyword = any(re.search(keyword, research, re.IGNORECASE) for keyword in keyword_list)
 

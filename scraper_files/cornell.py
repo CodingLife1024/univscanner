@@ -47,10 +47,8 @@ def get_faculty_data(prof):
         dd = dept.text.strip()
         if dd in departments:
             pers_link = get_scholar_profile(name)
-
-            if [university_name, country, name, email, link, pers_link] != faculty_data[-1] if faculty_data != [] else True:
-                faculty_data.append([university_name, country, name, email, link, pers_link])
-                print([university_name, country, name, email, link, pers_link])
+            faculty_data.append([university_name, country, name, email, link, pers_link])
+            print([university_name, country, name, email, link, pers_link])
 
 
 def cornell():
@@ -104,6 +102,7 @@ def cornell():
                 print(f"Error occurred: {e}")
 
     print('\nCornell University done...\n')
+    faculty_data = list(set(faculty_data))
     return faculty_data
 
 if __name__ == "__main__":

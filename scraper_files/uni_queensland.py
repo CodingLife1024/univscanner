@@ -16,7 +16,7 @@ u_name = "University of Queensland"
 country = "Australia"
 
 def get_faculty_data(prof, titles):
-    name = prof.find('a').text.strip()
+    name = prof.find('a').text.replace("Professor", "").replace("Ms", "").replace("Associate", "").strip()
     for title in titles:
         if name.startswith(title):
             name = name[len(title):]
