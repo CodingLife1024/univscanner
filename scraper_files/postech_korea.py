@@ -49,8 +49,9 @@ def get_faculty_data(prof):
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
-        print([u_name, country, name, email, link, get_scholar_profile(name)])
-        faculty_data.append([u_name, name, email, link, get_scholar_profile(name)])
+        pers_link = get_scholar_profile(name)
+        print([u_name, country, name, email, link, pers_link])
+        faculty_data.append([u_name, name, email, link, pers_link])
 
 def postech_korea():
     url = "https://ecse.postech.ac.kr/member/professor/"
