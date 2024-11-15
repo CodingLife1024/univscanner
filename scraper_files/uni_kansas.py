@@ -56,7 +56,7 @@ def get_faculty_data(prof):
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword or True:
-        pers_link = prof.find('a', href=lambda x: "Website" in x.text).get('href') if prof.find('a', href=lambda x: "Website" in x.text) else get_scholar_profile(name)
+        pers_link = prof.find('a', string=lambda x: "Website" in x).get('href') if prof.find('a', string=lambda x: "Website" in x) else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
