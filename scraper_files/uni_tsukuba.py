@@ -51,9 +51,6 @@ def uni_tsukuba():
     for i in super_class:
         all_profs.extend(i.find_all('tr'))
 
-    print(len(all_profs))
-    print(all_profs[0])
-
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):

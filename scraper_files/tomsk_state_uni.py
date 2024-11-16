@@ -56,7 +56,6 @@ def tomsk_state_uni():
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1358949768769161856&after_author=Tnt9AM79__8J&astart=300',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1358949768769161856&after_author=93d9AN_9__8J&astart=310',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1358949768769161856&after_author=fV98APD9__8J&astart=320',
-
     ]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -68,7 +67,7 @@ def tomsk_state_uni():
                 print(f"Error occurred: {e}")
 
     print("\nTomsk State University done...\n")
-    # print(len(all_faculty))
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
     return all_faculty
 
 if __name__ == "__main__":

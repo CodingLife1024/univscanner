@@ -16,7 +16,7 @@ u_name = "Universiti Brunei Darussalam"
 country = "Brunei"
 
 def get_faculty_data(prof):
-    name = prof.find("h2").text.replace("Dr.", "").strip()
+    name = prof.find("h2").text.replace("Dr.", "").replace("Prof", "").strip()
     link = get_scholar_profile(name)
 
     email = prof.find("a", href=re.compile(r"^mailto:")).text.strip() if prof.find("a", href=re.compile(r"^mailto:")) else "N/A"
@@ -29,8 +29,9 @@ def get_faculty_data(prof):
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
-        faculty_data.append([u_name, country, name, email, link])
-        print([u_name, country, name, email, link])
+        pers_link = get_scholar_profile(name)
+        faculty_data.append([u_name, country, name, email, link, pers_link])
+        print([u_name, country, name, email, link, pers_link])
 
 def universiti_brunei_darussalam():
     urls = ["https://fos.ubd.edu.bn/academics/"]

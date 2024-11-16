@@ -24,10 +24,11 @@ def get_faculty_data(href):
     extract_email = new_soup.find_all('a', href=lambda href: href and href.startswith('mailto:'))
     email = extract_email[0].get_text().strip() if extract_email else 'Email Not Provided'
 
-    text_content = new_soup.find('h1').get_text().strip()
+    name = new_soup.find('h1').get_text().strip()
+    pers_link = get_scholar_profile(name)
 
-    print([university, country, text_content, email, indiv_url])
-    faculty_data.append([university, country, text_content, email, indiv_url])
+    print([university, country, name, email, indiv_url, pers_link])
+    faculty_data.append([university, country, name, email, indiv_url, pers_link])
 
 def stanford():
     url_os = "https://www.cs.stanford.edu/people-cs/faculty-research/operatingdistributed-systems"

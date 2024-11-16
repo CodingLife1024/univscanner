@@ -37,8 +37,9 @@ def get_faculty_data(prof):
             print([u_name, country, name, email, link, pers_link])
 
 def uni_sussex():
-    urls = ["http://www.sussex.ac.uk/informatics/people/peoplelists/group/teaching-faculty",
-            "https://www.sussex.ac.uk/schools/engineering-and-informatics/contacts/informatics/group/research-faculty"]
+    urls = [
+        "http://www.sussex.ac.uk/informatics/people/peoplelists/group/teaching-faculty"
+    ]
 
     total_text = ""
 
