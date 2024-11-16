@@ -16,25 +16,21 @@ u_name = "University of Cape Town"
 country = "South Africa"
 
 def get_faculty_data(prof):
-    name = prof.find('h1', class_='contact--fullname').text.strip() if prof.find('h1', class_='contact--fullname') else "N/A"
-    print(name)
-    link = "https://sit.uct.ac.za" + prof.find('article')['about'] if prof.find('article') else "N/A"
-    print(link)
-    email = prof.find('a', href=re.compile(r"^mailto:")).text.strip() if prof.find('a', href=re.compile(r"^mailto:")) else "N/A"
-    print(email)
-    print("")
+    name = prof.find('h1').text.strip()
+    pers_link = prof.find('a', string="Website")['href'] if prof.find('a', string="Website") else prof.find('a', string=lambda x: x in ["ResearchGate profile", "Google Scholar profile"])['href']
+    email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
+    link = "https://sit.uct.ac.za" + prof.find('article', class_="node node--type-contact node--view-mode-full full profile-default")['about']
 
-    try:
-        new_r = requests.get(link)
-        new_soup = BeautifulSoup(new_r.text, "html.parser")
-        research = new_soup.find('div', class_="field--name-field-bio").text.strip()
-        found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-        if found_keyword or True:
-            pers_link = get_scholar_profile(name)
-            faculty_data.append([u_name, country, name, email, link, pers_link])
-            print([u_name, country, name, email, link, pers_link])
-    except Exception as e:
-        print(f"Error occurred: {e}")
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, "html.parser")
+
+    research = new_soup.text
+
+    found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
+    if found_keyword:
+        faculty_data.append([u_name, country, name, email, link, pers_link])
+        print([u_name, country, name, email, link, pers_link])
 
 
 def uni_cape_town():
@@ -46,14 +42,12 @@ def uni_cape_town():
     total_text = ""
 
     for url in urls:
-        r = requests.get(url, headers=headers, verify=False)
+        r = requests.get(url, headers=headers)
         total_text += r.text
 
     soup = BeautifulSoup(total_text, "html.parser")
 
     all_profs = soup.find_all('div', {'class': 'views-row'})
-
-    print(all_profs[1])
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]

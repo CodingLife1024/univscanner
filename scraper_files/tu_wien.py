@@ -17,10 +17,9 @@ country = "Austria"
 
 def get_faculty_data(prof):
     link = 'https://informatics.tuwien.ac.at' + prof.find('a')['href']
-    link_name = prof.find('a').text.strip()
-    title = prof.find('div', class_='text-truncate text-muted').text.strip()
-    name = prof.find('p').text.strip()
-    name = link_name + " " + name.replace(link_name, '').replace(title, '').replace(',', " ").strip()
+    title = prof.text.lower()
+    name_parts = prof.find('div', class_="text-truncate").text.strip().split(",")
+    name = name_parts[1].strip() + " " + name_parts[0].strip()
 
     if ("professor" in title or "lecturer" in title) and "emerit" not in title:
         new_r = requests.get(link)
@@ -31,7 +30,7 @@ def get_faculty_data(prof):
 
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
         if found_keyword:
-            pers_link = new_soup.find('ul', class_="mt-4").find_all('a')[-1] if new_soup.find('ul', class_="mt-4") else get_scholar_profile(name)
+            pers_link = new_soup.find('ul', class_="mt-4").find_all('a')[-1]['href'] if new_soup.find('ul', class_="mt-4") else get_scholar_profile(name)
             faculty_data.append([u_name, country, name, email, link, pers_link])
             print([u_name, country, name, email, link, pers_link])
 

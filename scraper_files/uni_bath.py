@@ -67,8 +67,7 @@ def uni_bath():
     print()
     print("University of Bath done...")
     print()
-
-    print("\nUniversity of Bath done...\n")
+    
     return faculty_data
 
 
