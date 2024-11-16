@@ -17,10 +17,9 @@ country = "United States"
 
 def get_faculty_data_1(prof):
     name = prof.find('h4').text.strip()
-    link = prof.find('a')['href']
-    full_text = prof.text.strip()
+    link = prof.find('a', string="Website")['href']
 
-    email = prof.find('a', rel_="noopener noreferrer").text.strip() if prof.find('a', rel_="noopener noreferrer") else "N/A"
+    email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")

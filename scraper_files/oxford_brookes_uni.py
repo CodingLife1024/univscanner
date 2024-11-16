@@ -16,7 +16,7 @@ u_name = "Oxford Brookes University"
 country = "United Kingdom"
 
 def get_name(prof):
-    name = prof.find('h3').get_text().replace("Dr ", "").replace("Professor", "").strip()
+    name = prof.find('h3').text.replace("Dr ", "").replace("Professor", "").strip()
     return name
 
 def get_email(prof):

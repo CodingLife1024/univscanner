@@ -17,7 +17,7 @@ country = "United States"
 
 
 def get_faculty_data(prof):
-    name = prof.find('a', class_="contact_block_name_link").text.strip()
+    name = prof.find('a', class_="contact_block_name_link").text.replace("\ufeff", "").strip()
     link = "https://engineering.virginia.edu" + prof.find('a', class_="contact_block_name_link")['href']
     research = prof.find('div', class_="people_list_item_body").text.strip()
 

@@ -15,7 +15,7 @@ u_name = "Lancaster University"
 country = "United Kingdom"
 
 def get_name(prof):
-    name = prof.find('h3', class_="name").get_text().strip()
+    name = prof.find('h3', class_="name").get_text().replace("Dr", "").replace("Professor", "").strip()
     return name
 
 def get_link(prof):

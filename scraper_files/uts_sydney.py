@@ -22,7 +22,7 @@ def get_name(prof):
 
 def get_link(prof):
     name_tag = prof.find('a', href=True)
-    link = name_tag['href'] if name_tag else None
+    link = "https://www.uts.edu.au" + name_tag['href'] if name_tag else None
     return link
 
 def get_title(prof):

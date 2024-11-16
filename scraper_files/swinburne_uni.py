@@ -19,23 +19,24 @@ def get_faculty_data(prof):
     columns = prof.find_all('td')
 
     if len(columns) > 2:
-        name = columns[0].text.replace("Dr", "").replace("Professor", "").strip()
-        link = columns[0].find('a').get('href')
-        email = columns[2].text.strip()
-        title = columns[1].text.strip().lower()
+        name = columns[0].text.replace("Dr", "").replace("Professor", "").strip() if columns[0] else "N/A"
+        link = columns[0].find('a')['href'] if columns[0].find('a') else "N/A"
+        email = columns[2].find('a', href=re.compile(r'^mailto:'))['href'][7:] if columns[2].find('a', href=re.compile(r'^mailto:')) else "N/A"
+        title = columns[1].text.strip().lower() if columns[1] else "N/A"
 
         if "professor" in title or "lecturer" in title:
-            new_r = requests.get(link)
-            new_soup = BeautifulSoup(new_r.text, "html.parser")
+            if link != "N/A":
+                new_r = requests.get(link)
+                new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-            research = new_soup.text
+                research = new_soup.text
 
-            found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+                found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-            if found_keyword:
-                pers_link = get_scholar_profile(name)
-                faculty_data.append([u_name, country, name, email, link, pers_link])
-                print([u_name, country, name, email, link, pers_link])
+                if found_keyword:
+                    pers_link = get_scholar_profile(name)
+                    faculty_data.append([u_name, country, name, email, link, pers_link])
+                    print([u_name, country, name, email, link, pers_link])
 
 def swinburne_uni():
     urls = [
@@ -49,7 +50,7 @@ def swinburne_uni():
         r = requests.get(url)
         soup = BeautifulSoup(r.text, "html.parser")
 
-        all_profs += soup.find('tbody').find_all('tr')
+        all_profs += soup.find('tbody').find_all('tr')[1:]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]

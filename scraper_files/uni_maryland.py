@@ -75,10 +75,7 @@ def uni_maryland():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print()
-    print("University of Maryland done...")
-    print()
-
+    print("\nUniversity of Maryland done...\n")
     return faculty_data
 
 if __name__ == '__main__':

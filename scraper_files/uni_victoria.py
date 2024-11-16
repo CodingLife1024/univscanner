@@ -17,7 +17,7 @@ country = "Canada"
 
 def get_faculty_data(prof):
     columns = prof.find_all('td')
-    name = columns[0].get_text().strip()
+    name = columns[0].find('a').text.strip() if columns[0].find('a') else columns[0].text.strip()
     link = "https://www.uvic.ca/ecs/computerscience/people/faculty/" + columns[0].find('a').get('href')
     email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
     research = columns[1].text
