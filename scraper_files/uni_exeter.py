@@ -33,41 +33,37 @@ def get_research(new_soup):
 
 
 def get_faculty_data(prof):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Submit tasks for each component
-        future_name = executor.submit(get_name, prof)
-        future_link = executor.submit(get_link, prof)
+    name = prof.find('a').text.replace("Dr", "").replace("Professor", "").replace("Ms", "").strip()
+    link = prof.find('a')['href']
+    email = prof.find('a', href=re.compile(r'^mailto:'))['href'][7:] if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
+    title = prof.find('p').text.strip().lower()
 
-        # Collect the results as they complete
-        name = future_name.result()
-        link = future_link.result()
+    if "lecturer" in title or "professor" in title:
+        new_r = requests.get(link)
+        new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    new_r = requests.get(link)
-    new_soup = BeautifulSoup(new_r.text, "html.parser")
+        research = new_soup.text
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Submit tasks for each component
-        future_email = executor.submit(get_email, new_soup)
-        future_research = executor.submit(get_research, new_soup)
+        found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-        # Collect the results as they complete
-        email = future_email.result()
-        research = future_research.result()
-
-    found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-
-    if found_keyword:
-        pers_link = get_scholar_profile(name)
-        faculty_data.append([u_name, country, name, email, link, pers_link])
-        print([u_name, country, name, email, link, pers_link])
+        if found_keyword:
+            pers_link = new_soup.find('a', class_="button arrow-icon")['href'] if new_soup.find('a', class_="button arrow-icon") else get_scholar_profile(name)
+            faculty_data.append([u_name, country, name, email, link, pers_link])
+            print([u_name, country, name, email, link, pers_link])
 
 
 def uni_exeter():
-    url = "https://computerscience.exeter.ac.uk/people/academicstaff/"
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, "html.parser")
+    urls = [
+        "https://computerscience.exeter.ac.uk/people/academic/",
+        "https://engineering.exeter.ac.uk/people/academicstaff/"
+    ]
 
-    all_profs = soup.find('tbody').find_all('tr')
+    all_profs = []
+
+    for url in urls:
+        r = requests.get(url)
+        soup = BeautifulSoup(r.text, "html.parser")
+        all_profs += soup.find_all('div', class_="profile-card-listing row")
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]

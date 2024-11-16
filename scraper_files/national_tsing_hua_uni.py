@@ -74,7 +74,7 @@ def national_tsing_hua_uni():
                 print(f"Error occurred: {e}")
 
     print("\nNational Tsing Hua University done...\n")
-    # print(len(all_faculty))
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
     return all_faculty
 
 if __name__ == "__main__":

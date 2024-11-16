@@ -21,10 +21,15 @@ def get_faculty_data(prof):
     research = columns[1].get_text().strip()
     email = columns[2].get_text().strip().replace(" [a] ", "@").replace(" [point] ", ".")
 
+    r = requests.get(link)
+    new_soup = BeautifulSoup(r.text, "html.parser")
+
+    research += " " + new_soup.text
+
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword:
-        pers_link = get_scholar_profile(name)
+    if found_keyword or True:
+        pers_link = new_soup.find('a', text="Website")['href'] if new_soup.find('a', text="Website") else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 

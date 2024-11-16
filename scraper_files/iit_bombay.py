@@ -89,7 +89,7 @@ def iit_bombay():
                 print(f"Error occurred: {e}")
 
     print("\nIndian Institute of Technology, Mumbai done...\n")
-    # print(len(all_faculty))
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
     return all_faculty
 
 if __name__ == "__main__":
