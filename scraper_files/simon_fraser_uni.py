@@ -49,6 +49,8 @@ def simon_fraser_uni():
 
     all_profs = soup.find_all('div', class_='text')
 
+    print(len(all_profs))
+
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):

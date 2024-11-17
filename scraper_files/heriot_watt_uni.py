@@ -69,7 +69,6 @@ def heriot_watt_uni():
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14625542210134544336&after_author=M-EPAcL9__8J&astart=430',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14625542210134544336&after_author=HN42AeX9__8J&astart=440',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14625542210134544336&after_author=nuZRAQb-__8J&astart=450',
-
     ]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:

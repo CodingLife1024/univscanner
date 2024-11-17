@@ -38,7 +38,6 @@ def uni_mannheim():
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=4109524060791268206&after_author=GLNNADD9__8J&astart=120',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=4109524060791268206&after_author=TxPcAKv9__8J&astart=130',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=4109524060791268206&after_author=qZNLAAn-__8J&astart=140',
-
     ]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -50,7 +49,7 @@ def uni_mannheim():
                 print(f"Error occurred: {e}")
 
     print("\nUniversität Mannheim done...\n")
-    # print(len(all_faculty))
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
     return all_faculty
 
 if __name__ == "__main__":

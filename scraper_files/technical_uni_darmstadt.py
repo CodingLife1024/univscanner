@@ -20,6 +20,9 @@ def get_faculty_data(prof):
     name = columns[1].text.replace("Prof.", "").replace("Dr.", "").replace("Hon.", "").replace("‘in", "").strip()
     link = columns[1].find('a').get('href')
 
+    if not link.startswith("http"):
+        link = "https://www.informatik.tu-darmstadt.de/fb20/organisation_fb20/" + link
+
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
 

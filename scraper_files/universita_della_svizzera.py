@@ -51,7 +51,9 @@ def get_faculty_data(prof):
         print([u_name, country, name, email, link, pers_link])
 
 def universita_della_svizzera():
-    urls = ["https://search.usi.ch/en/faculties/3/facolta-di-scienze-informatiche/people?_ga=2.16212086.1184706243.1634460451-1578945918.1634460451"]
+    urls = [
+        "https://search.usi.ch/en/faculties/3/facolta-di-scienze-informatiche/people?_ga=2.16212086.1184706243.1634460451-1578945918.1634460451"
+    ]
 
     total_text = ""
 

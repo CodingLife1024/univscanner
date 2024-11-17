@@ -16,7 +16,7 @@ u_name = "Massey University"
 country = "New Zealand"
 
 def get_name(prof):
-    name = prof.find('span', class_="pf_short_pname").text.replace("Dr", "").replace("Prof", "").replace("Professor", "").replace("Associate", "").strip()
+    name = prof.find('span', class_="pf_short_pname").text.replace("Dr", "").replace("Professor", "").replace("Prof", "").replace("Associate", "").strip()
     return name
 
 def get_link(prof):

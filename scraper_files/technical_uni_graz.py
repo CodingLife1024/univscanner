@@ -22,7 +22,7 @@ def get_faculty_data(prof):
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    email = new_soup.find('a', href=re.compile(r'^mailto:')).text.strip() if new_soup.find('a', href=re.compile(r'^mailto:')) else "N/A"
+    email = new_soup.find('a', href=re.compile(r'^mailto:')).text.replace('(at)', "@").strip() if new_soup.find('a', href=re.compile(r'^mailto:')) else "N/A"
 
     research = new_soup.text
 

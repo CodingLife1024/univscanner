@@ -1,64 +1,88 @@
+import concurrent.futures
+import os
+import pprint
+import re
+import sys
+
 import requests
 from bs4 import BeautifulSoup
-import sys
-import os
-import re
-import concurrent.futures
-import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from components.google_scholar import get_scholar_profile
-from components.GLOBAL_VARIABLES import keyword_list
-
-faculty_data = []
+from components.GLOBAL_VARIABLES import *
+from components.gscholar_indiv_page import search_faculty_list
 
 u_name = "Universidad Carlos III de Madrid"
 country = "Spain"
 
-def get_faculty_data(prof, headers):
-    name = prof.find('a').text.strip()
-    link = prof.find('a')['href']
+all_faculty = []
 
-    if not link.startswith("http"):
-        link = "https://researchportal.uc3m.es" + link
-
-    new_r = requests.get(link, headers=headers)
-    new_soup = BeautifulSoup(new_r.text, "html.parser")
-
-    email = new_soup.find('a', href=re.compile(r'^mailto:')).text.strip() if new_soup.find('a', href=re.compile(r'^mailto:')) else "N/A"
-
-    research = new_soup.text.strip()
-
-    found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-
-    if found_keyword:
-        pers_link = get_scholar_profile(name)
-        faculty_data.append([u_name, country, name, email, link, pers_link])
-        print([u_name, country, name, email, link, pers_link])
+def get_faculty_data(link, headers):
+    global all_faculty
+    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
 
 def universidad_carlos_de_madrid():
-    urls = [
-        "https://www.uc3m.es/ss/Satellite/Doctorado/en/Detalle/Estudio_C/1422576090112/1371210298470/Computer_Science_and_Technology#faculty_faculty",
-        "https://www.uc3m.es/phdprogram/electrical-engineering-electronics-automation#faculty",
-        "https://www.uc3m.es/ss/Satellite/Doctorado/en/Detalle/Estudio_C/1371323806437/1371210298470/Signal_Processing_and_Communications_Engineering#faculty_faculty"
+    global all_faculty
+    links = [
+        "https://scholar.google.com/citations?view_op=view_org&org=14848478220935772690",
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=M7kKAM7X__8J&astart=10',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=P0EBAEDh__8J&astart=20',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=dTAKACDk__8J&astart=30',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=pEUEAP7m__8J&astart=40',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=mmQEAAfp__8J&astart=50',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=RStNAEzs__8J&astart=60',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=Tw2LAMDt__8J&astart=70',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=9KVHAAnv__8J&astart=80',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=Zl3uAFjw__8J&astart=90',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=v1yGACry__8J&astart=100',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=2EIBANny__8J&astart=110',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=6BCCADPz__8J&astart=120',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=gnRnABT0__8J&astart=130',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=k96AAOj0__8J&astart=140',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=35cCAHf1__8J&astart=150',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=o4iVAOz1__8J&astart=160',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=QHWBAJj2__8J&astart=170',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=r3JnAO_2__8J&astart=180',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=nGEhAEv3__8J&astart=190',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=OBxPAM33__8J&astart=200',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=GNwDADP4__8J&astart=210',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=sK5PAJb4__8J&astart=220',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=TyJSAA35__8J&astart=230',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=UO8aADf5__8J&astart=240',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=DXQEAH75__8J&astart=250',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=wY8BAMz5__8J&astart=260',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=uEKCAfb5__8J&astart=270',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=BjcAADb6__8J&astart=280',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=5YtlAFn6__8J&astart=290',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=MlxLAJb6__8J&astart=300',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=I35nAMT6__8J&astart=310',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=7aVRAO76__8J&astart=320',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=I4GtACP7__8J&astart=330',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=OSyOAGL7__8J&astart=340',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=DZcQAIr7__8J&astart=350',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=tJ9XALf7__8J&astart=360',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=g_ZmANj7__8J&astart=370',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=RKRFAA78__8J&astart=380',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=pJeEADL8__8J&astart=390',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=_kVoAF38__8J&astart=400',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=_vhPAIL8__8J&astart=410',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=U0WGAK_8__8J&astart=420',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=9hqsAL_8__8J&astart=430',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=Dl0FAN_8__8J&astart=440',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=-DcIAAb9__8J&astart=450',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=3B93ADD9__8J&astart=460',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=sUdSAFL9__8J&astart=470',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=Zqx1AF79__8J&astart=480',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=V5xnAH79__8J&astart=490',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=-RADAaP9__8J&astart=500',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=TrSUALv9__8J&astart=510',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=3fAMAdH9__8J&astart=520',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=-u9KAO_9__8J&astart=530',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=6v7HAAD-__8J&astart=540',
+
     ]
 
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0'}
-
-    all_profs = []
-
-    for url in urls:
-        r = requests.get(url, headers=headers, verify=False)
-        soup = BeautifulSoup(r.text, "html.parser")
-
-        super_class = soup.find_all('div', {'class': 'row contenidoPestanaInner'})[:2]
-
-        for i in super_class:
-            profs = i.find_all('li')
-            all_profs.extend(profs)
-
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data, link, headers) for link in links]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()
@@ -66,8 +90,8 @@ def universidad_carlos_de_madrid():
                 print(f"Error occurred: {e}")
 
     print("\nUniversidad Carlos III de Madrid done...\n")
-    return faculty_data
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
+    return all_faculty
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     universidad_carlos_de_madrid()

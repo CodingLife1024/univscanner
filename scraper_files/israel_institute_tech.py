@@ -52,7 +52,7 @@ def get_faculty_data(prof):
     if ("professor" in title or "lecturer" in title) and "emeritus" not in title:
 
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-        if found_keyword or True:
+        if found_keyword:
             pers_link = get_scholar_profile(name)
             faculty_data.append([u_name, country, name, email, link, pers_link])
             print([u_name, country, name, email, link, pers_link])

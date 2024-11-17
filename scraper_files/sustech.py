@@ -36,7 +36,7 @@ def get_faculty_data_1(prof):
 
 def get_faculty_data_2(prof):
     link = "https://siqse.sustech.edu.cn" + prof.find('a').get('href')
-    name = prof.find('h4', class_="title").text.title()
+    name = prof.find('h4', class_="title").text.title().split("\\")[0].strip()
     research = prof.text
 
     new_r = requests.get(link)
@@ -81,7 +81,7 @@ def sustech():
 
     # for url 2
 
-    r = requests.get(urls[2], verify=False)
+    r = requests.get(urls[1], verify=False)
     soup = BeautifulSoup(r.text, "html.parser")
 
     all_profs = soup.find_all('div', class_="col-xs-12 col-md-6")
