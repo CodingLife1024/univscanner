@@ -1,87 +1,253 @@
+import concurrent.futures
+import os
+import pprint
+import re
+import sys
+
 import requests
 from bs4 import BeautifulSoup
-import sys
-import os
-import re
-import concurrent.futures
-import pprint
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from components.google_scholar import get_scholar_profile
-from components.GLOBAL_VARIABLES import keyword_list
+from components.GLOBAL_VARIABLES import *
+from components.gscholar_indiv_page import search_faculty_list
 
-faculty_data = []
+u_name = "Sungkyunkwan University"
+country = "South Korea"
 
-u_name = "University of Canterbury"
-country = "New Zealand"
+all_faculty = []
 
-def get_name(prof):
-    name = prof.find('h3').text.strip()
-    return name
-
-def get_email(prof):
-    email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
-    return email
-
-def get_link(prof):
-    link = "https://profiles.canterbury.ac.nz/" + prof.find('a').get('href')
-    return link
-
-def get_title(prof):
-    title = prof.find('div', class_="cmp-card__staff-info").text.lower()
-    return title
-
-def get_faculty_data(prof):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        future_name = executor.submit(get_name, prof)
-        future_link = executor.submit(get_link, prof)
-        future_email = executor.submit(get_email, prof)
-        future_title = executor.submit(get_title, prof)
-
-        name = future_name.result()
-        link = future_link.result()
-        email = future_email.result()
-        title = future_title.result()
-
-    if ("professor" in title or "lecturer" in title) and "emeritus" not in title:
-        email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
-
-        new_r = requests.get(link)
-        new_soup = BeautifulSoup(new_r.text, "html.parser")
-
-        research = new_soup.text
-
-        if email == "N/A":
-            email = new_soup.find('a', href=re.compile(r'^mailto:')).text.strip() if new_soup.find('a', href=re.compile(r'^mailto:')) else "N/A"
-
-        found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-
-        if found_keyword:
-            pers_link = get_scholar_profile(name)
-            faculty_data.append([u_name, country, name, email, link, pers_link])
-            print([u_name, country, name, email, link, pers_link])
-
+def get_faculty_data(link, headers):
+    global all_faculty
+    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
 
 def uni_canterbury():
-    url = "https://www.canterbury.ac.nz/study/academic-study/engineering/schools-and-departments-engineering-forestry-product-design/computer-science-and-software-engineering-department/contact-the-computer-science-and-software-engineering-department"
+    global all_faculty
+    links = [
+        "https://scholar.google.com/citations?view_op=view_org&org=1833112781109911660",
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=g-kuAKCP__8J&astart=10',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=xNoPAESs__8J&astart=20',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=RbxrAIGz__8J&astart=30',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=77hcAXfA__8J&astart=40',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=KKeVACTJ__8J&astart=50',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=v8sLAOjL__8J&astart=60',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=at4sAMLT__8J&astart=70',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=UwwbAVnX__8J&astart=80',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=_3wiAPPZ__8J&astart=90',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=qlTRAMvc__8J&astart=100',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=m_4XAFbf__8J&astart=110',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=fvyoAOjh__8J&astart=120',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=VKoAAL3j__8J&astart=130',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=BNXZAAjm__8J&astart=140',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=t7sGADLn__8J&astart=150',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=P0NtAKLo__8J&astart=160',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=-9UfACHq__8J&astart=170',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=zdtVAFTr__8J&astart=180',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=MosHADDs__8J&astart=190',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=851rABft__8J&astart=200',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=iHcRAAnu__8J&astart=210',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=HziMAFvv__8J&astart=220',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=R50XAB_w__8J&astart=230',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=N5stAA7x__8J&astart=240',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=lGtmACny__8J&astart=250',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=7QQBAMjy__8J&astart=260',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=eLwCAMTz__8J&astart=270',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=wNTPAF30__8J&astart=280',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=fmqeACT1__8J&astart=290',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=ZDwNALr1__8J&astart=300',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=yptVAD_2__8J&astart=310',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=n_sUAOz2__8J&astart=320',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=X4FlAG33__8J&astart=330',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=LJLkAJj3__8J&astart=340',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=QA8oABn4__8J&astart=350',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mOfQAGH4__8J&astart=360',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mmdsAAr5__8J&astart=370',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=H-ECADr5__8J&astart=380',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=BZ0xAZf5__8J&astart=390',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=7TB1AOT5__8J&astart=400',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=c4CGABr6__8J&astart=410',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=WkiLAHP6__8J&astart=420',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=B4SaAK_6__8J&astart=430',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=LlHeAOb6__8J&astart=440',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=zju9AQn7__8J&astart=450',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=GVghACv7__8J&astart=460',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=r4RhAEv7__8J&astart=470',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=8aoPAHT7__8J&astart=480',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=afmpAK37__8J&astart=490',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=qtZkAdH7__8J&astart=500',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=qr3bAPj7__8J&astart=510',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=fHqOABn8__8J&astart=520',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=euc9AEb8__8J&astart=530',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=FdsBAWX8__8J&astart=540',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=g5w1AJH8__8J&astart=550',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Zi-PALP8__8J&astart=560',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=1oe9AMv8__8J&astart=570',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=tmwBAOL8__8J&astart=580',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=e58XAQP9__8J&astart=590',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=vq2JACr9__8J&astart=600',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Ekr7ADj9__8J&astart=610',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=dAtJAFr9__8J&astart=620',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=xcfCAIT9__8J&astart=630',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=OI71AJL9__8J&astart=640',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mr0HAKT9__8J&astart=650',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Y2Z0AMX9__8J&astart=660',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Ch4ZAdD9__8J&astart=670',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=bgn9AOL9__8J&astart=680',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=MYcdAfT9__8J&astart=690',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=_m_1AAn-__8J&astart=700',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=eWcrARn-__8J&astart=710',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=icrRACn-__8J&astart=720',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=wK7KADb-__8J&astart=730',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=t_1_AEr-__8J&astart=740',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=vKMTAVr-__8J&astart=750',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=YGMPAWX-__8J&astart=760',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=U-diAXH-__8J&astart=770',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=3FYqAXv-__8J&astart=780',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=xOjDAYP-__8J&astart=790',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=aDsmAZD-__8J&astart=800',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=N3xpAJf-__8J&astart=810',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=pioOAaP-__8J&astart=820',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=wVBKAav-__8J&astart=830',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=enX_ALj-__8J&astart=840',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Eb0bAcT-__8J&astart=850',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=5CbUAM7-__8J&astart=860',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Y5MjANT-__8J&astart=870',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=6MLPANn-__8J&astart=880',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=b1cyAeL-__8J&astart=890',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=RANGAOv-__8J&astart=900',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=poRcAe_-__8J&astart=910',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=9ebyAPb-__8J&astart=920',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=pEhrAfz-__8J&astart=930',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=-JC1AAL___8J&astart=940',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=veWMAQv___8J&astart=950',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=1DhtART___8J&astart=960',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=TSDkABn___8J&astart=970',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=zez9ACP___8J&astart=980',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=6RjFASj___8J&astart=990',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=5DkIAS____8J&astart=1000',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=TFlNATP___8J&astart=1010',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=gY_OADb___8J&astart=1020',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=I5stATj___8J&astart=1030',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=wxGKAUL___8J&astart=1040',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=OcaZAEf___8J&astart=1050',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=vHpgAEz___8J&astart=1060',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=aVccAVX___8J&astart=1070',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=U1kEAVv___8J&astart=1080',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=UVfaAF7___8J&astart=1090',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=aPAMAWP___8J&astart=1100',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=oQGxAWb___8J&astart=1110',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=S5rIAWn___8J&astart=1120',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=91SiAW3___8J&astart=1130',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=gWsUAXH___8J&astart=1140',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=koAOAXT___8J&astart=1150',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=jU0jAXf___8J&astart=1160',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=2QP7AHn___8J&astart=1170',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=cttbAXv___8J&astart=1180',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=oDbPAX____8J&astart=1190',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=m7lrAIP___8J&astart=1200',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=zLJ8AYn___8J&astart=1210',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=kYAgAYz___8J&astart=1220',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=BFqGAY7___8J&astart=1230',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=RD0gAZH___8J&astart=1240',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=8-MTAZX___8J&astart=1250',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=1wx0AZb___8J&astart=1260',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=CSgHAZn___8J&astart=1270',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=wQdIAZv___8J&astart=1280',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=RpO0AZ3___8J&astart=1290',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=BD8hAaD___8J&astart=1300',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=I_RqAaL___8J&astart=1310',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=etgjAaX___8J&astart=1320',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=-Fg7AKj___8J&astart=1330',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mJuOAan___8J&astart=1340',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=J0H6AKz___8J&astart=1350',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=41Y2Aa7___8J&astart=1360',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=xg5fAbH___8J&astart=1370',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Uyf_ALT___8J&astart=1380',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mQTGAbX___8J&astart=1390',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mqpPAbj___8J&astart=1400',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=IQNmAbr___8J&astart=1410',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=C2d7Abv___8J&astart=1420',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=rsudAL7___8J&astart=1430',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=72dgAb____8J&astart=1440',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=O-sSAcH___8J&astart=1450',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=d6jeAMP___8J&astart=1460',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=sra_AcT___8J&astart=1470',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=vWR6Acb___8J&astart=1480',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=5I7oAMj___8J&astart=1490',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=SvtBAcn___8J&astart=1500',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=-4kkAcv___8J&astart=1510',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=e7xZAcz___8J&astart=1520',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=l-T1AM7___8J&astart=1530',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=SVq1Ac____8J&astart=1540',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=n5hwAdH___8J&astart=1550',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=olqfANP___8J&astart=1560',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=RS0cAdT___8J&astart=1570',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=daxXAdX___8J&astart=1580',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=1_f-ANf___8J&astart=1590',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=6xs7ANn___8J&astart=1600',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=oN9-Adv___8J&astart=1610',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mVTnAN3___8J&astart=1620',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=O5tbAd7___8J&astart=1630',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=3kI5Ad____8J&astart=1640',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=PcjUAOH___8J&astart=1650',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=noiQAOL___8J&astart=1660',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=3EafAeP___8J&astart=1670',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=sOF4AeX___8J&astart=1680',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Mf53Aeb___8J&astart=1690',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=i7c7Aef___8J&astart=1700',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=N1tPAej___8J&astart=1710',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=GzCzAej___8J&astart=1720',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=AiOPAen___8J&astart=1730',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=F-OaAer___8J&astart=1740',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=rO-_Aev___8J&astart=1750',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=IuyeAez___8J&astart=1760',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Q15aAe3___8J&astart=1770',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=5eXFAO7___8J&astart=1780',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Mj6-Ae7___8J&astart=1790',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=qImBAe____8J&astart=1800',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=jZwqAfD___8J&astart=1810',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=BFarAfD___8J&astart=1820',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=fvWLAfH___8J&astart=1830',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=x8RJAfL___8J&astart=1840',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=J_2ZAfL___8J&astart=1850',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=IT9AAfP___8J&astart=1860',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=AHjEAfP___8J&astart=1870',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=GRSDAfT___8J&astart=1880',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Ndm6AfT___8J&astart=1890',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=GLKJAfX___8J&astart=1900',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=F8f3APb___8J&astart=1910',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=jHKUAfb___8J&astart=1920',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=pS8oAff___8J&astart=1930',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=2DOLAff___8J&astart=1940',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=guQqAfj___8J&astart=1950',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=lomCAfj___8J&astart=1960',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=d167Afj___8J&astart=1970',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=pfRjAfn___8J&astart=1980',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=mM6iAfn___8J&astart=1990',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=ZKlQAfr___8J&astart=2000',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=gECZAfr___8J&astart=2010',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=TKG4Afr___8J&astart=2020',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=1P1ZAfv___8J&astart=2030',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=Z2KgAfv___8J&astart=2040',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=ZaDDAfv___8J&astart=2050',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=r1lCAfz___8J&astart=2060',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=3ZSeAfz___8J&astart=2070',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=QO22Afz___8J&astart=2080',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=SlbCAfz___8J&astart=2090',
+        'https://scholar.google.com/citations?view_op=view_org&hl=en&org=1833112781109911660&after_author=kILOAfz___8J&astart=2100',
 
-    r = requests.get(url)
-
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    all_profs = soup.find_all('li', {'class': 'cmp-image-list__item col-12 col-lg-6 cmp-card--people'})
+    ]
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data, link, headers) for link in links]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nUniversity of Canterbury done...\n")
-    return faculty_data
-
+    print("\nSungkyunkwan University done...\n")
+    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
+    return all_faculty
 
 if __name__ == "__main__":
     uni_canterbury()

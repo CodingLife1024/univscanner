@@ -52,7 +52,7 @@ from scraper_files.delft_uni_tech import delft_uni_tech
 from scraper_files.brown_uni import brown_uni
 from scraper_files.uni_warwick import uni_warwick
 from scraper_files.uni_wisconsin import uni_wisconsin
-from scraper_files.national_taiwan_university import national_taiwan_university
+from scraper_files.national_taiwan_uni import national_taiwan_uni
 from scraper_files.korea_uni import korea_uni
 from scraper_files.uni_austin import uni_austin
 from scraper_files.osaka_uni import osaka_uni
@@ -213,7 +213,6 @@ from scraper_files.tufts_uni import tufts_uni
 from scraper_files.hongkong_baptist_uni import hongkong_baptist_uni
 from scraper_files.uni_innsbruck import uni_innsbruck
 from scraper_files.uni_tsukuba import uni_tsukuba
-from scraper_files.national_taiwan_university import national_taiwan_university
 from scraper_files.technical_uni_darmstadt import technical_uni_darmstadt
 from scraper_files.uni_surrey import uni_surrey
 from scraper_files.uni_canterbury import uni_canterbury
@@ -412,8 +411,8 @@ def main():
         # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(uni_wisconsin())
         # writer.writerow(["", "", "", "", "", ""])
-        # writer.writerows(national_taiwan_university())
-        # writer.writerow(["", "", "", "", "", ""])
+        writer.writerows(national_taiwan_uni())
+        writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(korea_uni())
         # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(uni_austin())
@@ -734,8 +733,6 @@ def main():
         # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(uni_tsukuba())
         # writer.writerow(["", "", "", "", "", ""])
-        # writer.writerows(national_taiwan_university())
-        # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(technical_uni_darmstadt())
         # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(uni_surrey())
@@ -766,8 +763,8 @@ def main():
         # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(israel_institute_tech())
         # writer.writerow(["", "", "", "", "", ""])
-        writer.writerows(uni_miami())
-        writer.writerow(["", "", "", "", "", ""])
+        # writer.writerows(uni_miami())
+        # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(gwangju_uni())
         # writer.writerow(["", "", "", "", "", ""])
         # writer.writerows(north_carolina_state_uni())
