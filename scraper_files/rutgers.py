@@ -9,60 +9,53 @@ import pprint
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from components.google_scholar import get_scholar_profile
 from components.GLOBAL_VARIABLES import keyword_list
+from components.search_expertise import search_expertise
 
 faculty_data = []
 
 u_name = "Rutgers-New Brunswick University"
 country = "United States"
 
-def get_faculty_data_1(prof):
-    name = prof.find('a').text.strip()
+def get_faculty_data_1(prof, headers):
+    name = prof.find('h2', class_="newstitle").find('span').text.strip()
     link = "https://www.cs.rutgers.edu" + prof.find('a').get('href')
-    email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
+    email = "N/A"
+    email_spans = prof.find('span', class_=lambda x: x and any(cls.startswith("cloaked_email") for cls in x.split())).find_all('span', class_=False)
+    email_components = []
+    for i, span in enumerate(email_spans, 1):
+        email_components.extend(span.attrs.values())
 
-    new_r = requests.get(link)
-    new_soup = BeautifulSoup(new_r.text, "html.parser")
+    email = email_components[0] + email_components[2] + email_components[4] + email_components[1] + email_components[3] + email_components[5]
 
-    research = new_soup.text.strip()
+    pers_link = get_scholar_profile(name)
+
+    research = search_expertise(pers_link, headers)
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
-        pers_link = new_soup.find('li', class_="field-entry website ").find('a')['href'] if new_soup.find('li', class_="field-entry website ").find('a') else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
-def get_faculty_data_2(prof):
+def get_faculty_data_2(prof, headers):
     name = prof.find('a').text.strip()
     link = "https://www.cs.rutgers.edu" + prof.find('a').get('href')
 
-    new_r = requests.get(link)
-    new_soup = BeautifulSoup(new_r.text, "html.parser")
+    email = "N/A"
+    email_spans = prof.find('span', class_=lambda x: x and any(cls.startswith("cloaked_email") for cls in x.split())).find_all('span', class_=False)
+    email_components = []
+    for i, span in enumerate(email_spans, 1):
+        email_components.extend(span.attrs.values())
 
-    research = new_soup.text.strip()
+    email = email_components[0] + email_components[2] + email_components[4] + email_components[1] + email_components[3] + email_components[5]
+
+    pers_link = get_scholar_profile(name)
+
+    research = search_expertise(pers_link, headers)
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
     if found_keyword:
-        email_spans = prof.find('span',class_="detail_data").find_all('span', class_=False)
-        flag = 0
-        email_parts_0 = []
-        email_parts_1 = []
-        for det in email_spans:
-            for attr_name, attr_value in det.attrs.items():
-                if attr_name.startswith('data-ep'):
-                    if flag == 0:
-                        email_parts_0.append(attr_value)
-                        flag = 1
-                    else:
-                        email_parts_1.append(attr_value)
-                        flag = 0
-
-        email_parts_0 = email_parts_0[:3]
-        email_parts_1 = email_parts_1[:3]
-        email_parts = email_parts_0.extend(email_parts_1.reverse())
-        email = "".join(email_parts)
-        pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
@@ -84,7 +77,7 @@ def rutgers():
     total_text_1 = ""
 
     for url in urlss:
-        r = requests.get(url)
+        r = requests.get(url, headers=headers)
         total_text_1 += r.text
 
     soup = BeautifulSoup(total_text_1, "html.parser")
@@ -92,7 +85,7 @@ def rutgers():
     all_profs = soup.find_all('div', {'class': 'news'})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data_1, prof) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data_1, prof, headers) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()
@@ -100,6 +93,7 @@ def rutgers():
                 print(f"Error occurred: {e}")
 
     # urls 3 and 4
+
     urlss = [urls[2], urls[3]]
 
     total_text_2 = ""
@@ -113,7 +107,7 @@ def rutgers():
     all_profs = soup.find_all('div', {'class': 'news'})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data_2, prof) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data_2, prof, headers) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()

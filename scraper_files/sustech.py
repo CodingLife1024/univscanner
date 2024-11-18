@@ -17,7 +17,7 @@ country = "China"
 
 def get_faculty_data_1(prof):
     link = "https://math.sustech.edu.cn" + prof.find('a').get('href')
-    name = prof.find('li', class_="name").text.title()
+    name = prof.find('li', class_="name").text.split("\xa0")[0].title().strip()
     research = prof.text
 
     new_r = requests.get(link)
@@ -36,7 +36,7 @@ def get_faculty_data_1(prof):
 
 def get_faculty_data_2(prof):
     link = "https://siqse.sustech.edu.cn" + prof.find('a').get('href')
-    name = prof.find('h4', class_="title").text.title().split("\\")[0].strip()
+    name = prof.find('h4', class_="title").text.title().split("\xa0")[0].strip()
     research = prof.text
 
     new_r = requests.get(link)

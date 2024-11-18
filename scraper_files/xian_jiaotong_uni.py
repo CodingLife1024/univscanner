@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Xi’an Jiaotong University"
 country = "China"
 
-all_faculty = []
+all_faculty_xian_jiaotong_uni = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_xian_jiaotong_uni
+    all_faculty_xian_jiaotong_uni += search_faculty_list(link, headers, u_name, country)[0]
 
 def xian_jiaotong_uni():
-    global all_faculty
+    global all_faculty_xian_jiaotong_uni
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=12584268802548929965',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=4109524060791268206&after_author=r-IHABXK__8J&astart=10',
@@ -50,8 +50,8 @@ def xian_jiaotong_uni():
                 print(f"Error occurred: {e}")
 
     print("\nXi’an Jiaotong University done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_xian_jiaotong_uni = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_xian_jiaotong_uni)]
+    return all_faculty_xian_jiaotong_uni
 
 if __name__ == "__main__":
     xian_jiaotong_uni()

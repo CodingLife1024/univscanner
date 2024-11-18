@@ -16,27 +16,27 @@ u_name = "Simon Fraser University"
 country = "Canada"
 
 def get_faculty_data(prof):
-    name = prof.find('h4').text.split(',')[0].strip() if prof.find('h4') else "N/A"
-    link = "https://www.sfu.ca" + prof.find('a', string="Profile & Contact Information").get('href') if prof.find('a', string="Profile & Contact Information") else prof.find('a', string="Personal Website").get('href')
-
-    pers_link = prof.find('a', string="Home Page").get('href') if prof.find('a', string="Home Page") else get_scholar_profile(name)
+    name_parts = prof.find('a').text.split(",")
+    name = name_parts[1].strip() + " " + name_parts[0].strip()
+    link = "https://www.sfu.ca" + prof.find('a').get('href')
+    email = prof.find('a', href=re.compile(r'^mailto:'))['href'][7:] if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    email = new_soup.find('a', href=re.compile(r'^mailto:'))['href'] if new_soup.find('a', href=re.compile(r'^mailto:')) else "N/A"
+    pers_link = new_soup.find('a', class_="faculty-profile-icon personal-site")['href'] if new_soup.find('a', class_="faculty-profile-icon personal-site") else get_scholar_profile(name)
 
     research = new_soup.text
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
 def simon_fraser_uni():
     urls = [
-        "https://www.sfu.ca/computing/people/faculty.html"
+        "https://www.sfu.ca/fas/computing/people/faculty.html"
     ]
 
     total_text = ""
@@ -47,9 +47,7 @@ def simon_fraser_uni():
 
     soup = BeautifulSoup(total_text, "html.parser")
 
-    all_profs = soup.find_all('div', class_='text')
-
-    print(len(all_profs))
+    all_profs = soup.find_all('div', class_='clf-fdi__profile')
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
