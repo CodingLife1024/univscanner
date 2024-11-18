@@ -28,7 +28,10 @@ def get_faculty_data_1(prof, headers):
 
     pers_link = get_scholar_profile(name)
 
-    research = new_soup.text + search_expertise(pers_link, headers)
+    research = new_soup.text
+
+    if pers_link != None:
+        research += search_expertise(pers_link, headers)
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
@@ -48,7 +51,10 @@ def get_faculty_data_2(prof, headers):
 
     pers_link = get_scholar_profile(name)
 
-    research = new_soup.text + search_expertise(pers_link, headers)
+    research = new_soup.text
+
+    if pers_link != None:
+        research += search_expertise(pers_link, headers)
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
