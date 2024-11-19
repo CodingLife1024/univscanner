@@ -37,7 +37,7 @@ def get_faculty_data(prof, headers):
 
     found_keyword = any(keyword in new_soup.get_text().lower() for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
         pers_link = new_soup.find('h2', class_="panel-subheading text-uppercase no-top-margin").find_next('a')['href'] if new_soup.find('h2', class_="panel-subheading text-uppercase no-top-margin") else get_scholar_profile(name)
         if pers_link.startswith("/"):
             pers_link = "https://www.cs.ox.ac.uk" + pers_link
