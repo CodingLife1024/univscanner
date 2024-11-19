@@ -70,7 +70,6 @@ def caltech():
                 print(f"Error occurred: {e}")
 
     print("\nCaltech done...\n")
-    print()
     return faculty_data
 
 

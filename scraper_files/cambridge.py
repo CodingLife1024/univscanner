@@ -5,7 +5,7 @@ import concurrent.futures
 from components.google_scholar import get_scholar_profile
 
 university = "Cambridge"
-country = "UK"
+country = "United Kingdom"
 
 faculty_data = []
 
