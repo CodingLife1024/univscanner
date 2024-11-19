@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "University of Sydney"
 country = "United States"
 
-all_faculty = []
+all_faculty_uni_sydney = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_uni_sydney
+    all_faculty_uni_sydney += search_faculty_list(link, headers, u_name, country)[0]
 
 def uni_sydney():
-    global all_faculty
+    global all_faculty_uni_sydney
     links = [
         "https://scholar.google.com/citations?view_op=view_org&hl=en&org=17869855370174230969",
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=17869855370174230969&after_author=FQwEAClJ_v8J&astart=10',
@@ -110,8 +110,8 @@ def uni_sydney():
                 print(f"Error occurred: {e}")
 
     print("\nUniversity of Sydney done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_uni_sydney = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_uni_sydney)]
+    return all_faculty_uni_sydney
 
 if __name__ == "__main__":
     uni_sydney()

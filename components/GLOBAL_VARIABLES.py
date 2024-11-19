@@ -1,4 +1,4 @@
-keyword_list = ["operating system", "robotics", "kernel", "embedded system", "firmware", "computer architecture", "distributed system", "computer organization", "vlsi", "RTOS", "computer organisation", "virtualization", "device drivers"]
+keyword_list = ["operating system", "kernel", "embedded system"]
 print_flag = 0
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"

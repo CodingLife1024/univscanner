@@ -31,9 +31,8 @@ def get_faculty_data(prof, garbage_emails):
     research_text = prof_soup.text
 
     found_keyword = any(re.search(re.escape(keyword), research_text.lower()) for keyword in keyword_list)
-    matching_keywords = [keyword for keyword in keyword_list if re.search(re.escape(keyword), research_text.lower())]
 
-    if found_keyword or True:
+    if found_keyword:
         new_emails = set(re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}", prof_resp.text))
 
         for garbage_email in garbage_emails:

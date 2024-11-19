@@ -44,7 +44,6 @@ def shanghai_jt():
     soup = BeautifulSoup(r.text, "html.parser")
 
     departments = ["Institute of Parallel and Distributed Computing",
-                   "Institute of Intelligent Human-Computer Interaction",
                    "Institute of Computer Application",
                    "Institute of Computer Architecture"]
 

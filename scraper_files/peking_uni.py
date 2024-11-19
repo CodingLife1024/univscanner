@@ -13,14 +13,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Peking University"
 country = "China"
 
-all_faculty = []
+all_faculty_peking_uni = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_peking_uni
+    all_faculty_peking_uni += search_faculty_list(link, headers, u_name, country)[0]
 
 def peking_uni():
-    global all_faculty
+    global all_faculty_peking_uni
     links = [
         "https://scholar.google.com/citations?view_op=view_org&hl=en&org=10725744176602846184",
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=10725744176602846184&after_author=S-wgAPQ0__8J&astart=10',
@@ -74,9 +74,9 @@ def peking_uni():
                 print(f"Error occurred: {e}")
 
     print("\nPeking University done...\n")
-    # print(len(all_faculty))
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    # print(len(all_faculty_peking_uni))
+    all_faculty_peking_uni = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_peking_uni)]
+    return all_faculty_peking_uni
 
 if __name__ == "__main__":
     peking_uni()

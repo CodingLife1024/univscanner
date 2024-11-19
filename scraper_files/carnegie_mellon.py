@@ -38,7 +38,6 @@ def carnegie_mellon():
         "https://csd.cmu.edu/research/research-areas/computer-architecture",
         "https://csd.cmu.edu/research/research-areas/distributed-systems",
         "https://csd.cmu.edu/research/research-areas/operating-systems",
-        "https://csd.cmu.edu/research/research-areas/human-computer-interaction",
         "https://csd.cmu.edu/research/research-areas/robotics"
     ]
 

@@ -26,14 +26,20 @@ def get_faculty_data(prof):
     full_profile = new_soup.find('a', string="Full Profile")['href'] if new_soup.find('a', string="Full Profile") else link
     pers_website = new_soup.find('a', string="Website")['href'] if new_soup.find('a', string="Website") else get_scholar_profile(name)
 
-    print([u_name, country, name, email, full_profile, pers_website])
-    faculty_data.append([u_name, country, name, email, full_profile, pers_website])
+    new_r = requests.get(full_profile)
+    new_soup = BeautifulSoup(new_r.content, 'html.parser')
+
+    research = new_soup.text
+
+    found_keyword = any(re.search(re.escape(keyword), research.lower(), re.IGNORECASE) for keyword in keyword_list)
+
+    if found_keyword:
+        print([u_name, country, name, email, full_profile, pers_website])
+        faculty_data.append([u_name, country, name, email, full_profile, pers_website])
 
 def uc_san_diego():
     urls = ["https://cse.ucsd.edu/people/faculty-profiles/faculty",
              "https://cse.ucsd.edu/people/faculty-profiles/continuing-lecturer",
-             "https://cse.ucsd.edu/people/faculty-profiles/adjunct-faculty",
-             "https://cse.ucsd.edu/people/faculty-profiles/continuing-lecturer"
              "https://cse.ucsd.edu/people/faculty-profiles/researcher"]
 
     all_profs = []

@@ -45,12 +45,10 @@ def get_faculty_data(prof):
 def city_uni_hk():
     url_1 = "https://www.cs.cityu.edu.hk/people/academic-staff"
     url_2 = "https://www.cs.cityu.edu.hk/people/teaching-staff"
-    url_3 = "https://www.cs.cityu.edu.hk/people/affiliate-faculty"
 
     response_1 = requests.get(url_1)
     response_2 = requests.get(url_2)
-    response_3 = requests.get(url_3)
-    html_content = response_1.text + response_2.text + response_3.text
+    html_content = response_1.text + response_2.text
 
     soup = BeautifulSoup(html_content, 'html.parser')
 
