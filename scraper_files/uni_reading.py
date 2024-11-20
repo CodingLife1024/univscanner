@@ -18,11 +18,11 @@ country = "Malaysia"
 def get_faculty_data(prof):
     cols = prof.find_all('td')
     name = cols[0].get_text().replace("Dr", "").replace("Professor", "").replace("Dr.", "").replace("Professor.", "").strip()
-    link = cols[0].find('a').get('href')
+    link = cols[0].find('a')['href']
     if link[0] == '/':
         link = "https://www.reading.ac.uk" + link
     title = cols[1].get_text().strip()
-    email = cols[3].get_text().strip()
+    email = prof.find('a', href=re.compile(r"^mailto:")).text.strip() if prof.find('a', href=re.compile(r"^mailto:")) else "N/A"
 
     if ("professor" or "lecturer" or "head" in title.lower()) and ("emerit" not in title.lower()):
 
@@ -33,7 +33,7 @@ def get_faculty_data(prof):
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
         if found_keyword:
-            pers_link = get_scholar_profile(name)
+            pers_link = "get_scholar_profile(name)"
             faculty_data.append([u_name, country, name, email, link, pers_link])
             print([u_name, country, name, email, link, pers_link])
 

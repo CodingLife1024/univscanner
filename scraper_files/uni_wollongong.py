@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "University of Wollongong"
 country = "Australia"
 
-all_faculty = []
+all_faculty_uni_wollongong = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_uni_wollongong
+    all_faculty_uni_wollongong += search_faculty_list(link, headers, u_name, country)[0]
 
 def uni_wollongong():
-    global all_faculty
+    global all_faculty_uni_wollongong
     links = [
         "https://scholar.google.com/citations?view_op=view_org&org=14993595609467436432",
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14993595609467436432&after_author=SwMuASeB__8J&astart=10',
@@ -105,8 +105,8 @@ def uni_wollongong():
                 print(f"Error occurred: {e}")
 
     print("\nUniversity of Wollongong done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_uni_wollongong = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_uni_wollongong)]
+    return all_faculty_uni_wollongong
 
 if __name__ == "__main__":
     uni_wollongong()

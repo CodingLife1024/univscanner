@@ -17,9 +17,9 @@ country = "Australia"
 
 def get_faculty_data(prof, headers):
     columns = prof.find_all('td')
-    name = columns[0].text.replace("Mr", "").replace("Dr", "").replace("Professor", "").replace("Associate", "").replace("Ms", "").strip()
+    name = columns[0].text.replace("Mr", "").replace("Dr", "").replace("Professor", "").replace("Associate", "").replace("Ms", "").strip() if columns[0].text else "N/A"
     position = columns[1].text.strip().lower()
-    link = columns[0].find('a')['href']
+    link = columns[0].find('a')['href'] if columns[0].find('a') else "N/A"
 
     if "professor" in position or "lecturer" in position:
         new_r = requests.get(link, headers=headers)
@@ -32,7 +32,7 @@ def get_faculty_data(prof, headers):
         found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
         if found_keyword:
-            pers_link = get_scholar_profile(name)
+            pers_link = "get_scholar_profile(name)"
             faculty_data.append([u_name, country, name, email, link, pers_link])
             print([u_name, country, name, email, link, pers_link])
 

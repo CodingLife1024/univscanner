@@ -75,7 +75,7 @@ def radboud_uni():
             except Exception as e:
                 print(f"Error occurred: {e}")
 
-    print("\nRadbound University done...\n")
+    print("\nRadboud University done...\n")
     return faculty_data
 
 if __name__ == "__main__":

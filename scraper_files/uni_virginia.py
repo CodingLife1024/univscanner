@@ -49,6 +49,7 @@ def uni_virginia():
 
     for url in urls:
         r = requests.get(url)
+        print("Fetching URL... ", url)
         total_text += r.text
 
     soup = BeautifulSoup(total_text, "html.parser")
