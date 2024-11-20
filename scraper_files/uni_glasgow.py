@@ -19,7 +19,7 @@ def get_name(prof):
     name = prof.find('a').text.replace("Dr", "").replace("Professor", "").replace("Prof", "").replace("Mr", "").replace("Ms", "").replace("Miss", "").strip()
     name_parts = name.split(',')
     name = name_parts[1] + " " + name_parts[0]
-    name = " ".join(name.split(" ")[1:])
+    name = " ".join(name.split(" ")[1:]).strip()
     return name
 
 def get_link(prof):
@@ -46,8 +46,18 @@ def get_faculty_data(prof):
         link = future_link.result()
         email = future_email.result()
 
-    print([u_name, country, name, email, link, get_scholar_profile(name)])
-    faculty_data.append([u_name, country, name, email, link, get_scholar_profile(name)])
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, "html.parser")
+
+    research = new_soup.text
+
+    found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
+    if found_keyword:
+        pers_link = get_scholar_profile(name)
+
+        print([u_name, country, name, email, link, pers_link])
+        faculty_data.append([u_name, country, name, email, link, pers_link])
 
 def uni_glasgow():
     base_url = "https://www.gla.ac.uk/schools/computing/staff/"

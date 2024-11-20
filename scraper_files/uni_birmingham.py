@@ -28,7 +28,7 @@ def get_email(prof):
     if email_tag:
         email = email_tag.get_text().strip()
     else:
-        pass
+        email = "N/A"
     return email
 
 def get_research(new_soup):

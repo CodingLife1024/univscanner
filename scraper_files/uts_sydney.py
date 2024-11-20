@@ -50,9 +50,17 @@ def get_faculty_data(prof):
         else:
             email = f"{name_parts[0].strip().lower()}@uts.edu.au"
 
-        pers_link = get_scholar_profile(name)
-        faculty_data.append([u_name, country, name, email, link, pers_link])
-        print([u_name, country, name, email, link, pers_link])
+        new_r = requests.get(link, verify=False)
+        new_soup = BeautifulSoup(new_r.text, 'html.parser')
+
+        research = new_soup.text
+
+        found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
+        if found_keyword:
+            pers_link = get_scholar_profile(name)
+            faculty_data.append([u_name, country, name, email, link, pers_link])
+            print([u_name, country, name, email, link, pers_link])
 
 def uts_sydney():
     url = "https://www.uts.edu.au/about/faculty-engineering-and-information-technology/computer-science/school-computer-science-staff"

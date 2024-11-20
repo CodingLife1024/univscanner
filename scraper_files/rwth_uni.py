@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "RWTH Aachen University"
 country = "Germany"
 
-all_faculty = []
+all_faculty_rwth_uni = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_rwth_uni
+    all_faculty_rwth_uni += search_faculty_list(link, headers, u_name, country)[0]
 
 def rwth_uni():
-    global all_faculty
+    global all_faculty_rwth_uni
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=2022388551903139277',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=2022388551903139277&after_author=bLGHALUa__8J&astart=10',
@@ -107,8 +107,8 @@ def rwth_uni():
                 print(f"Error occurred: {e}")
 
     print("\nRWTH Aachen University done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_rwth_uni = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_rwth_uni)]
+    return all_faculty_rwth_uni
 
 if __name__ == "__main__":
     rwth_uni()

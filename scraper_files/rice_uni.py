@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Rice University"
 country = "United States"
 
-all_faculty = []
+all_faculty_rice_uni = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_rice_uni
+    all_faculty_rice_uni += search_faculty_list(link, headers, u_name, country)[0]
 
 def rice_uni():
-    global all_faculty
+    global all_faculty_rice_uni
     links = [
         "https://scholar.google.com/citations?view_op=view_org&hl=en&org=11940724553757128128",
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=11940724553757128128&after_author=bJxCABvy_v8J&astart=10',
@@ -61,8 +61,8 @@ def rice_uni():
                 print(f"Error occurred: {e}")
 
     print("\nRice University done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_rice_uni = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_rice_uni)]
+    return all_faculty_rice_uni
 
 if __name__ == "__main__":
     rice_uni()
