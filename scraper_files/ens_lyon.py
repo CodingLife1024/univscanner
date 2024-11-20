@@ -28,7 +28,7 @@ def get_faculty_data(prof):
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
         pers_link = new_soup.find('a', text="Website")['href'] if new_soup.find('a', text="Website") else get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])

@@ -38,9 +38,17 @@ def get_faculty_data(prof):
         link = future_link.result()
         email = future_email.result()
 
-    pers_link = get_scholar_profile(name)
-    faculty_data.append([u_name, country, name, email, link, pers_link])
-    print([u_name, country, name, email, link, pers_link])
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, "html.parser")
+
+    research = new_soup.text
+
+    found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
+    if found_keyword:
+        pers_link = get_scholar_profile(name)
+        faculty_data.append([u_name, country, name, email, link, pers_link])
+        print([u_name, country, name, email, link, pers_link])
 
 
 def emory_college():

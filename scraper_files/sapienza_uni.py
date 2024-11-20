@@ -22,17 +22,25 @@ def get_faculty_data(prof):
     email = columns[2].get_text().strip()
     email = email.replace(".", "@")
 
-    pers_link = get_scholar_profile(name)
+    new_r = requests.get(link)
+    new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    faculty_data.append([u_name, country, name, email, link, pers_link])
-    print([u_name, country, name, email, link, pers_link])
+    research = new_soup.text
+
+    found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
+
+    if found_keyword:
+        pers_link = get_scholar_profile(name)
+
+        faculty_data.append([u_name, country, name, email, link, pers_link])
+        print([u_name, country, name, email, link, pers_link])
 
 
 def sapienza_uni():
     url = "https://www.di.uniroma1.it/en/people/professors"
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
-    
+
     all_profs = soup.find_all('tr', {'class':["odd", 'even']})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:

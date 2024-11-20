@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "The Hebrew University of Jerusalem"
 country = "Israel"
 
-all_faculty = []
+all_faculty_hebrew_uni_jerusalem = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_hebrew_uni_jerusalem
+    all_faculty_hebrew_uni_jerusalem += search_faculty_list(link, headers, u_name, country)[0]
 
 def hebrew_uni_jerusalem():
-    global all_faculty
+    global all_faculty_hebrew_uni_jerusalem
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=17644907110646224264',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=17644907110646224264&after_author=cCJBAPsd__8J&astart=10',
@@ -140,8 +140,8 @@ def hebrew_uni_jerusalem():
                 print(f"Error occurred: {e}")
 
     print("\nThe Hebrew University of Jerusalem done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_hebrew_uni_jerusalem = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_hebrew_uni_jerusalem)]
+    return all_faculty_hebrew_uni_jerusalem
 
 if __name__ == "__main__":
     hebrew_uni_jerusalem()

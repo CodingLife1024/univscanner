@@ -55,7 +55,7 @@ def get_faculty_data(prof):
     research = research + research_2
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
-    if found_keyword or True:
+    if found_keyword:
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])
 
