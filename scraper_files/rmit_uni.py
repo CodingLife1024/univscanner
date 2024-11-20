@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "RMIT University"
 country = "United States"
 
-all_faculty = []
+all_faculty_rmit_uni = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_rmit_uni
+    all_faculty_rmit_uni += search_faculty_list(link, headers, u_name, country)[0]
 
 def rmit_uni():
-    global all_faculty
+    global all_faculty_rmit_uni
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=8943956419179841881',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=8943956419179841881&after_author=R4sBAE-A__8J&astart=10',
@@ -132,8 +132,8 @@ def rmit_uni():
                 print(f"Error occurred: {e}")
 
     print("\nRMIT University done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_rmit_uni = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_rmit_uni)]
+    return all_faculty_rmit_uni
 
 if __name__ == "__main__":
     rmit_uni()

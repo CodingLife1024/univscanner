@@ -15,16 +15,16 @@ faculty_data = []
 u_name = "University of Cape Town"
 country = "South Africa"
 
-def get_faculty_data(prof):
-    name = prof.find('h1').text.strip()
+def get_faculty_data(prof, headers):
+    name = prof.find('h1').text.strip() if prof.find('h1') else "N/A"
     pers_link = prof.find('a', string="Website")['href'] if prof.find('a', string="Website") else prof.find('a', string=lambda x: x in ["ResearchGate profile", "Google Scholar profile"])['href']
     email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
-    link = "https://sit.uct.ac.za" + prof.find('article', class_="node node--type-contact node--view-mode-full full profile-default")['about']
+    link = "https://sit.uct.ac.za" + prof.find('article')['about'] if prof.find('article') else "N/A"
 
-    new_r = requests.get(link)
+    new_r = requests.get(pers_link, headers=headers)
     new_soup = BeautifulSoup(new_r.text, "html.parser")
 
-    research = new_soup.text
+    research = new_soup.find.text
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
@@ -34,8 +34,10 @@ def get_faculty_data(prof):
 
 
 def uni_cape_town():
-    urls = ["https://sit.uct.ac.za/information-systems-staff",
-            "https://sit.uct.ac.za/computer-science-staff"]
+    urls = [
+        "https://sit.uct.ac.za/information-systems-staff",
+        "https://sit.uct.ac.za/computer-science-staff"
+    ]
 
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0'}
 
@@ -50,7 +52,7 @@ def uni_cape_town():
     all_profs = soup.find_all('div', {'class': 'views-row'})
 
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
+        futures = [executor.submit(get_faculty_data, prof, headers) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):
             try:
                 future.result()

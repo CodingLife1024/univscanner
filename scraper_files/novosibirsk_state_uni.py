@@ -16,7 +16,8 @@ u_name = "Novosibirsk State University"
 country = "Russia"
 
 def get_name(prof):
-    name = prof.find('a').text.replace("Dr", "").replace("Prof", "").replace("Professor", "").strip()
+    name_parts = prof.find('a').text.replace("Dr", "").replace("Prof", "").replace("Professor", "").strip().split(",")
+    name = name_parts[1].strip() + " " + name_parts[0].strip()
     return name
 
 def get_email(prof):

@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "University of Campinas"
 country = "Brazil"
 
-all_faculty = []
+all_faculty_unicamp = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_unicamp
+    all_faculty_unicamp += search_faculty_list(link, headers, u_name, country)[0]
 
 def unicamp():
-    global all_faculty
+    global all_faculty_unicamp
     links = [
         'https://scholar.google.com/citations?view_op=view_org&org=6300175949274449304',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=6300175949274449304&after_author=e_ZQANeR__8J&astart=10',
@@ -205,8 +205,8 @@ def unicamp():
                 print(f"Error occurred: {e}")
 
     print("\nUniversity of Campinas done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_unicamp = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_unicamp)]
+    return all_faculty_unicamp
 
 if __name__ == "__main__":
     unicamp()

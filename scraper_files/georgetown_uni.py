@@ -16,15 +16,15 @@ u_name = "Georgetown University"
 country = "United States"
 
 def get_name(prof):
-    name = prof.find('h2').text
+    name = prof.find('h2').text if prof.find('h2') else "N/A"
     return name
 
 def get_email(prof):
-    email = prof.find('a', href=re.compile(r'^mailto:'))['href'].split(':')[1]
+    email = prof.find('a', href=re.compile(r'^mailto:'))['href'].split(':')[1] if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
     return email
 
 def get_link(prof):
-    link = prof.find('h2').find('a')['href']
+    link = prof.find('h2').find('a')['href'] if prof.find('h2').find('a') else "N/A"
     return link
 
 def get_research(prof):
@@ -51,12 +51,16 @@ def get_faculty_data(prof):
         print([u_name, country, name, email, link, pers_link])
 
 def georgetown_uni():
-    urls = ["https://cs.georgetown.edu/faculty/#"]
+    urls = ["https://cs.georgetown.edu/faculty"]
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+    }
 
     total_text = ""
 
     for url in urls:
-        r = requests.get(url)
+        r = requests.get(url, verify=False, headers=headers)
         total_text += r.text
 
     soup = BeautifulSoup(total_text, 'html.parser')

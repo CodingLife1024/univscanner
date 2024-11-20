@@ -19,7 +19,7 @@ def get_faculty_data_1(prof):
     name = prof.find('div', class_="avatar__name").text.strip()
     link = prof.find('a').get('href')
     email = prof.find('a', href=re.compile(r'^mailto:')).text.strip() if prof.find('a', href=re.compile(r'^mailto:')) else "N/A"
-    pers_link = prof.find("div", class_="avatar-info__item").find('a')['href'] if prof.find("div", class_="avatar-info__item").find('a') else get_scholar_profile(name)
+    pers_link = prof.find("div", class_="avatar-info__item").find('a')['href'] if prof.find("div", class_="avatar-info__item").find('a') else "get_scholar_profile(name)"
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")

@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "University of Hamburg"
 country = "Germany"
 
-all_faculty = []
+all_faculty_uni_hamburg = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_uni_hamburg
+    all_faculty_uni_hamburg += search_faculty_list(link, headers, u_name, country)[0]
 
 def uni_hamburg():
-    global all_faculty
+    global all_faculty_uni_hamburg
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=10848167875220160520',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=10848167875220160520&after_author=D2sCABCq__8J&astart=10',
@@ -77,8 +77,8 @@ def uni_hamburg():
                 print(f"Error occurred: {e}")
 
     print("\nUniversity of Hamburg done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_uni_hamburg = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_uni_hamburg)]
+    return all_faculty_uni_hamburg
 
 if __name__ == "__main__":
     uni_hamburg()
