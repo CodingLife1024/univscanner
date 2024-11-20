@@ -38,7 +38,7 @@ def get_faculty_data(prof):
 
         found_keyword = any(re.search(re.escape(keyword), biography) for keyword in keyword_list)
 
-        if found_keyword or True:  # Adjust this condition as needed
+        if found_keyword:  # Adjust this condition as needed
 
             email = new_soup.find('div', class_='contact-link icon-email')
             email = email.text if email else None
