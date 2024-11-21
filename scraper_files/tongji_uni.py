@@ -17,7 +17,7 @@ country = "China"
 
 def get_faculty_data(prof):
     name = prof.find('a')['title']
-    link = "https://see-en.tongji.edu.cn" + prof.find('a').get('href')[2:]
+    link = "https://see-en.tongji.edu.cn" + prof.find('a').get('href')[2:].replace("../", "/")
 
     new_r = requests.get(link)
     new_soup = BeautifulSoup(new_r.text, "html.parser")

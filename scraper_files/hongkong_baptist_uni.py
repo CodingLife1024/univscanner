@@ -62,7 +62,7 @@ def hongkong_baptist_uni():
     soup = BeautifulSoup(total_text, "html.parser")
 
     all_profs = soup.find_all('div', class_="col-md-3 col-sm-5 m_card")
-    
+
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):

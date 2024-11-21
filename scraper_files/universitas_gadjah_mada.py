@@ -17,7 +17,7 @@ country = "Indonesia"
 
 def get_faculty_data_1(prof):
     columns = prof.find_all('td')
-    name = columns[1].text.strip().split(',')[0]
+    name = columns[1].text.strip().split(',')[0].replace("Dr. ", "").replace("Prof. ", "").replace("Drs.", "").strip()
     link = columns[1].find('a')['href']
 
     new_r = requests.get(link)
@@ -29,7 +29,7 @@ def get_faculty_data_1(prof):
 
     found_keyword = any(re.search(re.escape(keyword), research, re.IGNORECASE) for keyword in keyword_list)
 
-    if found_keyword or True:
+    if found_keyword:
         pers_link = get_scholar_profile(name)
         faculty_data.append([u_name, country, name, email, link, pers_link])
         print([u_name, country, name, email, link, pers_link])

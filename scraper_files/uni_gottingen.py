@@ -16,11 +16,11 @@ u_name = "University of Gottingen"
 country = "Germany"
 
 def get_name(prof):
-    name = prof.find('a').text.replace("Dr.", "").replace("Prof.", "").replace("Prof. Dr.", "").strip()
+    name = prof.find('a').text.replace("Dr.", "").replace("Prof.", "").replace("Prof. Dr.", "").strip() if prof.find('a') else "N/A"
     return name
 
 def get_link(prof):
-    link = prof.find('a')['href']
+    link = prof.find('a')['href'] if prof.find('a') else "N/A"
     return link
 
 def get_faculty_data(prof):
