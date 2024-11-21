@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Indiana University, Bloomington"
 country = "United States"
 
-all_faculty = []
+all_faculty_indiana_uni_bloomington = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_indiana_uni_bloomington
+    all_faculty_indiana_uni_bloomington += search_faculty_list(link, headers, u_name, country)[0]
 
 def indiana_uni_bloomington():
-    global all_faculty
+    global all_faculty_indiana_uni_bloomington
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=18243465982490009522',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=18243465982490009522&after_author=qF59AP3w_v8J&astart=10',
@@ -214,8 +214,8 @@ def indiana_uni_bloomington():
                 print(f"Error occurred: {e}")
 
     print("\nIndiana University, Bloomington done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_indiana_uni_bloomington = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_indiana_uni_bloomington)]
+    return all_faculty_indiana_uni_bloomington
 
 if __name__ == "__main__":
     indiana_uni_bloomington()

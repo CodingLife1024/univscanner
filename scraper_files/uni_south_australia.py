@@ -77,8 +77,6 @@ def uni_south_australia():
             print("No data found for URL..." + url + "\n")
         print("Fetched from URL..." + url + "\n")
 
-    print(len(all_profs))
-
     with concurrent.futures.ThreadPoolExecutor() as executor:
         futures = [executor.submit(get_faculty_data, prof) for prof in all_profs]
         for future in concurrent.futures.as_completed(futures):

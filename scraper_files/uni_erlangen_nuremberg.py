@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Friedrich Alexander Universität Erlangen Nürnberg"
 country = "Germany"
 
-all_faculty = []
+all_faculty_uni_erlangen_nuremberg = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_uni_erlangen_nuremberg
+    all_faculty_uni_erlangen_nuremberg += search_faculty_list(link, headers, u_name, country)[0]
 
 def uni_erlangen_nuremberg():
-    global all_faculty
+    global all_faculty_uni_erlangen_nuremberg
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=3435058929645828923',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=3435058929645828923&after_author=xKkYAKpQ__8J&astart=10',
@@ -95,8 +95,8 @@ def uni_erlangen_nuremberg():
                 print(f"Error occurred: {e}")
 
     print("\nFriedrich Alexander Universität Erlangen Nürnberg done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_uni_erlangen_nuremberg = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_uni_erlangen_nuremberg)]
+    return all_faculty_uni_erlangen_nuremberg
 
 if __name__ == "__main__":
     uni_erlangen_nuremberg()

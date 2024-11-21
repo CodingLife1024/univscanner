@@ -20,6 +20,8 @@ def get_personal_url(name):
 
 def get_faculty_data(element):
     name = element.get_text().strip()
+    if "emeritus" in name.lower():
+        return
     if name != "":
         href = element.get('href')  # Get the href attribute value
         if not re.match(r'^/people/directory', href):  # Check if href does not start with '/people/'

@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Belarusian State University"
 country = "Belarus"
 
-all_faculty = []
+all_faculty_belarusian_state_uni = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_belarusian_state_uni
+    all_faculty_belarusian_state_uni += search_faculty_list(link, headers, u_name, country)[0]
 
 def belarusian_state_uni():
-    global all_faculty
+    global all_faculty_belarusian_state_uni
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=5521431868896417804',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=5521431868896417804&after_author=dHxHAN7Q__8J&astart=10',
@@ -67,8 +67,8 @@ def belarusian_state_uni():
                 print(f"Error occurred: {e}")
 
     print("\nBelarusian State University done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_belarusian_state_uni = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_belarusian_state_uni)]
+    return all_faculty_belarusian_state_uni
 
 if __name__ == "__main__":
     belarusian_state_uni()

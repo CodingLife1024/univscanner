@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Pontifical Catholic University of Argentina"
 country = "Argentina"
 
-all_faculty = []
+all_faculty_uca_argentina = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_uca_argentina
+    all_faculty_uca_argentina += search_faculty_list(link, headers, u_name, country)[0]
 
 def uca_argentina():
-    global all_faculty
+    global all_faculty_uca_argentina
     links = [
         'https://scholar.google.com/citations?hl=en&view_op=search_authors&mauthors=uca+argentina&btnG=',
         'https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=uca+argentina&after_author=9ty-ADjz__8J&astart=10',
@@ -39,8 +39,8 @@ def uca_argentina():
                 print(f"Error occurred: {e}")
 
     print("\nPontifical Catholic University of Argentina done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_uca_argentina = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_uca_argentina)]
+    return all_faculty_uca_argentina
 
 if __name__ == "__main__":
     uca_argentina()

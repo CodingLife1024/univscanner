@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Universidad Carlos III de Madrid"
 country = "Spain"
 
-all_faculty = []
+all_faculty_carlos = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_carlos
+    all_faculty_carlos += search_faculty_list(link, headers, u_name, country)[0]
 
 def universidad_carlos_de_madrid():
-    global all_faculty
+    global all_faculty_carlos
     links = [
         "https://scholar.google.com/citations?view_op=view_org&org=14848478220935772690",
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=14848478220935772690&after_author=M7kKAM7X__8J&astart=10',
@@ -90,8 +90,8 @@ def universidad_carlos_de_madrid():
                 print(f"Error occurred: {e}")
 
     print("\nUniversidad Carlos III de Madrid done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_carlos = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_carlos)]
+    return all_faculty_carlos
 
 if __name__ == "__main__":
     universidad_carlos_de_madrid()

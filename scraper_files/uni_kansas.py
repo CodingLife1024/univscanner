@@ -22,7 +22,7 @@ def get_name(prof):
 def get_email(prof):
     email_tag = prof.find('a', href=re.compile(r'^mailto:'))
     email = email_tag['href'] if email_tag else "N/A"
-    return email
+    return email[7:]
 
 def get_link(prof):
     link_tag = prof.find('a')

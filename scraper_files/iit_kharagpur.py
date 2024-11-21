@@ -14,14 +14,14 @@ from components.gscholar_indiv_page import search_faculty_list
 u_name = "Indian Institute of Technology, Kharagpur"
 country = "India"
 
-all_faculty = []
+all_faculty_iit_kharagpur = []
 
 def get_faculty_data(link, headers):
-    global all_faculty
-    all_faculty += search_faculty_list(link, headers, u_name, country)[0]
+    global all_faculty_iit_kharagpur
+    all_faculty_iit_kharagpur += search_faculty_list(link, headers, u_name, country)[0]
 
 def iit_kharagpur():
-    global all_faculty
+    global all_faculty_iit_kharagpur
     links = [
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=9904414229552554802',
         'https://scholar.google.com/citations?view_op=view_org&hl=en&org=9904414229552554802&after_author=LIdrAHzE__8J&astart=10',
@@ -90,8 +90,8 @@ def iit_kharagpur():
                 print(f"Error occurred: {e}")
 
     print("\nIndian Institute of Technology, Kharagpur done...\n")
-    all_faculty = [list(item) for item in set(tuple(sublist) for sublist in all_faculty)]
-    return all_faculty
+    all_faculty_iit_kharagpur = [list(item) for item in set(tuple(sublist) for sublist in all_faculty_iit_kharagpur)]
+    return all_faculty_iit_kharagpur
 
 if __name__ == "__main__":
     iit_kharagpur()

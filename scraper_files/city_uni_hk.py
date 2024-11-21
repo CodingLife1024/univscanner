@@ -19,6 +19,9 @@ def get_faculty_data(prof):
     name = prof.find('div', class_="name").get_text().strip() if prof.find('div', class_="name") else "Name not found"
     name = name.split(" ")[1:-1]
     name = " ".join(name)
+    name_parts = name.split(",")
+    name = name_parts[1] + " " + name_parts[0] if len(name_parts) > 1 else name_parts[0]
+    name = name.title()
     profile = prof.find('div', class_="profile")
     links = profile.find_all('a')
     email = links[0]['href'][7:] if links[0] else "Email not found"
